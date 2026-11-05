@@ -1,0 +1,217 @@
+{
+  "numero": 12,
+  "slug": "s2-liga-futbol",
+  "semana": 2,
+  "tipo": "ER",
+  "titulo": "Liga de fútbol",
+  "enunciado": [
+    "Una liga de fútbol profesional desea crear una base de datos con la información de los partidos que se juegan. Se guarda: de cada jugador su código (identificador), nombre, fecha de nacimiento y posición (portero, defensa, centrocampista…); de cada equipo su código (identificador), nombre, nombre del estadio, aforo, año de fundación y ciudad.",
+    "Un jugador solo puede pertenecer a un único equipo. De cada partido: código numérico (identificador), fecha, goles del equipo de casa y goles del equipo de fuera. Cada partido lo juega un equipo local y un equipo visitante (dos relaciones entre equipo y partido).",
+    "También se registra cada gol: código de gol (identificador), minuto y descripción. Un partido tiene varios goles y un jugador puede meter varios goles. Cada gol pertenece a un partido y lo mete un jugador.",
+    "Por último, se guardan los presidentes de los equipos: rut (identificador), nombre, apellidos y fecha de nacimiento, además del año en que fue elegido presidente. Un equipo solo puede tener un presidente y una persona solo puede ser presidente de un equipo.",
+    "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Jugador",
+        "attrs": [
+          {
+            "name": "cod_jugador",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "fecha_nacimiento"
+          },
+          {
+            "name": "posicion"
+          }
+        ]
+      },
+      {
+        "name": "Equipo",
+        "attrs": [
+          {
+            "name": "cod_equipo",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "nombre_estadio"
+          },
+          {
+            "name": "aforo"
+          },
+          {
+            "name": "anio_fundacion",
+            "aliases": [
+              "año_fundacion"
+            ]
+          },
+          {
+            "name": "ciudad"
+          }
+        ]
+      },
+      {
+        "name": "Partido",
+        "attrs": [
+          {
+            "name": "cod_partido",
+            "key": true
+          },
+          {
+            "name": "fecha"
+          },
+          {
+            "name": "goles_casa"
+          },
+          {
+            "name": "goles_fuera"
+          }
+        ]
+      },
+      {
+        "name": "Gol",
+        "attrs": [
+          {
+            "name": "cod_gol",
+            "key": true
+          },
+          {
+            "name": "minuto"
+          },
+          {
+            "name": "descripcion"
+          }
+        ]
+      },
+      {
+        "name": "Presidente",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "apellidos"
+          },
+          {
+            "name": "fecha_nacimiento"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "pertenece",
+        "between": [
+          {
+            "entity": "Equipo",
+            "card": "1"
+          },
+          {
+            "entity": "Jugador",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "local",
+        "between": [
+          {
+            "entity": "Equipo",
+            "card": "1"
+          },
+          {
+            "entity": "Partido",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "visitante",
+        "between": [
+          {
+            "entity": "Equipo",
+            "card": "1"
+          },
+          {
+            "entity": "Partido",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "marca",
+        "between": [
+          {
+            "entity": "Jugador",
+            "card": "1"
+          },
+          {
+            "entity": "Gol",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "contiene",
+        "between": [
+          {
+            "entity": "Partido",
+            "card": "1"
+          },
+          {
+            "entity": "Gol",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "preside",
+        "between": [
+          {
+            "entity": "Presidente",
+            "card": "1"
+          },
+          {
+            "entity": "Equipo",
+            "card": "1"
+          }
+        ],
+        "attrs": [
+          {
+            "name": "anio_eleccion",
+            "aliases": [
+              "año_eleccion",
+              "anio_elegido"
+            ]
+          }
+        ]
+      }
+    ],
+    "layout": [
+      [
+        "Presidente",
+        "Equipo",
+        "Partido",
+        "Gol"
+      ],
+      [
+        null,
+        "Jugador",
+        null,
+        null
+      ]
+    ]
+  }
+}

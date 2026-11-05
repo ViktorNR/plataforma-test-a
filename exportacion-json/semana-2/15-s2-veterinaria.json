@@ -1,0 +1,208 @@
+{
+  "numero": 15,
+  "slug": "s2-veterinaria",
+  "semana": 2,
+  "tipo": "ER",
+  "titulo": "Clínica veterinaria",
+  "enunciado": [
+    "Una clínica veterinaria necesita diseñar una base de datos para administrar sus clientes, mascotas, veterinarios y atenciones médicas.",
+    "Cada cliente tiene rut (identificador), nombre, dirección (calle, número y comuna) y teléfonos (puede tener varios). Un cliente puede tener una o varias mascotas, pero cada mascota pertenece a un solo cliente.",
+    "De cada mascota se registra código (identificador), nombre, especie, raza, fecha de nacimiento y peso; la edad debe poder calcularse a partir de la fecha de nacimiento.",
+    "Cada veterinario tiene rut (identificador), nombre, especialidad, correo electrónico y teléfono. Cada atención médica (identificada por un número de atención) es realizada por un veterinario a una mascota y registra la fecha, motivo de consulta, diagnóstico, tratamiento indicado y costo. Un veterinario realiza muchas atenciones y una mascota puede recibir varias atenciones.",
+    "Además, se registran los medicamentos indicados en cada atención: código (identificador), nombre, dosis recomendada y laboratorio. Una atención puede incluir varios medicamentos y un medicamento puede indicarse en muchas atenciones.",
+    "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Cliente",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "direccion",
+            "parts": [
+              {
+                "name": "calle"
+              },
+              {
+                "name": "numero"
+              },
+              {
+                "name": "comuna"
+              }
+            ]
+          },
+          {
+            "name": "telefono",
+            "multi": true
+          }
+        ]
+      },
+      {
+        "name": "Mascota",
+        "attrs": [
+          {
+            "name": "codigo",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "especie"
+          },
+          {
+            "name": "raza"
+          },
+          {
+            "name": "fecha_nacimiento"
+          },
+          {
+            "name": "peso"
+          },
+          {
+            "name": "edad",
+            "derived": true
+          }
+        ]
+      },
+      {
+        "name": "Veterinario",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "especialidad"
+          },
+          {
+            "name": "correo"
+          },
+          {
+            "name": "telefono"
+          }
+        ]
+      },
+      {
+        "name": "Atencion",
+        "attrs": [
+          {
+            "name": "cod_atencion",
+            "key": true
+          },
+          {
+            "name": "fecha"
+          },
+          {
+            "name": "motivo"
+          },
+          {
+            "name": "diagnostico"
+          },
+          {
+            "name": "tratamiento"
+          },
+          {
+            "name": "costo"
+          }
+        ]
+      },
+      {
+        "name": "Medicamento",
+        "attrs": [
+          {
+            "name": "codigo",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "dosis_recomendada"
+          },
+          {
+            "name": "laboratorio"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "tiene",
+        "between": [
+          {
+            "entity": "Cliente",
+            "card": "1"
+          },
+          {
+            "entity": "Mascota",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "recibe",
+        "between": [
+          {
+            "entity": "Mascota",
+            "card": "1"
+          },
+          {
+            "entity": "Atencion",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "realiza",
+        "between": [
+          {
+            "entity": "Veterinario",
+            "card": "1"
+          },
+          {
+            "entity": "Atencion",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "indica",
+        "between": [
+          {
+            "entity": "Atencion",
+            "card": "N"
+          },
+          {
+            "entity": "Medicamento",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "layout": [
+      [
+        "Cliente",
+        "Mascota",
+        "Atencion",
+        "Medicamento"
+      ],
+      [
+        null,
+        null,
+        "Veterinario",
+        null
+      ]
+    ]
+  }
+}

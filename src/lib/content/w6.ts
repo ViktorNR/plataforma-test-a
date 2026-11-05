@@ -1,0 +1,30 @@
+import type { Exercise } from '../types';
+import { Q, quiz } from './dsl';
+
+/** Semana 6: cuestionarios del simulacro de Solemne 1 (el resto del simulacro reutiliza ejercicios de las semanas 3 a 5). */
+export const W6_QUIZ: Exercise[] = [
+  quiz('s6-q-especializacion', 'Solemne 1: especialización y generalización', 'Preguntas de selección múltiple como las de la Solemne 1.', [
+    Q('Una especialización **disyunta** significa que:', ['Una instancia del supertipo puede pertenecer a más de un subtipo', 'Una instancia del supertipo pertenece a lo más a un subtipo', 'Todas las instancias del supertipo deben pertenecer a algún subtipo', 'El supertipo no tiene atributos'], 1, 'Disyunta (d): los subtipos son excluyentes entre sí. Solapada (o) permite pertenecer a varios.'),
+    Q('Una especialización **total** significa que:', ['Toda instancia del supertipo pertenece a al menos un subtipo', 'Solo algunas instancias pertenecen a un subtipo', 'Los subtipos no tienen atributos propios', 'Hay un único subtipo'], 0, 'Total: participación obligatoria. Parcial: existen instancias del supertipo que no pertenecen a ningún subtipo.'),
+    Q('En una empresa, un empleado puede ser a la vez «conductor» y «mecánico», y puede existir personal que no sea ninguno de los dos. La especialización es:', ['Disyunta y total', 'Disyunta y parcial', 'Solapada y total', 'Solapada y parcial'], 3, 'Puede ser ambos (solapada) y no es obligatorio ser alguno (parcial).'),
+    Q('Los subtipos de una especialización heredan del supertipo:', ['Solo la clave primaria', 'Todos los atributos y relaciones', 'Nada, solo el nombre', 'Únicamente las relaciones'], 1, 'La herencia incluye atributos y participación en relaciones del supertipo.'),
+    Q('¿Cuándo conviene modelar algo como entidad en lugar de relación?', ['Cuando tiene identidad propia y atributos independientes', 'Cuando solo une dos entidades', 'Nunca, siempre es relación', 'Cuando no tiene atributos'], 0, 'Si el concepto existe por sí mismo (se identifica y se describe), es entidad; si solo asocia, es relación.'),
+    Q('Una entidad débil se caracteriza porque:', ['No tiene atributos', 'Su identificación depende de otra entidad (propietaria)', 'Tiene clave primaria simple', 'No participa en relaciones'], 1, 'Su clave parcial se combina con la clave de la entidad propietaria.'),
+  ], 6),
+  quiz('s6-q-transformacion', 'Solemne 1: del modelo E/R al relacional', 'Preguntas de selección múltiple sobre reglas de transformación.', [
+    Q('Una relación 1:N entre A y B (B es el lado «muchos») se transforma:', ['Creando una tabla nueva para la relación', 'Agregando la clave de A como clave foránea en B', 'Agregando la clave de B como clave foránea en A', 'Uniendo A y B en una sola tabla siempre'], 1, 'La clave foránea va en la tabla del lado N.'),
+    Q('Una relación M:N entre A y B se transforma:', ['Con una tabla intermedia con las claves de A y B', 'Con una clave foránea en A', 'Con una clave foránea en B', 'No se puede transformar'], 0, 'La tabla intermedia tiene como clave primaria compuesta las dos claves foráneas.'),
+    Q('Un atributo multivaluado se transforma:', ['En una columna con listas separadas por coma', 'En una tabla aparte que incluye la clave de la entidad', 'Se descarta', 'En una clave primaria'], 1, 'Se crea una tabla con la clave de la entidad y el atributo; la clave primaria combina ambos.'),
+    Q('Una entidad débil se transforma en una tabla cuya clave primaria es:', ['Solo su clave parcial', 'La clave de la entidad propietaria más su clave parcial', 'Un autoincremental obligatorio', 'No lleva clave'], 1, 'La clave foránea hacia la propietaria forma parte de la clave primaria.'),
+    Q('En una relación 1:1 con participación total en un lado, una opción válida es:', ['Fusionar ambas entidades o poner la FK en el lado total', 'Crear siempre tres tablas', 'Eliminar una entidad', 'Usar atributos multivaluados'], 0, 'En 1:1 se puede fusionar o poner la FK (con UNIQUE) en la tabla del lado de participación total.'),
+    Q('Para una especialización con subtipos que tienen muchos atributos propios suele convenir:', ['Una tabla por supertipo y una por subtipo, con la misma clave', 'Una sola tabla con todo', 'Ninguna tabla', 'Solo tablas de subtipos'], 0, 'Una tabla para el supertipo y una por subtipo cuya clave primaria es también clave foránea al supertipo.'),
+  ], 6),
+  quiz('s6-q-normalizacion', 'Solemne 1: dependencias y normalización', 'Preguntas de selección múltiple sobre formas normales.', [
+    Q('Una relación está en **1FN** cuando:', ['No tiene claves foráneas', 'Todos sus atributos son atómicos (sin grupos repetitivos)', 'No tiene dependencias transitivas', 'Tiene una sola columna'], 1, '1FN exige valores atómicos y ausencia de grupos repetidos.'),
+    Q('Una dependencia **parcial** ocurre cuando:', ['Un atributo no clave depende de parte de una clave compuesta', 'Un atributo depende de otro no clave', 'La clave es simple', 'Hay claves foráneas'], 0, '2FN elimina las dependencias parciales.'),
+    Q('Una dependencia **transitiva** es:', ['A → B y B → C, con C no clave dependiendo de A a través de B', 'A → A', 'Una clave foránea', 'Un atributo multivaluado'], 0, '3FN elimina las dependencias transitivas entre atributos no clave.'),
+    Q('Una relación con clave simple y sin dependencias transitivas, ¿en qué forma normal está como mínimo?', ['1FN solamente', '2FN (y 3FN si no hay transitivas)', 'Ninguna', 'Es imposible'], 1, 'Con clave simple no pueden existir dependencias parciales; sin transitivas está en 3FN.'),
+    Q('Si `rut → nombre` y `cod_curso → nombre_curso` en una tabla con clave (rut, cod_curso), existe:', ['Dependencia parcial', 'Dependencia transitiva', 'Ninguna dependencia', 'Clave candidata nueva'], 0, 'Ambos dependen de solo una parte de la clave compuesta.'),
+    Q('El objetivo de normalizar es principalmente:', ['Reducir redundancia y anomalías de actualización', 'Aumentar la cantidad de columnas', 'Eliminar las claves primarias', 'Acelerar el hardware'], 0, 'Se evitan anomalías de inserción, actualización y borrado.'),
+  ], 6),
+];

@@ -1,0 +1,502 @@
+{
+  "nodes": [
+    {
+      "id": "e:Paciente",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Paciente",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:cod_paciente",
+      "type": "attribute",
+      "position": {
+        "x": 154.01803146452664,
+        "y": 151.4411815572248
+      },
+      "data": {
+        "label": "cod_paciente",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 46.33448263415764,
+        "y": 209.23437790299207
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:apellidos",
+      "type": "attribute",
+      "position": {
+        "x": -75.30357376521708,
+        "y": 197.4029169642317
+      },
+      "data": {
+        "label": "apellidos",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:direccion",
+      "type": "attribute",
+      "position": {
+        "x": -169.83117041012764,
+        "y": 119.94109601287539
+      },
+      "data": {
+        "label": "direccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:poblacion",
+      "type": "attribute",
+      "position": {
+        "x": -205.33582215986803,
+        "y": 3.000000000000025
+      },
+      "data": {
+        "label": "poblacion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:provincia",
+      "type": "attribute",
+      "position": {
+        "x": -169.83117041012767,
+        "y": -113.94109601287535
+      },
+      "data": {
+        "label": "provincia",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:codigo_postal",
+      "type": "attribute",
+      "position": {
+        "x": -75.30357376521718,
+        "y": -191.40291696423168
+      },
+      "data": {
+        "label": "codigo_postal",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:telefono",
+      "type": "attribute",
+      "position": {
+        "x": 46.33448263415764,
+        "y": -203.2343779029921
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:fecha_nacimiento",
+      "type": "attribute",
+      "position": {
+        "x": 154.01803146452644,
+        "y": -145.44118155722498
+      },
+      "data": {
+        "label": "fecha_nacimiento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Medico",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Medico",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Medico:cod_medico",
+      "type": "attribute",
+      "position": {
+        "x": 942.1216912835905,
+        "y": -99.20723209716573
+      },
+      "data": {
+        "label": "cod_medico",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Medico:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1063.543159096648,
+        "y": -101.75064927237716
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Medico:apellidos",
+      "type": "attribute",
+      "position": {
+        "x": 1125,
+        "y": 2.9999999999999716
+      },
+      "data": {
+        "label": "apellidos",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Medico:telefono",
+      "type": "attribute",
+      "position": {
+        "x": 1063.543159096648,
+        "y": 107.75064927237713
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Medico:especialidad",
+      "type": "attribute",
+      "position": {
+        "x": 942.1216912835904,
+        "y": 105.20723209716566
+      },
+      "data": {
+        "label": "especialidad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Ingreso",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Ingreso",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Ingreso:cod_ingreso",
+      "type": "attribute",
+      "position": {
+        "x": 671.2435601038433,
+        "y": 160.75924798308264
+      },
+      "data": {
+        "label": "cod_ingreso",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Ingreso:numero_habitacion",
+      "type": "attribute",
+      "position": {
+        "x": 566.246524292856,
+        "y": 223.84783191653142
+      },
+      "data": {
+        "label": "numero_habitacion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Ingreso:cama",
+      "type": "attribute",
+      "position": {
+        "x": 443.7534757071441,
+        "y": 223.84783191653142
+      },
+      "data": {
+        "label": "cama",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Ingreso:fecha_ingreso",
+      "type": "attribute",
+      "position": {
+        "x": 338.75643989615673,
+        "y": 160.75924798308264
+      },
+      "data": {
+        "label": "fecha_ingreso",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "realiza",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "atiende",
+        "identifying": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Paciente->a:e:Paciente:cod_paciente#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:cod_paciente",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->a:e:Paciente:nombre#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->a:e:Paciente:apellidos#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:apellidos",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->a:e:Paciente:direccion#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:direccion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->a:e:Paciente:poblacion#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:poblacion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->a:e:Paciente:provincia#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:provincia",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->a:e:Paciente:codigo_postal#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:codigo_postal",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->a:e:Paciente:telefono#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->a:e:Paciente:fecha_nacimiento#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:fecha_nacimiento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Medico->a:e:Medico:cod_medico#0",
+      "source": "e:Medico",
+      "target": "a:e:Medico:cod_medico",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Medico->a:e:Medico:nombre#0",
+      "source": "e:Medico",
+      "target": "a:e:Medico:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Medico->a:e:Medico:apellidos#0",
+      "source": "e:Medico",
+      "target": "a:e:Medico:apellidos",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Medico->a:e:Medico:telefono#0",
+      "source": "e:Medico",
+      "target": "a:e:Medico:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Medico->a:e:Medico:especialidad#0",
+      "source": "e:Medico",
+      "target": "a:e:Medico:especialidad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Ingreso->a:e:Ingreso:cod_ingreso#0",
+      "source": "e:Ingreso",
+      "target": "a:e:Ingreso:cod_ingreso",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Ingreso->a:e:Ingreso:numero_habitacion#0",
+      "source": "e:Ingreso",
+      "target": "a:e:Ingreso:numero_habitacion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Ingreso->a:e:Ingreso:cama#0",
+      "source": "e:Ingreso",
+      "target": "a:e:Ingreso:cama",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Ingreso->a:e:Ingreso:fecha_ingreso#0",
+      "source": "e:Ingreso",
+      "target": "a:e:Ingreso:fecha_ingreso",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->r:0#0",
+      "source": "e:Paciente",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Ingreso->r:0#0",
+      "source": "e:Ingreso",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Medico->r:1#0",
+      "source": "e:Medico",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Ingreso->r:1#0",
+      "source": "e:Ingreso",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,374 @@
+{
+  "nodes": [
+    {
+      "id": "e:Medico",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Medico",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Medico:rut_medico",
+      "type": "attribute",
+      "position": {
+        "x": 28.58199314393964,
+        "y": 120.66005949071752
+      },
+      "data": {
+        "label": "rut_medico",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Medico:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -115,
+        "y": 3.000000000000014
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Medico:especialidad",
+      "type": "attribute",
+      "position": {
+        "x": 28.58199314393964,
+        "y": -114.66005949071752
+      },
+      "data": {
+        "label": "especialidad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Paciente",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Paciente",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:rut_paciente",
+      "type": "attribute",
+      "position": {
+        "x": 442.12169128359056,
+        "y": -99.20723209716573
+      },
+      "data": {
+        "label": "rut_paciente",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 563.543159096648,
+        "y": -101.75064927237716
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:fecha_nacimiento",
+      "type": "attribute",
+      "position": {
+        "x": 625,
+        "y": 2.9999999999999716
+      },
+      "data": {
+        "label": "fecha_nacimiento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:telefono",
+      "type": "attribute",
+      "position": {
+        "x": 563.543159096648,
+        "y": 107.75064927237713
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": true,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:edad",
+      "type": "attribute",
+      "position": {
+        "x": 442.1216912835904,
+        "y": 105.20723209716566
+      },
+      "data": {
+        "label": "edad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": true
+      }
+    },
+    {
+      "id": "e:Departamento",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Departamento",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Departamento:cod_depto",
+      "type": "attribute",
+      "position": {
+        "x": 1034.03062747196,
+        "y": -113.4354871531196
+      },
+      "data": {
+        "label": "cod_depto",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Departamento:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1034.0306274719603,
+        "y": 119.43548715311954
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 490,
+        "y": -18
+      },
+      "data": {
+        "label": "pertenece",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "atiende",
+        "identifying": false
+      }
+    },
+    {
+      "id": "a:r:1:fecha",
+      "type": "attribute",
+      "position": {
+        "x": 314.0190159617777,
+        "y": 101.22413733370432
+      },
+      "data": {
+        "label": "fecha",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:r:1:diagnostico",
+      "type": "attribute",
+      "position": {
+        "x": 195.98098403822232,
+        "y": 101.22413733370432
+      },
+      "data": {
+        "label": "diagnostico",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Medico->a:e:Medico:rut_medico#0",
+      "source": "e:Medico",
+      "target": "a:e:Medico:rut_medico",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Medico->a:e:Medico:nombre#0",
+      "source": "e:Medico",
+      "target": "a:e:Medico:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Medico->a:e:Medico:especialidad#0",
+      "source": "e:Medico",
+      "target": "a:e:Medico:especialidad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->a:e:Paciente:rut_paciente#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:rut_paciente",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->a:e:Paciente:nombre#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->a:e:Paciente:fecha_nacimiento#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:fecha_nacimiento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->a:e:Paciente:telefono#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->a:e:Paciente:edad#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:edad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Departamento->a:e:Departamento:cod_depto#0",
+      "source": "e:Departamento",
+      "target": "a:e:Departamento:cod_depto",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Departamento->a:e:Departamento:nombre#0",
+      "source": "e:Departamento",
+      "target": "a:e:Departamento:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Medico->r:0#0",
+      "source": "e:Medico",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "min": "0",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Departamento->r:0#0",
+      "source": "e:Departamento",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "min": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Medico->r:1#0",
+      "source": "e:Medico",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "min": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Paciente->r:1#0",
+      "source": "e:Paciente",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "min": "0",
+        "view": true
+      }
+    },
+    {
+      "id": "r:1->a:r:1:fecha#0",
+      "source": "r:1",
+      "target": "a:r:1:fecha",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "r:1->a:r:1:diagnostico#0",
+      "source": "r:1",
+      "target": "a:r:1:diagnostico",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

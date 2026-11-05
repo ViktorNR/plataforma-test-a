@@ -1,0 +1,77 @@
+{
+  "numero": 9,
+  "slug": "s1-ventajas",
+  "semana": 1,
+  "tipo": "QUIZ",
+  "titulo": "Ventajas del enfoque de bases de datos",
+  "enunciado": [
+    "Qué se gana al usar una base de datos."
+  ],
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "¿Cuál es una ventaja del enfoque de bases de datos?",
+      "alternativas": [
+        "Mayor redundancia",
+        "Mínima redundancia de datos",
+        "Mayor dependencia de los programas",
+        "Menor seguridad"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "Mínima redundancia de datos",
+      "explicacion": "Se evita duplicar datos innecesariamente."
+    },
+    {
+      "id": "q2",
+      "pregunta": "La consistencia de datos significa que…",
+      "alternativas": [
+        "todos los datos son iguales",
+        "un dato tiene el mismo valor en toda la organización",
+        "los datos no cambian nunca",
+        "hay un solo usuario"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "un dato tiene el mismo valor en toda la organización",
+      "explicacion": "Al no duplicarse, los datos no se contradicen entre sí."
+    },
+    {
+      "id": "q3",
+      "pregunta": "Facilitar el desarrollo de aplicaciones se logra porque…",
+      "alternativas": [
+        "los programadores no necesitan conocer los datos",
+        "los datos ya están definidos y disponibles de forma independiente",
+        "se elimina el DBMS",
+        "se programa en papel"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "los datos ya están definidos y disponibles de forma independiente",
+      "explicacion": "Los programadores reutilizan datos y definiciones existentes."
+    },
+    {
+      "id": "q4",
+      "pregunta": "La reducción de la mantención de programas se debe a…",
+      "alternativas": [
+        "la independencia de los datos",
+        "la redundancia",
+        "el uso de más archivos",
+        "la duplicidad de código"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "la independencia de los datos",
+      "explicacion": "Un cambio en el almacenamiento no obliga a modificar los programas."
+    },
+    {
+      "id": "q5",
+      "pregunta": "¿Cuál de las siguientes NO es una ventaja listada?",
+      "alternativas": [
+        "Esfuerzo por estandarización",
+        "Controles de seguridad, privacidad e integridad",
+        "Integración de datos",
+        "Dependencia de los datos"
+      ],
+      "respuestaCorrecta": 3,
+      "respuestaCorrectaTexto": "Dependencia de los datos",
+      "explicacion": "La dependencia de los datos es un problema del enfoque tradicional."
+    }
+  ]
+}

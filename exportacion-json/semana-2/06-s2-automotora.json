@@ -1,0 +1,120 @@
+{
+  "numero": 6,
+  "slug": "s2-automotora",
+  "semana": 2,
+  "tipo": "ER",
+  "titulo": "Venta de automóviles",
+  "enunciado": [
+    "Se desea diseñar una base de datos para una empresa dedicada a la venta de automóviles. La empresa dispone de vehículos para su venta: se necesita conocer la matrícula (identificador), marca, modelo, color y precio de venta.",
+    "De cada cliente interesa el rut, nombre, dirección, ciudad y números de teléfono (puede tener varios). Además, los clientes se diferencian por un código interno (identificador) que se incrementa automáticamente cuando un cliente se da de alta.",
+    "Un cliente puede comprar tantos vehículos como desee. Un vehículo determinado solo puede ser comprado por un único cliente.",
+    "El concesionario también realiza las revisiones de cada vehículo. Cada revisión tiene un código (identificador) y se desea saber si se hizo cambio de filtro, de aceite, de frenos u otros. Un vehículo puede pasar varias revisiones, y cada revisión corresponde a un solo vehículo.",
+    "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Vehiculo",
+        "attrs": [
+          {
+            "name": "matricula",
+            "key": true
+          },
+          {
+            "name": "marca"
+          },
+          {
+            "name": "modelo"
+          },
+          {
+            "name": "color"
+          },
+          {
+            "name": "precio_venta"
+          }
+        ]
+      },
+      {
+        "name": "Cliente",
+        "attrs": [
+          {
+            "name": "codigo_interno",
+            "key": true
+          },
+          {
+            "name": "rut"
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "direccion"
+          },
+          {
+            "name": "ciudad"
+          },
+          {
+            "name": "telefono",
+            "multi": true
+          }
+        ]
+      },
+      {
+        "name": "Revision",
+        "attrs": [
+          {
+            "name": "cod_revision",
+            "key": true
+          },
+          {
+            "name": "cambio_filtro"
+          },
+          {
+            "name": "cambio_aceite"
+          },
+          {
+            "name": "cambio_frenos"
+          },
+          {
+            "name": "otros"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "compra",
+        "between": [
+          {
+            "entity": "Cliente",
+            "card": "1"
+          },
+          {
+            "entity": "Vehiculo",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "se_revisa",
+        "between": [
+          {
+            "entity": "Vehiculo",
+            "card": "1"
+          },
+          {
+            "entity": "Revision",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "layout": [
+      [
+        "Cliente",
+        "Vehiculo",
+        "Revision"
+      ]
+    ]
+  }
+}

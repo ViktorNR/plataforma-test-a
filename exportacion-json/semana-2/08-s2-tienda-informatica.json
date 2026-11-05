@@ -1,0 +1,125 @@
+{
+  "numero": 8,
+  "slug": "s2-tienda-informatica",
+  "semana": 2,
+  "tipo": "ER",
+  "titulo": "Tienda informática",
+  "enunciado": [
+    "Se desea informatizar la gestión de una tienda informática. De cada producto se guarda el código (identificador), descripción, precio y número de existencias.",
+    "De cada cliente: código (identificador), nombre, apellidos, dirección, correos (puede tener varios) y teléfonos (puede tener varios). Un cliente puede comprar varios productos y un mismo producto puede ser comprado por varios clientes. Cada compra queda registrada con la fecha en la que se realizó.",
+    "La tienda tiene contactos con varios proveedores que suministran los productos. Un mismo producto puede ser suministrado por varios proveedores (y un proveedor suministra varios productos). De cada proveedor: código (identificador), nombre, apellido, dirección, provincia y teléfono.",
+    "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Producto",
+        "attrs": [
+          {
+            "name": "codigo",
+            "key": true
+          },
+          {
+            "name": "descripcion"
+          },
+          {
+            "name": "precio"
+          },
+          {
+            "name": "existencias"
+          }
+        ]
+      },
+      {
+        "name": "Cliente",
+        "attrs": [
+          {
+            "name": "codigo",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "apellidos"
+          },
+          {
+            "name": "direccion"
+          },
+          {
+            "name": "correos",
+            "multi": true
+          },
+          {
+            "name": "telefonos",
+            "multi": true
+          }
+        ]
+      },
+      {
+        "name": "Proveedor",
+        "attrs": [
+          {
+            "name": "codigo",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "apellido"
+          },
+          {
+            "name": "direccion"
+          },
+          {
+            "name": "provincia"
+          },
+          {
+            "name": "telefono"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "compra",
+        "between": [
+          {
+            "entity": "Cliente",
+            "card": "N"
+          },
+          {
+            "entity": "Producto",
+            "card": "N"
+          }
+        ],
+        "attrs": [
+          {
+            "name": "fecha"
+          }
+        ]
+      },
+      {
+        "name": "suministra",
+        "between": [
+          {
+            "entity": "Proveedor",
+            "card": "N"
+          },
+          {
+            "entity": "Producto",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "layout": [
+      [
+        "Cliente",
+        "Producto",
+        "Proveedor"
+      ]
+    ]
+  }
+}

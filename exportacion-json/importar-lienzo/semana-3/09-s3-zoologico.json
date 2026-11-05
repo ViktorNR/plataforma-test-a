@@ -1,0 +1,486 @@
+{
+  "nodes": [
+    {
+      "id": "e:Animal",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 380
+      },
+      "data": {
+        "label": "Animal",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Animal:id_animal",
+      "type": "attribute",
+      "position": {
+        "x": 386.31809639657,
+        "y": 400.7371293355532
+      },
+      "data": {
+        "label": "id_animal",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Animal:fecha_nacimiento",
+      "type": "attribute",
+      "position": {
+        "x": 522.7371293355533,
+        "y": 264.31809639657
+      },
+      "data": {
+        "label": "fecha_nacimiento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Mamifero",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Mamifero",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Mamifero:es_depredador",
+      "type": "attribute",
+      "position": {
+        "x": -77.34645122748637,
+        "y": -84.28723830113546
+      },
+      "data": {
+        "label": "es_depredador",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Ave",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Ave",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Ave:envergadura",
+      "type": "attribute",
+      "position": {
+        "x": 505,
+        "y": -117
+      },
+      "data": {
+        "label": "envergadura",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Reptil",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Reptil",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Reptil:es_venenoso",
+      "type": "attribute",
+      "position": {
+        "x": 1087.3464512274863,
+        "y": -84.28723830113549
+      },
+      "data": {
+        "label": "es_venenoso",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Habitat",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 380
+      },
+      "data": {
+        "label": "Habitat",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Habitat:id_habitat",
+      "type": "attribute",
+      "position": {
+        "x": 1089.8528137423857,
+        "y": 298.1471862576143
+      },
+      "data": {
+        "label": "id_habitat",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Empleado",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 1140
+      },
+      "data": {
+        "label": "Empleado",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Empleado:rut",
+      "type": "attribute",
+      "position": {
+        "x": 888.5645128468805,
+        "y": 1113.96937252804
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Empleado:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1121.4354871531195,
+        "y": 1113.96937252804
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Cuidador",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 760
+      },
+      "data": {
+        "label": "Cuidador",
+        "weak": false
+      }
+    },
+    {
+      "id": "e:Programa_Conservacion",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 380
+      },
+      "data": {
+        "label": "Programa_Conservacion",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Programa_Conservacion:id_programa",
+      "type": "attribute",
+      "position": {
+        "x": 1534.03062747196,
+        "y": 266.5645128468804
+      },
+      "data": {
+        "label": "id_programa",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Programa_Conservacion:estado_riesgo",
+      "type": "attribute",
+      "position": {
+        "x": 1534.0306274719603,
+        "y": 499.43548715311954
+      },
+      "data": {
+        "label": "estado_riesgo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": 362
+      },
+      "data": {
+        "label": "alberga",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 990,
+        "y": 552
+      },
+      "data": {
+        "label": "esta_asignado",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:2",
+      "type": "relationship",
+      "position": {
+        "x": 990,
+        "y": 362
+      },
+      "data": {
+        "label": "participa",
+        "identifying": false
+      }
+    },
+    {
+      "id": "s:0",
+      "type": "spec",
+      "position": {
+        "x": 538,
+        "y": 530
+      },
+      "data": {
+        "label": "",
+        "disjoint": true,
+        "total": true
+      }
+    },
+    {
+      "id": "s:1",
+      "type": "spec",
+      "position": {
+        "x": 1038,
+        "y": 1290
+      },
+      "data": {
+        "label": "",
+        "disjoint": true,
+        "total": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Animal->a:e:Animal:id_animal#0",
+      "source": "e:Animal",
+      "target": "a:e:Animal:id_animal",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Animal->a:e:Animal:fecha_nacimiento#0",
+      "source": "e:Animal",
+      "target": "a:e:Animal:fecha_nacimiento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Mamifero->a:e:Mamifero:es_depredador#0",
+      "source": "e:Mamifero",
+      "target": "a:e:Mamifero:es_depredador",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Ave->a:e:Ave:envergadura#0",
+      "source": "e:Ave",
+      "target": "a:e:Ave:envergadura",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Reptil->a:e:Reptil:es_venenoso#0",
+      "source": "e:Reptil",
+      "target": "a:e:Reptil:es_venenoso",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Habitat->a:e:Habitat:id_habitat#0",
+      "source": "e:Habitat",
+      "target": "a:e:Habitat:id_habitat",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Empleado->a:e:Empleado:rut#0",
+      "source": "e:Empleado",
+      "target": "a:e:Empleado:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Empleado->a:e:Empleado:nombre#0",
+      "source": "e:Empleado",
+      "target": "a:e:Empleado:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Programa_Conservacion->a:e:Programa_Conservacion:id_programa#0",
+      "source": "e:Programa_Conservacion",
+      "target": "a:e:Programa_Conservacion:id_programa",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Programa_Conservacion->a:e:Programa_Conservacion:estado_riesgo#0",
+      "source": "e:Programa_Conservacion",
+      "target": "a:e:Programa_Conservacion:estado_riesgo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Habitat->r:0#0",
+      "source": "e:Habitat",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Animal->r:0#0",
+      "source": "e:Animal",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Habitat->r:1#0",
+      "source": "e:Habitat",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Cuidador->r:1#0",
+      "source": "e:Cuidador",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Programa_Conservacion->r:2#0",
+      "source": "e:Programa_Conservacion",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Animal->r:2#0",
+      "source": "e:Animal",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Animal->s:0#0",
+      "source": "e:Animal",
+      "target": "s:0",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Mamifero#0",
+      "source": "s:0",
+      "target": "e:Mamifero",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Ave#0",
+      "source": "s:0",
+      "target": "e:Ave",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Reptil#0",
+      "source": "s:0",
+      "target": "e:Reptil",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Empleado->s:1#0",
+      "source": "e:Empleado",
+      "target": "s:1",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:1->e:Cuidador#0",
+      "source": "s:1",
+      "target": "e:Cuidador",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

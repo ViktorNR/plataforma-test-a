@@ -1,0 +1,276 @@
+{
+  "nodes": [
+    {
+      "id": "e:Empleado",
+      "type": "entity",
+      "position": {
+        "x": 280,
+        "y": 40
+      },
+      "data": {
+        "label": "Empleado",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Empleado:rut",
+      "type": "attribute",
+      "position": {
+        "x": 186.85146211733016,
+        "y": 112.04248338156822
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Empleado:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 193.69483056598375,
+        "y": -34.86761865259257
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Empleado:sueldo",
+      "type": "attribute",
+      "position": {
+        "x": 337.6824298435608,
+        "y": -64.81726014779962
+      },
+      "data": {
+        "label": "sueldo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Docente",
+      "type": "entity",
+      "position": {
+        "x": 110,
+        "y": 330
+      },
+      "data": {
+        "label": "Docente",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Docente:grado_academico",
+      "type": "attribute",
+      "position": {
+        "x": 19.52594774000316,
+        "y": 405.69597887817037
+      },
+      "data": {
+        "label": "grado_academico",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Administrativo",
+      "type": "entity",
+      "position": {
+        "x": 440,
+        "y": 330
+      },
+      "data": {
+        "label": "Administrativo",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Administrativo:cargo",
+      "type": "attribute",
+      "position": {
+        "x": 524.6121379745367,
+        "y": 422.7881255351916
+      },
+      "data": {
+        "label": "cargo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Departamento",
+      "type": "entity",
+      "position": {
+        "x": 760,
+        "y": 40
+      },
+      "data": {
+        "label": "Departamento",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Departamento:cod_depto",
+      "type": "attribute",
+      "position": {
+        "x": 789.9655999847336,
+        "y": -74.37426812296754
+      },
+      "data": {
+        "label": "cod_depto",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Departamento:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 798.0605646757405,
+        "y": 158.35596674347272
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 520,
+        "y": 30
+      },
+      "data": {
+        "label": "trabaja_en",
+        "identifying": false
+      }
+    },
+    {
+      "id": "s:0",
+      "type": "spec",
+      "position": {
+        "x": 345,
+        "y": 180
+      },
+      "data": {
+        "label": "",
+        "disjoint": true,
+        "total": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Empleado->a:e:Empleado:rut#0",
+      "source": "e:Empleado",
+      "target": "a:e:Empleado:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Empleado->a:e:Empleado:nombre#0",
+      "source": "e:Empleado",
+      "target": "a:e:Empleado:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Empleado->a:e:Empleado:sueldo#0",
+      "source": "e:Empleado",
+      "target": "a:e:Empleado:sueldo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Docente->a:e:Docente:grado_academico#0",
+      "source": "e:Docente",
+      "target": "a:e:Docente:grado_academico",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Administrativo->a:e:Administrativo:cargo#0",
+      "source": "e:Administrativo",
+      "target": "a:e:Administrativo:cargo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Departamento->a:e:Departamento:cod_depto#0",
+      "source": "e:Departamento",
+      "target": "a:e:Departamento:cod_depto",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Departamento->a:e:Departamento:nombre#0",
+      "source": "e:Departamento",
+      "target": "a:e:Departamento:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Empleado->r:0#0",
+      "source": "e:Empleado",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "min": "0",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Departamento->r:0#0",
+      "source": "e:Departamento",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "min": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Empleado->s:0#0",
+      "source": "e:Empleado",
+      "target": "s:0",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Docente#0",
+      "source": "s:0",
+      "target": "e:Docente",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Administrativo#0",
+      "source": "s:0",
+      "target": "e:Administrativo",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

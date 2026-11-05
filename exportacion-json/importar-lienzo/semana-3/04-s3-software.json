@@ -1,0 +1,410 @@
+{
+  "nodes": [
+    {
+      "id": "e:Producto",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Producto",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Producto:id_producto",
+      "type": "attribute",
+      "position": {
+        "x": 518.0828890611484,
+        "y": -116.28469312453163
+      },
+      "data": {
+        "label": "id_producto",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Producto:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 577.5899531178633,
+        "y": 98.55468960938761
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Software_Escritorio",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 380
+      },
+      "data": {
+        "label": "Software_Escritorio",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Software_Escritorio:sistema_operativo",
+      "type": "attribute",
+      "position": {
+        "x": -83.31172141141951,
+        "y": 464.2467836985061
+      },
+      "data": {
+        "label": "sistema_operativo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Aplicacion_Web",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 380
+      },
+      "data": {
+        "label": "Aplicacion_Web",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Aplicacion_Web:url_acceso",
+      "type": "attribute",
+      "position": {
+        "x": 593.3117214114195,
+        "y": 464.246783698506
+      },
+      "data": {
+        "label": "url_acceso",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Cliente",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Cliente",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:id_cliente",
+      "type": "attribute",
+      "position": {
+        "x": -24.030627471960134,
+        "y": 119.4354871531196
+      },
+      "data": {
+        "label": "id_cliente",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -24.030627471960134,
+        "y": -113.43548715311958
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Empleado",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Empleado",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Empleado:id_empleado",
+      "type": "attribute",
+      "position": {
+        "x": 920.2008783923816,
+        "y": 87.90647192397262
+      },
+      "data": {
+        "label": "id_empleado",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Empleado:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1040.0120062352144,
+        "y": -111.77874114741509
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Desarrollador",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 380
+      },
+      "data": {
+        "label": "Desarrollador",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Desarrollador:lenguaje_principal",
+      "type": "attribute",
+      "position": {
+        "x": 916.6882785885805,
+        "y": 464.2467836985061
+      },
+      "data": {
+        "label": "lenguaje_principal",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Vendedor",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 380
+      },
+      "data": {
+        "label": "Vendedor",
+        "weak": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "compra",
+        "identifying": false
+      }
+    },
+    {
+      "id": "a:r:0:fecha_compra",
+      "type": "attribute",
+      "position": {
+        "x": 255,
+        "y": 103
+      },
+      "data": {
+        "label": "fecha_compra",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "s:0",
+      "type": "spec",
+      "position": {
+        "x": 288,
+        "y": 150
+      },
+      "data": {
+        "label": "",
+        "disjoint": true,
+        "total": true
+      }
+    },
+    {
+      "id": "s:1",
+      "type": "spec",
+      "position": {
+        "x": 1288,
+        "y": 150
+      },
+      "data": {
+        "label": "",
+        "disjoint": false,
+        "total": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Producto->a:e:Producto:id_producto#0",
+      "source": "e:Producto",
+      "target": "a:e:Producto:id_producto",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Producto->a:e:Producto:nombre#0",
+      "source": "e:Producto",
+      "target": "a:e:Producto:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Software_Escritorio->a:e:Software_Escritorio:sistema_operativo#0",
+      "source": "e:Software_Escritorio",
+      "target": "a:e:Software_Escritorio:sistema_operativo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Aplicacion_Web->a:e:Aplicacion_Web:url_acceso#0",
+      "source": "e:Aplicacion_Web",
+      "target": "a:e:Aplicacion_Web:url_acceso",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:id_cliente#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:id_cliente",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:nombre#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Empleado->a:e:Empleado:id_empleado#0",
+      "source": "e:Empleado",
+      "target": "a:e:Empleado:id_empleado",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Empleado->a:e:Empleado:nombre#0",
+      "source": "e:Empleado",
+      "target": "a:e:Empleado:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Desarrollador->a:e:Desarrollador:lenguaje_principal#0",
+      "source": "e:Desarrollador",
+      "target": "a:e:Desarrollador:lenguaje_principal",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->r:0#0",
+      "source": "e:Cliente",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Producto->r:0#0",
+      "source": "e:Producto",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "r:0->a:r:0:fecha_compra#0",
+      "source": "r:0",
+      "target": "a:r:0:fecha_compra",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Producto->s:0#0",
+      "source": "e:Producto",
+      "target": "s:0",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Software_Escritorio#0",
+      "source": "s:0",
+      "target": "e:Software_Escritorio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Aplicacion_Web#0",
+      "source": "s:0",
+      "target": "e:Aplicacion_Web",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Empleado->s:1#0",
+      "source": "e:Empleado",
+      "target": "s:1",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:1->e:Desarrollador#0",
+      "source": "s:1",
+      "target": "e:Desarrollador",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:1->e:Vendedor#0",
+      "source": "s:1",
+      "target": "e:Vendedor",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

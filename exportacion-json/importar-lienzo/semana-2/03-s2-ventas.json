@@ -1,0 +1,458 @@
+{
+  "nodes": [
+    {
+      "id": "e:Cliente",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Cliente",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:rut",
+      "type": "attribute",
+      "position": {
+        "x": 88.73589556375634,
+        "y": 115.47682748108696
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -28.92322720628659,
+        "y": 139.05863288297866
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:apellido",
+      "type": "attribute",
+      "position": {
+        "x": -121.73907939865009,
+        "y": 62.99952232524166
+      },
+      "data": {
+        "label": "apellido",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:direccion",
+      "type": "attribute",
+      "position": {
+        "x": -121.73907939865006,
+        "y": -56.99952232524168
+      },
+      "data": {
+        "label": "direccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Cliente:direccion:calle",
+      "type": "attribute",
+      "position": {
+        "x": -147.1408784366151,
+        "y": 44.88152893373796
+      },
+      "data": {
+        "label": "calle",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Cliente:direccion:numero",
+      "type": "attribute",
+      "position": {
+        "x": -216.64162524324473,
+        "y": -101.9273176441153
+      },
+      "data": {
+        "label": "numero",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Cliente:direccion:ciudad",
+      "type": "attribute",
+      "position": {
+        "x": -59.037427269857616,
+        "y": -141.22245756452136
+      },
+      "data": {
+        "label": "ciudad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:fecha_nacimiento",
+      "type": "attribute",
+      "position": {
+        "x": -28.92322720628659,
+        "y": -133.05863288297866
+      },
+      "data": {
+        "label": "fecha_nacimiento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:edad",
+      "type": "attribute",
+      "position": {
+        "x": 88.7358955637564,
+        "y": -109.4768274810869
+      },
+      "data": {
+        "label": "edad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": true
+      }
+    },
+    {
+      "id": "e:Producto",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Producto",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Producto:codigo",
+      "type": "attribute",
+      "position": {
+        "x": 1118.5210373477119,
+        "y": 132.06677043145189
+      },
+      "data": {
+        "label": "codigo",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Producto:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1005,
+        "y": 174.88733853924697
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Producto:precio_unitario",
+      "type": "attribute",
+      "position": {
+        "x": 891.4789626522881,
+        "y": 132.06677043145189
+      },
+      "data": {
+        "label": "precio_unitario",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Proveedor",
+      "type": "entity",
+      "position": {
+        "x": 2000,
+        "y": 0
+      },
+      "data": {
+        "label": "Proveedor",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Proveedor:rut",
+      "type": "attribute",
+      "position": {
+        "x": 1956.191602830904,
+        "y": -106.62545491711212
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Proveedor:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 2099.561290432807,
+        "y": -70.87937703907906
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Proveedor:direccion",
+      "type": "attribute",
+      "position": {
+        "x": 2099.561290432807,
+        "y": 76.879377039079
+      },
+      "data": {
+        "label": "direccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Proveedor:representantes",
+      "type": "attribute",
+      "position": {
+        "x": 1956.191602830904,
+        "y": 112.62545491711211
+      },
+      "data": {
+        "label": "representantes",
+        "key": false,
+        "partialKey": false,
+        "multi": true,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 490,
+        "y": -18
+      },
+      "data": {
+        "label": "compra",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 1490,
+        "y": -18
+      },
+      "data": {
+        "label": "suministra",
+        "identifying": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Cliente->a:e:Cliente:rut#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:nombre#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:apellido#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:apellido",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:direccion#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:direccion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Cliente:direccion->a:a:e:Cliente:direccion:calle#0",
+      "source": "a:e:Cliente:direccion",
+      "target": "a:a:e:Cliente:direccion:calle",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Cliente:direccion->a:a:e:Cliente:direccion:numero#0",
+      "source": "a:e:Cliente:direccion",
+      "target": "a:a:e:Cliente:direccion:numero",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Cliente:direccion->a:a:e:Cliente:direccion:ciudad#0",
+      "source": "a:e:Cliente:direccion",
+      "target": "a:a:e:Cliente:direccion:ciudad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:fecha_nacimiento#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:fecha_nacimiento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:edad#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:edad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Producto->a:e:Producto:codigo#0",
+      "source": "e:Producto",
+      "target": "a:e:Producto:codigo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Producto->a:e:Producto:nombre#0",
+      "source": "e:Producto",
+      "target": "a:e:Producto:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Producto->a:e:Producto:precio_unitario#0",
+      "source": "e:Producto",
+      "target": "a:e:Producto:precio_unitario",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proveedor->a:e:Proveedor:rut#0",
+      "source": "e:Proveedor",
+      "target": "a:e:Proveedor:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proveedor->a:e:Proveedor:nombre#0",
+      "source": "e:Proveedor",
+      "target": "a:e:Proveedor:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proveedor->a:e:Proveedor:direccion#0",
+      "source": "e:Proveedor",
+      "target": "a:e:Proveedor:direccion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proveedor->a:e:Proveedor:representantes#0",
+      "source": "e:Proveedor",
+      "target": "a:e:Proveedor:representantes",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->r:0#0",
+      "source": "e:Cliente",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Producto->r:0#0",
+      "source": "e:Producto",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Proveedor->r:1#0",
+      "source": "e:Proveedor",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Producto->r:1#0",
+      "source": "e:Producto",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,392 @@
+{
+  "nodes": [
+    {
+      "id": "e:Paciente",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Paciente",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:rut",
+      "type": "attribute",
+      "position": {
+        "x": 53.808397169096025,
+        "y": 112.62545491711211
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -89.56129043280663,
+        "y": 76.879377039079
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:fecha_nacimiento",
+      "type": "attribute",
+      "position": {
+        "x": -89.56129043280667,
+        "y": -70.87937703907895
+      },
+      "data": {
+        "label": "fecha_nacimiento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paciente:alergias",
+      "type": "attribute",
+      "position": {
+        "x": 53.80839716909607,
+        "y": -106.6254549171121
+      },
+      "data": {
+        "label": "alergias",
+        "key": false,
+        "partialKey": false,
+        "multi": true,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Ficha_Dental",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Ficha_Dental",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Ficha_Dental:numero_folio",
+      "type": "attribute",
+      "position": {
+        "x": 566.8045689892065,
+        "y": 105.86007608425346
+      },
+      "data": {
+        "label": "numero_folio",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Ficha_Dental:historial",
+      "type": "attribute",
+      "position": {
+        "x": 443.19543101079347,
+        "y": 105.86007608425348
+      },
+      "data": {
+        "label": "historial",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Tratamiento",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Tratamiento",
+        "weak": true
+      }
+    },
+    {
+      "id": "a:e:Tratamiento:codigo_tratamiento",
+      "type": "attribute",
+      "position": {
+        "x": 1118.5210373477119,
+        "y": 132.06677043145189
+      },
+      "data": {
+        "label": "codigo_tratamiento",
+        "key": false,
+        "partialKey": true,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Tratamiento:descripcion",
+      "type": "attribute",
+      "position": {
+        "x": 1005,
+        "y": 174.88733853924697
+      },
+      "data": {
+        "label": "descripcion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Tratamiento:costo",
+      "type": "attribute",
+      "position": {
+        "x": 891.4789626522881,
+        "y": 132.06677043145189
+      },
+      "data": {
+        "label": "costo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Odontologo",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 0
+      },
+      "data": {
+        "label": "Odontologo",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Odontologo:id_odontologo",
+      "type": "attribute",
+      "position": {
+        "x": 1534.03062747196,
+        "y": -113.4354871531196
+      },
+      "data": {
+        "label": "id_odontologo",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Odontologo:nombre_odontologo",
+      "type": "attribute",
+      "position": {
+        "x": 1534.0306274719603,
+        "y": 119.43548715311954
+      },
+      "data": {
+        "label": "nombre_odontologo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "tiene",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "contiene",
+        "identifying": true
+      }
+    },
+    {
+      "id": "r:2",
+      "type": "relationship",
+      "position": {
+        "x": 1240,
+        "y": -18
+      },
+      "data": {
+        "label": "realiza",
+        "identifying": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Paciente->a:e:Paciente:rut#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->a:e:Paciente:nombre#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->a:e:Paciente:fecha_nacimiento#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:fecha_nacimiento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->a:e:Paciente:alergias#0",
+      "source": "e:Paciente",
+      "target": "a:e:Paciente:alergias",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Ficha_Dental->a:e:Ficha_Dental:numero_folio#0",
+      "source": "e:Ficha_Dental",
+      "target": "a:e:Ficha_Dental:numero_folio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Ficha_Dental->a:e:Ficha_Dental:historial#0",
+      "source": "e:Ficha_Dental",
+      "target": "a:e:Ficha_Dental:historial",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Tratamiento->a:e:Tratamiento:codigo_tratamiento#0",
+      "source": "e:Tratamiento",
+      "target": "a:e:Tratamiento:codigo_tratamiento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Tratamiento->a:e:Tratamiento:descripcion#0",
+      "source": "e:Tratamiento",
+      "target": "a:e:Tratamiento:descripcion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Tratamiento->a:e:Tratamiento:costo#0",
+      "source": "e:Tratamiento",
+      "target": "a:e:Tratamiento:costo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Odontologo->a:e:Odontologo:id_odontologo#0",
+      "source": "e:Odontologo",
+      "target": "a:e:Odontologo:id_odontologo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Odontologo->a:e:Odontologo:nombre_odontologo#0",
+      "source": "e:Odontologo",
+      "target": "a:e:Odontologo:nombre_odontologo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paciente->r:0#0",
+      "source": "e:Paciente",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Ficha_Dental->r:0#0",
+      "source": "e:Ficha_Dental",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Ficha_Dental->r:1#0",
+      "source": "e:Ficha_Dental",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Tratamiento->r:1#0",
+      "source": "e:Tratamiento",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Odontologo->r:2#0",
+      "source": "e:Odontologo",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Tratamiento->r:2#0",
+      "source": "e:Tratamiento",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    }
+  ]
+}

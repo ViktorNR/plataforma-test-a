@@ -1,0 +1,457 @@
+{
+  "numero": 13,
+  "slug": "s3-biblioteca-universitaria",
+  "semana": 3,
+  "tipo": "EER",
+  "titulo": "Biblioteca universitaria",
+  "enunciado": [
+    "Una universidad tiene sucursales de biblioteca (código único, nombre, dirección, teléfono y horario de atención). Una sucursal tiene muchos ejemplares de libros, pero cada ejemplar físico pertenece a una sola sucursal.",
+    "Cada libro tiene ISBN (identificador), título, año de publicación, editorial, categoría y número de páginas. Un libro puede tener varios autores y un autor puede haber escrito varios libros; de cada autor: id (identificador), nombre completo, nacionalidad, fecha de nacimiento y correo. Un libro puede tener varios ejemplares físicos (código único, estado, ubicación y fecha de adquisición).",
+    "Los usuarios se clasifican en estudiantes o funcionarios; todo usuario pertenece obligatoriamente a una de las dos categorías. De cada usuario: rut (identificador), nombre completo, dirección (calle, número, comuna y ciudad), teléfonos (puede tener varios), correo, fecha de inscripción y fecha de nacimiento (de la que se calcula la edad). De los estudiantes: carrera, semestre y jornada; de los funcionarios: cargo, departamento y tipo de contrato.",
+    "Un funcionario puede desempeñar uno, ambos o ninguno de estos roles: bibliotecario (se guarda el turno) y administrativo (el área de gestión). Cada sucursal tiene un funcionario responsable (relación 1:1) y un funcionario puede supervisar a otros funcionarios.",
+    "Los usuarios solicitan préstamos de ejemplares (id, fecha de préstamo, fecha estimada de devolución, fecha real de devolución y estado); cada préstamo pertenece a un solo usuario y a un ejemplar específico. Un usuario puede reservar varios libros y un libro puede ser reservado por varios usuarios; de cada reserva se guarda la fecha de solicitud, el estado y la fecha máxima de retiro. Cada sanción por atraso (id, monto, motivo, fecha de generación y estado de pago) está asociada a un préstamo, y un préstamo puede generar varias sanciones.",
+    "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Sucursal",
+        "attrs": [
+          {
+            "name": "codigo_sucursal",
+            "key": true,
+            "aliases": [
+              "codigo"
+            ]
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "direccion"
+          },
+          {
+            "name": "telefono"
+          },
+          {
+            "name": "horario_atencion",
+            "aliases": [
+              "horario"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Libro",
+        "attrs": [
+          {
+            "name": "isbn",
+            "key": true
+          },
+          {
+            "name": "titulo"
+          },
+          {
+            "name": "anio_publicacion",
+            "aliases": [
+              "año_publicacion"
+            ]
+          },
+          {
+            "name": "editorial"
+          },
+          {
+            "name": "categoria"
+          },
+          {
+            "name": "numero_paginas"
+          }
+        ]
+      },
+      {
+        "name": "Autor",
+        "attrs": [
+          {
+            "name": "id_autor",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          },
+          {
+            "name": "nombre_completo",
+            "aliases": [
+              "nombre"
+            ]
+          },
+          {
+            "name": "nacionalidad"
+          },
+          {
+            "name": "fecha_nacimiento"
+          },
+          {
+            "name": "email"
+          }
+        ]
+      },
+      {
+        "name": "Ejemplar",
+        "attrs": [
+          {
+            "name": "codigo_ejemplar",
+            "key": true,
+            "aliases": [
+              "codigo"
+            ]
+          },
+          {
+            "name": "estado"
+          },
+          {
+            "name": "ubicacion"
+          },
+          {
+            "name": "fecha_adquisicion"
+          }
+        ]
+      },
+      {
+        "name": "Usuario",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true
+          },
+          {
+            "name": "nombre_completo",
+            "aliases": [
+              "nombre"
+            ]
+          },
+          {
+            "name": "direccion",
+            "parts": [
+              {
+                "name": "calle"
+              },
+              {
+                "name": "numero"
+              },
+              {
+                "name": "comuna"
+              },
+              {
+                "name": "ciudad"
+              }
+            ]
+          },
+          {
+            "name": "telefonos",
+            "multi": true,
+            "aliases": [
+              "telefono"
+            ]
+          },
+          {
+            "name": "correo",
+            "aliases": [
+              "email"
+            ]
+          },
+          {
+            "name": "fecha_inscripcion"
+          },
+          {
+            "name": "fecha_nacimiento"
+          },
+          {
+            "name": "edad",
+            "derived": true
+          }
+        ]
+      },
+      {
+        "name": "Estudiante",
+        "attrs": [
+          {
+            "name": "carrera"
+          },
+          {
+            "name": "semestre"
+          },
+          {
+            "name": "jornada"
+          }
+        ]
+      },
+      {
+        "name": "Funcionario",
+        "attrs": [
+          {
+            "name": "cargo"
+          },
+          {
+            "name": "departamento"
+          },
+          {
+            "name": "tipo_contrato"
+          }
+        ]
+      },
+      {
+        "name": "Bibliotecario",
+        "attrs": [
+          {
+            "name": "turno"
+          }
+        ]
+      },
+      {
+        "name": "Administrativo",
+        "attrs": [
+          {
+            "name": "area_gestion",
+            "aliases": [
+              "area"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Prestamo",
+        "aliases": [
+          "Préstamo"
+        ],
+        "attrs": [
+          {
+            "name": "id_prestamo",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          },
+          {
+            "name": "fecha_prestamo"
+          },
+          {
+            "name": "fecha_estimada_devolucion"
+          },
+          {
+            "name": "fecha_real_devolucion"
+          },
+          {
+            "name": "estado"
+          }
+        ]
+      },
+      {
+        "name": "Sancion",
+        "aliases": [
+          "Sanción"
+        ],
+        "attrs": [
+          {
+            "name": "id_sancion",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          },
+          {
+            "name": "monto"
+          },
+          {
+            "name": "motivo"
+          },
+          {
+            "name": "fecha_generacion"
+          },
+          {
+            "name": "estado_pago"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "tiene",
+        "between": [
+          {
+            "entity": "Sucursal",
+            "card": "1"
+          },
+          {
+            "entity": "Ejemplar",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "escribe",
+        "between": [
+          {
+            "entity": "Autor",
+            "card": "N"
+          },
+          {
+            "entity": "Libro",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "posee",
+        "between": [
+          {
+            "entity": "Libro",
+            "card": "1"
+          },
+          {
+            "entity": "Ejemplar",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "solicita",
+        "between": [
+          {
+            "entity": "Usuario",
+            "card": "1"
+          },
+          {
+            "entity": "Prestamo",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "corresponde",
+        "between": [
+          {
+            "entity": "Ejemplar",
+            "card": "1"
+          },
+          {
+            "entity": "Prestamo",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "genera",
+        "between": [
+          {
+            "entity": "Prestamo",
+            "card": "1"
+          },
+          {
+            "entity": "Sancion",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "reserva",
+        "between": [
+          {
+            "entity": "Usuario",
+            "card": "N"
+          },
+          {
+            "entity": "Libro",
+            "card": "N"
+          }
+        ],
+        "attrs": [
+          {
+            "name": "fecha_solicitud"
+          },
+          {
+            "name": "estado"
+          },
+          {
+            "name": "fecha_maxima_retiro"
+          }
+        ]
+      },
+      {
+        "name": "responsable",
+        "between": [
+          {
+            "entity": "Funcionario",
+            "card": "1"
+          },
+          {
+            "entity": "Sucursal",
+            "card": "1"
+          }
+        ]
+      },
+      {
+        "name": "supervisa",
+        "between": [
+          {
+            "entity": "Funcionario",
+            "card": "1"
+          },
+          {
+            "entity": "Funcionario",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "specializations": [
+      {
+        "parent": "Usuario",
+        "children": [
+          "Estudiante",
+          "Funcionario"
+        ],
+        "disjoint": true,
+        "total": true
+      },
+      {
+        "parent": "Funcionario",
+        "children": [
+          "Bibliotecario",
+          "Administrativo"
+        ],
+        "disjoint": false,
+        "total": false
+      }
+    ],
+    "layout": [
+      [
+        "Autor",
+        "Libro",
+        "Ejemplar",
+        "Sucursal",
+        "Sancion"
+      ],
+      [
+        null,
+        "Usuario",
+        "Prestamo",
+        null,
+        null
+      ],
+      [
+        "Estudiante",
+        "Funcionario",
+        null,
+        null,
+        null
+      ],
+      [
+        "Bibliotecario",
+        null,
+        "Administrativo",
+        null,
+        null
+      ]
+    ]
+  }
+}

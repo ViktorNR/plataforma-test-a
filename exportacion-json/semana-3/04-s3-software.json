@@ -1,0 +1,162 @@
+{
+  "numero": 4,
+  "slug": "s3-software",
+  "semana": 3,
+  "tipo": "EER",
+  "titulo": "Empresa de software",
+  "enunciado": [
+    "Una empresa de software gestiona sus productos. Un producto, con un ID único, puede ser de dos tipos: software de escritorio o aplicación web. Todo producto debe ser de un tipo y solo uno. Del software de escritorio se anota el sistema operativo compatible. De las aplicaciones web, la URL de acceso.",
+    "La empresa tiene clientes (ID y nombre), y un cliente puede comprar licencias para varios productos. Una compra asocia un cliente con un producto y una fecha.",
+    "Además, los empleados de la empresa (ID y nombre) se clasifican como desarrolladores o vendedores. Un empleado puede ser ambas cosas, pero no es obligatorio que sea alguna de ellas. De los desarrolladores se guarda su lenguaje de programación principal.",
+    "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Producto",
+        "attrs": [
+          {
+            "name": "id_producto",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      },
+      {
+        "name": "Software_Escritorio",
+        "aliases": [
+          "Software de escritorio",
+          "Escritorio",
+          "Software_de_Escritorio"
+        ],
+        "attrs": [
+          {
+            "name": "sistema_operativo"
+          }
+        ]
+      },
+      {
+        "name": "Aplicacion_Web",
+        "aliases": [
+          "Aplicación web",
+          "App_Web",
+          "Aplicacion Web"
+        ],
+        "attrs": [
+          {
+            "name": "url_acceso",
+            "aliases": [
+              "url"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Cliente",
+        "attrs": [
+          {
+            "name": "id_cliente",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      },
+      {
+        "name": "Empleado",
+        "attrs": [
+          {
+            "name": "id_empleado",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      },
+      {
+        "name": "Desarrollador",
+        "attrs": [
+          {
+            "name": "lenguaje_principal",
+            "aliases": [
+              "lenguaje"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Vendedor",
+        "attrs": []
+      }
+    ],
+    "relationships": [
+      {
+        "name": "compra",
+        "between": [
+          {
+            "entity": "Cliente",
+            "card": "N"
+          },
+          {
+            "entity": "Producto",
+            "card": "N"
+          }
+        ],
+        "attrs": [
+          {
+            "name": "fecha_compra",
+            "aliases": [
+              "fecha"
+            ]
+          }
+        ]
+      }
+    ],
+    "specializations": [
+      {
+        "parent": "Producto",
+        "children": [
+          "Software_Escritorio",
+          "Aplicacion_Web"
+        ],
+        "disjoint": true,
+        "total": true
+      },
+      {
+        "parent": "Empleado",
+        "children": [
+          "Desarrollador",
+          "Vendedor"
+        ],
+        "disjoint": false,
+        "total": false
+      }
+    ],
+    "layout": [
+      [
+        "Cliente",
+        "Producto",
+        "Empleado"
+      ],
+      [
+        "Software_Escritorio",
+        "Aplicacion_Web",
+        "Desarrollador",
+        "Vendedor"
+      ]
+    ]
+  }
+}

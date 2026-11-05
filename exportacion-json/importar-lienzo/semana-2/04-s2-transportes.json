@@ -1,0 +1,524 @@
+{
+  "nodes": [
+    {
+      "id": "e:Camionero",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Camionero",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Camionero:rut",
+      "type": "attribute",
+      "position": {
+        "x": 740.3246994758726,
+        "y": 189.07064738047805
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Camionero:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 659.5114224730163,
+        "y": 260.15019021063364
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Camionero:telefono",
+      "type": "attribute",
+      "position": {
+        "x": 558.8123757812373,
+        "y": 298.13425455676764
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": true,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Camionero:direccion",
+      "type": "attribute",
+      "position": {
+        "x": 451.18762421876283,
+        "y": 298.13425455676764
+      },
+      "data": {
+        "label": "direccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Camionero:sueldo",
+      "type": "attribute",
+      "position": {
+        "x": 350.4885775269837,
+        "y": 260.1501902106337
+      },
+      "data": {
+        "label": "sueldo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Camionero:ciudad",
+      "type": "attribute",
+      "position": {
+        "x": 269.67530052412724,
+        "y": 189.07064738047794
+      },
+      "data": {
+        "label": "ciudad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Paquete",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Paquete",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Paquete:cod_paquete",
+      "type": "attribute",
+      "position": {
+        "x": 1171.2435601038433,
+        "y": 160.75924798308264
+      },
+      "data": {
+        "label": "cod_paquete",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paquete:descripcion",
+      "type": "attribute",
+      "position": {
+        "x": 1066.2465242928558,
+        "y": 223.84783191653142
+      },
+      "data": {
+        "label": "descripcion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paquete:destinatario",
+      "type": "attribute",
+      "position": {
+        "x": 943.753475707144,
+        "y": 223.84783191653142
+      },
+      "data": {
+        "label": "destinatario",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Paquete:direccion_destinatario",
+      "type": "attribute",
+      "position": {
+        "x": 838.7564398961567,
+        "y": 160.75924798308264
+      },
+      "data": {
+        "label": "direccion_destinatario",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Provincia",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 0
+      },
+      "data": {
+        "label": "Provincia",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Provincia:cod_provincia",
+      "type": "attribute",
+      "position": {
+        "x": 1534.03062747196,
+        "y": -113.4354871531196
+      },
+      "data": {
+        "label": "cod_provincia",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Provincia:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1534.0306274719603,
+        "y": 119.43548715311954
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Camion",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Camion",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Camion:matricula",
+      "type": "attribute",
+      "position": {
+        "x": 53.808397169096025,
+        "y": 112.62545491711211
+      },
+      "data": {
+        "label": "matricula",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Camion:modelo",
+      "type": "attribute",
+      "position": {
+        "x": -89.56129043280663,
+        "y": 76.879377039079
+      },
+      "data": {
+        "label": "modelo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Camion:tipo",
+      "type": "attribute",
+      "position": {
+        "x": -89.56129043280667,
+        "y": -70.87937703907895
+      },
+      "data": {
+        "label": "tipo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Camion:potencia",
+      "type": "attribute",
+      "position": {
+        "x": 53.80839716909607,
+        "y": -106.6254549171121
+      },
+      "data": {
+        "label": "potencia",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "distribuye",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 1240,
+        "y": -18
+      },
+      "data": {
+        "label": "llega",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:2",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "conduce",
+        "identifying": false
+      }
+    },
+    {
+      "id": "a:r:2:fecha",
+      "type": "attribute",
+      "position": {
+        "x": 255,
+        "y": 103
+      },
+      "data": {
+        "label": "fecha",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Camionero->a:e:Camionero:rut#0",
+      "source": "e:Camionero",
+      "target": "a:e:Camionero:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Camionero->a:e:Camionero:nombre#0",
+      "source": "e:Camionero",
+      "target": "a:e:Camionero:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Camionero->a:e:Camionero:telefono#0",
+      "source": "e:Camionero",
+      "target": "a:e:Camionero:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Camionero->a:e:Camionero:direccion#0",
+      "source": "e:Camionero",
+      "target": "a:e:Camionero:direccion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Camionero->a:e:Camionero:sueldo#0",
+      "source": "e:Camionero",
+      "target": "a:e:Camionero:sueldo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Camionero->a:e:Camionero:ciudad#0",
+      "source": "e:Camionero",
+      "target": "a:e:Camionero:ciudad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paquete->a:e:Paquete:cod_paquete#0",
+      "source": "e:Paquete",
+      "target": "a:e:Paquete:cod_paquete",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paquete->a:e:Paquete:descripcion#0",
+      "source": "e:Paquete",
+      "target": "a:e:Paquete:descripcion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paquete->a:e:Paquete:destinatario#0",
+      "source": "e:Paquete",
+      "target": "a:e:Paquete:destinatario",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Paquete->a:e:Paquete:direccion_destinatario#0",
+      "source": "e:Paquete",
+      "target": "a:e:Paquete:direccion_destinatario",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Provincia->a:e:Provincia:cod_provincia#0",
+      "source": "e:Provincia",
+      "target": "a:e:Provincia:cod_provincia",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Provincia->a:e:Provincia:nombre#0",
+      "source": "e:Provincia",
+      "target": "a:e:Provincia:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Camion->a:e:Camion:matricula#0",
+      "source": "e:Camion",
+      "target": "a:e:Camion:matricula",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Camion->a:e:Camion:modelo#0",
+      "source": "e:Camion",
+      "target": "a:e:Camion:modelo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Camion->a:e:Camion:tipo#0",
+      "source": "e:Camion",
+      "target": "a:e:Camion:tipo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Camion->a:e:Camion:potencia#0",
+      "source": "e:Camion",
+      "target": "a:e:Camion:potencia",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Camionero->r:0#0",
+      "source": "e:Camionero",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Paquete->r:0#0",
+      "source": "e:Paquete",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Provincia->r:1#0",
+      "source": "e:Provincia",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Paquete->r:1#0",
+      "source": "e:Paquete",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Camionero->r:2#0",
+      "source": "e:Camionero",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Camion->r:2#0",
+      "source": "e:Camion",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "r:2->a:r:2:fecha#0",
+      "source": "r:2",
+      "target": "a:r:2:fecha",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

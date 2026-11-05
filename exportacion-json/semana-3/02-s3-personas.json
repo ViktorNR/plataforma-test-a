@@ -1,0 +1,108 @@
+{
+  "numero": 2,
+  "slug": "s3-personas",
+  "semana": 3,
+  "tipo": "EER",
+  "titulo": "Personas en la universidad",
+  "enunciado": [
+    "De cada persona se registra su rut (identificador), nombre y email. Algunas personas son estudiantes (con carrera y anio_ingreso) y otras son funcionarios (con cargo).",
+    "No toda persona es estudiante o funcionario (por ejemplo, un visitante), y una persona puede ser estudiante y funcionario al mismo tiempo (por ejemplo, un ayudante).",
+    "Un estudiante puede cursar muchos cursos (o ninguno todavía) (cod_curso como identificador, y nombre) y cada curso puede ser cursado por muchos estudiantes (o por ninguno).",
+    "Dibuja el modelo E/R extendido indicando el tipo de especialización."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Persona",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true,
+            "aliases": [
+              "run"
+            ]
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "email",
+            "aliases": [
+              "correo"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Estudiante",
+        "attrs": [
+          {
+            "name": "carrera"
+          },
+          {
+            "name": "anio_ingreso",
+            "aliases": [
+              "año_ingreso",
+              "ano_ingreso",
+              "anio_de_ingreso"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Funcionario",
+        "attrs": [
+          {
+            "name": "cargo"
+          }
+        ]
+      },
+      {
+        "name": "Curso",
+        "attrs": [
+          {
+            "name": "cod_curso",
+            "key": true,
+            "aliases": [
+              "codigo_curso",
+              "id_curso",
+              "codigo",
+              "cod"
+            ]
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "cursa",
+        "between": [
+          {
+            "entity": "Estudiante",
+            "card": "N",
+            "min": 0
+          },
+          {
+            "entity": "Curso",
+            "card": "N",
+            "min": 0
+          }
+        ]
+      }
+    ],
+    "specializations": [
+      {
+        "parent": "Persona",
+        "children": [
+          "Estudiante",
+          "Funcionario"
+        ],
+        "disjoint": false,
+        "total": false
+      }
+    ]
+  }
+}

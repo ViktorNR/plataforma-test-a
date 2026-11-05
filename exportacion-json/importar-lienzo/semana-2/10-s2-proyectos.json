@@ -1,0 +1,656 @@
+{
+  "nodes": [
+    {
+      "id": "e:Proyecto",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Proyecto",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Proyecto:cod_proyecto",
+      "type": "attribute",
+      "position": {
+        "x": 723.1646547969538,
+        "y": 188.6726747467694
+      },
+      "data": {
+        "label": "cod_proyecto",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Proyecto:descripcion",
+      "type": "attribute",
+      "position": {
+        "x": 625.1641701606969,
+        "y": 263.0590912848168
+      },
+      "data": {
+        "label": "descripcion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Proyecto:cuantia",
+      "type": "attribute",
+      "position": {
+        "x": 505,
+        "y": 289.4788975654116
+      },
+      "data": {
+        "label": "cuantia",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Proyecto:fecha_inicio",
+      "type": "attribute",
+      "position": {
+        "x": 384.835829839303,
+        "y": 263.05909128481676
+      },
+      "data": {
+        "label": "fecha_inicio",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Proyecto:fecha_fin",
+      "type": "attribute",
+      "position": {
+        "x": 286.83534520304636,
+        "y": 188.67267474676942
+      },
+      "data": {
+        "label": "fecha_fin",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Cliente",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Cliente",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:cod_cliente",
+      "type": "attribute",
+      "position": {
+        "x": 53.808397169096025,
+        "y": 112.62545491711211
+      },
+      "data": {
+        "label": "cod_cliente",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:telefono",
+      "type": "attribute",
+      "position": {
+        "x": -89.56129043280663,
+        "y": 76.879377039079
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:domicilio",
+      "type": "attribute",
+      "position": {
+        "x": -89.56129043280667,
+        "y": -70.87937703907895
+      },
+      "data": {
+        "label": "domicilio",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:razon_social",
+      "type": "attribute",
+      "position": {
+        "x": 53.80839716909607,
+        "y": -106.6254549171121
+      },
+      "data": {
+        "label": "razon_social",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Colaborador",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Colaborador",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Colaborador:rut",
+      "type": "attribute",
+      "position": {
+        "x": 866.2102271332303,
+        "y": -139.88688265898358
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Colaborador:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 975.5568764488305,
+        "y": -194.00853982495843
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Colaborador:domicilio",
+      "type": "attribute",
+      "position": {
+        "x": 1095.9492384059968,
+        "y": -174.22160794265702
+      },
+      "data": {
+        "label": "domicilio",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Colaborador:telefono",
+      "type": "attribute",
+      "position": {
+        "x": 1182.2216079426569,
+        "y": -87.94923840599697
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Colaborador:banco",
+      "type": "attribute",
+      "position": {
+        "x": 1202.0085398249585,
+        "y": 32.44312355116962
+      },
+      "data": {
+        "label": "banco",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Colaborador:numero_cuenta",
+      "type": "attribute",
+      "position": {
+        "x": 1147.8868826589837,
+        "y": 141.78977286676965
+      },
+      "data": {
+        "label": "numero_cuenta",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Pago",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 380
+      },
+      "data": {
+        "label": "Pago",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Pago:numero_pago",
+      "type": "attribute",
+      "position": {
+        "x": 1113.4481158174722,
+        "y": 306.3564493295185
+      },
+      "data": {
+        "label": "numero_pago",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Pago:concepto",
+      "type": "attribute",
+      "position": {
+        "x": 1131.117854497011,
+        "y": 424.58743152455213
+      },
+      "data": {
+        "label": "concepto",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Pago:cantidad",
+      "type": "attribute",
+      "position": {
+        "x": 1046.5874315245521,
+        "y": 509.11785449701085
+      },
+      "data": {
+        "label": "cantidad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Pago:fecha_pago",
+      "type": "attribute",
+      "position": {
+        "x": 928.3564493295186,
+        "y": 491.4481158174722
+      },
+      "data": {
+        "label": "fecha_pago",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:TipoPago",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 380
+      },
+      "data": {
+        "label": "TipoPago",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:TipoPago:cod_tipo",
+      "type": "attribute",
+      "position": {
+        "x": 475.9693725280399,
+        "y": 499.43548715311954
+      },
+      "data": {
+        "label": "cod_tipo",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:TipoPago:descripcion",
+      "type": "attribute",
+      "position": {
+        "x": 475.9693725280399,
+        "y": 266.5645128468804
+      },
+      "data": {
+        "label": "descripcion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "realiza",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "participa",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:2",
+      "type": "relationship",
+      "position": {
+        "x": 990,
+        "y": 172
+      },
+      "data": {
+        "label": "recibe",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:3",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": 362
+      },
+      "data": {
+        "label": "tiene",
+        "identifying": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Proyecto->a:e:Proyecto:cod_proyecto#0",
+      "source": "e:Proyecto",
+      "target": "a:e:Proyecto:cod_proyecto",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proyecto->a:e:Proyecto:descripcion#0",
+      "source": "e:Proyecto",
+      "target": "a:e:Proyecto:descripcion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proyecto->a:e:Proyecto:cuantia#0",
+      "source": "e:Proyecto",
+      "target": "a:e:Proyecto:cuantia",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proyecto->a:e:Proyecto:fecha_inicio#0",
+      "source": "e:Proyecto",
+      "target": "a:e:Proyecto:fecha_inicio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proyecto->a:e:Proyecto:fecha_fin#0",
+      "source": "e:Proyecto",
+      "target": "a:e:Proyecto:fecha_fin",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:cod_cliente#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:cod_cliente",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:telefono#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:domicilio#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:domicilio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:razon_social#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:razon_social",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Colaborador->a:e:Colaborador:rut#0",
+      "source": "e:Colaborador",
+      "target": "a:e:Colaborador:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Colaborador->a:e:Colaborador:nombre#0",
+      "source": "e:Colaborador",
+      "target": "a:e:Colaborador:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Colaborador->a:e:Colaborador:domicilio#0",
+      "source": "e:Colaborador",
+      "target": "a:e:Colaborador:domicilio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Colaborador->a:e:Colaborador:telefono#0",
+      "source": "e:Colaborador",
+      "target": "a:e:Colaborador:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Colaborador->a:e:Colaborador:banco#0",
+      "source": "e:Colaborador",
+      "target": "a:e:Colaborador:banco",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Colaborador->a:e:Colaborador:numero_cuenta#0",
+      "source": "e:Colaborador",
+      "target": "a:e:Colaborador:numero_cuenta",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Pago->a:e:Pago:numero_pago#0",
+      "source": "e:Pago",
+      "target": "a:e:Pago:numero_pago",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Pago->a:e:Pago:concepto#0",
+      "source": "e:Pago",
+      "target": "a:e:Pago:concepto",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Pago->a:e:Pago:cantidad#0",
+      "source": "e:Pago",
+      "target": "a:e:Pago:cantidad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Pago->a:e:Pago:fecha_pago#0",
+      "source": "e:Pago",
+      "target": "a:e:Pago:fecha_pago",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:TipoPago->a:e:TipoPago:cod_tipo#0",
+      "source": "e:TipoPago",
+      "target": "a:e:TipoPago:cod_tipo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:TipoPago->a:e:TipoPago:descripcion#0",
+      "source": "e:TipoPago",
+      "target": "a:e:TipoPago:descripcion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->r:0#0",
+      "source": "e:Cliente",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Proyecto->r:0#0",
+      "source": "e:Proyecto",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Colaborador->r:1#0",
+      "source": "e:Colaborador",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Proyecto->r:1#0",
+      "source": "e:Proyecto",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Colaborador->r:2#0",
+      "source": "e:Colaborador",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Pago->r:2#0",
+      "source": "e:Pago",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:TipoPago->r:3#0",
+      "source": "e:TipoPago",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Pago->r:3#0",
+      "source": "e:Pago",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    }
+  ]
+}

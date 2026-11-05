@@ -1,0 +1,291 @@
+{
+  "nodes": [
+    {
+      "id": "e:Empleado",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Empleado",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Empleado:id_empleado",
+      "type": "attribute",
+      "position": {
+        "x": -109.93915422653816,
+        "y": -31.481746267961448
+      },
+      "data": {
+        "label": "id_empleado",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Contratado",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 380
+      },
+      "data": {
+        "label": "Contratado",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Contratado:salario",
+      "type": "attribute",
+      "position": {
+        "x": -96.0392021903946,
+        "y": 318.26145181788087
+      },
+      "data": {
+        "label": "salario",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Externo",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 380
+      },
+      "data": {
+        "label": "Externo",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Externo:empresa_consultora",
+      "type": "attribute",
+      "position": {
+        "x": 1114.018854321429,
+        "y": 433.1486729878573
+      },
+      "data": {
+        "label": "empresa_consultora",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Gerente",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 760
+      },
+      "data": {
+        "label": "Gerente",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Gerente:presupuesto",
+      "type": "attribute",
+      "position": {
+        "x": 5.0000000000000355,
+        "y": 883
+      },
+      "data": {
+        "label": "presupuesto",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Beneficio",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 760
+      },
+      "data": {
+        "label": "Beneficio",
+        "weak": true
+      }
+    },
+    {
+      "id": "a:e:Beneficio:codigo_beneficio",
+      "type": "attribute",
+      "position": {
+        "x": 598.5662530883174,
+        "y": 687.864414003663
+      },
+      "data": {
+        "label": "codigo_beneficio",
+        "key": false,
+        "partialKey": true,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Beneficio:descripcion",
+      "type": "attribute",
+      "position": {
+        "x": 457.6599230413751,
+        "y": 873.2674798549032
+      },
+      "data": {
+        "label": "descripcion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": 552
+      },
+      "data": {
+        "label": "tiene",
+        "identifying": true
+      }
+    },
+    {
+      "id": "s:0",
+      "type": "spec",
+      "position": {
+        "x": 538,
+        "y": 150
+      },
+      "data": {
+        "label": "",
+        "disjoint": true,
+        "total": true
+      }
+    },
+    {
+      "id": "s:1",
+      "type": "spec",
+      "position": {
+        "x": 38,
+        "y": 530
+      },
+      "data": {
+        "label": "",
+        "disjoint": true,
+        "total": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Empleado->a:e:Empleado:id_empleado#0",
+      "source": "e:Empleado",
+      "target": "a:e:Empleado:id_empleado",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Contratado->a:e:Contratado:salario#0",
+      "source": "e:Contratado",
+      "target": "a:e:Contratado:salario",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Externo->a:e:Externo:empresa_consultora#0",
+      "source": "e:Externo",
+      "target": "a:e:Externo:empresa_consultora",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Gerente->a:e:Gerente:presupuesto#0",
+      "source": "e:Gerente",
+      "target": "a:e:Gerente:presupuesto",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Beneficio->a:e:Beneficio:codigo_beneficio#0",
+      "source": "e:Beneficio",
+      "target": "a:e:Beneficio:codigo_beneficio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Beneficio->a:e:Beneficio:descripcion#0",
+      "source": "e:Beneficio",
+      "target": "a:e:Beneficio:descripcion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Contratado->r:0#0",
+      "source": "e:Contratado",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Beneficio->r:0#0",
+      "source": "e:Beneficio",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Empleado->s:0#0",
+      "source": "e:Empleado",
+      "target": "s:0",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Contratado#0",
+      "source": "s:0",
+      "target": "e:Contratado",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Externo#0",
+      "source": "s:0",
+      "target": "e:Externo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Contratado->s:1#0",
+      "source": "e:Contratado",
+      "target": "s:1",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:1->e:Gerente#0",
+      "source": "s:1",
+      "target": "e:Gerente",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

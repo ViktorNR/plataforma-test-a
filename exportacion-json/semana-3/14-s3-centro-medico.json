@@ -1,0 +1,462 @@
+{
+  "numero": 14,
+  "slug": "s3-centro-medico",
+  "semana": 3,
+  "tipo": "EER",
+  "titulo": "Centro médico universitario",
+  "enunciado": [
+    "Una universidad con facultad de medicina diseña el sistema de su red de centros médicos. Cada centro tiene código único, nombre, dirección, teléfono y horario de atención. Cada centro tiene varios consultorios, que solo tienen sentido en el contexto de un centro: se identifican por un número (único solo dentro de su centro), con piso y tipo de equipamiento (entidad débil). Cada centro tiene un médico jefe responsable (relación 1:1).",
+    "Todo el personal se clasifica en médicos o administrativos (exclusivo y obligatorio). De todo el personal: rut (identificador), nombre completo, dirección (calle, número, comuna y ciudad), teléfono, correo y fecha de contratación. De los médicos: número de colegiatura y años de experiencia; de los administrativos: cargo y área.",
+    "Dentro de los médicos hay dos roles: tratante (cupo diario de pacientes) y docente (asignatura o rotación a cargo). Un médico puede ser tratante, docente, ambos, o ninguno. Un médico puede supervisar a otros médicos (relación reflexiva).",
+    "Hay especialidades (código, nombre y descripción): un médico ejerce varias especialidades y una especialidad es ejercida por muchos médicos, registrándose la fecha de certificación.",
+    "Los pacientes (rut, nombre completo, dirección compuesta, correo, fecha de nacimiento —de la que se calcula la edad— y varios teléfonos) solicitan citas (id, fecha, hora, motivo y estado); cada cita pertenece a un paciente y a un médico. De una cita puede emitirse una receta (id), que incluye uno o varios medicamentos (código y nombre); un medicamento puede estar en varias recetas, con dosis, frecuencia y duración.",
+    "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Personal",
+        "attrs": [
+          {
+            "name": "rut_personal",
+            "key": true,
+            "aliases": [
+              "rut"
+            ]
+          },
+          {
+            "name": "nombre_completo",
+            "aliases": [
+              "nombre"
+            ]
+          },
+          {
+            "name": "direccion",
+            "parts": [
+              {
+                "name": "calle"
+              },
+              {
+                "name": "numero"
+              },
+              {
+                "name": "comuna"
+              },
+              {
+                "name": "ciudad"
+              }
+            ]
+          },
+          {
+            "name": "telefono"
+          },
+          {
+            "name": "correo"
+          },
+          {
+            "name": "fecha_contratacion"
+          }
+        ]
+      },
+      {
+        "name": "Medico",
+        "aliases": [
+          "Médico"
+        ],
+        "attrs": [
+          {
+            "name": "numero_colegiatura"
+          },
+          {
+            "name": "anios_experiencia",
+            "aliases": [
+              "años_experiencia"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Administrativo",
+        "attrs": [
+          {
+            "name": "cargo"
+          },
+          {
+            "name": "area"
+          }
+        ]
+      },
+      {
+        "name": "Medico_Tratante",
+        "aliases": [
+          "Médico tratante",
+          "Tratante"
+        ],
+        "attrs": [
+          {
+            "name": "cupo_diario_pacientes",
+            "aliases": [
+              "cupo_diario"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Medico_Docente",
+        "aliases": [
+          "Médico docente",
+          "Docente"
+        ],
+        "attrs": [
+          {
+            "name": "asignatura_rotacion",
+            "aliases": [
+              "asignatura",
+              "rotacion"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Centro_Medico",
+        "aliases": [
+          "Centro médico",
+          "Centro"
+        ],
+        "attrs": [
+          {
+            "name": "codigo_centro",
+            "key": true,
+            "aliases": [
+              "codigo"
+            ]
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "direccion"
+          },
+          {
+            "name": "telefono"
+          },
+          {
+            "name": "horario_atencion",
+            "aliases": [
+              "horario"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Consultorio",
+        "weak": true,
+        "attrs": [
+          {
+            "name": "numero_consultorio",
+            "partialKey": true,
+            "aliases": [
+              "numero"
+            ]
+          },
+          {
+            "name": "piso"
+          },
+          {
+            "name": "tipo_equipamiento",
+            "aliases": [
+              "equipamiento"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Especialidad",
+        "attrs": [
+          {
+            "name": "codigo_especialidad",
+            "key": true,
+            "aliases": [
+              "codigo"
+            ]
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "descripcion"
+          }
+        ]
+      },
+      {
+        "name": "Paciente",
+        "attrs": [
+          {
+            "name": "rut_paciente",
+            "key": true,
+            "aliases": [
+              "rut"
+            ]
+          },
+          {
+            "name": "nombre_completo",
+            "aliases": [
+              "nombre"
+            ]
+          },
+          {
+            "name": "direccion",
+            "parts": [
+              {
+                "name": "calle"
+              },
+              {
+                "name": "numero"
+              },
+              {
+                "name": "comuna"
+              },
+              {
+                "name": "ciudad"
+              }
+            ]
+          },
+          {
+            "name": "correo"
+          },
+          {
+            "name": "fecha_nacimiento"
+          },
+          {
+            "name": "telefonos",
+            "multi": true,
+            "aliases": [
+              "telefono"
+            ]
+          },
+          {
+            "name": "edad",
+            "derived": true
+          }
+        ]
+      },
+      {
+        "name": "Cita",
+        "attrs": [
+          {
+            "name": "id_cita",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          },
+          {
+            "name": "fecha"
+          },
+          {
+            "name": "hora"
+          },
+          {
+            "name": "motivo"
+          },
+          {
+            "name": "estado"
+          }
+        ]
+      },
+      {
+        "name": "Receta",
+        "attrs": [
+          {
+            "name": "id_receta",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Medicamento",
+        "attrs": [
+          {
+            "name": "codigo_medicamento",
+            "key": true,
+            "aliases": [
+              "codigo"
+            ]
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "tiene",
+        "identifying": true,
+        "between": [
+          {
+            "entity": "Centro_Medico",
+            "card": "1"
+          },
+          {
+            "entity": "Consultorio",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "dirige",
+        "between": [
+          {
+            "entity": "Medico",
+            "card": "1"
+          },
+          {
+            "entity": "Centro_Medico",
+            "card": "1"
+          }
+        ]
+      },
+      {
+        "name": "ejerce",
+        "between": [
+          {
+            "entity": "Medico",
+            "card": "N"
+          },
+          {
+            "entity": "Especialidad",
+            "card": "N"
+          }
+        ],
+        "attrs": [
+          {
+            "name": "fecha_certificacion"
+          }
+        ]
+      },
+      {
+        "name": "supervisa",
+        "between": [
+          {
+            "entity": "Medico",
+            "card": "1"
+          },
+          {
+            "entity": "Medico",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "solicita",
+        "between": [
+          {
+            "entity": "Paciente",
+            "card": "1"
+          },
+          {
+            "entity": "Cita",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "atiende",
+        "between": [
+          {
+            "entity": "Medico",
+            "card": "1"
+          },
+          {
+            "entity": "Cita",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "emite",
+        "between": [
+          {
+            "entity": "Cita",
+            "card": "1"
+          },
+          {
+            "entity": "Receta",
+            "card": "1"
+          }
+        ]
+      },
+      {
+        "name": "incluye",
+        "between": [
+          {
+            "entity": "Receta",
+            "card": "N"
+          },
+          {
+            "entity": "Medicamento",
+            "card": "N"
+          }
+        ],
+        "attrs": [
+          {
+            "name": "dosis"
+          },
+          {
+            "name": "frecuencia"
+          },
+          {
+            "name": "duracion"
+          }
+        ]
+      }
+    ],
+    "specializations": [
+      {
+        "parent": "Personal",
+        "children": [
+          "Medico",
+          "Administrativo"
+        ],
+        "disjoint": true,
+        "total": true
+      },
+      {
+        "parent": "Medico",
+        "children": [
+          "Medico_Tratante",
+          "Medico_Docente"
+        ],
+        "disjoint": false,
+        "total": false
+      }
+    ],
+    "layout": [
+      [
+        "Consultorio",
+        "Centro_Medico",
+        "Personal",
+        "Especialidad",
+        "Paciente"
+      ],
+      [
+        null,
+        "Administrativo",
+        "Medico",
+        "Cita",
+        null
+      ],
+      [
+        null,
+        "Medico_Tratante",
+        "Medico_Docente",
+        "Receta",
+        "Medicamento"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "numero": 10,
+  "slug": "s2-proyectos",
+  "semana": 2,
+  "tipo": "ER",
+  "titulo": "Gestión de proyectos",
+  "enunciado": [
+    "Una empresa desea almacenar la información generada en cada uno de sus proyectos. De cada proyecto interesa: código (identificador), descripción, cuantía, fecha de inicio y fecha de fin.",
+    "Los proyectos son realizados por clientes, de los que se guarda el código (identificador), teléfono, domicilio y razón social. Un cliente puede realizar varios proyectos, pero un proyecto es realizado por un único cliente.",
+    "En los proyectos participan colaboradores: rut (identificador), nombre, domicilio, teléfono, banco y número de cuenta. Un colaborador puede participar en varios proyectos, y un proyecto es realizado por uno o más colaboradores.",
+    "Los colaboradores reciben pagos (cada pago se hace a un colaborador). De cada pago: número de pago (identificador), concepto, cantidad y fecha de pago. También se almacenan los tipos de pago (código —identificador— y descripción); un tipo de pago puede pertenecer a varios pagos y cada pago tiene un tipo.",
+    "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Proyecto",
+        "attrs": [
+          {
+            "name": "cod_proyecto",
+            "key": true
+          },
+          {
+            "name": "descripcion"
+          },
+          {
+            "name": "cuantia"
+          },
+          {
+            "name": "fecha_inicio"
+          },
+          {
+            "name": "fecha_fin"
+          }
+        ]
+      },
+      {
+        "name": "Cliente",
+        "attrs": [
+          {
+            "name": "cod_cliente",
+            "key": true
+          },
+          {
+            "name": "telefono"
+          },
+          {
+            "name": "domicilio"
+          },
+          {
+            "name": "razon_social"
+          }
+        ]
+      },
+      {
+        "name": "Colaborador",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "domicilio"
+          },
+          {
+            "name": "telefono"
+          },
+          {
+            "name": "banco"
+          },
+          {
+            "name": "numero_cuenta"
+          }
+        ]
+      },
+      {
+        "name": "Pago",
+        "attrs": [
+          {
+            "name": "numero_pago",
+            "key": true
+          },
+          {
+            "name": "concepto"
+          },
+          {
+            "name": "cantidad"
+          },
+          {
+            "name": "fecha_pago"
+          }
+        ]
+      },
+      {
+        "name": "TipoPago",
+        "aliases": [
+          "Tipo_de_pago",
+          "Tipo Pago"
+        ],
+        "attrs": [
+          {
+            "name": "cod_tipo",
+            "key": true
+          },
+          {
+            "name": "descripcion"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "realiza",
+        "between": [
+          {
+            "entity": "Cliente",
+            "card": "1"
+          },
+          {
+            "entity": "Proyecto",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "participa",
+        "between": [
+          {
+            "entity": "Colaborador",
+            "card": "N"
+          },
+          {
+            "entity": "Proyecto",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "recibe",
+        "between": [
+          {
+            "entity": "Colaborador",
+            "card": "1"
+          },
+          {
+            "entity": "Pago",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "tiene",
+        "between": [
+          {
+            "entity": "TipoPago",
+            "card": "1"
+          },
+          {
+            "entity": "Pago",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "layout": [
+      [
+        "Cliente",
+        "Proyecto",
+        "Colaborador"
+      ],
+      [
+        null,
+        "TipoPago",
+        "Pago"
+      ]
+    ]
+  }
+}

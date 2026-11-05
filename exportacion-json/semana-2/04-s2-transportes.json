@@ -1,0 +1,145 @@
+{
+  "numero": 4,
+  "slug": "s2-transportes",
+  "semana": 2,
+  "tipo": "ER",
+  "titulo": "Empresa de transportes",
+  "enunciado": [
+    "Se desea informatizar la gestión de una empresa de transportes que reparte paquetes. Los encargados de llevar los paquetes son los camioneros, de los que se quiere guardar el rut (identificador), nombre, teléfonos (puede tener varios), dirección, sueldo y ciudad en la que vive.",
+    "De los paquetes transportados interesa conocer el código de paquete (identificador), descripción, destinatario y dirección del destinatario. Un camionero distribuye muchos paquetes, y un paquete solo puede ser distribuido por un camionero.",
+    "De las provincias a las que llegan los paquetes interesa guardar el código de provincia (identificador) y el nombre. Un paquete solo puede llegar a una provincia; sin embargo, a una provincia pueden llegar varios paquetes.",
+    "De los camiones interesa conocer la matrícula (identificador), modelo, tipo y potencia. Un camionero puede conducir diferentes camiones en fechas diferentes (se registra la fecha), y un camión puede ser conducido por varios camioneros.",
+    "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Camionero",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "telefono",
+            "multi": true
+          },
+          {
+            "name": "direccion"
+          },
+          {
+            "name": "sueldo"
+          },
+          {
+            "name": "ciudad"
+          }
+        ]
+      },
+      {
+        "name": "Paquete",
+        "attrs": [
+          {
+            "name": "cod_paquete",
+            "key": true
+          },
+          {
+            "name": "descripcion"
+          },
+          {
+            "name": "destinatario"
+          },
+          {
+            "name": "direccion_destinatario"
+          }
+        ]
+      },
+      {
+        "name": "Provincia",
+        "attrs": [
+          {
+            "name": "cod_provincia",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      },
+      {
+        "name": "Camion",
+        "attrs": [
+          {
+            "name": "matricula",
+            "key": true
+          },
+          {
+            "name": "modelo"
+          },
+          {
+            "name": "tipo"
+          },
+          {
+            "name": "potencia"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "distribuye",
+        "between": [
+          {
+            "entity": "Camionero",
+            "card": "1"
+          },
+          {
+            "entity": "Paquete",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "llega",
+        "between": [
+          {
+            "entity": "Provincia",
+            "card": "1"
+          },
+          {
+            "entity": "Paquete",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "conduce",
+        "between": [
+          {
+            "entity": "Camionero",
+            "card": "N"
+          },
+          {
+            "entity": "Camion",
+            "card": "N"
+          }
+        ],
+        "attrs": [
+          {
+            "name": "fecha"
+          }
+        ]
+      }
+    ],
+    "layout": [
+      [
+        "Camion",
+        "Camionero",
+        "Paquete",
+        "Provincia"
+      ]
+    ]
+  }
+}

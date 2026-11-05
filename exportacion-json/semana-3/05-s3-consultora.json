@@ -1,0 +1,164 @@
+{
+  "numero": 5,
+  "slug": "s3-consultora",
+  "semana": 3,
+  "tipo": "EER",
+  "titulo": "Consultora",
+  "enunciado": [
+    "Una consultora registra a sus empleados (ID y nombre), que pueden ser consultores (con su especialidad) o administrativos (con su cargo). Un empleado no puede ser de ambos tipos, pero puede no ser de ninguno (por ejemplo, personal de apoyo).",
+    "Sus clientes (ID y nombre) pueden ser personas (con su rut) o empresas (con su razón social); un cliente no puede ser ambas cosas y puede ser de otro tipo (por ejemplo, una institución pública).",
+    "La consultora ejecuta proyectos (código como identificador y nombre). Cada proyecto es contratado por un cliente, y un cliente puede contratar varios proyectos. En cada proyecto trabajan varios empleados y un empleado puede trabajar en varios proyectos.",
+    "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Empleado",
+        "attrs": [
+          {
+            "name": "id_empleado",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      },
+      {
+        "name": "Consultor",
+        "attrs": [
+          {
+            "name": "especialidad"
+          }
+        ]
+      },
+      {
+        "name": "Administrativo",
+        "attrs": [
+          {
+            "name": "cargo"
+          }
+        ]
+      },
+      {
+        "name": "Cliente",
+        "attrs": [
+          {
+            "name": "id_cliente",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      },
+      {
+        "name": "Cliente_Personal",
+        "aliases": [
+          "Cliente personal",
+          "Personal",
+          "Persona"
+        ],
+        "attrs": [
+          {
+            "name": "rut"
+          }
+        ]
+      },
+      {
+        "name": "Cliente_Empresa",
+        "aliases": [
+          "Cliente empresa",
+          "Empresa"
+        ],
+        "attrs": [
+          {
+            "name": "razon_social"
+          }
+        ]
+      },
+      {
+        "name": "Proyecto",
+        "attrs": [
+          {
+            "name": "cod_proyecto",
+            "key": true,
+            "aliases": [
+              "codigo"
+            ]
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "trabaja_en",
+        "between": [
+          {
+            "entity": "Empleado",
+            "card": "N"
+          },
+          {
+            "entity": "Proyecto",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "contrata",
+        "between": [
+          {
+            "entity": "Cliente",
+            "card": "1"
+          },
+          {
+            "entity": "Proyecto",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "specializations": [
+      {
+        "parent": "Empleado",
+        "children": [
+          "Consultor",
+          "Administrativo"
+        ],
+        "disjoint": true,
+        "total": false
+      },
+      {
+        "parent": "Cliente",
+        "children": [
+          "Cliente_Personal",
+          "Cliente_Empresa"
+        ],
+        "disjoint": true,
+        "total": false
+      }
+    ],
+    "layout": [
+      [
+        "Consultor",
+        "Administrativo",
+        "Cliente_Personal",
+        "Cliente_Empresa"
+      ],
+      [
+        "Empleado",
+        "Proyecto",
+        "Cliente"
+      ]
+    ]
+  }
+}

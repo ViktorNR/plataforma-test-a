@@ -1,0 +1,199 @@
+{
+  "numero": 6,
+  "slug": "s3-estudiantes",
+  "semana": 3,
+  "tipo": "EER",
+  "titulo": "Gestión de estudiantes",
+  "enunciado": [
+    "En una universidad hay estudiantes de tiempo completo, de medio tiempo y a distancia. Todo estudiante pertenece a exactamente una de estas categorías. De todos los estudiantes se requiere su ID (identificador) y nombre completo; de los estudiantes a distancia, la modalidad de estudio (online o semipresencial); y de los de medio tiempo, el número de créditos que están cursando.",
+    "Los estudiantes se inscriben en uno o más programas académicos (código identificador y nombre); un programa tiene muchos estudiantes. Cada programa ofrece varias asignaturas (código identificador y nombre) y cada asignatura pertenece a un solo programa. Un estudiante cursa varias asignaturas y una asignatura es cursada por varios estudiantes.",
+    "Cada estudiante tiene un tutor asignado (ID y nombre) que lo asesora; un tutor puede asesorar a muchos estudiantes.",
+    "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Estudiante",
+        "attrs": [
+          {
+            "name": "id_estudiante",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          },
+          {
+            "name": "nombre_completo",
+            "aliases": [
+              "nombre"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tiempo_Completo",
+        "aliases": [
+          "Tiempo completo",
+          "Estudiante_Tiempo_Completo"
+        ],
+        "attrs": []
+      },
+      {
+        "name": "Medio_Tiempo",
+        "aliases": [
+          "Medio tiempo",
+          "Estudiante_Medio_Tiempo"
+        ],
+        "attrs": [
+          {
+            "name": "numero_creditos",
+            "aliases": [
+              "creditos"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "A_Distancia",
+        "aliases": [
+          "A distancia",
+          "Estudiante_A_Distancia",
+          "Distancia"
+        ],
+        "attrs": [
+          {
+            "name": "modalidad_estudio",
+            "aliases": [
+              "modalidad"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Programa",
+        "attrs": [
+          {
+            "name": "cod_programa",
+            "key": true,
+            "aliases": [
+              "codigo"
+            ]
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      },
+      {
+        "name": "Asignatura",
+        "attrs": [
+          {
+            "name": "cod_asignatura",
+            "key": true,
+            "aliases": [
+              "codigo"
+            ]
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      },
+      {
+        "name": "Tutor",
+        "attrs": [
+          {
+            "name": "id_tutor",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "se_inscribe",
+        "between": [
+          {
+            "entity": "Estudiante",
+            "card": "N"
+          },
+          {
+            "entity": "Programa",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "ofrece",
+        "between": [
+          {
+            "entity": "Programa",
+            "card": "1"
+          },
+          {
+            "entity": "Asignatura",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "cursa",
+        "between": [
+          {
+            "entity": "Estudiante",
+            "card": "N"
+          },
+          {
+            "entity": "Asignatura",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "asesora",
+        "between": [
+          {
+            "entity": "Tutor",
+            "card": "1"
+          },
+          {
+            "entity": "Estudiante",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "specializations": [
+      {
+        "parent": "Estudiante",
+        "children": [
+          "Tiempo_Completo",
+          "Medio_Tiempo",
+          "A_Distancia"
+        ],
+        "disjoint": true,
+        "total": true
+      }
+    ],
+    "layout": [
+      [
+        "Tiempo_Completo",
+        "Medio_Tiempo",
+        "A_Distancia",
+        null
+      ],
+      [
+        "Tutor",
+        "Estudiante",
+        "Programa",
+        "Asignatura"
+      ]
+    ]
+  }
+}

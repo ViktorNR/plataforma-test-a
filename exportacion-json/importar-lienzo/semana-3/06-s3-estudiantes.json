@@ -1,0 +1,479 @@
+{
+  "nodes": [
+    {
+      "id": "e:Estudiante",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 380
+      },
+      "data": {
+        "label": "Estudiante",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Estudiante:id_estudiante",
+      "type": "attribute",
+      "position": {
+        "x": 443.19543101079347,
+        "y": 280.1399239157465
+      },
+      "data": {
+        "label": "id_estudiante",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Estudiante:nombre_completo",
+      "type": "attribute",
+      "position": {
+        "x": 566.8045689892065,
+        "y": 280.1399239157465
+      },
+      "data": {
+        "label": "nombre_completo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Tiempo_Completo",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Tiempo_Completo",
+        "weak": false
+      }
+    },
+    {
+      "id": "e:Medio_Tiempo",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Medio_Tiempo",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Medio_Tiempo:numero_creditos",
+      "type": "attribute",
+      "position": {
+        "x": 505,
+        "y": -117
+      },
+      "data": {
+        "label": "numero_creditos",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:A_Distancia",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "A_Distancia",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:A_Distancia:modalidad_estudio",
+      "type": "attribute",
+      "position": {
+        "x": 1087.3464512274863,
+        "y": -84.28723830113549
+      },
+      "data": {
+        "label": "modalidad_estudio",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Programa",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 380
+      },
+      "data": {
+        "label": "Programa",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Programa:cod_programa",
+      "type": "attribute",
+      "position": {
+        "x": 1066.8045689892065,
+        "y": 485.8600760842535
+      },
+      "data": {
+        "label": "cod_programa",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Programa:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 943.1954310107935,
+        "y": 485.8600760842535
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Asignatura",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 380
+      },
+      "data": {
+        "label": "Asignatura",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Asignatura:cod_asignatura",
+      "type": "attribute",
+      "position": {
+        "x": 1534.03062747196,
+        "y": 266.5645128468804
+      },
+      "data": {
+        "label": "cod_asignatura",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Asignatura:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1534.0306274719603,
+        "y": 499.43548715311954
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Tutor",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 380
+      },
+      "data": {
+        "label": "Tutor",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Tutor:id_tutor",
+      "type": "attribute",
+      "position": {
+        "x": -24.030627471960134,
+        "y": 499.43548715311954
+      },
+      "data": {
+        "label": "id_tutor",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Tutor:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -24.030627471960134,
+        "y": 266.5645128468804
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": 362
+      },
+      "data": {
+        "label": "se_inscribe",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 1240,
+        "y": 362
+      },
+      "data": {
+        "label": "ofrece",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:2",
+      "type": "relationship",
+      "position": {
+        "x": 990,
+        "y": 362
+      },
+      "data": {
+        "label": "cursa",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:3",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": 362
+      },
+      "data": {
+        "label": "asesora",
+        "identifying": false
+      }
+    },
+    {
+      "id": "s:0",
+      "type": "spec",
+      "position": {
+        "x": 538,
+        "y": 530
+      },
+      "data": {
+        "label": "",
+        "disjoint": true,
+        "total": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Estudiante->a:e:Estudiante:id_estudiante#0",
+      "source": "e:Estudiante",
+      "target": "a:e:Estudiante:id_estudiante",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Estudiante->a:e:Estudiante:nombre_completo#0",
+      "source": "e:Estudiante",
+      "target": "a:e:Estudiante:nombre_completo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Medio_Tiempo->a:e:Medio_Tiempo:numero_creditos#0",
+      "source": "e:Medio_Tiempo",
+      "target": "a:e:Medio_Tiempo:numero_creditos",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:A_Distancia->a:e:A_Distancia:modalidad_estudio#0",
+      "source": "e:A_Distancia",
+      "target": "a:e:A_Distancia:modalidad_estudio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Programa->a:e:Programa:cod_programa#0",
+      "source": "e:Programa",
+      "target": "a:e:Programa:cod_programa",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Programa->a:e:Programa:nombre#0",
+      "source": "e:Programa",
+      "target": "a:e:Programa:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Asignatura->a:e:Asignatura:cod_asignatura#0",
+      "source": "e:Asignatura",
+      "target": "a:e:Asignatura:cod_asignatura",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Asignatura->a:e:Asignatura:nombre#0",
+      "source": "e:Asignatura",
+      "target": "a:e:Asignatura:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Tutor->a:e:Tutor:id_tutor#0",
+      "source": "e:Tutor",
+      "target": "a:e:Tutor:id_tutor",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Tutor->a:e:Tutor:nombre#0",
+      "source": "e:Tutor",
+      "target": "a:e:Tutor:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Estudiante->r:0#0",
+      "source": "e:Estudiante",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Programa->r:0#0",
+      "source": "e:Programa",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Programa->r:1#0",
+      "source": "e:Programa",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Asignatura->r:1#0",
+      "source": "e:Asignatura",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Estudiante->r:2#0",
+      "source": "e:Estudiante",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Asignatura->r:2#0",
+      "source": "e:Asignatura",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Tutor->r:3#0",
+      "source": "e:Tutor",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Estudiante->r:3#0",
+      "source": "e:Estudiante",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Estudiante->s:0#0",
+      "source": "e:Estudiante",
+      "target": "s:0",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Tiempo_Completo#0",
+      "source": "s:0",
+      "target": "e:Tiempo_Completo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Medio_Tiempo#0",
+      "source": "s:0",
+      "target": "e:Medio_Tiempo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:A_Distancia#0",
+      "source": "s:0",
+      "target": "e:A_Distancia",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

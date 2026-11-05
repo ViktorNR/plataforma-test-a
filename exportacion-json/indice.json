@@ -1,0 +1,26 @@
+{
+  "generado": "2026-10-25T16:44:36.205Z",
+  "semanas": [
+    {
+      "semana": 1,
+      "titulo": "Fundamentos de bases de datos",
+      "ejercicios": 15,
+      "archivo": "semana-1.json",
+      "carpeta": "semana-1/"
+    },
+    {
+      "semana": 2,
+      "titulo": "Modelo Entidad-Relación",
+      "ejercicios": 15,
+      "archivo": "semana-2.json",
+      "carpeta": "semana-2/"
+    },
+    {
+      "semana": 3,
+      "titulo": "Modelo Entidad-Relación extendido",
+      "ejercicios": 15,
+      "archivo": "semana-3.json",
+      "carpeta": "semana-3/"
+    }
+  ]
+}

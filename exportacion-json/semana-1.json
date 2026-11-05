@@ -1,0 +1,1223 @@
+{
+  "semana": 1,
+  "titulo": "Fundamentos de bases de datos",
+  "ejercicios": [
+    {
+      "numero": 1,
+      "slug": "s1-dato-informacion",
+      "semana": 1,
+      "tipo": "QUIZ",
+      "titulo": "Dato, información y conocimiento",
+      "enunciado": [
+        "Distingue los tres niveles de significado de la información."
+      ],
+      "preguntas": [
+        {
+          "id": "q1",
+          "pregunta": "¿Cuál de los siguientes es un ejemplo de DATO?",
+          "alternativas": [
+            "Un informe financiero trimestral",
+            "El número 22,5 registrado por un sensor de temperatura",
+            "La comprensión de por qué sube la temperatura en verano",
+            "Un reporte meteorológico semanal"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "El número 22,5 registrado por un sensor de temperatura",
+          "explicacion": "Un dato es un hecho discreto y crudo, sin contexto: un número, una palabra, una temperatura."
+        },
+        {
+          "id": "q2",
+          "pregunta": "La información se obtiene cuando los datos…",
+          "alternativas": [
+            "se borran para ahorrar espacio",
+            "se organizan, interpretan y se les da contexto",
+            "se copian a otro equipo",
+            "se encriptan"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "se organizan, interpretan y se les da contexto",
+          "explicacion": "La información es el resultado de organizar e interpretar datos para que sean útiles en la toma de decisiones."
+        },
+        {
+          "id": "q3",
+          "pregunta": "¿Qué ejemplo corresponde a CONOCIMIENTO?",
+          "alternativas": [
+            "El teléfono 9 4552 4171",
+            "Una tabla con las ventas de enero",
+            "Comprender las implicaciones de un fenómeno a partir de la información y la experiencia acumulada",
+            "Una fotografía sin descripción"
+          ],
+          "respuestaCorrecta": 2,
+          "respuestaCorrectaTexto": "Comprender las implicaciones de un fenómeno a partir de la información y la experiencia acumulada",
+          "explicacion": "El conocimiento es la comprensión profunda de la información, basada en su aplicación práctica y experiencia."
+        },
+        {
+          "id": "q4",
+          "pregunta": "Ordena de menor a mayor significado:",
+          "alternativas": [
+            "Conocimiento → información → dato",
+            "Dato → información → conocimiento",
+            "Información → dato → conocimiento",
+            "Dato → conocimiento → información"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "Dato → información → conocimiento",
+          "explicacion": "Los datos se transforman en información y esta, con experiencia, en conocimiento."
+        },
+        {
+          "id": "q5",
+          "pregunta": "Verdadero o falso: un dato aislado, sin contexto, ya es información útil para decidir.",
+          "alternativas": [
+            "Verdadero",
+            "Falso"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "Falso",
+          "explicacion": "Sin contexto ni interpretación un dato carece de significado; por eso no es aún información."
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "slug": "s1-enfoque-tradicional",
+      "semana": 1,
+      "tipo": "QUIZ",
+      "titulo": "Enfoque tradicional: sistema de archivos",
+      "enunciado": [
+        "Repasa cómo se manejaba la información antes de las bases de datos."
+      ],
+      "preguntas": [
+        {
+          "id": "q1",
+          "pregunta": "En el enfoque tradicional (sistema de archivos), cada programa…",
+          "alternativas": [
+            "comparte todos los archivos con los demás",
+            "es dueño de sus propios archivos y depende de su formato",
+            "consulta una base de datos central",
+            "no necesita definir sus datos"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "es dueño de sus propios archivos y depende de su formato",
+          "explicacion": "Cada programa define y maneja sus archivos; la lógica del programa depende de los formatos de esos datos."
+        },
+        {
+          "id": "q2",
+          "pregunta": "¿Qué ocurre cuando cambia el formato de un archivo en el enfoque tradicional?",
+          "alternativas": [
+            "Nada, los programas se adaptan solos",
+            "Hay que modificar todos los programas que lo usan",
+            "Solo se modifica el sistema operativo",
+            "Se pierde el archivo"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "Hay que modificar todos los programas que lo usan",
+          "explicacion": "Es la dependencia de los datos: un cambio de esquema obliga a modificar todos los programas."
+        },
+        {
+          "id": "q3",
+          "pregunta": "Cada nueva aplicación en este enfoque se diseña con…",
+          "alternativas": [
+            "la base de datos corporativa",
+            "su propio conjunto de archivos",
+            "un modelo conceptual compartido",
+            "un DBMS"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "su propio conjunto de archivos",
+          "explicacion": "Cada aplicación nace con sus archivos propios, lo que duplica datos."
+        },
+        {
+          "id": "q4",
+          "pregunta": "El enfoque tradicional responde a requerimientos…",
+          "alternativas": [
+            "de la organización completa, con planificación central",
+            "de usuarios individuales, sin una planificación que guíe el desarrollo",
+            "de la alta gerencia únicamente",
+            "de los clientes externos"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "de usuarios individuales, sin una planificación que guíe el desarrollo",
+          "explicacion": "Cada sistema satisface las necesidades de un departamento, sin planificación corporativa."
+        },
+        {
+          "id": "q5",
+          "pregunta": "Verdadero o falso: en el enfoque tradicional cada usuario mantiene archivos y programas separados.",
+          "alternativas": [
+            "Verdadero",
+            "Falso"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "Verdadero",
+          "explicacion": "Por eso también se le llama enfoque de archivos."
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "slug": "s1-enfoque-agregacion",
+      "semana": 1,
+      "tipo": "QUIZ",
+      "titulo": "Enfoque por agregación",
+      "enunciado": [
+        "Sistemas de información que crecen por departamentos."
+      ],
+      "preguntas": [
+        {
+          "id": "q1",
+          "pregunta": "El enfoque por agregación consiste en…",
+          "alternativas": [
+            "integrar todos los datos en un único modelo",
+            "ir acoplando a un sistema de información nuevas funciones por departamento",
+            "eliminar los archivos duplicados",
+            "usar solo hojas de cálculo"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "ir acoplando a un sistema de información nuevas funciones por departamento",
+          "explicacion": "Es un proceso evolutivo: se agregan funciones y sistemas a medida que cada área los necesita."
+        },
+        {
+          "id": "q2",
+          "pregunta": "¿Cuál es un ejemplo de aplicación individual típica de este enfoque?",
+          "alternativas": [
+            "Remuneraciones",
+            "Un diagrama E/R",
+            "El esquema conceptual",
+            "Un motor de base de datos"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "Remuneraciones",
+          "explicacion": "Remuneraciones, cuentas corrientes, contabilidad o control de inventario se desarrollaron como sistemas aislados."
+        },
+        {
+          "id": "q3",
+          "pregunta": "La superposición de áreas en el organigrama indica…",
+          "alternativas": [
+            "mejor integración",
+            "utilización del mismo tipo de dato por varios sistemas (duplicación de recursos)",
+            "menor costo",
+            "mayor seguridad"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "utilización del mismo tipo de dato por varios sistemas (duplicación de recursos)",
+          "explicacion": "Distintos sistemas usan el mismo dato, lo que duplica recursos y esfuerzo."
+        },
+        {
+          "id": "q4",
+          "pregunta": "En este enfoque, los programas de aplicación…",
+          "alternativas": [
+            "no necesitan conocer los archivos",
+            "deben contener las definiciones de los archivos que usan y las instrucciones para manejarlos",
+            "acceden siempre a una sola tabla",
+            "delegan todo al DBMS"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "deben contener las definiciones de los archivos que usan y las instrucciones para manejarlos",
+          "explicacion": "Cada programa incluye la definición de sus archivos y la lógica para manipularlos."
+        },
+        {
+          "id": "q5",
+          "pregunta": "¿Existe una planificación corporativa que guíe el desarrollo de aplicaciones en el enfoque por agregación?",
+          "alternativas": [
+            "Sí, siempre",
+            "No, cada sistema responde a las necesidades de un departamento",
+            "Solo en empresas grandes",
+            "Solo en bancos"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "No, cada sistema responde a las necesidades de un departamento",
+          "explicacion": "La falta de planificación y de un modelo común es precisamente su debilidad."
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "slug": "s1-inconvenientes",
+      "semana": 1,
+      "tipo": "QUIZ",
+      "titulo": "Inconvenientes del enfoque tradicional",
+      "enunciado": [
+        "Identifica los problemas que motivaron las bases de datos."
+      ],
+      "preguntas": [
+        {
+          "id": "q1",
+          "pregunta": "Guardar la dirección de un cliente en tres archivos distintos genera principalmente…",
+          "alternativas": [
+            "redundancia y riesgo de inconsistencia",
+            "mayor velocidad",
+            "independencia de datos",
+            "menos duplicación"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "redundancia y riesgo de inconsistencia",
+          "explicacion": "La redundancia no controlada puede dejar versiones distintas del mismo dato."
+        },
+        {
+          "id": "q2",
+          "pregunta": "Usar nombres diferentes para el mismo ítem de datos en distintos archivos es un problema de…",
+          "alternativas": [
+            "seguridad",
+            "anomalías de los datos",
+            "rendimiento",
+            "hardware"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "anomalías de los datos",
+          "explicacion": "Es una anomalía: mismo dato, distintos nombres (o el mismo nombre para datos distintos)."
+        },
+        {
+          "id": "q3",
+          "pregunta": "Que no exista restricción de acceso a los datos corresponde a un problema de…",
+          "alternativas": [
+            "seguridad",
+            "normalización",
+            "indexación",
+            "respaldo"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "seguridad",
+          "explicacion": "En los archivos tradicionales es difícil controlar quién ve o modifica qué."
+        },
+        {
+          "id": "q4",
+          "pregunta": "Los informes erróneos y la pérdida de confianza del cliente son consecuencia de…",
+          "alternativas": [
+            "la inconsistencia de los datos",
+            "el exceso de memoria",
+            "la normalización",
+            "las vistas de usuario"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "la inconsistencia de los datos",
+          "explicacion": "Datos inconsistentes entre archivos producen informes distintos para la misma pregunta."
+        },
+        {
+          "id": "q5",
+          "pregunta": "¿Cuál NO es un inconveniente del enfoque tradicional?",
+          "alternativas": [
+            "Subutilización del espacio en disco",
+            "Duplicidad en el ingreso de datos",
+            "Escasa posibilidad de compartir datos",
+            "Control centralizado de la seguridad"
+          ],
+          "respuestaCorrecta": 3,
+          "respuestaCorrectaTexto": "Control centralizado de la seguridad",
+          "explicacion": "El control centralizado es una característica del enfoque de bases de datos."
+        }
+      ]
+    },
+    {
+      "numero": 5,
+      "slug": "s1-conceptos",
+      "semana": 1,
+      "tipo": "QUIZ",
+      "titulo": "Conceptos fundamentales",
+      "enunciado": [
+        "Responde las siguientes preguntas sobre las características y ventajas de las bases de datos. Al corregir verás la explicación de cada una."
+      ],
+      "preguntas": [
+        {
+          "id": "q1",
+          "pregunta": "¿Qué es una base de datos?",
+          "alternativas": [
+            "Una colección organizada de datos relacionados entre sí, almacenados para ser consultados y actualizados",
+            "Un programa para editar documentos de texto",
+            "Un lenguaje de programación orientado a objetos",
+            "Un dispositivo de almacenamiento físico"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "Una colección organizada de datos relacionados entre sí, almacenados para ser consultados y actualizados",
+          "explicacion": "La base de datos es el conjunto de datos; el software que la gestiona es el SGBD."
+        },
+        {
+          "id": "q2",
+          "pregunta": "¿Cuál es la función principal de un SGBD (DBMS)?",
+          "alternativas": [
+            "Diseñar la interfaz gráfica de las aplicaciones",
+            "Permitir definir, crear, manipular y controlar el acceso a la base de datos",
+            "Compilar el código de las aplicaciones",
+            "Conectar los computadores a internet"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "Permitir definir, crear, manipular y controlar el acceso a la base de datos",
+          "explicacion": "El SGBD ofrece lenguajes de definición y manipulación, control de acceso, concurrencia y recuperación."
+        },
+        {
+          "id": "q3",
+          "pregunta": "En un sistema de archivos tradicional, el mismo dato (por ejemplo, la dirección de un cliente) se guarda en varios archivos. ¿Qué problema genera principalmente?",
+          "alternativas": [
+            "Mayor velocidad de consulta",
+            "Redundancia e inconsistencia de datos",
+            "Mayor seguridad",
+            "Independencia de datos"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "Redundancia e inconsistencia de datos",
+          "explicacion": "Al duplicar datos, una actualización puede quedar en un archivo y no en otro, generando inconsistencias."
+        },
+        {
+          "id": "q4",
+          "pregunta": "¿Qué significa independencia de datos?",
+          "alternativas": [
+            "Que los datos no necesitan ser almacenados",
+            "Que cada usuario tiene su propia copia de la base de datos",
+            "Poder modificar el esquema de almacenamiento sin tener que reescribir los programas de aplicación",
+            "Que los datos no pueden relacionarse entre sí"
+          ],
+          "respuestaCorrecta": 2,
+          "respuestaCorrectaTexto": "Poder modificar el esquema de almacenamiento sin tener que reescribir los programas de aplicación",
+          "explicacion": "Es una de las grandes ventajas del enfoque de bases de datos frente al procesamiento de archivos."
+        },
+        {
+          "id": "q5",
+          "pregunta": "Verdadero o falso: la integridad de los datos busca que estos sean correctos y consistentes con las reglas definidas.",
+          "alternativas": [
+            "Verdadero",
+            "Falso"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "Verdadero",
+          "explicacion": "Las restricciones de integridad (claves, dominios, referencias) protegen la calidad de los datos."
+        },
+        {
+          "id": "q6",
+          "pregunta": "¿Cuál es una tarea típica del administrador de la base de datos (DBA)?",
+          "alternativas": [
+            "Diseñar los logotipos de la empresa",
+            "Gestionar seguridad, respaldos, permisos y rendimiento del SGBD",
+            "Escribir manuales de usuario de las aplicaciones",
+            "Reparar los computadores de los usuarios"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "Gestionar seguridad, respaldos, permisos y rendimiento del SGBD",
+          "explicacion": "El DBA vela por la disponibilidad, seguridad y rendimiento del sistema de bases de datos."
+        },
+        {
+          "id": "q7",
+          "pregunta": "Verdadero o falso: en un enfoque de bases de datos, varios usuarios pueden acceder y modificar datos de forma concurrente.",
+          "alternativas": [
+            "Verdadero",
+            "Falso"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "Verdadero",
+          "explicacion": "El SGBD controla la concurrencia mediante transacciones y bloqueos para mantener la consistencia."
+        },
+        {
+          "id": "q8",
+          "pregunta": "¿Cuál de las siguientes NO es una ventaja de usar una metodología de bases de datos?",
+          "alternativas": [
+            "Reducción de la redundancia",
+            "Mayor control de la seguridad de los datos",
+            "Eliminación total de la necesidad de respaldos",
+            "Datos compartidos entre aplicaciones"
+          ],
+          "respuestaCorrecta": 2,
+          "respuestaCorrectaTexto": "Eliminación total de la necesidad de respaldos",
+          "explicacion": "Los respaldos siguen siendo necesarios: una base de datos puede fallar o corromperse."
+        }
+      ]
+    },
+    {
+      "numero": 6,
+      "slug": "s1-definicion-bd",
+      "semana": 1,
+      "tipo": "QUIZ",
+      "titulo": "Definición de base de datos",
+      "enunciado": [
+        "Integrar y compartir: las dos propiedades fundamentales."
+      ],
+      "preguntas": [
+        {
+          "id": "q1",
+          "pregunta": "Una base de datos es…",
+          "alternativas": [
+            "un conjunto de datos organizados y relacionados entre sí que satisface las necesidades de información de una organización",
+            "un archivo de texto con datos sueltos",
+            "un programa de contabilidad",
+            "una planilla por departamento"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "un conjunto de datos organizados y relacionados entre sí que satisface las necesidades de información de una organización",
+          "explicacion": "Es el conjunto de datos organizados y relacionados de una organización."
+        },
+        {
+          "id": "q2",
+          "pregunta": "Las dos propiedades principales de una base de datos son…",
+          "alternativas": [
+            "rapidez y color",
+            "integrar y compartir",
+            "copiar y pegar",
+            "cifrar y comprimir"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "integrar y compartir",
+          "explicacion": "Integrar (reducir redundancia, facilitar acceso) y compartir (todos los usuarios calificados acceden a los mismos datos)."
+        },
+        {
+          "id": "q3",
+          "pregunta": "«Integrar» significa que los archivos de datos…",
+          "alternativas": [
+            "se organizan lógicamente para reducir redundancia y facilitar el acceso",
+            "se separan por departamento",
+            "se borran después de usarlos",
+            "se copian en cada aplicación"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "se organizan lógicamente para reducir redundancia y facilitar el acceso",
+          "explicacion": "Integración es organización lógica de los datos para evitar redundancia."
+        },
+        {
+          "id": "q4",
+          "pregunta": "«Compartir» significa que…",
+          "alternativas": [
+            "cada usuario tiene su copia",
+            "todos los usuarios calificados acceden a los mismos datos en distintas actividades",
+            "los datos son públicos",
+            "solo el administrador accede"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "todos los usuarios calificados acceden a los mismos datos en distintas actividades",
+          "explicacion": "Los datos son un recurso común, con acceso controlado."
+        },
+        {
+          "id": "q5",
+          "pregunta": "Verdadero o falso: en el enfoque de bases de datos los datos son visualizados como un recurso de la organización.",
+          "alternativas": [
+            "Verdadero",
+            "Falso"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "Verdadero",
+          "explicacion": "Los datos dejan de pertenecer a cada programa y pasan a ser un recurso compartido."
+        }
+      ]
+    },
+    {
+      "numero": 7,
+      "slug": "s1-enfoque-bd",
+      "semana": 1,
+      "tipo": "QUIZ",
+      "titulo": "Enfoque de base de datos",
+      "enunciado": [
+        "Características de la metodología de bases de datos."
+      ],
+      "preguntas": [
+        {
+          "id": "q1",
+          "pregunta": "En el enfoque de bases de datos los datos se almacenan…",
+          "alternativas": [
+            "dentro de cada programa",
+            "de forma independiente del programa que los usa",
+            "solo en papel",
+            "en archivos por departamento"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "de forma independiente del programa que los usa",
+          "explicacion": "Esta es la independencia de datos."
+        },
+        {
+          "id": "q2",
+          "pregunta": "El control de protección, ingreso, modificación, eliminación y recuperación de datos es…",
+          "alternativas": [
+            "individual de cada aplicación",
+            "centralizado",
+            "inexistente",
+            "responsabilidad del usuario final"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "centralizado",
+          "explicacion": "Existe un control centralizado de las operaciones sobre los datos."
+        },
+        {
+          "id": "q3",
+          "pregunta": "¿Qué software gestiona la base de datos?",
+          "alternativas": [
+            "Un compilador",
+            "Un DBMS",
+            "Un navegador",
+            "Un antivirus"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "Un DBMS",
+          "explicacion": "El DBMS (Data Base Management System) es el intermediario entre las aplicaciones y los datos."
+        },
+        {
+          "id": "q4",
+          "pregunta": "Una característica del enfoque de bases de datos es…",
+          "alternativas": [
+            "la redundancia no controlada",
+            "la dependencia de los datos",
+            "los datos se integran y se comparten",
+            "cada programa define sus archivos"
+          ],
+          "respuestaCorrecta": 2,
+          "respuestaCorrectaTexto": "los datos se integran y se comparten",
+          "explicacion": "Integración y compartición son sus propiedades distintivas."
+        },
+        {
+          "id": "q5",
+          "pregunta": "Verdadero o falso: con el enfoque de bases de datos, un cambio en el esquema obliga siempre a reescribir todos los programas.",
+          "alternativas": [
+            "Verdadero",
+            "Falso"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "Falso",
+          "explicacion": "La independencia de datos evita reescribir los programas por cambios en el esquema."
+        }
+      ]
+    },
+    {
+      "numero": 8,
+      "slug": "s1-dbms",
+      "semana": 1,
+      "tipo": "QUIZ",
+      "titulo": "DBMS: el intermediario de los datos",
+      "enunciado": [
+        "Funciones y tipos de sistemas gestores."
+      ],
+      "preguntas": [
+        {
+          "id": "q1",
+          "pregunta": "DBMS significa…",
+          "alternativas": [
+            "Data Backup Management System",
+            "Data Base Management System",
+            "Digital Binary Memory Server",
+            "Database Model Syntax"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "Data Base Management System",
+          "explicacion": "Sistema de gestión de bases de datos."
+        },
+        {
+          "id": "q2",
+          "pregunta": "Entre las funciones del DBMS están…",
+          "alternativas": [
+            "solo almacenar archivos",
+            "seguridad, integridad y compartición de datos",
+            "diseñar interfaces gráficas",
+            "compilar programas"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "seguridad, integridad y compartición de datos",
+          "explicacion": "El DBMS protege, valida y comparte los datos entre aplicaciones y usuarios."
+        },
+        {
+          "id": "q3",
+          "pregunta": "MySQL, Oracle y SQL Server son ejemplos de…",
+          "alternativas": [
+            "DBMS relacionales",
+            "sistemas operativos",
+            "lenguajes de programación",
+            "bases de datos de grafos"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "DBMS relacionales",
+          "explicacion": "Los RDBMS organizan los datos en tablas con filas y columnas."
+        },
+        {
+          "id": "q4",
+          "pregunta": "Un DBMS NoSQL es adecuado para…",
+          "alternativas": [
+            "solo datos con esquema fijo",
+            "gestionar datos no estructurados con esquema flexible",
+            "reemplazar a los sistemas operativos",
+            "dibujar diagramas"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "gestionar datos no estructurados con esquema flexible",
+          "explicacion": "Ofrece esquemas flexibles y varios modelos de datos."
+        },
+        {
+          "id": "q5",
+          "pregunta": "Un DBMS jerárquico organiza los datos…",
+          "alternativas": [
+            "en tablas",
+            "en relaciones padre-hijo como un árbol",
+            "en documentos JSON",
+            "en grafos"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "en relaciones padre-hijo como un árbol",
+          "explicacion": "Cada padre puede tener varios hijos, pero cada hijo tiene un solo padre (ej.: IMS de IBM)."
+        }
+      ]
+    },
+    {
+      "numero": 9,
+      "slug": "s1-ventajas",
+      "semana": 1,
+      "tipo": "QUIZ",
+      "titulo": "Ventajas del enfoque de bases de datos",
+      "enunciado": [
+        "Qué se gana al usar una base de datos."
+      ],
+      "preguntas": [
+        {
+          "id": "q1",
+          "pregunta": "¿Cuál es una ventaja del enfoque de bases de datos?",
+          "alternativas": [
+            "Mayor redundancia",
+            "Mínima redundancia de datos",
+            "Mayor dependencia de los programas",
+            "Menor seguridad"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "Mínima redundancia de datos",
+          "explicacion": "Se evita duplicar datos innecesariamente."
+        },
+        {
+          "id": "q2",
+          "pregunta": "La consistencia de datos significa que…",
+          "alternativas": [
+            "todos los datos son iguales",
+            "un dato tiene el mismo valor en toda la organización",
+            "los datos no cambian nunca",
+            "hay un solo usuario"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "un dato tiene el mismo valor en toda la organización",
+          "explicacion": "Al no duplicarse, los datos no se contradicen entre sí."
+        },
+        {
+          "id": "q3",
+          "pregunta": "Facilitar el desarrollo de aplicaciones se logra porque…",
+          "alternativas": [
+            "los programadores no necesitan conocer los datos",
+            "los datos ya están definidos y disponibles de forma independiente",
+            "se elimina el DBMS",
+            "se programa en papel"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "los datos ya están definidos y disponibles de forma independiente",
+          "explicacion": "Los programadores reutilizan datos y definiciones existentes."
+        },
+        {
+          "id": "q4",
+          "pregunta": "La reducción de la mantención de programas se debe a…",
+          "alternativas": [
+            "la independencia de los datos",
+            "la redundancia",
+            "el uso de más archivos",
+            "la duplicidad de código"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "la independencia de los datos",
+          "explicacion": "Un cambio en el almacenamiento no obliga a modificar los programas."
+        },
+        {
+          "id": "q5",
+          "pregunta": "¿Cuál de las siguientes NO es una ventaja listada?",
+          "alternativas": [
+            "Esfuerzo por estandarización",
+            "Controles de seguridad, privacidad e integridad",
+            "Integración de datos",
+            "Dependencia de los datos"
+          ],
+          "respuestaCorrecta": 3,
+          "respuestaCorrectaTexto": "Dependencia de los datos",
+          "explicacion": "La dependencia de los datos es un problema del enfoque tradicional."
+        }
+      ]
+    },
+    {
+      "numero": 10,
+      "slug": "s1-etapas-modelos",
+      "semana": 1,
+      "tipo": "QUIZ",
+      "titulo": "Etapas y modelos en bases de datos",
+      "enunciado": [
+        "Creación y operación; esquema conceptual y físico."
+      ],
+      "preguntas": [
+        {
+          "id": "q1",
+          "pregunta": "Las dos etapas al trabajar con bases de datos son…",
+          "alternativas": [
+            "compilación y ejecución",
+            "creación y operación o utilización",
+            "compra e instalación",
+            "diseño gráfico y pruebas"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "creación y operación o utilización",
+          "explicacion": "La creación se hace una vez; la operación involucra a los usuarios finales."
+        },
+        {
+          "id": "q2",
+          "pregunta": "La creación de la base de datos debe…",
+          "alternativas": [
+            "hacerse cada día",
+            "satisfacer los requerimientos de todas las áreas",
+            "ignorar a los usuarios",
+            "hacerse solo para un departamento"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "satisfacer los requerimientos de todas las áreas",
+          "explicacion": "Debe considerar las necesidades de toda la organización."
+        },
+        {
+          "id": "q3",
+          "pregunta": "Los modelos se usan para…",
+          "alternativas": [
+            "facilitar la comunicación entre el diseñador y los usuarios finales",
+            "reemplazar al DBMS",
+            "comprimir archivos",
+            "dibujar la interfaz"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "facilitar la comunicación entre el diseñador y los usuarios finales",
+          "explicacion": "Son una imagen simplificada del sistema de información que se desea desarrollar."
+        },
+        {
+          "id": "q4",
+          "pregunta": "La definición o esquema conceptual describe…",
+          "alternativas": [
+            "la ubicación física de los archivos",
+            "los archivos y sus asociaciones",
+            "las contraseñas",
+            "el hardware"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "los archivos y sus asociaciones",
+          "explicacion": "Es la descripción lógica de los datos y sus relaciones."
+        },
+        {
+          "id": "q5",
+          "pregunta": "Los usuarios finales participan principalmente en la etapa de…",
+          "alternativas": [
+            "creación",
+            "operación o utilización",
+            "diseño físico",
+            "instalación del hardware"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "operación o utilización",
+          "explicacion": "Son quienes acceden constantemente a las bases de datos."
+        }
+      ]
+    },
+    {
+      "numero": 11,
+      "slug": "s1-modelos",
+      "semana": 1,
+      "tipo": "QUIZ",
+      "titulo": "Modelos de datos y arquitecturas",
+      "enunciado": [
+        "Pon a prueba lo aprendido sobre modelos de datos, tipos de bases de datos y arquitecturas de un SGBD."
+      ],
+      "preguntas": [
+        {
+          "id": "q1",
+          "pregunta": "El modelo relacional organiza los datos en:",
+          "alternativas": [
+            "Árboles de nodos padre-hijo",
+            "Tablas (relaciones) formadas por filas y columnas",
+            "Grafos de nodos y aristas",
+            "Pares clave-valor únicamente"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "Tablas (relaciones) formadas por filas y columnas",
+          "explicacion": "Cada tabla (relación) tiene columnas (atributos) y filas (tuplas)."
+        },
+        {
+          "id": "q2",
+          "pregunta": "¿Cuál de las siguientes es una base de datos NoSQL orientada a documentos?",
+          "alternativas": [
+            "MySQL",
+            "PostgreSQL",
+            "MongoDB",
+            "Oracle Database"
+          ],
+          "respuestaCorrecta": 2,
+          "respuestaCorrectaTexto": "MongoDB",
+          "explicacion": "MongoDB almacena documentos tipo JSON; los otros son sistemas relacionales."
+        },
+        {
+          "id": "q3",
+          "pregunta": "En la arquitectura de tres niveles ANSI/SPARC, ¿qué nivel describe cómo se almacenan físicamente los datos?",
+          "alternativas": [
+            "Nivel externo",
+            "Nivel conceptual",
+            "Nivel interno",
+            "Nivel de aplicación"
+          ],
+          "respuestaCorrecta": 2,
+          "respuestaCorrectaTexto": "Nivel interno",
+          "explicacion": "El nivel interno define estructuras de almacenamiento y rutas de acceso; el conceptual, el esquema lógico completo; el externo, las vistas de usuario."
+        },
+        {
+          "id": "q4",
+          "pregunta": "¿Qué nivel de la arquitectura ANSI/SPARC presenta a cada grupo de usuarios solo la parte de la base de datos que le interesa?",
+          "alternativas": [
+            "Nivel externo (vistas)",
+            "Nivel conceptual",
+            "Nivel interno",
+            "Nivel físico"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "Nivel externo (vistas)",
+          "explicacion": "Las vistas del nivel externo ocultan datos que el usuario no necesita o no debe ver."
+        },
+        {
+          "id": "q5",
+          "pregunta": "En una arquitectura cliente-servidor:",
+          "alternativas": [
+            "El cliente almacena toda la base de datos",
+            "El cliente solicita servicios y el servidor del SGBD procesa las consultas y devuelve resultados",
+            "No existe comunicación entre equipos",
+            "Solo puede conectarse un cliente a la vez"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "El cliente solicita servicios y el servidor del SGBD procesa las consultas y devuelve resultados",
+          "explicacion": "El servidor centraliza el procesamiento y almacenamiento; los clientes envían solicitudes."
+        },
+        {
+          "id": "q6",
+          "pregunta": "Las tres capas de una arquitectura de tres capas son:",
+          "alternativas": [
+            "Interna, conceptual y externa",
+            "Presentación, lógica de negocio y datos",
+            "Cliente, red y servidor de correo",
+            "Entrada, proceso y salida"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "Presentación, lógica de negocio y datos",
+          "explicacion": "Separar presentación, lógica y datos facilita el mantenimiento y la escalabilidad."
+        },
+        {
+          "id": "q7",
+          "pregunta": "¿Para qué tipo de problema resulta especialmente adecuada una base de datos de grafos?",
+          "alternativas": [
+            "Registros contables con formato fijo",
+            "Redes sociales o recomendaciones, donde importan las relaciones complejas entre elementos",
+            "Almacenar archivos de video",
+            "Sustituir las hojas de cálculo"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "Redes sociales o recomendaciones, donde importan las relaciones complejas entre elementos",
+          "explicacion": "Los grafos modelan nodos y aristas, ideales para recorrer relaciones (amigos de amigos, rutas, etc.)."
+        },
+        {
+          "id": "q8",
+          "pregunta": "Verdadero o falso: en una base de datos distribuida, los datos pueden estar almacenados en varias ubicaciones físicas conectadas por una red.",
+          "alternativas": [
+            "Verdadero",
+            "Falso"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "Verdadero",
+          "explicacion": "Esto permite mayor disponibilidad y escalabilidad, a costa de mayor complejidad en consistencia y coordinación."
+        }
+      ]
+    },
+    {
+      "numero": 12,
+      "slug": "s1-niveles-arquitectura",
+      "semana": 1,
+      "tipo": "QUIZ",
+      "titulo": "Niveles de la arquitectura de una BD",
+      "enunciado": [
+        "Nivel externo, conceptual e interno."
+      ],
+      "preguntas": [
+        {
+          "id": "q1",
+          "pregunta": "El nivel externo describe…",
+          "alternativas": [
+            "la estructura física de almacenamiento",
+            "la parte de la base de datos visible para cada grupo de usuarios (vistas)",
+            "la estructura completa de la base de datos",
+            "la red"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "la parte de la base de datos visible para cada grupo de usuarios (vistas)",
+          "explicacion": "Presenta solo la información relevante a cada grupo de usuarios y oculta el resto."
+        },
+        {
+          "id": "q2",
+          "pregunta": "El nivel conceptual se centra en…",
+          "alternativas": [
+            "rutas de acceso físicas",
+            "entidades, atributos, relaciones, operaciones y restricciones",
+            "pantallas de usuario",
+            "el sistema operativo"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "entidades, atributos, relaciones, operaciones y restricciones",
+          "explicacion": "Describe la estructura completa de la base de datos mediante un modelo conceptual o lógico."
+        },
+        {
+          "id": "q3",
+          "pregunta": "El nivel interno describe…",
+          "alternativas": [
+            "las vistas de usuario",
+            "el esquema lógico",
+            "la estructura física: almacenamiento, rutas y métodos de acceso",
+            "los permisos"
+          ],
+          "respuestaCorrecta": 2,
+          "respuestaCorrectaTexto": "la estructura física: almacenamiento, rutas y métodos de acceso",
+          "explicacion": "Se especifica mediante un modelo físico."
+        },
+        {
+          "id": "q4",
+          "pregunta": "Una factura, boleta o informe que ve un usuario corresponde al esquema…",
+          "alternativas": [
+            "externo",
+            "conceptual",
+            "interno",
+            "físico del disco"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "externo",
+          "explicacion": "Las vistas de usuario (facturas, boletas, informes) son esquemas externos."
+        },
+        {
+          "id": "q5",
+          "pregunta": "Verdadero o falso: puede haber varios esquemas externos para una misma base de datos.",
+          "alternativas": [
+            "Verdadero",
+            "Falso"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "Verdadero",
+          "explicacion": "Cada grupo de usuarios puede tener su propia vista."
+        }
+      ]
+    },
+    {
+      "numero": 13,
+      "slug": "s1-esquemas",
+      "semana": 1,
+      "tipo": "QUIZ",
+      "titulo": "Esquemas: externo, conceptual e interno",
+      "enunciado": [
+        "Qué representa cada esquema y para qué sirve."
+      ],
+      "preguntas": [
+        {
+          "id": "q1",
+          "pregunta": "El esquema conceptual…",
+          "alternativas": [
+            "depende del DBMS",
+            "abstrae la realidad en relación con los datos e integra las visiones de distintos interesados",
+            "describe solo la interfaz",
+            "es el archivo de respaldo"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "abstrae la realidad en relación con los datos e integra las visiones de distintos interesados",
+          "explicacion": "Permite integrar visiones de diferentes interesados."
+        },
+        {
+          "id": "q2",
+          "pregunta": "El esquema interno…",
+          "alternativas": [
+            "es independiente del DBMS",
+            "depende del DBMS y desarrolla conceptos de eficiencia, seguridad e integridad",
+            "son las vistas de usuario",
+            "solo existe en NoSQL"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "depende del DBMS y desarrolla conceptos de eficiencia, seguridad e integridad",
+          "explicacion": "Depende del DBMS elegido."
+        },
+        {
+          "id": "q3",
+          "pregunta": "Si cambia la forma física de almacenar datos pero no el esquema conceptual, ¿qué conviene preservar?",
+          "alternativas": [
+            "Los programas de aplicación sin cambios",
+            "Reescribir todo",
+            "Cambiar las vistas",
+            "Cambiar el modelo conceptual"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "Los programas de aplicación sin cambios",
+          "explicacion": "La independencia física de datos permite cambios en el nivel interno sin afectar las aplicaciones."
+        },
+        {
+          "id": "q4",
+          "pregunta": "¿Cuál es el orden de abstracción de más cercano al usuario a más cercano al hardware?",
+          "alternativas": [
+            "Interno, conceptual, externo",
+            "Externo, conceptual, interno",
+            "Conceptual, externo, interno",
+            "Interno, externo, conceptual"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "Externo, conceptual, interno",
+          "explicacion": "Externo (usuario) → conceptual → interno (físico)."
+        },
+        {
+          "id": "q5",
+          "pregunta": "Los modelos Entidad-Relación se usan principalmente en el nivel…",
+          "alternativas": [
+            "interno",
+            "conceptual",
+            "de red",
+            "de hardware"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "conceptual",
+          "explicacion": "El modelo E/R es un modelo conceptual de alto nivel."
+        }
+      ]
+    },
+    {
+      "numero": 14,
+      "slug": "s1-arquitecturas-dbms",
+      "semana": 1,
+      "tipo": "QUIZ",
+      "titulo": "Arquitecturas de un DBMS",
+      "enunciado": [
+        "Centralizada, cliente/servidor y distribuida."
+      ],
+      "preguntas": [
+        {
+          "id": "q1",
+          "pregunta": "En la arquitectura centralizada…",
+          "alternativas": [
+            "los datos están en varios países",
+            "el DBMS y los datos residen en un único computador central",
+            "no existe servidor",
+            "solo hay clientes"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "el DBMS y los datos residen en un único computador central",
+          "explicacion": "Todo el procesamiento y almacenamiento ocurre en un equipo central."
+        },
+        {
+          "id": "q2",
+          "pregunta": "En la arquitectura cliente/servidor de dos capas…",
+          "alternativas": [
+            "la aplicación (cliente) se conecta directamente al servidor de base de datos",
+            "hay tres servidores",
+            "no hay red",
+            "los datos están en el cliente"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "la aplicación (cliente) se conecta directamente al servidor de base de datos",
+          "explicacion": "El cliente contiene la lógica y la interfaz; el servidor gestiona los datos."
+        },
+        {
+          "id": "q3",
+          "pregunta": "La arquitectura de tres capas separa…",
+          "alternativas": [
+            "presentación, lógica de negocio y datos",
+            "interno, conceptual y externo",
+            "cliente, red y correo",
+            "hardware, software y datos"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "presentación, lógica de negocio y datos",
+          "explicacion": "Facilita mantenimiento y escalabilidad."
+        },
+        {
+          "id": "q4",
+          "pregunta": "Una base de datos distribuida…",
+          "alternativas": [
+            "almacena los datos en múltiples ubicaciones conectadas por una red",
+            "solo funciona sin red",
+            "usa un único disco",
+            "no admite consultas"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "almacena los datos en múltiples ubicaciones conectadas por una red",
+          "explicacion": "Aumenta disponibilidad, a costa de complejidad."
+        },
+        {
+          "id": "q5",
+          "pregunta": "Una arquitectura IoT–Big Data basada en pipeline de datos se caracteriza por…",
+          "alternativas": [
+            "un flujo de datos desde sensores hasta el almacenamiento y análisis",
+            "no usar datos",
+            "funcionar solo en papel",
+            "usar solo hojas de cálculo"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "un flujo de datos desde sensores hasta el almacenamiento y análisis",
+          "explicacion": "Los datos fluyen por etapas: captura, transporte, almacenamiento y análisis."
+        }
+      ]
+    },
+    {
+      "numero": 15,
+      "slug": "s1-tipos-bd",
+      "semana": 1,
+      "tipo": "QUIZ",
+      "titulo": "Tipos de bases de datos",
+      "enunciado": [
+        "Relacionales, documentales, orientadas a objetos y de grafos."
+      ],
+      "preguntas": [
+        {
+          "id": "q1",
+          "pregunta": "Las bases de datos relacionales…",
+          "alternativas": [
+            "usan tablas relacionadas (ej. Oracle, MySQL, PostgreSQL, SQL Server, MariaDB)",
+            "usan solo grafos",
+            "solo guardan imágenes",
+            "no usan SQL"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "usan tablas relacionadas (ej. Oracle, MySQL, PostgreSQL, SQL Server, MariaDB)",
+          "explicacion": "Estructuran los datos en tablas con filas y columnas."
+        },
+        {
+          "id": "q2",
+          "pregunta": "Las bases de datos documentales (NoSQL) utilizan…",
+          "alternativas": [
+            "tablas",
+            "documentos en formato JSON o XML",
+            "solo archivos de audio",
+            "árboles B"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "documentos en formato JSON o XML",
+          "explicacion": "Ejemplos: MongoDB, Cassandra, Redis."
+        },
+        {
+          "id": "q3",
+          "pregunta": "Las bases de datos orientadas a objetos…",
+          "alternativas": [
+            "almacenan datos como objetos basados en clases",
+            "no permiten herencia",
+            "son siempre relacionales",
+            "solo guardan texto"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "almacenan datos como objetos basados en clases",
+          "explicacion": "Son útiles para estructuras de datos complejas (ej.: modelado 3D)."
+        },
+        {
+          "id": "q4",
+          "pregunta": "Las bases de datos de grafos son adecuadas para…",
+          "alternativas": [
+            "facturas",
+            "relaciones complejas como redes sociales o redes de transporte",
+            "listas simples",
+            "hojas de cálculo"
+          ],
+          "respuestaCorrecta": 1,
+          "respuestaCorrectaTexto": "relaciones complejas como redes sociales o redes de transporte",
+          "explicacion": "Los grafos representan nodos y relaciones."
+        },
+        {
+          "id": "q5",
+          "pregunta": "Una base de datos con un esquema predefinido de columnas y tipos de datos es típica de un DBMS…",
+          "alternativas": [
+            "relacional",
+            "de grafos",
+            "de documentos sin esquema",
+            "jerárquico NoSQL"
+          ],
+          "respuestaCorrecta": 0,
+          "respuestaCorrectaTexto": "relacional",
+          "explicacion": "Los RDBMS definen un esquema fijo por tabla."
+        }
+      ]
+    }
+  ]
+}

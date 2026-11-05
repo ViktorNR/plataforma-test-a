@@ -1,0 +1,177 @@
+{
+  "numero": 14,
+  "slug": "s2-farmacias",
+  "semana": 2,
+  "tipo": "ER",
+  "titulo": "Sistema de farmacias",
+  "enunciado": [
+    "Se debe diseñar un sistema para registrar las farmacias de las ciudades de un país. Cada farmacia tiene un nombre (único, identificador) y un domicilio. Cada farmacia se ubica en una sola ciudad, pero en una ciudad hay varias farmacias.",
+    "De cada ciudad se conoce el nombre, la provincia, la cantidad de habitantes y la superficie; cada ciudad se identifica con el nombre y la provincia (clave compuesta).",
+    "Cada farmacia puede tener un propietario y cada propietario tiene solamente una farmacia (puede haber farmacias sin propietario). De los propietarios se conoce el dni (identificador), nombre, domicilio (compuesto por calle, número, código postal y ciudad), teléfonos (varios) y emails (varios).",
+    "Cada farmacia vende varios medicamentos y un medicamento se vende en varias farmacias, a un precio determinado que puede ser distinto en cada farmacia. De cada medicamento se conoce su id (identificador), nombre comercial y las drogas de las que se compone (varias monodrogas).",
+    "Un medicamento puede complementar a otros medicamentos, pero cada medicamento puede ser complementado por un solo medicamento (relación reflexiva).",
+    "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Farmacia",
+        "attrs": [
+          {
+            "name": "nombre",
+            "key": true
+          },
+          {
+            "name": "domicilio"
+          }
+        ]
+      },
+      {
+        "name": "Ciudad",
+        "attrs": [
+          {
+            "name": "nombre",
+            "key": true
+          },
+          {
+            "name": "provincia",
+            "key": true
+          },
+          {
+            "name": "habitantes"
+          },
+          {
+            "name": "superficie"
+          }
+        ]
+      },
+      {
+        "name": "Propietario",
+        "attrs": [
+          {
+            "name": "dni",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "domicilio",
+            "parts": [
+              {
+                "name": "calle"
+              },
+              {
+                "name": "numero"
+              },
+              {
+                "name": "codigo_postal"
+              },
+              {
+                "name": "ciudad"
+              }
+            ]
+          },
+          {
+            "name": "telefonos",
+            "multi": true
+          },
+          {
+            "name": "emails",
+            "multi": true
+          }
+        ]
+      },
+      {
+        "name": "Medicamento",
+        "attrs": [
+          {
+            "name": "id",
+            "key": true
+          },
+          {
+            "name": "nombre_comercial"
+          },
+          {
+            "name": "drogas",
+            "multi": true,
+            "aliases": [
+              "monodrogas"
+            ]
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "se_ubica",
+        "between": [
+          {
+            "entity": "Ciudad",
+            "card": "1"
+          },
+          {
+            "entity": "Farmacia",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "posee",
+        "between": [
+          {
+            "entity": "Propietario",
+            "card": "1"
+          },
+          {
+            "entity": "Farmacia",
+            "card": "1"
+          }
+        ]
+      },
+      {
+        "name": "vende",
+        "between": [
+          {
+            "entity": "Farmacia",
+            "card": "N"
+          },
+          {
+            "entity": "Medicamento",
+            "card": "N"
+          }
+        ],
+        "attrs": [
+          {
+            "name": "precio"
+          }
+        ]
+      },
+      {
+        "name": "complementa",
+        "between": [
+          {
+            "entity": "Medicamento",
+            "card": "1"
+          },
+          {
+            "entity": "Medicamento",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "layout": [
+      [
+        "Ciudad",
+        "Farmacia",
+        "Propietario"
+      ],
+      [
+        null,
+        "Medicamento",
+        null
+      ]
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "numero": 3,
+  "slug": "s1-enfoque-agregacion",
+  "semana": 1,
+  "tipo": "QUIZ",
+  "titulo": "Enfoque por agregación",
+  "enunciado": [
+    "Sistemas de información que crecen por departamentos."
+  ],
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "El enfoque por agregación consiste en…",
+      "alternativas": [
+        "integrar todos los datos en un único modelo",
+        "ir acoplando a un sistema de información nuevas funciones por departamento",
+        "eliminar los archivos duplicados",
+        "usar solo hojas de cálculo"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "ir acoplando a un sistema de información nuevas funciones por departamento",
+      "explicacion": "Es un proceso evolutivo: se agregan funciones y sistemas a medida que cada área los necesita."
+    },
+    {
+      "id": "q2",
+      "pregunta": "¿Cuál es un ejemplo de aplicación individual típica de este enfoque?",
+      "alternativas": [
+        "Remuneraciones",
+        "Un diagrama E/R",
+        "El esquema conceptual",
+        "Un motor de base de datos"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "Remuneraciones",
+      "explicacion": "Remuneraciones, cuentas corrientes, contabilidad o control de inventario se desarrollaron como sistemas aislados."
+    },
+    {
+      "id": "q3",
+      "pregunta": "La superposición de áreas en el organigrama indica…",
+      "alternativas": [
+        "mejor integración",
+        "utilización del mismo tipo de dato por varios sistemas (duplicación de recursos)",
+        "menor costo",
+        "mayor seguridad"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "utilización del mismo tipo de dato por varios sistemas (duplicación de recursos)",
+      "explicacion": "Distintos sistemas usan el mismo dato, lo que duplica recursos y esfuerzo."
+    },
+    {
+      "id": "q4",
+      "pregunta": "En este enfoque, los programas de aplicación…",
+      "alternativas": [
+        "no necesitan conocer los archivos",
+        "deben contener las definiciones de los archivos que usan y las instrucciones para manejarlos",
+        "acceden siempre a una sola tabla",
+        "delegan todo al DBMS"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "deben contener las definiciones de los archivos que usan y las instrucciones para manejarlos",
+      "explicacion": "Cada programa incluye la definición de sus archivos y la lógica para manipularlos."
+    },
+    {
+      "id": "q5",
+      "pregunta": "¿Existe una planificación corporativa que guíe el desarrollo de aplicaciones en el enfoque por agregación?",
+      "alternativas": [
+        "Sí, siempre",
+        "No, cada sistema responde a las necesidades de un departamento",
+        "Solo en empresas grandes",
+        "Solo en bancos"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "No, cada sistema responde a las necesidades de un departamento",
+      "explicacion": "La falta de planificación y de un modelo común es precisamente su debilidad."
+    }
+  ]
+}

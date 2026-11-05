@@ -1,0 +1,109 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Rol {
+  ADMIN
+  PROFESOR
+  ESTUDIANTE
+}
+
+// Un periodo cerrado (activo = false) deja a sus cursos y estudiantes en el histórico.
+model Periodo {
+  id        Int      @id @default(autoincrement())
+  nombre    String   @unique
+  activo    Boolean  @default(true)
+  creadoEn  DateTime @default(now())
+  usuarios  User[]
+  cursos    Curso[]
+}
+
+// Una sección (NRC) de la asignatura dictada en un periodo. El administrador vincula a su profesor.
+model Curso {
+  id         Int      @id @default(autoincrement())
+  nombre     String
+  nrc        String
+  periodoId  Int
+  periodo    Periodo  @relation(fields: [periodoId], references: [id])
+  /** Se desactiva junto con su periodo. */
+  activo     Boolean  @default(true)
+  profesorId Int?
+  profesor   User?    @relation("CursoProfesor", fields: [profesorId], references: [id], onDelete: SetNull)
+  creadoEn   DateTime @default(now())
+  estudiantes User[]  @relation("CursoEstudiante")
+
+  @@unique([nrc, periodoId])
+  @@index([profesorId])
+}
+
+model User {
+  id             Int       @id @default(autoincrement())
+  nombre         String
+  apellido       String
+  email          String    @unique
+  passwordHash   String
+  rol            Rol       @default(ESTUDIANTE)
+  activo         Boolean   @default(true)
+  /** Verdadero si la cuenta se desactivó porque se cerró su periodo (al reabrirlo se reactiva sola). */
+  inactivoPorPeriodo Boolean @default(false)
+  periodoId      Int?
+  periodo        Periodo?  @relation(fields: [periodoId], references: [id])
+  cursoId        Int?
+  curso          Curso?    @relation("CursoEstudiante", fields: [cursoId], references: [id], onDelete: SetNull)
+  cursosDocente  Curso[]   @relation("CursoProfesor")
+  creadoEn       DateTime  @default(now())
+  ultimaConexion DateTime?
+  ingresos       Int       @default(0)
+  intentos       Intento[]
+  vistas         RespuestaVista[]
+
+  accesos        Acceso[]
+
+  @@index([cursoId])
+}
+
+// Un registro por inicio de sesión y por primer uso de cada día: base de «usuarios activos por día».
+model Acceso {
+  id       Int      @id @default(autoincrement())
+  userId   Int
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  creadoEn DateTime @default(now())
+
+  @@index([creadoEn])
+  @@index([userId, creadoEn])
+}
+
+// El estudiante pidió «Ver respuesta»: el ejercicio queda con 0 % y bloqueado para siempre.
+model RespuestaVista {
+  id           Int      @id @default(autoincrement())
+  userId       Int
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exerciseSlug String
+  creadoEn     DateTime @default(now())
+
+  @@unique([userId, exerciseSlug])
+}
+
+model Intento {
+  id           Int      @id @default(autoincrement())
+  userId       Int
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exerciseSlug String
+  respuesta    Json
+  puntaje      Float
+  feedback     Json
+  creadoEn     DateTime @default(now())
+
+  @@index([userId, exerciseSlug])
+}
+
+// Permite al administrador activar/desactivar semanas ("week:3") y ejercicios (slug).
+model ContentToggle {
+  key     String  @id
+  enabled Boolean
+}

@@ -1,0 +1,138 @@
+{
+  "numero": 9,
+  "slug": "s2-biblioteca-centro",
+  "semana": 2,
+  "tipo": "ER",
+  "titulo": "Biblioteca del centro",
+  "enunciado": [
+    "En la biblioteca de un centro se manejan fichas de autores y libros. De cada autor: código de autor (identificador) y nombre. De cada libro: código (identificador), título, ISBN, editorial y número de páginas.",
+    "Un autor puede escribir varios libros, y un libro puede ser escrito por varios autores.",
+    "Un libro está formado por ejemplares. Cada ejemplar tiene un código (identificador) y una localización. Un libro tiene muchos ejemplares y un ejemplar pertenece solo a un libro.",
+    "Los usuarios también tienen ficha: código (identificador), nombre, dirección y teléfono. Los ejemplares son prestados a los usuarios: un usuario puede tomar prestados varios ejemplares, y un ejemplar puede ser prestado a varios usuarios (en distintos momentos). De cada préstamo se guarda la fecha de préstamo y la fecha de devolución.",
+    "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Autor",
+        "attrs": [
+          {
+            "name": "cod_autor",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      },
+      {
+        "name": "Libro",
+        "attrs": [
+          {
+            "name": "cod_libro",
+            "key": true
+          },
+          {
+            "name": "titulo"
+          },
+          {
+            "name": "isbn"
+          },
+          {
+            "name": "editorial"
+          },
+          {
+            "name": "numero_paginas"
+          }
+        ]
+      },
+      {
+        "name": "Ejemplar",
+        "attrs": [
+          {
+            "name": "cod_ejemplar",
+            "key": true
+          },
+          {
+            "name": "localizacion"
+          }
+        ]
+      },
+      {
+        "name": "Usuario",
+        "attrs": [
+          {
+            "name": "cod_usuario",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "direccion"
+          },
+          {
+            "name": "telefono"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "escribe",
+        "between": [
+          {
+            "entity": "Autor",
+            "card": "N"
+          },
+          {
+            "entity": "Libro",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "tiene",
+        "between": [
+          {
+            "entity": "Libro",
+            "card": "1"
+          },
+          {
+            "entity": "Ejemplar",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "presta",
+        "between": [
+          {
+            "entity": "Usuario",
+            "card": "N"
+          },
+          {
+            "entity": "Ejemplar",
+            "card": "N"
+          }
+        ],
+        "attrs": [
+          {
+            "name": "fecha_prestamo"
+          },
+          {
+            "name": "fecha_devolucion"
+          }
+        ]
+      }
+    ],
+    "layout": [
+      [
+        "Autor",
+        "Libro",
+        "Ejemplar",
+        "Usuario"
+      ]
+    ]
+  }
+}

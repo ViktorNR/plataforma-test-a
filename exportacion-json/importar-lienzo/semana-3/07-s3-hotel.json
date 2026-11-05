@@ -1,0 +1,670 @@
+{
+  "nodes": [
+    {
+      "id": "e:Hotel",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Hotel",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Hotel:cod_hotel",
+      "type": "attribute",
+      "position": {
+        "x": 723.1646547969538,
+        "y": 188.6726747467694
+      },
+      "data": {
+        "label": "cod_hotel",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Hotel:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 625.1641701606969,
+        "y": 263.0590912848168
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Hotel:direccion",
+      "type": "attribute",
+      "position": {
+        "x": 505,
+        "y": 289.4788975654116
+      },
+      "data": {
+        "label": "direccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Hotel:telefono",
+      "type": "attribute",
+      "position": {
+        "x": 384.835829839303,
+        "y": 263.05909128481676
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Hotel:anio_construccion",
+      "type": "attribute",
+      "position": {
+        "x": 286.83534520304636,
+        "y": 188.67267474676942
+      },
+      "data": {
+        "label": "anio_construccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Categoria",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Categoria",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Categoria:cod_categoria",
+      "type": "attribute",
+      "position": {
+        "x": 28.58199314393964,
+        "y": 120.66005949071752
+      },
+      "data": {
+        "label": "cod_categoria",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Categoria:tipo_iva",
+      "type": "attribute",
+      "position": {
+        "x": -115,
+        "y": 3.000000000000014
+      },
+      "data": {
+        "label": "tipo_iva",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Categoria:descripcion",
+      "type": "attribute",
+      "position": {
+        "x": 28.58199314393964,
+        "y": -114.66005949071752
+      },
+      "data": {
+        "label": "descripcion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Habitacion",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Habitacion",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Habitacion:codigo_habitacion",
+      "type": "attribute",
+      "position": {
+        "x": 1066.8045689892065,
+        "y": 105.86007608425346
+      },
+      "data": {
+        "label": "codigo_habitacion",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Habitacion:tipo",
+      "type": "attribute",
+      "position": {
+        "x": 943.1954310107935,
+        "y": 105.86007608425348
+      },
+      "data": {
+        "label": "tipo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Cliente",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 380
+      },
+      "data": {
+        "label": "Cliente",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:id_cliente",
+      "type": "attribute",
+      "position": {
+        "x": 388.848316319304,
+        "y": 473.2616997625855
+      },
+      "data": {
+        "label": "id_cliente",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 360.3387523745254,
+        "y": 356.3258270731271
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:direccion",
+      "type": "attribute",
+      "position": {
+        "x": 428.6791766916516,
+        "y": 257.2481809458509
+      },
+      "data": {
+        "label": "direccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:telefono",
+      "type": "attribute",
+      "position": {
+        "x": 548.1160139243458,
+        "y": 242.3607543778508
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Particular",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 380
+      },
+      "data": {
+        "label": "Particular",
+        "weak": false
+      }
+    },
+    {
+      "id": "e:Agencia",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 380
+      },
+      "data": {
+        "label": "Agencia",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Agencia:nombre_persona",
+      "type": "attribute",
+      "position": {
+        "x": 1119.9391542265382,
+        "y": 348.51825373203866
+      },
+      "data": {
+        "label": "nombre_persona",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Reserva",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 0
+      },
+      "data": {
+        "label": "Reserva",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Reserva:cod_reserva",
+      "type": "attribute",
+      "position": {
+        "x": 1451.2673197636543,
+        "y": -104.29771234569088
+      },
+      "data": {
+        "label": "cod_reserva",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Reserva:precio",
+      "type": "attribute",
+      "position": {
+        "x": 1588.6559885104305,
+        "y": -83.03299126697112
+      },
+      "data": {
+        "label": "precio",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Reserva:fecha_inicio",
+      "type": "attribute",
+      "position": {
+        "x": 1613.7606909750389,
+        "y": 53.706134723839085
+      },
+      "data": {
+        "label": "fecha_inicio",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Reserva:fecha_fin",
+      "type": "attribute",
+      "position": {
+        "x": 1492.8856258735284,
+        "y": 122.38694208130084
+      },
+      "data": {
+        "label": "fecha_fin",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "clasifica",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "tiene",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:2",
+      "type": "relationship",
+      "position": {
+        "x": 1240,
+        "y": -18
+      },
+      "data": {
+        "label": "es_de",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:3",
+      "type": "relationship",
+      "position": {
+        "x": 990,
+        "y": 172
+      },
+      "data": {
+        "label": "realiza",
+        "identifying": false
+      }
+    },
+    {
+      "id": "s:0",
+      "type": "spec",
+      "position": {
+        "x": 538,
+        "y": 530
+      },
+      "data": {
+        "label": "",
+        "disjoint": true,
+        "total": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Hotel->a:e:Hotel:cod_hotel#0",
+      "source": "e:Hotel",
+      "target": "a:e:Hotel:cod_hotel",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Hotel->a:e:Hotel:nombre#0",
+      "source": "e:Hotel",
+      "target": "a:e:Hotel:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Hotel->a:e:Hotel:direccion#0",
+      "source": "e:Hotel",
+      "target": "a:e:Hotel:direccion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Hotel->a:e:Hotel:telefono#0",
+      "source": "e:Hotel",
+      "target": "a:e:Hotel:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Hotel->a:e:Hotel:anio_construccion#0",
+      "source": "e:Hotel",
+      "target": "a:e:Hotel:anio_construccion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Categoria->a:e:Categoria:cod_categoria#0",
+      "source": "e:Categoria",
+      "target": "a:e:Categoria:cod_categoria",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Categoria->a:e:Categoria:tipo_iva#0",
+      "source": "e:Categoria",
+      "target": "a:e:Categoria:tipo_iva",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Categoria->a:e:Categoria:descripcion#0",
+      "source": "e:Categoria",
+      "target": "a:e:Categoria:descripcion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Habitacion->a:e:Habitacion:codigo_habitacion#0",
+      "source": "e:Habitacion",
+      "target": "a:e:Habitacion:codigo_habitacion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Habitacion->a:e:Habitacion:tipo#0",
+      "source": "e:Habitacion",
+      "target": "a:e:Habitacion:tipo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:id_cliente#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:id_cliente",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:nombre#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:direccion#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:direccion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:telefono#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Agencia->a:e:Agencia:nombre_persona#0",
+      "source": "e:Agencia",
+      "target": "a:e:Agencia:nombre_persona",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Reserva->a:e:Reserva:cod_reserva#0",
+      "source": "e:Reserva",
+      "target": "a:e:Reserva:cod_reserva",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Reserva->a:e:Reserva:precio#0",
+      "source": "e:Reserva",
+      "target": "a:e:Reserva:precio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Reserva->a:e:Reserva:fecha_inicio#0",
+      "source": "e:Reserva",
+      "target": "a:e:Reserva:fecha_inicio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Reserva->a:e:Reserva:fecha_fin#0",
+      "source": "e:Reserva",
+      "target": "a:e:Reserva:fecha_fin",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Categoria->r:0#0",
+      "source": "e:Categoria",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Hotel->r:0#0",
+      "source": "e:Hotel",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Hotel->r:1#0",
+      "source": "e:Hotel",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Habitacion->r:1#0",
+      "source": "e:Habitacion",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Habitacion->r:2#0",
+      "source": "e:Habitacion",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Reserva->r:2#0",
+      "source": "e:Reserva",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Cliente->r:3#0",
+      "source": "e:Cliente",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Reserva->r:3#0",
+      "source": "e:Reserva",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Cliente->s:0#0",
+      "source": "e:Cliente",
+      "target": "s:0",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Particular#0",
+      "source": "s:0",
+      "target": "e:Particular",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Agencia#0",
+      "source": "s:0",
+      "target": "e:Agencia",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

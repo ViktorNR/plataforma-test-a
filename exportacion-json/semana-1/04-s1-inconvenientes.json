@@ -1,0 +1,77 @@
+{
+  "numero": 4,
+  "slug": "s1-inconvenientes",
+  "semana": 1,
+  "tipo": "QUIZ",
+  "titulo": "Inconvenientes del enfoque tradicional",
+  "enunciado": [
+    "Identifica los problemas que motivaron las bases de datos."
+  ],
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "Guardar la dirección de un cliente en tres archivos distintos genera principalmente…",
+      "alternativas": [
+        "redundancia y riesgo de inconsistencia",
+        "mayor velocidad",
+        "independencia de datos",
+        "menos duplicación"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "redundancia y riesgo de inconsistencia",
+      "explicacion": "La redundancia no controlada puede dejar versiones distintas del mismo dato."
+    },
+    {
+      "id": "q2",
+      "pregunta": "Usar nombres diferentes para el mismo ítem de datos en distintos archivos es un problema de…",
+      "alternativas": [
+        "seguridad",
+        "anomalías de los datos",
+        "rendimiento",
+        "hardware"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "anomalías de los datos",
+      "explicacion": "Es una anomalía: mismo dato, distintos nombres (o el mismo nombre para datos distintos)."
+    },
+    {
+      "id": "q3",
+      "pregunta": "Que no exista restricción de acceso a los datos corresponde a un problema de…",
+      "alternativas": [
+        "seguridad",
+        "normalización",
+        "indexación",
+        "respaldo"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "seguridad",
+      "explicacion": "En los archivos tradicionales es difícil controlar quién ve o modifica qué."
+    },
+    {
+      "id": "q4",
+      "pregunta": "Los informes erróneos y la pérdida de confianza del cliente son consecuencia de…",
+      "alternativas": [
+        "la inconsistencia de los datos",
+        "el exceso de memoria",
+        "la normalización",
+        "las vistas de usuario"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "la inconsistencia de los datos",
+      "explicacion": "Datos inconsistentes entre archivos producen informes distintos para la misma pregunta."
+    },
+    {
+      "id": "q5",
+      "pregunta": "¿Cuál NO es un inconveniente del enfoque tradicional?",
+      "alternativas": [
+        "Subutilización del espacio en disco",
+        "Duplicidad en el ingreso de datos",
+        "Escasa posibilidad de compartir datos",
+        "Control centralizado de la seguridad"
+      ],
+      "respuestaCorrecta": 3,
+      "respuestaCorrectaTexto": "Control centralizado de la seguridad",
+      "explicacion": "El control centralizado es una característica del enfoque de bases de datos."
+    }
+  ]
+}

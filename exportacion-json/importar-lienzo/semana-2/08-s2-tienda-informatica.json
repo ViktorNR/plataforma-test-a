@@ -1,0 +1,480 @@
+{
+  "nodes": [
+    {
+      "id": "e:Producto",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Producto",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Producto:codigo",
+      "type": "attribute",
+      "position": {
+        "x": 671.2435601038433,
+        "y": 160.75924798308264
+      },
+      "data": {
+        "label": "codigo",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Producto:descripcion",
+      "type": "attribute",
+      "position": {
+        "x": 566.246524292856,
+        "y": 223.84783191653142
+      },
+      "data": {
+        "label": "descripcion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Producto:precio",
+      "type": "attribute",
+      "position": {
+        "x": 443.7534757071441,
+        "y": 223.84783191653142
+      },
+      "data": {
+        "label": "precio",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Producto:existencias",
+      "type": "attribute",
+      "position": {
+        "x": 338.75643989615673,
+        "y": 160.75924798308264
+      },
+      "data": {
+        "label": "existencias",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Cliente",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Cliente",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:codigo",
+      "type": "attribute",
+      "position": {
+        "x": 88.73589556375634,
+        "y": 115.47682748108696
+      },
+      "data": {
+        "label": "codigo",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -28.92322720628659,
+        "y": 139.05863288297866
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:apellidos",
+      "type": "attribute",
+      "position": {
+        "x": -121.73907939865009,
+        "y": 62.99952232524166
+      },
+      "data": {
+        "label": "apellidos",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:direccion",
+      "type": "attribute",
+      "position": {
+        "x": -121.73907939865006,
+        "y": -56.99952232524168
+      },
+      "data": {
+        "label": "direccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:correos",
+      "type": "attribute",
+      "position": {
+        "x": -28.92322720628659,
+        "y": -133.05863288297866
+      },
+      "data": {
+        "label": "correos",
+        "key": false,
+        "partialKey": false,
+        "multi": true,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:telefonos",
+      "type": "attribute",
+      "position": {
+        "x": 88.7358955637564,
+        "y": -109.4768274810869
+      },
+      "data": {
+        "label": "telefonos",
+        "key": false,
+        "partialKey": false,
+        "multi": true,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Proveedor",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Proveedor",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Proveedor:codigo",
+      "type": "attribute",
+      "position": {
+        "x": 921.2641044362437,
+        "y": -109.47682748108694
+      },
+      "data": {
+        "label": "codigo",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Proveedor:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1038.9232272062866,
+        "y": -133.05863288297869
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Proveedor:apellido",
+      "type": "attribute",
+      "position": {
+        "x": 1131.7390793986501,
+        "y": -56.99952232524167
+      },
+      "data": {
+        "label": "apellido",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Proveedor:direccion",
+      "type": "attribute",
+      "position": {
+        "x": 1131.7390793986501,
+        "y": 62.99952232524173
+      },
+      "data": {
+        "label": "direccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Proveedor:provincia",
+      "type": "attribute",
+      "position": {
+        "x": 1038.9232272062868,
+        "y": 139.05863288297863
+      },
+      "data": {
+        "label": "provincia",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Proveedor:telefono",
+      "type": "attribute",
+      "position": {
+        "x": 921.2641044362438,
+        "y": 115.47682748108701
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "compra",
+        "identifying": false
+      }
+    },
+    {
+      "id": "a:r:0:fecha",
+      "type": "attribute",
+      "position": {
+        "x": 255,
+        "y": 103
+      },
+      "data": {
+        "label": "fecha",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "suministra",
+        "identifying": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Producto->a:e:Producto:codigo#0",
+      "source": "e:Producto",
+      "target": "a:e:Producto:codigo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Producto->a:e:Producto:descripcion#0",
+      "source": "e:Producto",
+      "target": "a:e:Producto:descripcion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Producto->a:e:Producto:precio#0",
+      "source": "e:Producto",
+      "target": "a:e:Producto:precio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Producto->a:e:Producto:existencias#0",
+      "source": "e:Producto",
+      "target": "a:e:Producto:existencias",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:codigo#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:codigo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:nombre#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:apellidos#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:apellidos",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:direccion#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:direccion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:correos#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:correos",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:telefonos#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:telefonos",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proveedor->a:e:Proveedor:codigo#0",
+      "source": "e:Proveedor",
+      "target": "a:e:Proveedor:codigo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proveedor->a:e:Proveedor:nombre#0",
+      "source": "e:Proveedor",
+      "target": "a:e:Proveedor:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proveedor->a:e:Proveedor:apellido#0",
+      "source": "e:Proveedor",
+      "target": "a:e:Proveedor:apellido",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proveedor->a:e:Proveedor:direccion#0",
+      "source": "e:Proveedor",
+      "target": "a:e:Proveedor:direccion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proveedor->a:e:Proveedor:provincia#0",
+      "source": "e:Proveedor",
+      "target": "a:e:Proveedor:provincia",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proveedor->a:e:Proveedor:telefono#0",
+      "source": "e:Proveedor",
+      "target": "a:e:Proveedor:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->r:0#0",
+      "source": "e:Cliente",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Producto->r:0#0",
+      "source": "e:Producto",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "r:0->a:r:0:fecha#0",
+      "source": "r:0",
+      "target": "a:r:0:fecha",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proveedor->r:1#0",
+      "source": "e:Proveedor",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Producto->r:1#0",
+      "source": "e:Producto",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "numero": 6,
+  "slug": "s1-definicion-bd",
+  "semana": 1,
+  "tipo": "QUIZ",
+  "titulo": "Definición de base de datos",
+  "enunciado": [
+    "Integrar y compartir: las dos propiedades fundamentales."
+  ],
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "Una base de datos es…",
+      "alternativas": [
+        "un conjunto de datos organizados y relacionados entre sí que satisface las necesidades de información de una organización",
+        "un archivo de texto con datos sueltos",
+        "un programa de contabilidad",
+        "una planilla por departamento"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "un conjunto de datos organizados y relacionados entre sí que satisface las necesidades de información de una organización",
+      "explicacion": "Es el conjunto de datos organizados y relacionados de una organización."
+    },
+    {
+      "id": "q2",
+      "pregunta": "Las dos propiedades principales de una base de datos son…",
+      "alternativas": [
+        "rapidez y color",
+        "integrar y compartir",
+        "copiar y pegar",
+        "cifrar y comprimir"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "integrar y compartir",
+      "explicacion": "Integrar (reducir redundancia, facilitar acceso) y compartir (todos los usuarios calificados acceden a los mismos datos)."
+    },
+    {
+      "id": "q3",
+      "pregunta": "«Integrar» significa que los archivos de datos…",
+      "alternativas": [
+        "se organizan lógicamente para reducir redundancia y facilitar el acceso",
+        "se separan por departamento",
+        "se borran después de usarlos",
+        "se copian en cada aplicación"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "se organizan lógicamente para reducir redundancia y facilitar el acceso",
+      "explicacion": "Integración es organización lógica de los datos para evitar redundancia."
+    },
+    {
+      "id": "q4",
+      "pregunta": "«Compartir» significa que…",
+      "alternativas": [
+        "cada usuario tiene su copia",
+        "todos los usuarios calificados acceden a los mismos datos en distintas actividades",
+        "los datos son públicos",
+        "solo el administrador accede"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "todos los usuarios calificados acceden a los mismos datos en distintas actividades",
+      "explicacion": "Los datos son un recurso común, con acceso controlado."
+    },
+    {
+      "id": "q5",
+      "pregunta": "Verdadero o falso: en el enfoque de bases de datos los datos son visualizados como un recurso de la organización.",
+      "alternativas": [
+        "Verdadero",
+        "Falso"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "Verdadero",
+      "explicacion": "Los datos dejan de pertenecer a cada programa y pasan a ser un recurso compartido."
+    }
+  ]
+}

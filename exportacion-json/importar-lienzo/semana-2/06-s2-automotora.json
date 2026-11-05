@@ -1,0 +1,458 @@
+{
+  "nodes": [
+    {
+      "id": "e:Vehiculo",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Vehiculo",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Vehiculo:matricula",
+      "type": "attribute",
+      "position": {
+        "x": 723.1646547969538,
+        "y": 188.6726747467694
+      },
+      "data": {
+        "label": "matricula",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Vehiculo:marca",
+      "type": "attribute",
+      "position": {
+        "x": 625.1641701606969,
+        "y": 263.0590912848168
+      },
+      "data": {
+        "label": "marca",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Vehiculo:modelo",
+      "type": "attribute",
+      "position": {
+        "x": 505,
+        "y": 289.4788975654116
+      },
+      "data": {
+        "label": "modelo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Vehiculo:color",
+      "type": "attribute",
+      "position": {
+        "x": 384.835829839303,
+        "y": 263.05909128481676
+      },
+      "data": {
+        "label": "color",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Vehiculo:precio_venta",
+      "type": "attribute",
+      "position": {
+        "x": 286.83534520304636,
+        "y": 188.67267474676942
+      },
+      "data": {
+        "label": "precio_venta",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Cliente",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Cliente",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:codigo_interno",
+      "type": "attribute",
+      "position": {
+        "x": 88.73589556375634,
+        "y": 115.47682748108696
+      },
+      "data": {
+        "label": "codigo_interno",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:rut",
+      "type": "attribute",
+      "position": {
+        "x": -28.92322720628659,
+        "y": 139.05863288297866
+      },
+      "data": {
+        "label": "rut",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -121.73907939865009,
+        "y": 62.99952232524166
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:direccion",
+      "type": "attribute",
+      "position": {
+        "x": -121.73907939865006,
+        "y": -56.99952232524168
+      },
+      "data": {
+        "label": "direccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:ciudad",
+      "type": "attribute",
+      "position": {
+        "x": -28.92322720628659,
+        "y": -133.05863288297866
+      },
+      "data": {
+        "label": "ciudad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:telefono",
+      "type": "attribute",
+      "position": {
+        "x": 88.7358955637564,
+        "y": -109.4768274810869
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": true,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Revision",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Revision",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Revision:cod_revision",
+      "type": "attribute",
+      "position": {
+        "x": 942.1216912835905,
+        "y": -99.20723209716573
+      },
+      "data": {
+        "label": "cod_revision",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Revision:cambio_filtro",
+      "type": "attribute",
+      "position": {
+        "x": 1063.543159096648,
+        "y": -101.75064927237716
+      },
+      "data": {
+        "label": "cambio_filtro",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Revision:cambio_aceite",
+      "type": "attribute",
+      "position": {
+        "x": 1125,
+        "y": 2.9999999999999716
+      },
+      "data": {
+        "label": "cambio_aceite",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Revision:cambio_frenos",
+      "type": "attribute",
+      "position": {
+        "x": 1063.543159096648,
+        "y": 107.75064927237713
+      },
+      "data": {
+        "label": "cambio_frenos",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Revision:otros",
+      "type": "attribute",
+      "position": {
+        "x": 942.1216912835904,
+        "y": 105.20723209716566
+      },
+      "data": {
+        "label": "otros",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "compra",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "se_revisa",
+        "identifying": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Vehiculo->a:e:Vehiculo:matricula#0",
+      "source": "e:Vehiculo",
+      "target": "a:e:Vehiculo:matricula",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Vehiculo->a:e:Vehiculo:marca#0",
+      "source": "e:Vehiculo",
+      "target": "a:e:Vehiculo:marca",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Vehiculo->a:e:Vehiculo:modelo#0",
+      "source": "e:Vehiculo",
+      "target": "a:e:Vehiculo:modelo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Vehiculo->a:e:Vehiculo:color#0",
+      "source": "e:Vehiculo",
+      "target": "a:e:Vehiculo:color",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Vehiculo->a:e:Vehiculo:precio_venta#0",
+      "source": "e:Vehiculo",
+      "target": "a:e:Vehiculo:precio_venta",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:codigo_interno#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:codigo_interno",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:rut#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:nombre#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:direccion#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:direccion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:ciudad#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:ciudad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:telefono#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Revision->a:e:Revision:cod_revision#0",
+      "source": "e:Revision",
+      "target": "a:e:Revision:cod_revision",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Revision->a:e:Revision:cambio_filtro#0",
+      "source": "e:Revision",
+      "target": "a:e:Revision:cambio_filtro",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Revision->a:e:Revision:cambio_aceite#0",
+      "source": "e:Revision",
+      "target": "a:e:Revision:cambio_aceite",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Revision->a:e:Revision:cambio_frenos#0",
+      "source": "e:Revision",
+      "target": "a:e:Revision:cambio_frenos",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Revision->a:e:Revision:otros#0",
+      "source": "e:Revision",
+      "target": "a:e:Revision:otros",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->r:0#0",
+      "source": "e:Cliente",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Vehiculo->r:0#0",
+      "source": "e:Vehiculo",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Vehiculo->r:1#0",
+      "source": "e:Vehiculo",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Revision->r:1#0",
+      "source": "e:Revision",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    }
+  ]
+}

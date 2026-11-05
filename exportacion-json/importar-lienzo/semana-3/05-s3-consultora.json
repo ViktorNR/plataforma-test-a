@@ -1,0 +1,442 @@
+{
+  "nodes": [
+    {
+      "id": "e:Empleado",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 380
+      },
+      "data": {
+        "label": "Empleado",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Empleado:id_empleado",
+      "type": "attribute",
+      "position": {
+        "x": -67.58995311786339,
+        "y": 478.55468960938754
+      },
+      "data": {
+        "label": "id_empleado",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Empleado:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -8.082889061148421,
+        "y": 263.7153068754684
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Consultor",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Consultor",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Consultor:especialidad",
+      "type": "attribute",
+      "position": {
+        "x": -46.1942410855573,
+        "y": -105.53179110138116
+      },
+      "data": {
+        "label": "especialidad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Administrativo",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Administrativo",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Administrativo:cargo",
+      "type": "attribute",
+      "position": {
+        "x": 556.1942410855571,
+        "y": -105.53179110138122
+      },
+      "data": {
+        "label": "cargo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Cliente",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 380
+      },
+      "data": {
+        "label": "Cliente",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:id_cliente",
+      "type": "attribute",
+      "position": {
+        "x": 957.6133018929393,
+        "y": 272.75254722892555
+      },
+      "data": {
+        "label": "id_cliente",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1102.3556048970952,
+        "y": 312.84384421078425
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Cliente_Personal",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Cliente_Personal",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Cliente_Personal:rut",
+      "type": "attribute",
+      "position": {
+        "x": 953.8057589144427,
+        "y": -105.53179110138116
+      },
+      "data": {
+        "label": "rut",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Cliente_Empresa",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 0
+      },
+      "data": {
+        "label": "Cliente_Empresa",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Cliente_Empresa:razon_social",
+      "type": "attribute",
+      "position": {
+        "x": 1556.1942410855572,
+        "y": -105.53179110138122
+      },
+      "data": {
+        "label": "razon_social",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Proyecto",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 380
+      },
+      "data": {
+        "label": "Proyecto",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Proyecto:cod_proyecto",
+      "type": "attribute",
+      "position": {
+        "x": 566.8045689892065,
+        "y": 485.8600760842535
+      },
+      "data": {
+        "label": "cod_proyecto",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Proyecto:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 443.19543101079347,
+        "y": 485.8600760842535
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": 362
+      },
+      "data": {
+        "label": "trabaja_en",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": 362
+      },
+      "data": {
+        "label": "contrata",
+        "identifying": false
+      }
+    },
+    {
+      "id": "s:0",
+      "type": "spec",
+      "position": {
+        "x": 288,
+        "y": 530
+      },
+      "data": {
+        "label": "",
+        "disjoint": true,
+        "total": false
+      }
+    },
+    {
+      "id": "s:1",
+      "type": "spec",
+      "position": {
+        "x": 1288,
+        "y": 530
+      },
+      "data": {
+        "label": "",
+        "disjoint": true,
+        "total": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Empleado->a:e:Empleado:id_empleado#0",
+      "source": "e:Empleado",
+      "target": "a:e:Empleado:id_empleado",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Empleado->a:e:Empleado:nombre#0",
+      "source": "e:Empleado",
+      "target": "a:e:Empleado:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Consultor->a:e:Consultor:especialidad#0",
+      "source": "e:Consultor",
+      "target": "a:e:Consultor:especialidad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Administrativo->a:e:Administrativo:cargo#0",
+      "source": "e:Administrativo",
+      "target": "a:e:Administrativo:cargo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:id_cliente#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:id_cliente",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:nombre#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente_Personal->a:e:Cliente_Personal:rut#0",
+      "source": "e:Cliente_Personal",
+      "target": "a:e:Cliente_Personal:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente_Empresa->a:e:Cliente_Empresa:razon_social#0",
+      "source": "e:Cliente_Empresa",
+      "target": "a:e:Cliente_Empresa:razon_social",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proyecto->a:e:Proyecto:cod_proyecto#0",
+      "source": "e:Proyecto",
+      "target": "a:e:Proyecto:cod_proyecto",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proyecto->a:e:Proyecto:nombre#0",
+      "source": "e:Proyecto",
+      "target": "a:e:Proyecto:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Empleado->r:0#0",
+      "source": "e:Empleado",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Proyecto->r:0#0",
+      "source": "e:Proyecto",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Cliente->r:1#0",
+      "source": "e:Cliente",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Proyecto->r:1#0",
+      "source": "e:Proyecto",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Empleado->s:0#0",
+      "source": "e:Empleado",
+      "target": "s:0",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Consultor#0",
+      "source": "s:0",
+      "target": "e:Consultor",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Administrativo#0",
+      "source": "s:0",
+      "target": "e:Administrativo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->s:1#0",
+      "source": "e:Cliente",
+      "target": "s:1",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:1->e:Cliente_Personal#0",
+      "source": "s:1",
+      "target": "e:Cliente_Personal",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:1->e:Cliente_Empresa#0",
+      "source": "s:1",
+      "target": "e:Cliente_Empresa",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "numero": 11,
+  "slug": "s2-agencia-viajes",
+  "semana": 2,
+  "tipo": "ER",
+  "titulo": "Agencia de viajes",
+  "enunciado": [
+    "Una agencia de viajes desea informatizar la gestión de sus viajeros y de los viajes que estos realizan.",
+    "De los viajeros se guarda el rut (identificador), nombre, dirección y teléfono. De cada viaje: código de viaje (identificador), número de plazas, fecha y otros datos.",
+    "Un viajero puede realizar tantos viajes como desee con la agencia. Un viaje determinado solo puede ser cubierto por un viajero.",
+    "Cada viaje tiene un lugar de destino y un lugar de origen. De cada lugar se guarda el código (identificador), nombre y otros datos. Un viaje tiene un único destino y un único origen (ambos son lugares).",
+    "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Viajero",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "direccion"
+          },
+          {
+            "name": "telefono"
+          }
+        ]
+      },
+      {
+        "name": "Viaje",
+        "attrs": [
+          {
+            "name": "cod_viaje",
+            "key": true
+          },
+          {
+            "name": "numero_plazas"
+          },
+          {
+            "name": "fecha"
+          },
+          {
+            "name": "otros_datos"
+          }
+        ]
+      },
+      {
+        "name": "Lugar",
+        "attrs": [
+          {
+            "name": "cod_lugar",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "otros_datos"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "realiza",
+        "between": [
+          {
+            "entity": "Viajero",
+            "card": "1"
+          },
+          {
+            "entity": "Viaje",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "destino",
+        "between": [
+          {
+            "entity": "Lugar",
+            "card": "1"
+          },
+          {
+            "entity": "Viaje",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "origen",
+        "between": [
+          {
+            "entity": "Lugar",
+            "card": "1"
+          },
+          {
+            "entity": "Viaje",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "layout": [
+      [
+        "Viajero",
+        "Viaje",
+        "Lugar"
+      ]
+    ]
+  }
+}

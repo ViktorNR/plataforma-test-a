@@ -1,0 +1,136 @@
+{
+  "numero": 5,
+  "slug": "s2-instituto",
+  "semana": 2,
+  "tipo": "ER",
+  "titulo": "Instituto",
+  "enunciado": [
+    "Se desea diseñar la base de datos de un instituto. De los profesores se guarda el dni (identificador), nombre, dirección y teléfono. Los profesores imparten módulos, y cada módulo tiene un código (identificador) y un nombre.",
+    "Cada alumno está matriculado en uno o varios módulos. De cada alumno se guarda el n.º de expediente (identificador), nombre, apellidos y fecha de nacimiento. Los profesores pueden impartir varios módulos, pero un módulo solo puede ser impartido por un profesor.",
+    "Cada curso (identificado por un código) tiene un grupo de alumnos, y cada alumno pertenece a un curso. Uno de los alumnos del curso es el delegado del grupo (un alumno es delegado de, como máximo, un curso y cada curso tiene un delegado).",
+    "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Profesor",
+        "attrs": [
+          {
+            "name": "dni",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "direccion"
+          },
+          {
+            "name": "telefono"
+          }
+        ]
+      },
+      {
+        "name": "Modulo",
+        "attrs": [
+          {
+            "name": "cod_modulo",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      },
+      {
+        "name": "Alumno",
+        "attrs": [
+          {
+            "name": "n_expediente",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "apellidos"
+          },
+          {
+            "name": "fecha_nacimiento"
+          }
+        ]
+      },
+      {
+        "name": "Curso",
+        "attrs": [
+          {
+            "name": "cod_curso",
+            "key": true
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "imparte",
+        "between": [
+          {
+            "entity": "Profesor",
+            "card": "1"
+          },
+          {
+            "entity": "Modulo",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "matricula",
+        "between": [
+          {
+            "entity": "Alumno",
+            "card": "N"
+          },
+          {
+            "entity": "Modulo",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "tiene",
+        "between": [
+          {
+            "entity": "Curso",
+            "card": "1"
+          },
+          {
+            "entity": "Alumno",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "delegado",
+        "between": [
+          {
+            "entity": "Curso",
+            "card": "1"
+          },
+          {
+            "entity": "Alumno",
+            "card": "1"
+          }
+        ]
+      }
+    ],
+    "layout": [
+      [
+        "Profesor",
+        "Modulo",
+        "Alumno",
+        "Curso"
+      ]
+    ]
+  }
+}

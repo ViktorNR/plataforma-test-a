@@ -1,0 +1,380 @@
+{
+  "nodes": [
+    {
+      "id": "e:Viajero",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Viajero",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Viajero:rut",
+      "type": "attribute",
+      "position": {
+        "x": 53.808397169096025,
+        "y": 112.62545491711211
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Viajero:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -89.56129043280663,
+        "y": 76.879377039079
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Viajero:direccion",
+      "type": "attribute",
+      "position": {
+        "x": -89.56129043280667,
+        "y": -70.87937703907895
+      },
+      "data": {
+        "label": "direccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Viajero:telefono",
+      "type": "attribute",
+      "position": {
+        "x": 53.80839716909607,
+        "y": -106.6254549171121
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Viaje",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Viaje",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Viaje:cod_viaje",
+      "type": "attribute",
+      "position": {
+        "x": 338.75643989615673,
+        "y": -154.75924798308262
+      },
+      "data": {
+        "label": "cod_viaje",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Viaje:numero_plazas",
+      "type": "attribute",
+      "position": {
+        "x": 443.75347570714405,
+        "y": -217.84783191653142
+      },
+      "data": {
+        "label": "numero_plazas",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Viaje:fecha",
+      "type": "attribute",
+      "position": {
+        "x": 566.2465242928558,
+        "y": -217.84783191653145
+      },
+      "data": {
+        "label": "fecha",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Viaje:otros_datos",
+      "type": "attribute",
+      "position": {
+        "x": 671.2435601038433,
+        "y": -154.75924798308267
+      },
+      "data": {
+        "label": "otros_datos",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Lugar",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Lugar",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Lugar:cod_lugar",
+      "type": "attribute",
+      "position": {
+        "x": 972.7158353040204,
+        "y": -112.57565794700398
+      },
+      "data": {
+        "label": "cod_lugar",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Lugar:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1122.0084014666108,
+        "y": -23.627692093540958
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Lugar:otros_datos",
+      "type": "attribute",
+      "position": {
+        "x": 1025.9082589856905,
+        "y": 121.16448157626422
+      },
+      "data": {
+        "label": "otros_datos",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "realiza",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "destino",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:2",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": 102
+      },
+      "data": {
+        "label": "origen",
+        "identifying": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Viajero->a:e:Viajero:rut#0",
+      "source": "e:Viajero",
+      "target": "a:e:Viajero:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Viajero->a:e:Viajero:nombre#0",
+      "source": "e:Viajero",
+      "target": "a:e:Viajero:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Viajero->a:e:Viajero:direccion#0",
+      "source": "e:Viajero",
+      "target": "a:e:Viajero:direccion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Viajero->a:e:Viajero:telefono#0",
+      "source": "e:Viajero",
+      "target": "a:e:Viajero:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Viaje->a:e:Viaje:cod_viaje#0",
+      "source": "e:Viaje",
+      "target": "a:e:Viaje:cod_viaje",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Viaje->a:e:Viaje:numero_plazas#0",
+      "source": "e:Viaje",
+      "target": "a:e:Viaje:numero_plazas",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Viaje->a:e:Viaje:fecha#0",
+      "source": "e:Viaje",
+      "target": "a:e:Viaje:fecha",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Viaje->a:e:Viaje:otros_datos#0",
+      "source": "e:Viaje",
+      "target": "a:e:Viaje:otros_datos",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Lugar->a:e:Lugar:cod_lugar#0",
+      "source": "e:Lugar",
+      "target": "a:e:Lugar:cod_lugar",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Lugar->a:e:Lugar:nombre#0",
+      "source": "e:Lugar",
+      "target": "a:e:Lugar:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Lugar->a:e:Lugar:otros_datos#0",
+      "source": "e:Lugar",
+      "target": "a:e:Lugar:otros_datos",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Viajero->r:0#0",
+      "source": "e:Viajero",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Viaje->r:0#0",
+      "source": "e:Viaje",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Lugar->r:1#0",
+      "source": "e:Lugar",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Viaje->r:1#0",
+      "source": "e:Viaje",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Lugar->r:2#0",
+      "source": "e:Lugar",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Viaje->r:2#0",
+      "source": "e:Viaje",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    }
+  ]
+}

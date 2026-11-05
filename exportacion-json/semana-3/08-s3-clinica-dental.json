@@ -1,0 +1,145 @@
+{
+  "numero": 8,
+  "slug": "s3-clinica-dental",
+  "semana": 3,
+  "tipo": "EER",
+  "titulo": "Clínica dental",
+  "enunciado": [
+    "Una clínica dental necesita un sistema para gestionar sus pacientes y tratamientos. Cada paciente es identificado por un rut y se registra su nombre y fecha de nacimiento. Un paciente puede tener múltiples alergias registradas.",
+    "Cada paciente tiene asignada una única ficha dental, identificada por un número de folio, que contiene el historial. De cada ficha se desglosan los tratamientos realizados. Un tratamiento, que se identifica por un código único dentro de cada ficha, no puede existir sin ella (entidad débil). De cada tratamiento se anota la descripción y el costo.",
+    "Un odontólogo, con un ID único (y su nombre), puede realizar muchos tratamientos, y un tratamiento es realizado por un único odontólogo.",
+    "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Paciente",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "fecha_nacimiento"
+          },
+          {
+            "name": "alergias",
+            "multi": true
+          }
+        ]
+      },
+      {
+        "name": "Ficha_Dental",
+        "aliases": [
+          "Ficha dental",
+          "Ficha"
+        ],
+        "attrs": [
+          {
+            "name": "numero_folio",
+            "key": true,
+            "aliases": [
+              "folio"
+            ]
+          },
+          {
+            "name": "historial"
+          }
+        ]
+      },
+      {
+        "name": "Tratamiento",
+        "weak": true,
+        "attrs": [
+          {
+            "name": "codigo_tratamiento",
+            "partialKey": true,
+            "aliases": [
+              "codigo"
+            ]
+          },
+          {
+            "name": "descripcion"
+          },
+          {
+            "name": "costo"
+          }
+        ]
+      },
+      {
+        "name": "Odontologo",
+        "aliases": [
+          "Odontólogo"
+        ],
+        "attrs": [
+          {
+            "name": "id_odontologo",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          },
+          {
+            "name": "nombre_odontologo",
+            "aliases": [
+              "nombre"
+            ]
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "tiene",
+        "between": [
+          {
+            "entity": "Paciente",
+            "card": "1"
+          },
+          {
+            "entity": "Ficha_Dental",
+            "card": "1"
+          }
+        ]
+      },
+      {
+        "name": "contiene",
+        "identifying": true,
+        "between": [
+          {
+            "entity": "Ficha_Dental",
+            "card": "1"
+          },
+          {
+            "entity": "Tratamiento",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "realiza",
+        "between": [
+          {
+            "entity": "Odontologo",
+            "card": "1"
+          },
+          {
+            "entity": "Tratamiento",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "layout": [
+      [
+        "Paciente",
+        "Ficha_Dental",
+        "Tratamiento",
+        "Odontologo"
+      ]
+    ]
+  }
+}

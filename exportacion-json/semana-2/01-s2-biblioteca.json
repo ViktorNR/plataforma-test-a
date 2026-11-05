@@ -1,0 +1,123 @@
+{
+  "numero": 1,
+  "slug": "s2-biblioteca",
+  "semana": 2,
+  "tipo": "ER",
+  "titulo": "Biblioteca universitaria",
+  "enunciado": [
+    "Una biblioteca desea registrar a sus socios, los libros y los autores.",
+    "De cada socio se guarda su rut (identificador), nombre y email. De cada libro: isbn (identificador), título y año de publicación. De cada autor: id_autor (identificador), nombre y nacionalidad.",
+    "Un socio puede pedir prestados muchos libros (o ninguno todavía) y un libro puede ser prestado por muchos socios (o por ninguno); de cada préstamo interesa la fecha_prestamo. Un autor escribe al menos un libro (y puede escribir muchos) y todo libro tiene al menos un autor (y puede tener varios).",
+    "Dibuja el modelo Entidad-Relación. Indica la cardinalidad (mín,máx) en cada extremo de las relaciones con la notación «look across» de erdplus: el valor junto a una entidad indica con cuántas ocurrencias de ESA entidad se asocia UNA ocurrencia de la otra. Ejemplo: si todo libro tiene al menos un autor (y puede tener varios), junto a «Autor» va (1,M)."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Socio",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true,
+            "aliases": [
+              "id_socio",
+              "run"
+            ]
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "email",
+            "aliases": [
+              "correo",
+              "correo_electronico"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Libro",
+        "attrs": [
+          {
+            "name": "isbn",
+            "key": true
+          },
+          {
+            "name": "titulo"
+          },
+          {
+            "name": "anio_publicacion",
+            "aliases": [
+              "anio",
+              "año",
+              "ano_publicacion",
+              "anio_de_publicacion",
+              "año_publicacion",
+              "año_de_publicacion"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Autor",
+        "attrs": [
+          {
+            "name": "id_autor",
+            "key": true,
+            "aliases": [
+              "id",
+              "codigo_autor"
+            ]
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "nacionalidad"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "presta",
+        "between": [
+          {
+            "entity": "Socio",
+            "card": "N",
+            "min": 0
+          },
+          {
+            "entity": "Libro",
+            "card": "N",
+            "min": 0
+          }
+        ],
+        "attrs": [
+          {
+            "name": "fecha_prestamo",
+            "aliases": [
+              "fecha",
+              "fecha_de_prestamo"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "escribe",
+        "between": [
+          {
+            "entity": "Autor",
+            "card": "N",
+            "min": 1
+          },
+          {
+            "entity": "Libro",
+            "card": "N",
+            "min": 1
+          }
+        ]
+      }
+    ]
+  }
+}

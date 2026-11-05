@@ -1,0 +1,298 @@
+{
+  "nodes": [
+    {
+      "id": "e:Persona",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Persona",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Persona:rut",
+      "type": "attribute",
+      "position": {
+        "x": 5.049010643774615,
+        "y": 122.99998999148625
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Persona:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -112.66968108291042,
+        "y": -20.533936216582084
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Persona:email",
+      "type": "attribute",
+      "position": {
+        "x": 51.19908289867138,
+        "y": -107.75037128299702
+      },
+      "data": {
+        "label": "email",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Estudiante",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Estudiante",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Estudiante:carrera",
+      "type": "attribute",
+      "position": {
+        "x": 411.4988881113902,
+        "y": -72.2166343011549
+      },
+      "data": {
+        "label": "carrera",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Estudiante:anio_ingreso",
+      "type": "attribute",
+      "position": {
+        "x": 589.7255170852281,
+        "y": -81.97991971425193
+      },
+      "data": {
+        "label": "anio_ingreso",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Funcionario",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Funcionario",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Funcionario:cargo",
+      "type": "attribute",
+      "position": {
+        "x": 1107.8991510855053,
+        "y": -58.73949065130311
+      },
+      "data": {
+        "label": "cargo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Curso",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 380
+      },
+      "data": {
+        "label": "Curso",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Curso:cod_curso",
+      "type": "attribute",
+      "position": {
+        "x": 52.34007695862505,
+        "y": 493.26747985490306
+      },
+      "data": {
+        "label": "cod_curso",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Curso:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -88.56625308831748,
+        "y": 307.8644140036632
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": 172
+      },
+      "data": {
+        "label": "cursa",
+        "identifying": false
+      }
+    },
+    {
+      "id": "s:0",
+      "type": "spec",
+      "position": {
+        "x": 788,
+        "y": 150
+      },
+      "data": {
+        "label": "",
+        "disjoint": false,
+        "total": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Persona->a:e:Persona:rut#0",
+      "source": "e:Persona",
+      "target": "a:e:Persona:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Persona->a:e:Persona:nombre#0",
+      "source": "e:Persona",
+      "target": "a:e:Persona:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Persona->a:e:Persona:email#0",
+      "source": "e:Persona",
+      "target": "a:e:Persona:email",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Estudiante->a:e:Estudiante:carrera#0",
+      "source": "e:Estudiante",
+      "target": "a:e:Estudiante:carrera",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Estudiante->a:e:Estudiante:anio_ingreso#0",
+      "source": "e:Estudiante",
+      "target": "a:e:Estudiante:anio_ingreso",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Funcionario->a:e:Funcionario:cargo#0",
+      "source": "e:Funcionario",
+      "target": "a:e:Funcionario:cargo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Curso->a:e:Curso:cod_curso#0",
+      "source": "e:Curso",
+      "target": "a:e:Curso:cod_curso",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Curso->a:e:Curso:nombre#0",
+      "source": "e:Curso",
+      "target": "a:e:Curso:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Estudiante->r:0#0",
+      "source": "e:Estudiante",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "min": "0",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Curso->r:0#0",
+      "source": "e:Curso",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "min": "0",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Persona->s:0#0",
+      "source": "e:Persona",
+      "target": "s:0",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Estudiante#0",
+      "source": "s:0",
+      "target": "e:Estudiante",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Funcionario#0",
+      "source": "s:0",
+      "target": "e:Funcionario",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

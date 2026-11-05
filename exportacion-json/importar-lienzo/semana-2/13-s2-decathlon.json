@@ -1,0 +1,964 @@
+{
+  "nodes": [
+    {
+      "id": "e:Sucursal",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Sucursal",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Sucursal:num_sucursal",
+      "type": "attribute",
+      "position": {
+        "x": 338.75643989615673,
+        "y": -154.75924798308262
+      },
+      "data": {
+        "label": "num_sucursal",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Sucursal:domicilio",
+      "type": "attribute",
+      "position": {
+        "x": 443.75347570714405,
+        "y": -217.84783191653142
+      },
+      "data": {
+        "label": "domicilio",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Sucursal:ciudad",
+      "type": "attribute",
+      "position": {
+        "x": 566.2465242928558,
+        "y": -217.84783191653145
+      },
+      "data": {
+        "label": "ciudad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Sucursal:descuento",
+      "type": "attribute",
+      "position": {
+        "x": 671.2435601038433,
+        "y": -154.75924798308267
+      },
+      "data": {
+        "label": "descuento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Empleado",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Empleado",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Empleado:rut",
+      "type": "attribute",
+      "position": {
+        "x": 53.808397169096025,
+        "y": 112.62545491711211
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Empleado:nombre_completo",
+      "type": "attribute",
+      "position": {
+        "x": -89.56129043280663,
+        "y": 76.879377039079
+      },
+      "data": {
+        "label": "nombre_completo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Empleado:domicilio",
+      "type": "attribute",
+      "position": {
+        "x": -89.56129043280667,
+        "y": -70.87937703907895
+      },
+      "data": {
+        "label": "domicilio",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Empleado:domicilio:calle",
+      "type": "attribute",
+      "position": {
+        "x": -136.68520435385517,
+        "y": 22.952050194879362
+      },
+      "data": {
+        "label": "calle",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Empleado:domicilio:numero",
+      "type": "attribute",
+      "position": {
+        "x": -172.30241956151252,
+        "y": -135.52383194827303
+      },
+      "data": {
+        "label": "numero",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Empleado:domicilio:ciudad",
+      "type": "attribute",
+      "position": {
+        "x": -9.917364181175387,
+        "y": -139.3033860653317
+      },
+      "data": {
+        "label": "ciudad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Empleado:telefono",
+      "type": "attribute",
+      "position": {
+        "x": 53.80839716909607,
+        "y": -106.6254549171121
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": true,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Producto",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Producto",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Producto:codigo",
+      "type": "attribute",
+      "position": {
+        "x": 1171.2435601038433,
+        "y": 160.75924798308264
+      },
+      "data": {
+        "label": "codigo",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Producto:descripcion",
+      "type": "attribute",
+      "position": {
+        "x": 1066.2465242928558,
+        "y": 223.84783191653142
+      },
+      "data": {
+        "label": "descripcion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Producto:color",
+      "type": "attribute",
+      "position": {
+        "x": 943.753475707144,
+        "y": 223.84783191653142
+      },
+      "data": {
+        "label": "color",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Producto:costo_fijo",
+      "type": "attribute",
+      "position": {
+        "x": 838.7564398961567,
+        "y": 160.75924798308264
+      },
+      "data": {
+        "label": "costo_fijo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Fabrica",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 0
+      },
+      "data": {
+        "label": "Fabrica",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Fabrica:cuit",
+      "type": "attribute",
+      "position": {
+        "x": 1442.1216912835905,
+        "y": -99.20723209716573
+      },
+      "data": {
+        "label": "cuit",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Fabrica:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1563.543159096648,
+        "y": -101.75064927237716
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Fabrica:pais_origen",
+      "type": "attribute",
+      "position": {
+        "x": 1625,
+        "y": 2.9999999999999716
+      },
+      "data": {
+        "label": "pais_origen",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Fabrica:cantidad_empleados",
+      "type": "attribute",
+      "position": {
+        "x": 1563.543159096648,
+        "y": 107.75064927237713
+      },
+      "data": {
+        "label": "cantidad_empleados",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Fabrica:gerente",
+      "type": "attribute",
+      "position": {
+        "x": 1442.1216912835905,
+        "y": 105.20723209716566
+      },
+      "data": {
+        "label": "gerente",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Cliente",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 380
+      },
+      "data": {
+        "label": "Cliente",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:cod_cliente",
+      "type": "attribute",
+      "position": {
+        "x": 643.7897728667698,
+        "y": 525.8868826589835
+      },
+      "data": {
+        "label": "cod_cliente",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:rut",
+      "type": "attribute",
+      "position": {
+        "x": 534.4431235511696,
+        "y": 580.0085398249585
+      },
+      "data": {
+        "label": "rut",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 414.05076159400335,
+        "y": 560.2216079426571
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:fecha_nacimiento",
+      "type": "attribute",
+      "position": {
+        "x": 327.778392057343,
+        "y": 473.94923840599677
+      },
+      "data": {
+        "label": "fecha_nacimiento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:ciudad",
+      "type": "attribute",
+      "position": {
+        "x": 307.99146017504154,
+        "y": 353.55687644883045
+      },
+      "data": {
+        "label": "ciudad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:edad",
+      "type": "attribute",
+      "position": {
+        "x": 362.11311734101645,
+        "y": 244.21022713323026
+      },
+      "data": {
+        "label": "edad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": true
+      }
+    },
+    {
+      "id": "e:Tarjeta",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 380
+      },
+      "data": {
+        "label": "Tarjeta",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Tarjeta:numero",
+      "type": "attribute",
+      "position": {
+        "x": 956.191602830904,
+        "y": 273.3745450828879
+      },
+      "data": {
+        "label": "numero",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Tarjeta:nombre_tarjeta",
+      "type": "attribute",
+      "position": {
+        "x": 1099.5612904328066,
+        "y": 309.12062296092097
+      },
+      "data": {
+        "label": "nombre_tarjeta",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Tarjeta:codigo_seguridad",
+      "type": "attribute",
+      "position": {
+        "x": 1099.5612904328066,
+        "y": 456.87937703907903
+      },
+      "data": {
+        "label": "codigo_seguridad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Tarjeta:fecha_vencimiento",
+      "type": "attribute",
+      "position": {
+        "x": 956.191602830904,
+        "y": 492.6254549171121
+      },
+      "data": {
+        "label": "fecha_vencimiento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "trabaja",
+        "identifying": false
+      }
+    },
+    {
+      "id": "a:r:0:dia",
+      "type": "attribute",
+      "position": {
+        "x": 314.0190159617777,
+        "y": 101.22413733370432
+      },
+      "data": {
+        "label": "dia",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:r:0:horario",
+      "type": "attribute",
+      "position": {
+        "x": 195.98098403822232,
+        "y": 101.22413733370432
+      },
+      "data": {
+        "label": "horario",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "vende",
+        "identifying": false
+      }
+    },
+    {
+      "id": "a:r:1:precio_venta",
+      "type": "attribute",
+      "position": {
+        "x": 755,
+        "y": 103
+      },
+      "data": {
+        "label": "precio_venta",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:2",
+      "type": "relationship",
+      "position": {
+        "x": 1240,
+        "y": -18
+      },
+      "data": {
+        "label": "fabrica",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:3",
+      "type": "relationship",
+      "position": {
+        "x": 490,
+        "y": 172
+      },
+      "data": {
+        "label": "compra",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:4",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": 362
+      },
+      "data": {
+        "label": "utiliza",
+        "identifying": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Sucursal->a:e:Sucursal:num_sucursal#0",
+      "source": "e:Sucursal",
+      "target": "a:e:Sucursal:num_sucursal",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Sucursal->a:e:Sucursal:domicilio#0",
+      "source": "e:Sucursal",
+      "target": "a:e:Sucursal:domicilio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Sucursal->a:e:Sucursal:ciudad#0",
+      "source": "e:Sucursal",
+      "target": "a:e:Sucursal:ciudad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Sucursal->a:e:Sucursal:descuento#0",
+      "source": "e:Sucursal",
+      "target": "a:e:Sucursal:descuento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Empleado->a:e:Empleado:rut#0",
+      "source": "e:Empleado",
+      "target": "a:e:Empleado:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Empleado->a:e:Empleado:nombre_completo#0",
+      "source": "e:Empleado",
+      "target": "a:e:Empleado:nombre_completo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Empleado->a:e:Empleado:domicilio#0",
+      "source": "e:Empleado",
+      "target": "a:e:Empleado:domicilio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Empleado:domicilio->a:a:e:Empleado:domicilio:calle#0",
+      "source": "a:e:Empleado:domicilio",
+      "target": "a:a:e:Empleado:domicilio:calle",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Empleado:domicilio->a:a:e:Empleado:domicilio:numero#0",
+      "source": "a:e:Empleado:domicilio",
+      "target": "a:a:e:Empleado:domicilio:numero",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Empleado:domicilio->a:a:e:Empleado:domicilio:ciudad#0",
+      "source": "a:e:Empleado:domicilio",
+      "target": "a:a:e:Empleado:domicilio:ciudad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Empleado->a:e:Empleado:telefono#0",
+      "source": "e:Empleado",
+      "target": "a:e:Empleado:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Producto->a:e:Producto:codigo#0",
+      "source": "e:Producto",
+      "target": "a:e:Producto:codigo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Producto->a:e:Producto:descripcion#0",
+      "source": "e:Producto",
+      "target": "a:e:Producto:descripcion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Producto->a:e:Producto:color#0",
+      "source": "e:Producto",
+      "target": "a:e:Producto:color",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Producto->a:e:Producto:costo_fijo#0",
+      "source": "e:Producto",
+      "target": "a:e:Producto:costo_fijo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Fabrica->a:e:Fabrica:cuit#0",
+      "source": "e:Fabrica",
+      "target": "a:e:Fabrica:cuit",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Fabrica->a:e:Fabrica:nombre#0",
+      "source": "e:Fabrica",
+      "target": "a:e:Fabrica:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Fabrica->a:e:Fabrica:pais_origen#0",
+      "source": "e:Fabrica",
+      "target": "a:e:Fabrica:pais_origen",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Fabrica->a:e:Fabrica:cantidad_empleados#0",
+      "source": "e:Fabrica",
+      "target": "a:e:Fabrica:cantidad_empleados",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Fabrica->a:e:Fabrica:gerente#0",
+      "source": "e:Fabrica",
+      "target": "a:e:Fabrica:gerente",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:cod_cliente#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:cod_cliente",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:rut#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:nombre#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:fecha_nacimiento#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:fecha_nacimiento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:ciudad#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:ciudad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:edad#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:edad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Tarjeta->a:e:Tarjeta:numero#0",
+      "source": "e:Tarjeta",
+      "target": "a:e:Tarjeta:numero",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Tarjeta->a:e:Tarjeta:nombre_tarjeta#0",
+      "source": "e:Tarjeta",
+      "target": "a:e:Tarjeta:nombre_tarjeta",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Tarjeta->a:e:Tarjeta:codigo_seguridad#0",
+      "source": "e:Tarjeta",
+      "target": "a:e:Tarjeta:codigo_seguridad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Tarjeta->a:e:Tarjeta:fecha_vencimiento#0",
+      "source": "e:Tarjeta",
+      "target": "a:e:Tarjeta:fecha_vencimiento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Empleado->r:0#0",
+      "source": "e:Empleado",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Sucursal->r:0#0",
+      "source": "e:Sucursal",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "r:0->a:r:0:dia#0",
+      "source": "r:0",
+      "target": "a:r:0:dia",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "r:0->a:r:0:horario#0",
+      "source": "r:0",
+      "target": "a:r:0:horario",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Sucursal->r:1#0",
+      "source": "e:Sucursal",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Producto->r:1#0",
+      "source": "e:Producto",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "r:1->a:r:1:precio_venta#0",
+      "source": "r:1",
+      "target": "a:r:1:precio_venta",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Fabrica->r:2#0",
+      "source": "e:Fabrica",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Producto->r:2#0",
+      "source": "e:Producto",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Sucursal->r:3#0",
+      "source": "e:Sucursal",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Cliente->r:3#0",
+      "source": "e:Cliente",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Cliente->r:4#0",
+      "source": "e:Cliente",
+      "target": "r:4",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Tarjeta->r:4#0",
+      "source": "e:Tarjeta",
+      "target": "r:4",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    }
+  ]
+}

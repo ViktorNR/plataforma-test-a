@@ -1,0 +1,65 @@
+name: plataforma-bd
+
+services:
+  web:
+    build: .
+    container_name: bdplat-web
+    restart: unless-stopped
+    ports:
+      - "${WEB_PORT:-8300}:3000"
+    environment:
+      DATABASE_URL: postgresql://bdplat:${POSTGRES_PASSWORD}@db:5432/bdplat
+      AUTH_SECRET: ${AUTH_SECRET}
+      ADMIN_EMAIL: ${ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      SANDBOX_MYSQL_HOST: sandbox
+      SANDBOX_MYSQL_PORT: "3306"
+      SANDBOX_MYSQL_USER: sandbox
+      SANDBOX_MYSQL_PASSWORD: ${SANDBOX_MYSQL_PASSWORD}
+      SANDBOX_MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    depends_on:
+      db:
+        condition: service_healthy
+      sandbox:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    container_name: bdplat-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: bdplat
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: bdplat
+    volumes:
+      - bdplat_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bdplat -d bdplat"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  # MySQL aislado donde se ejecutan los scripts DDL de los estudiantes.
+  sandbox:
+    image: mysql:8.4
+    container_name: bdplat-sandbox
+    restart: unless-stopped
+    # Permite que los estudiantes (sin SUPER) creen funciones y triggers en el laboratorio.
+    # lower-case-table-names=1: nombres de tablas y bases sin distinguir mayúsculas (igual que MySQL en Windows,
+    # donde se escribieron los scripts de clase). Solo se puede fijar al crear el volumen de datos.
+    command: ["--log-bin-trust-function-creators=1", "--lower-case-table-names=1"]
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      SANDBOX_MYSQL_PASSWORD: ${SANDBOX_MYSQL_PASSWORD}
+    volumes:
+      - ./docker/mysql-init:/docker-entrypoint-initdb.d:ro
+      - bdplat_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+volumes:
+  bdplat_pg:
+  bdplat_mysql:

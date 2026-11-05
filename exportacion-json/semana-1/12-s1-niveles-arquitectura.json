@@ -1,0 +1,75 @@
+{
+  "numero": 12,
+  "slug": "s1-niveles-arquitectura",
+  "semana": 1,
+  "tipo": "QUIZ",
+  "titulo": "Niveles de la arquitectura de una BD",
+  "enunciado": [
+    "Nivel externo, conceptual e interno."
+  ],
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "El nivel externo describe…",
+      "alternativas": [
+        "la estructura física de almacenamiento",
+        "la parte de la base de datos visible para cada grupo de usuarios (vistas)",
+        "la estructura completa de la base de datos",
+        "la red"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "la parte de la base de datos visible para cada grupo de usuarios (vistas)",
+      "explicacion": "Presenta solo la información relevante a cada grupo de usuarios y oculta el resto."
+    },
+    {
+      "id": "q2",
+      "pregunta": "El nivel conceptual se centra en…",
+      "alternativas": [
+        "rutas de acceso físicas",
+        "entidades, atributos, relaciones, operaciones y restricciones",
+        "pantallas de usuario",
+        "el sistema operativo"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "entidades, atributos, relaciones, operaciones y restricciones",
+      "explicacion": "Describe la estructura completa de la base de datos mediante un modelo conceptual o lógico."
+    },
+    {
+      "id": "q3",
+      "pregunta": "El nivel interno describe…",
+      "alternativas": [
+        "las vistas de usuario",
+        "el esquema lógico",
+        "la estructura física: almacenamiento, rutas y métodos de acceso",
+        "los permisos"
+      ],
+      "respuestaCorrecta": 2,
+      "respuestaCorrectaTexto": "la estructura física: almacenamiento, rutas y métodos de acceso",
+      "explicacion": "Se especifica mediante un modelo físico."
+    },
+    {
+      "id": "q4",
+      "pregunta": "Una factura, boleta o informe que ve un usuario corresponde al esquema…",
+      "alternativas": [
+        "externo",
+        "conceptual",
+        "interno",
+        "físico del disco"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "externo",
+      "explicacion": "Las vistas de usuario (facturas, boletas, informes) son esquemas externos."
+    },
+    {
+      "id": "q5",
+      "pregunta": "Verdadero o falso: puede haber varios esquemas externos para una misma base de datos.",
+      "alternativas": [
+        "Verdadero",
+        "Falso"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "Verdadero",
+      "explicacion": "Cada grupo de usuarios puede tener su propia vista."
+    }
+  ]
+}

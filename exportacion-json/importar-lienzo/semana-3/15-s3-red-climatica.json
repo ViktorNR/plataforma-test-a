@@ -1,0 +1,772 @@
+{
+  "nodes": [
+    {
+      "id": "e:Persona",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 760
+      },
+      "data": {
+        "label": "Persona",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Persona:orcid",
+      "type": "attribute",
+      "position": {
+        "x": 398.4971080069217,
+        "y": 707.7086444630746
+      },
+      "data": {
+        "label": "orcid",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Persona:nombre_completo",
+      "type": "attribute",
+      "position": {
+        "x": 501.30658034532405,
+        "y": 643.056852420597
+      },
+      "data": {
+        "label": "nombre_completo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Persona:nombre_completo:nombre_pila",
+      "type": "attribute",
+      "position": {
+        "x": 398.69196809089516,
+        "y": 620.8028336403136
+      },
+      "data": {
+        "label": "nombre_pila",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Persona:nombre_completo:apellidos",
+      "type": "attribute",
+      "position": {
+        "x": 602.3575342025705,
+        "y": 614.5313423543307
+      },
+      "data": {
+        "label": "apellidos",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Persona:correos",
+      "type": "attribute",
+      "position": {
+        "x": 607.8991510855053,
+        "y": 701.2605093486969
+      },
+      "data": {
+        "label": "correos",
+        "key": false,
+        "partialKey": false,
+        "multi": true,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Persona:anio_nacimiento",
+      "type": "attribute",
+      "position": {
+        "x": 609.0941092031551,
+        "y": 822.7027338503156
+      },
+      "data": {
+        "label": "anio_nacimiento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Persona:edad",
+      "type": "attribute",
+      "position": {
+        "x": 503.6674821828973,
+        "y": 882.992601423034
+      },
+      "data": {
+        "label": "edad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": true
+      }
+    },
+    {
+      "id": "e:Investigador",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 380
+      },
+      "data": {
+        "label": "Investigador",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Investigador:campo_estudio",
+      "type": "attribute",
+      "position": {
+        "x": 472.96797017250265,
+        "y": 267.3542086147087
+      },
+      "data": {
+        "label": "campo_estudio",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Tecnico_Laboratorio",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 1140
+      },
+      "data": {
+        "label": "Tecnico_Laboratorio",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Tecnico_Laboratorio:certificacion",
+      "type": "attribute",
+      "position": {
+        "x": -106.79759963740355,
+        "y": 1186.6038612431837
+      },
+      "data": {
+        "label": "certificacion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Jefe_Departamento",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Jefe_Departamento",
+        "weak": false
+      }
+    },
+    {
+      "id": "e:Editor_Revista",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Editor_Revista",
+        "weak": false
+      }
+    },
+    {
+      "id": "e:Estacion",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 1140
+      },
+      "data": {
+        "label": "Estacion",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Estacion:codigo_estacion",
+      "type": "attribute",
+      "position": {
+        "x": 1066.8045689892065,
+        "y": 1245.8600760842535
+      },
+      "data": {
+        "label": "codigo_estacion",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Estacion:ubicacion",
+      "type": "attribute",
+      "position": {
+        "x": 943.1954310107935,
+        "y": 1245.8600760842535
+      },
+      "data": {
+        "label": "ubicacion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Estacion:ubicacion:latitud",
+      "type": "attribute",
+      "position": {
+        "x": 1017.441643035381,
+        "y": 1320.106288108841
+      },
+      "data": {
+        "label": "latitud",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Estacion:ubicacion:longitud",
+      "type": "attribute",
+      "position": {
+        "x": 842.7834316346748,
+        "y": 1215.161047088366
+      },
+      "data": {
+        "label": "longitud",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Registro",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 1140
+      },
+      "data": {
+        "label": "Registro",
+        "weak": true
+      }
+    },
+    {
+      "id": "a:e:Registro:fecha_hora",
+      "type": "attribute",
+      "position": {
+        "x": 1481.4180068560604,
+        "y": 1025.3399405092825
+      },
+      "data": {
+        "label": "fecha_hora",
+        "key": false,
+        "partialKey": true,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Registro:temperatura",
+      "type": "attribute",
+      "position": {
+        "x": 1625,
+        "y": 1143
+      },
+      "data": {
+        "label": "temperatura",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Registro:humedad",
+      "type": "attribute",
+      "position": {
+        "x": 1481.4180068560604,
+        "y": 1260.6600594907175
+      },
+      "data": {
+        "label": "humedad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Publicacion",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 380
+      },
+      "data": {
+        "label": "Publicacion",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Publicacion:doi",
+      "type": "attribute",
+      "position": {
+        "x": 1066.8045689892065,
+        "y": 485.8600760842535
+      },
+      "data": {
+        "label": "doi",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Publicacion:titulo",
+      "type": "attribute",
+      "position": {
+        "x": 943.1954310107935,
+        "y": 485.8600760842535
+      },
+      "data": {
+        "label": "titulo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Proyecto",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 380
+      },
+      "data": {
+        "label": "Proyecto",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Proyecto:id_proyecto",
+      "type": "attribute",
+      "position": {
+        "x": 1534.03062747196,
+        "y": 266.5645128468804
+      },
+      "data": {
+        "label": "id_proyecto",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Proyecto:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1534.0306274719603,
+        "y": 499.43548715311954
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 490,
+        "y": 1122
+      },
+      "data": {
+        "label": "opera",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 1240,
+        "y": 1122
+      },
+      "data": {
+        "label": "genera",
+        "identifying": true
+      }
+    },
+    {
+      "id": "r:2",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": 362
+      },
+      "data": {
+        "label": "escribe",
+        "identifying": false
+      }
+    },
+    {
+      "id": "a:r:2:orden_autor",
+      "type": "attribute",
+      "position": {
+        "x": 755,
+        "y": 483
+      },
+      "data": {
+        "label": "orden_autor",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:3",
+      "type": "relationship",
+      "position": {
+        "x": 1240,
+        "y": 362
+      },
+      "data": {
+        "label": "financia",
+        "identifying": false
+      }
+    },
+    {
+      "id": "s:0",
+      "type": "spec",
+      "position": {
+        "x": 288,
+        "y": 910
+      },
+      "data": {
+        "label": "",
+        "disjoint": true,
+        "total": true
+      }
+    },
+    {
+      "id": "s:1",
+      "type": "spec",
+      "position": {
+        "x": 288,
+        "y": 530
+      },
+      "data": {
+        "label": "",
+        "disjoint": false,
+        "total": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Persona->a:e:Persona:orcid#0",
+      "source": "e:Persona",
+      "target": "a:e:Persona:orcid",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Persona->a:e:Persona:nombre_completo#0",
+      "source": "e:Persona",
+      "target": "a:e:Persona:nombre_completo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Persona:nombre_completo->a:a:e:Persona:nombre_completo:nombre_pila#0",
+      "source": "a:e:Persona:nombre_completo",
+      "target": "a:a:e:Persona:nombre_completo:nombre_pila",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Persona:nombre_completo->a:a:e:Persona:nombre_completo:apellidos#0",
+      "source": "a:e:Persona:nombre_completo",
+      "target": "a:a:e:Persona:nombre_completo:apellidos",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Persona->a:e:Persona:correos#0",
+      "source": "e:Persona",
+      "target": "a:e:Persona:correos",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Persona->a:e:Persona:anio_nacimiento#0",
+      "source": "e:Persona",
+      "target": "a:e:Persona:anio_nacimiento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Persona->a:e:Persona:edad#0",
+      "source": "e:Persona",
+      "target": "a:e:Persona:edad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Investigador->a:e:Investigador:campo_estudio#0",
+      "source": "e:Investigador",
+      "target": "a:e:Investigador:campo_estudio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Tecnico_Laboratorio->a:e:Tecnico_Laboratorio:certificacion#0",
+      "source": "e:Tecnico_Laboratorio",
+      "target": "a:e:Tecnico_Laboratorio:certificacion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Estacion->a:e:Estacion:codigo_estacion#0",
+      "source": "e:Estacion",
+      "target": "a:e:Estacion:codigo_estacion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Estacion->a:e:Estacion:ubicacion#0",
+      "source": "e:Estacion",
+      "target": "a:e:Estacion:ubicacion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Estacion:ubicacion->a:a:e:Estacion:ubicacion:latitud#0",
+      "source": "a:e:Estacion:ubicacion",
+      "target": "a:a:e:Estacion:ubicacion:latitud",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Estacion:ubicacion->a:a:e:Estacion:ubicacion:longitud#0",
+      "source": "a:e:Estacion:ubicacion",
+      "target": "a:a:e:Estacion:ubicacion:longitud",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Registro->a:e:Registro:fecha_hora#0",
+      "source": "e:Registro",
+      "target": "a:e:Registro:fecha_hora",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Registro->a:e:Registro:temperatura#0",
+      "source": "e:Registro",
+      "target": "a:e:Registro:temperatura",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Registro->a:e:Registro:humedad#0",
+      "source": "e:Registro",
+      "target": "a:e:Registro:humedad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Publicacion->a:e:Publicacion:doi#0",
+      "source": "e:Publicacion",
+      "target": "a:e:Publicacion:doi",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Publicacion->a:e:Publicacion:titulo#0",
+      "source": "e:Publicacion",
+      "target": "a:e:Publicacion:titulo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proyecto->a:e:Proyecto:id_proyecto#0",
+      "source": "e:Proyecto",
+      "target": "a:e:Proyecto:id_proyecto",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proyecto->a:e:Proyecto:nombre#0",
+      "source": "e:Proyecto",
+      "target": "a:e:Proyecto:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Tecnico_Laboratorio->r:0#0",
+      "source": "e:Tecnico_Laboratorio",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Estacion->r:0#0",
+      "source": "e:Estacion",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Estacion->r:1#0",
+      "source": "e:Estacion",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Registro->r:1#0",
+      "source": "e:Registro",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Investigador->r:2#0",
+      "source": "e:Investigador",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Publicacion->r:2#0",
+      "source": "e:Publicacion",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "r:2->a:r:2:orden_autor#0",
+      "source": "r:2",
+      "target": "a:r:2:orden_autor",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proyecto->r:3#0",
+      "source": "e:Proyecto",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Publicacion->r:3#0",
+      "source": "e:Publicacion",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Persona->s:0#0",
+      "source": "e:Persona",
+      "target": "s:0",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Investigador#0",
+      "source": "s:0",
+      "target": "e:Investigador",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Tecnico_Laboratorio#0",
+      "source": "s:0",
+      "target": "e:Tecnico_Laboratorio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Investigador->s:1#0",
+      "source": "e:Investigador",
+      "target": "s:1",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:1->e:Jefe_Departamento#0",
+      "source": "s:1",
+      "target": "e:Jefe_Departamento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:1->e:Editor_Revista#0",
+      "source": "s:1",
+      "target": "e:Editor_Revista",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

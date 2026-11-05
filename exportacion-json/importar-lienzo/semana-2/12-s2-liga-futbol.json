@@ -1,0 +1,742 @@
+{
+  "nodes": [
+    {
+      "id": "e:Jugador",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 380
+      },
+      "data": {
+        "label": "Jugador",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Jugador:cod_jugador",
+      "type": "attribute",
+      "position": {
+        "x": 602.235548281748,
+        "y": 455.06629607876636
+      },
+      "data": {
+        "label": "cod_jugador",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Jugador:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 493.9344713711754,
+        "y": 503.5232631334268
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Jugador:fecha_nacimiento",
+      "type": "attribute",
+      "position": {
+        "x": 396.2675048435907,
+        "y": 436.1558781060571
+      },
+      "data": {
+        "label": "fecha_nacimiento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Jugador:posicion",
+      "type": "attribute",
+      "position": {
+        "x": 403.0938159981028,
+        "y": 317.7050343262511
+      },
+      "data": {
+        "label": "posicion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Equipo",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Equipo",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Equipo:cod_equipo",
+      "type": "attribute",
+      "position": {
+        "x": 262.9013395726755,
+        "y": -174.16726170287498
+      },
+      "data": {
+        "label": "cod_equipo",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Equipo:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 322.74460960464137,
+        "y": -235.29178053771687
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Equipo:nombre_estadio",
+      "type": "attribute",
+      "position": {
+        "x": 397.40610103722344,
+        "y": -277.0420556023467
+      },
+      "data": {
+        "label": "nombre_estadio",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Equipo:aforo",
+      "type": "attribute",
+      "position": {
+        "x": 480.8154830684173,
+        "y": -296.02359295009813
+      },
+      "data": {
+        "label": "aforo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Equipo:anio_fundacion",
+      "type": "attribute",
+      "position": {
+        "x": 566.1911802005349,
+        "y": -290.69310421878424
+      },
+      "data": {
+        "label": "anio_fundacion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Equipo:ciudad",
+      "type": "attribute",
+      "position": {
+        "x": 646.591746259659,
+        "y": -261.483983241217
+      },
+      "data": {
+        "label": "ciudad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Partido",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Partido",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Partido:cod_partido",
+      "type": "attribute",
+      "position": {
+        "x": 1171.2435601038433,
+        "y": 160.75924798308264
+      },
+      "data": {
+        "label": "cod_partido",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Partido:fecha",
+      "type": "attribute",
+      "position": {
+        "x": 1066.2465242928558,
+        "y": 223.84783191653142
+      },
+      "data": {
+        "label": "fecha",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Partido:goles_casa",
+      "type": "attribute",
+      "position": {
+        "x": 943.753475707144,
+        "y": 223.84783191653142
+      },
+      "data": {
+        "label": "goles_casa",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Partido:goles_fuera",
+      "type": "attribute",
+      "position": {
+        "x": 838.7564398961567,
+        "y": 160.75924798308264
+      },
+      "data": {
+        "label": "goles_fuera",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Gol",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 0
+      },
+      "data": {
+        "label": "Gol",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Gol:cod_gol",
+      "type": "attribute",
+      "position": {
+        "x": 1474.344217188569,
+        "y": -113.01820107301428
+      },
+      "data": {
+        "label": "cod_gol",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Gol:minuto",
+      "type": "attribute",
+      "position": {
+        "x": 1623.0272925226877,
+        "y": -18.669292091895624
+      },
+      "data": {
+        "label": "minuto",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Gol:descripcion",
+      "type": "attribute",
+      "position": {
+        "x": 1517.5552031545233,
+        "y": 122.34138793289046
+      },
+      "data": {
+        "label": "descripcion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Presidente",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Presidente",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Presidente:rut",
+      "type": "attribute",
+      "position": {
+        "x": 53.808397169096025,
+        "y": 112.62545491711211
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Presidente:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -89.56129043280663,
+        "y": 76.879377039079
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Presidente:apellidos",
+      "type": "attribute",
+      "position": {
+        "x": -89.56129043280667,
+        "y": -70.87937703907895
+      },
+      "data": {
+        "label": "apellidos",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Presidente:fecha_nacimiento",
+      "type": "attribute",
+      "position": {
+        "x": 53.80839716909607,
+        "y": -106.6254549171121
+      },
+      "data": {
+        "label": "fecha_nacimiento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 490,
+        "y": 172
+      },
+      "data": {
+        "label": "pertenece",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "local",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:2",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -138
+      },
+      "data": {
+        "label": "visitante",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:3",
+      "type": "relationship",
+      "position": {
+        "x": 990,
+        "y": 172
+      },
+      "data": {
+        "label": "marca",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:4",
+      "type": "relationship",
+      "position": {
+        "x": 1240,
+        "y": -18
+      },
+      "data": {
+        "label": "contiene",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:5",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "preside",
+        "identifying": false
+      }
+    },
+    {
+      "id": "a:r:5:anio_eleccion",
+      "type": "attribute",
+      "position": {
+        "x": 255,
+        "y": 103
+      },
+      "data": {
+        "label": "anio_eleccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Jugador->a:e:Jugador:cod_jugador#0",
+      "source": "e:Jugador",
+      "target": "a:e:Jugador:cod_jugador",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Jugador->a:e:Jugador:nombre#0",
+      "source": "e:Jugador",
+      "target": "a:e:Jugador:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Jugador->a:e:Jugador:fecha_nacimiento#0",
+      "source": "e:Jugador",
+      "target": "a:e:Jugador:fecha_nacimiento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Jugador->a:e:Jugador:posicion#0",
+      "source": "e:Jugador",
+      "target": "a:e:Jugador:posicion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Equipo->a:e:Equipo:cod_equipo#0",
+      "source": "e:Equipo",
+      "target": "a:e:Equipo:cod_equipo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Equipo->a:e:Equipo:nombre#0",
+      "source": "e:Equipo",
+      "target": "a:e:Equipo:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Equipo->a:e:Equipo:nombre_estadio#0",
+      "source": "e:Equipo",
+      "target": "a:e:Equipo:nombre_estadio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Equipo->a:e:Equipo:aforo#0",
+      "source": "e:Equipo",
+      "target": "a:e:Equipo:aforo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Equipo->a:e:Equipo:anio_fundacion#0",
+      "source": "e:Equipo",
+      "target": "a:e:Equipo:anio_fundacion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Equipo->a:e:Equipo:ciudad#0",
+      "source": "e:Equipo",
+      "target": "a:e:Equipo:ciudad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Partido->a:e:Partido:cod_partido#0",
+      "source": "e:Partido",
+      "target": "a:e:Partido:cod_partido",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Partido->a:e:Partido:fecha#0",
+      "source": "e:Partido",
+      "target": "a:e:Partido:fecha",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Partido->a:e:Partido:goles_casa#0",
+      "source": "e:Partido",
+      "target": "a:e:Partido:goles_casa",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Partido->a:e:Partido:goles_fuera#0",
+      "source": "e:Partido",
+      "target": "a:e:Partido:goles_fuera",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Gol->a:e:Gol:cod_gol#0",
+      "source": "e:Gol",
+      "target": "a:e:Gol:cod_gol",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Gol->a:e:Gol:minuto#0",
+      "source": "e:Gol",
+      "target": "a:e:Gol:minuto",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Gol->a:e:Gol:descripcion#0",
+      "source": "e:Gol",
+      "target": "a:e:Gol:descripcion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Presidente->a:e:Presidente:rut#0",
+      "source": "e:Presidente",
+      "target": "a:e:Presidente:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Presidente->a:e:Presidente:nombre#0",
+      "source": "e:Presidente",
+      "target": "a:e:Presidente:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Presidente->a:e:Presidente:apellidos#0",
+      "source": "e:Presidente",
+      "target": "a:e:Presidente:apellidos",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Presidente->a:e:Presidente:fecha_nacimiento#0",
+      "source": "e:Presidente",
+      "target": "a:e:Presidente:fecha_nacimiento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Equipo->r:0#0",
+      "source": "e:Equipo",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Jugador->r:0#0",
+      "source": "e:Jugador",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Equipo->r:1#0",
+      "source": "e:Equipo",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Partido->r:1#0",
+      "source": "e:Partido",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Equipo->r:2#0",
+      "source": "e:Equipo",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Partido->r:2#0",
+      "source": "e:Partido",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Jugador->r:3#0",
+      "source": "e:Jugador",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Gol->r:3#0",
+      "source": "e:Gol",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Partido->r:4#0",
+      "source": "e:Partido",
+      "target": "r:4",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Gol->r:4#0",
+      "source": "e:Gol",
+      "target": "r:4",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Presidente->r:5#0",
+      "source": "e:Presidente",
+      "target": "r:5",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Equipo->r:5#0",
+      "source": "e:Equipo",
+      "target": "r:5",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "r:5->a:r:5:anio_eleccion#0",
+      "source": "r:5",
+      "target": "a:r:5:anio_eleccion",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

@@ -1,0 +1,2324 @@
+{
+  "semana": 2,
+  "titulo": "Modelo Entidad-Relación",
+  "ejercicios": [
+    {
+      "numero": 1,
+      "slug": "s2-biblioteca",
+      "semana": 2,
+      "tipo": "ER",
+      "titulo": "Biblioteca universitaria",
+      "enunciado": [
+        "Una biblioteca desea registrar a sus socios, los libros y los autores.",
+        "De cada socio se guarda su rut (identificador), nombre y email. De cada libro: isbn (identificador), título y año de publicación. De cada autor: id_autor (identificador), nombre y nacionalidad.",
+        "Un socio puede pedir prestados muchos libros (o ninguno todavía) y un libro puede ser prestado por muchos socios (o por ninguno); de cada préstamo interesa la fecha_prestamo. Un autor escribe al menos un libro (y puede escribir muchos) y todo libro tiene al menos un autor (y puede tener varios).",
+        "Dibuja el modelo Entidad-Relación. Indica la cardinalidad (mín,máx) en cada extremo de las relaciones con la notación «look across» de erdplus: el valor junto a una entidad indica con cuántas ocurrencias de ESA entidad se asocia UNA ocurrencia de la otra. Ejemplo: si todo libro tiene al menos un autor (y puede tener varios), junto a «Autor» va (1,M)."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Socio",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true,
+                "aliases": [
+                  "id_socio",
+                  "run"
+                ]
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "email",
+                "aliases": [
+                  "correo",
+                  "correo_electronico"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Libro",
+            "attrs": [
+              {
+                "name": "isbn",
+                "key": true
+              },
+              {
+                "name": "titulo"
+              },
+              {
+                "name": "anio_publicacion",
+                "aliases": [
+                  "anio",
+                  "año",
+                  "ano_publicacion",
+                  "anio_de_publicacion",
+                  "año_publicacion",
+                  "año_de_publicacion"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Autor",
+            "attrs": [
+              {
+                "name": "id_autor",
+                "key": true,
+                "aliases": [
+                  "id",
+                  "codigo_autor"
+                ]
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "nacionalidad"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "presta",
+            "between": [
+              {
+                "entity": "Socio",
+                "card": "N",
+                "min": 0
+              },
+              {
+                "entity": "Libro",
+                "card": "N",
+                "min": 0
+              }
+            ],
+            "attrs": [
+              {
+                "name": "fecha_prestamo",
+                "aliases": [
+                  "fecha",
+                  "fecha_de_prestamo"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "escribe",
+            "between": [
+              {
+                "entity": "Autor",
+                "card": "N",
+                "min": 1
+              },
+              {
+                "entity": "Libro",
+                "card": "N",
+                "min": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "numero": 2,
+      "slug": "s2-clinica",
+      "semana": 2,
+      "tipo": "ER",
+      "titulo": "Clínica médica",
+      "enunciado": [
+        "Una clínica gestiona médicos, pacientes y departamentos.",
+        "Médico: rut_medico (identificador), nombre y especialidad. Paciente: rut_paciente (identificador), nombre, fecha_nacimiento, edad (se calcula a partir de la fecha de nacimiento, por lo tanto es derivado) y puede tener varios teléfonos. Departamento: cod_depto (identificador) y nombre.",
+        "Todo médico pertenece a un único departamento, pero un departamento puede tener muchos médicos (o ninguno todavía). Un médico puede atender a muchos pacientes (o a ninguno todavía) y todo paciente registrado ha sido atendido por al menos un médico (y puede haber sido atendido por varios); de cada atención se registra la fecha y el diagnóstico.",
+        "Dibuja el modelo Entidad-Relación con cardinalidades (mín,máx). Recuerda marcar los atributos multivaluado y derivado."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Medico",
+            "aliases": [
+              "Doctor"
+            ],
+            "attrs": [
+              {
+                "name": "rut_medico",
+                "key": true,
+                "aliases": [
+                  "rut",
+                  "id_medico"
+                ]
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "especialidad"
+              }
+            ]
+          },
+          {
+            "name": "Paciente",
+            "attrs": [
+              {
+                "name": "rut_paciente",
+                "key": true,
+                "aliases": [
+                  "rut",
+                  "id_paciente"
+                ]
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "fecha_nacimiento",
+                "aliases": [
+                  "fecha_de_nacimiento",
+                  "nacimiento"
+                ]
+              },
+              {
+                "name": "telefono",
+                "multi": true,
+                "aliases": [
+                  "telefonos",
+                  "fono"
+                ]
+              },
+              {
+                "name": "edad",
+                "derived": true
+              }
+            ]
+          },
+          {
+            "name": "Departamento",
+            "attrs": [
+              {
+                "name": "cod_depto",
+                "key": true,
+                "aliases": [
+                  "codigo_depto",
+                  "id_depto",
+                  "codigo",
+                  "id_departamento",
+                  "cod_departamento"
+                ]
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "pertenece",
+            "between": [
+              {
+                "entity": "Medico",
+                "card": "N",
+                "min": 0
+              },
+              {
+                "entity": "Departamento",
+                "card": "1",
+                "min": 1
+              }
+            ]
+          },
+          {
+            "name": "atiende",
+            "between": [
+              {
+                "entity": "Medico",
+                "card": "N",
+                "min": 1
+              },
+              {
+                "entity": "Paciente",
+                "card": "N",
+                "min": 0
+              }
+            ],
+            "attrs": [
+              {
+                "name": "fecha"
+              },
+              {
+                "name": "diagnostico"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "numero": 3,
+      "slug": "s2-ventas",
+      "semana": 2,
+      "tipo": "ER",
+      "titulo": "Empresa de ventas",
+      "enunciado": [
+        "Una empresa vende productos a varios clientes. De los clientes se guardan: rut (identificador), nombre, apellido, dirección (compuesta por calle, número y ciudad), fecha de nacimiento y edad (se calcula a partir de la fecha de nacimiento). Cada producto tiene un código (identificador), un nombre y un precio unitario.",
+        "Un cliente puede comprar varios productos a la empresa, y un mismo producto puede ser comprado por varios clientes.",
+        "Los productos son suministrados por diferentes proveedores. Un producto solo puede ser suministrado por un proveedor, y un proveedor puede suministrar diferentes productos. De cada proveedor se desea conocer el rut (identificador), nombre, dirección y sus representantes (puede tener varios).",
+        "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Cliente",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "apellido"
+              },
+              {
+                "name": "direccion",
+                "parts": [
+                  {
+                    "name": "calle"
+                  },
+                  {
+                    "name": "numero"
+                  },
+                  {
+                    "name": "ciudad"
+                  }
+                ]
+              },
+              {
+                "name": "fecha_nacimiento"
+              },
+              {
+                "name": "edad",
+                "derived": true
+              }
+            ]
+          },
+          {
+            "name": "Producto",
+            "attrs": [
+              {
+                "name": "codigo",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "precio_unitario"
+              }
+            ]
+          },
+          {
+            "name": "Proveedor",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "direccion"
+              },
+              {
+                "name": "representantes",
+                "multi": true
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "compra",
+            "between": [
+              {
+                "entity": "Cliente",
+                "card": "N"
+              },
+              {
+                "entity": "Producto",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "suministra",
+            "between": [
+              {
+                "entity": "Proveedor",
+                "card": "1"
+              },
+              {
+                "entity": "Producto",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "layout": [
+          [
+            "Cliente",
+            null,
+            "Producto",
+            null,
+            "Proveedor"
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 4,
+      "slug": "s2-transportes",
+      "semana": 2,
+      "tipo": "ER",
+      "titulo": "Empresa de transportes",
+      "enunciado": [
+        "Se desea informatizar la gestión de una empresa de transportes que reparte paquetes. Los encargados de llevar los paquetes son los camioneros, de los que se quiere guardar el rut (identificador), nombre, teléfonos (puede tener varios), dirección, sueldo y ciudad en la que vive.",
+        "De los paquetes transportados interesa conocer el código de paquete (identificador), descripción, destinatario y dirección del destinatario. Un camionero distribuye muchos paquetes, y un paquete solo puede ser distribuido por un camionero.",
+        "De las provincias a las que llegan los paquetes interesa guardar el código de provincia (identificador) y el nombre. Un paquete solo puede llegar a una provincia; sin embargo, a una provincia pueden llegar varios paquetes.",
+        "De los camiones interesa conocer la matrícula (identificador), modelo, tipo y potencia. Un camionero puede conducir diferentes camiones en fechas diferentes (se registra la fecha), y un camión puede ser conducido por varios camioneros.",
+        "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Camionero",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "telefono",
+                "multi": true
+              },
+              {
+                "name": "direccion"
+              },
+              {
+                "name": "sueldo"
+              },
+              {
+                "name": "ciudad"
+              }
+            ]
+          },
+          {
+            "name": "Paquete",
+            "attrs": [
+              {
+                "name": "cod_paquete",
+                "key": true
+              },
+              {
+                "name": "descripcion"
+              },
+              {
+                "name": "destinatario"
+              },
+              {
+                "name": "direccion_destinatario"
+              }
+            ]
+          },
+          {
+            "name": "Provincia",
+            "attrs": [
+              {
+                "name": "cod_provincia",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          },
+          {
+            "name": "Camion",
+            "attrs": [
+              {
+                "name": "matricula",
+                "key": true
+              },
+              {
+                "name": "modelo"
+              },
+              {
+                "name": "tipo"
+              },
+              {
+                "name": "potencia"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "distribuye",
+            "between": [
+              {
+                "entity": "Camionero",
+                "card": "1"
+              },
+              {
+                "entity": "Paquete",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "llega",
+            "between": [
+              {
+                "entity": "Provincia",
+                "card": "1"
+              },
+              {
+                "entity": "Paquete",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "conduce",
+            "between": [
+              {
+                "entity": "Camionero",
+                "card": "N"
+              },
+              {
+                "entity": "Camion",
+                "card": "N"
+              }
+            ],
+            "attrs": [
+              {
+                "name": "fecha"
+              }
+            ]
+          }
+        ],
+        "layout": [
+          [
+            "Camion",
+            "Camionero",
+            "Paquete",
+            "Provincia"
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 5,
+      "slug": "s2-instituto",
+      "semana": 2,
+      "tipo": "ER",
+      "titulo": "Instituto",
+      "enunciado": [
+        "Se desea diseñar la base de datos de un instituto. De los profesores se guarda el dni (identificador), nombre, dirección y teléfono. Los profesores imparten módulos, y cada módulo tiene un código (identificador) y un nombre.",
+        "Cada alumno está matriculado en uno o varios módulos. De cada alumno se guarda el n.º de expediente (identificador), nombre, apellidos y fecha de nacimiento. Los profesores pueden impartir varios módulos, pero un módulo solo puede ser impartido por un profesor.",
+        "Cada curso (identificado por un código) tiene un grupo de alumnos, y cada alumno pertenece a un curso. Uno de los alumnos del curso es el delegado del grupo (un alumno es delegado de, como máximo, un curso y cada curso tiene un delegado).",
+        "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Profesor",
+            "attrs": [
+              {
+                "name": "dni",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "direccion"
+              },
+              {
+                "name": "telefono"
+              }
+            ]
+          },
+          {
+            "name": "Modulo",
+            "attrs": [
+              {
+                "name": "cod_modulo",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          },
+          {
+            "name": "Alumno",
+            "attrs": [
+              {
+                "name": "n_expediente",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "apellidos"
+              },
+              {
+                "name": "fecha_nacimiento"
+              }
+            ]
+          },
+          {
+            "name": "Curso",
+            "attrs": [
+              {
+                "name": "cod_curso",
+                "key": true
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "imparte",
+            "between": [
+              {
+                "entity": "Profesor",
+                "card": "1"
+              },
+              {
+                "entity": "Modulo",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "matricula",
+            "between": [
+              {
+                "entity": "Alumno",
+                "card": "N"
+              },
+              {
+                "entity": "Modulo",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "tiene",
+            "between": [
+              {
+                "entity": "Curso",
+                "card": "1"
+              },
+              {
+                "entity": "Alumno",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "delegado",
+            "between": [
+              {
+                "entity": "Curso",
+                "card": "1"
+              },
+              {
+                "entity": "Alumno",
+                "card": "1"
+              }
+            ]
+          }
+        ],
+        "layout": [
+          [
+            "Profesor",
+            "Modulo",
+            "Alumno",
+            "Curso"
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 6,
+      "slug": "s2-automotora",
+      "semana": 2,
+      "tipo": "ER",
+      "titulo": "Venta de automóviles",
+      "enunciado": [
+        "Se desea diseñar una base de datos para una empresa dedicada a la venta de automóviles. La empresa dispone de vehículos para su venta: se necesita conocer la matrícula (identificador), marca, modelo, color y precio de venta.",
+        "De cada cliente interesa el rut, nombre, dirección, ciudad y números de teléfono (puede tener varios). Además, los clientes se diferencian por un código interno (identificador) que se incrementa automáticamente cuando un cliente se da de alta.",
+        "Un cliente puede comprar tantos vehículos como desee. Un vehículo determinado solo puede ser comprado por un único cliente.",
+        "El concesionario también realiza las revisiones de cada vehículo. Cada revisión tiene un código (identificador) y se desea saber si se hizo cambio de filtro, de aceite, de frenos u otros. Un vehículo puede pasar varias revisiones, y cada revisión corresponde a un solo vehículo.",
+        "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Vehiculo",
+            "attrs": [
+              {
+                "name": "matricula",
+                "key": true
+              },
+              {
+                "name": "marca"
+              },
+              {
+                "name": "modelo"
+              },
+              {
+                "name": "color"
+              },
+              {
+                "name": "precio_venta"
+              }
+            ]
+          },
+          {
+            "name": "Cliente",
+            "attrs": [
+              {
+                "name": "codigo_interno",
+                "key": true
+              },
+              {
+                "name": "rut"
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "direccion"
+              },
+              {
+                "name": "ciudad"
+              },
+              {
+                "name": "telefono",
+                "multi": true
+              }
+            ]
+          },
+          {
+            "name": "Revision",
+            "attrs": [
+              {
+                "name": "cod_revision",
+                "key": true
+              },
+              {
+                "name": "cambio_filtro"
+              },
+              {
+                "name": "cambio_aceite"
+              },
+              {
+                "name": "cambio_frenos"
+              },
+              {
+                "name": "otros"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "compra",
+            "between": [
+              {
+                "entity": "Cliente",
+                "card": "1"
+              },
+              {
+                "entity": "Vehiculo",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "se_revisa",
+            "between": [
+              {
+                "entity": "Vehiculo",
+                "card": "1"
+              },
+              {
+                "entity": "Revision",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "layout": [
+          [
+            "Cliente",
+            "Vehiculo",
+            "Revision"
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 7,
+      "slug": "s2-santa-paz",
+      "semana": 2,
+      "tipo": "ER",
+      "titulo": "Clínica «Santa Paz»",
+      "enunciado": [
+        "La clínica «Santa Paz» necesita llevar un control informatizado de sus pacientes y médicos.",
+        "De cada paciente se guarda el código (identificador), nombre, apellidos, dirección, población, provincia, código postal, teléfono y fecha de nacimiento. De cada médico: código (identificador), nombre, apellidos, teléfono y especialidad.",
+        "Se controla cada ingreso que el paciente hace en la clínica. De cada ingreso se guarda el código de ingreso (identificador), el número de habitación, la cama y la fecha de ingreso.",
+        "Un médico puede atender varios ingresos, pero cada ingreso solo es atendido por un único médico. Un paciente puede realizar varios ingresos y cada ingreso corresponde a un solo paciente.",
+        "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Paciente",
+            "attrs": [
+              {
+                "name": "cod_paciente",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "apellidos"
+              },
+              {
+                "name": "direccion"
+              },
+              {
+                "name": "poblacion"
+              },
+              {
+                "name": "provincia"
+              },
+              {
+                "name": "codigo_postal"
+              },
+              {
+                "name": "telefono"
+              },
+              {
+                "name": "fecha_nacimiento"
+              }
+            ]
+          },
+          {
+            "name": "Medico",
+            "attrs": [
+              {
+                "name": "cod_medico",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "apellidos"
+              },
+              {
+                "name": "telefono"
+              },
+              {
+                "name": "especialidad"
+              }
+            ]
+          },
+          {
+            "name": "Ingreso",
+            "attrs": [
+              {
+                "name": "cod_ingreso",
+                "key": true
+              },
+              {
+                "name": "numero_habitacion"
+              },
+              {
+                "name": "cama"
+              },
+              {
+                "name": "fecha_ingreso"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "realiza",
+            "between": [
+              {
+                "entity": "Paciente",
+                "card": "1"
+              },
+              {
+                "entity": "Ingreso",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "atiende",
+            "between": [
+              {
+                "entity": "Medico",
+                "card": "1"
+              },
+              {
+                "entity": "Ingreso",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "layout": [
+          [
+            "Paciente",
+            "Ingreso",
+            "Medico"
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 8,
+      "slug": "s2-tienda-informatica",
+      "semana": 2,
+      "tipo": "ER",
+      "titulo": "Tienda informática",
+      "enunciado": [
+        "Se desea informatizar la gestión de una tienda informática. De cada producto se guarda el código (identificador), descripción, precio y número de existencias.",
+        "De cada cliente: código (identificador), nombre, apellidos, dirección, correos (puede tener varios) y teléfonos (puede tener varios). Un cliente puede comprar varios productos y un mismo producto puede ser comprado por varios clientes. Cada compra queda registrada con la fecha en la que se realizó.",
+        "La tienda tiene contactos con varios proveedores que suministran los productos. Un mismo producto puede ser suministrado por varios proveedores (y un proveedor suministra varios productos). De cada proveedor: código (identificador), nombre, apellido, dirección, provincia y teléfono.",
+        "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Producto",
+            "attrs": [
+              {
+                "name": "codigo",
+                "key": true
+              },
+              {
+                "name": "descripcion"
+              },
+              {
+                "name": "precio"
+              },
+              {
+                "name": "existencias"
+              }
+            ]
+          },
+          {
+            "name": "Cliente",
+            "attrs": [
+              {
+                "name": "codigo",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "apellidos"
+              },
+              {
+                "name": "direccion"
+              },
+              {
+                "name": "correos",
+                "multi": true
+              },
+              {
+                "name": "telefonos",
+                "multi": true
+              }
+            ]
+          },
+          {
+            "name": "Proveedor",
+            "attrs": [
+              {
+                "name": "codigo",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "apellido"
+              },
+              {
+                "name": "direccion"
+              },
+              {
+                "name": "provincia"
+              },
+              {
+                "name": "telefono"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "compra",
+            "between": [
+              {
+                "entity": "Cliente",
+                "card": "N"
+              },
+              {
+                "entity": "Producto",
+                "card": "N"
+              }
+            ],
+            "attrs": [
+              {
+                "name": "fecha"
+              }
+            ]
+          },
+          {
+            "name": "suministra",
+            "between": [
+              {
+                "entity": "Proveedor",
+                "card": "N"
+              },
+              {
+                "entity": "Producto",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "layout": [
+          [
+            "Cliente",
+            "Producto",
+            "Proveedor"
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 9,
+      "slug": "s2-biblioteca-centro",
+      "semana": 2,
+      "tipo": "ER",
+      "titulo": "Biblioteca del centro",
+      "enunciado": [
+        "En la biblioteca de un centro se manejan fichas de autores y libros. De cada autor: código de autor (identificador) y nombre. De cada libro: código (identificador), título, ISBN, editorial y número de páginas.",
+        "Un autor puede escribir varios libros, y un libro puede ser escrito por varios autores.",
+        "Un libro está formado por ejemplares. Cada ejemplar tiene un código (identificador) y una localización. Un libro tiene muchos ejemplares y un ejemplar pertenece solo a un libro.",
+        "Los usuarios también tienen ficha: código (identificador), nombre, dirección y teléfono. Los ejemplares son prestados a los usuarios: un usuario puede tomar prestados varios ejemplares, y un ejemplar puede ser prestado a varios usuarios (en distintos momentos). De cada préstamo se guarda la fecha de préstamo y la fecha de devolución.",
+        "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Autor",
+            "attrs": [
+              {
+                "name": "cod_autor",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          },
+          {
+            "name": "Libro",
+            "attrs": [
+              {
+                "name": "cod_libro",
+                "key": true
+              },
+              {
+                "name": "titulo"
+              },
+              {
+                "name": "isbn"
+              },
+              {
+                "name": "editorial"
+              },
+              {
+                "name": "numero_paginas"
+              }
+            ]
+          },
+          {
+            "name": "Ejemplar",
+            "attrs": [
+              {
+                "name": "cod_ejemplar",
+                "key": true
+              },
+              {
+                "name": "localizacion"
+              }
+            ]
+          },
+          {
+            "name": "Usuario",
+            "attrs": [
+              {
+                "name": "cod_usuario",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "direccion"
+              },
+              {
+                "name": "telefono"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "escribe",
+            "between": [
+              {
+                "entity": "Autor",
+                "card": "N"
+              },
+              {
+                "entity": "Libro",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "tiene",
+            "between": [
+              {
+                "entity": "Libro",
+                "card": "1"
+              },
+              {
+                "entity": "Ejemplar",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "presta",
+            "between": [
+              {
+                "entity": "Usuario",
+                "card": "N"
+              },
+              {
+                "entity": "Ejemplar",
+                "card": "N"
+              }
+            ],
+            "attrs": [
+              {
+                "name": "fecha_prestamo"
+              },
+              {
+                "name": "fecha_devolucion"
+              }
+            ]
+          }
+        ],
+        "layout": [
+          [
+            "Autor",
+            "Libro",
+            "Ejemplar",
+            "Usuario"
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 10,
+      "slug": "s2-proyectos",
+      "semana": 2,
+      "tipo": "ER",
+      "titulo": "Gestión de proyectos",
+      "enunciado": [
+        "Una empresa desea almacenar la información generada en cada uno de sus proyectos. De cada proyecto interesa: código (identificador), descripción, cuantía, fecha de inicio y fecha de fin.",
+        "Los proyectos son realizados por clientes, de los que se guarda el código (identificador), teléfono, domicilio y razón social. Un cliente puede realizar varios proyectos, pero un proyecto es realizado por un único cliente.",
+        "En los proyectos participan colaboradores: rut (identificador), nombre, domicilio, teléfono, banco y número de cuenta. Un colaborador puede participar en varios proyectos, y un proyecto es realizado por uno o más colaboradores.",
+        "Los colaboradores reciben pagos (cada pago se hace a un colaborador). De cada pago: número de pago (identificador), concepto, cantidad y fecha de pago. También se almacenan los tipos de pago (código —identificador— y descripción); un tipo de pago puede pertenecer a varios pagos y cada pago tiene un tipo.",
+        "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Proyecto",
+            "attrs": [
+              {
+                "name": "cod_proyecto",
+                "key": true
+              },
+              {
+                "name": "descripcion"
+              },
+              {
+                "name": "cuantia"
+              },
+              {
+                "name": "fecha_inicio"
+              },
+              {
+                "name": "fecha_fin"
+              }
+            ]
+          },
+          {
+            "name": "Cliente",
+            "attrs": [
+              {
+                "name": "cod_cliente",
+                "key": true
+              },
+              {
+                "name": "telefono"
+              },
+              {
+                "name": "domicilio"
+              },
+              {
+                "name": "razon_social"
+              }
+            ]
+          },
+          {
+            "name": "Colaborador",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "domicilio"
+              },
+              {
+                "name": "telefono"
+              },
+              {
+                "name": "banco"
+              },
+              {
+                "name": "numero_cuenta"
+              }
+            ]
+          },
+          {
+            "name": "Pago",
+            "attrs": [
+              {
+                "name": "numero_pago",
+                "key": true
+              },
+              {
+                "name": "concepto"
+              },
+              {
+                "name": "cantidad"
+              },
+              {
+                "name": "fecha_pago"
+              }
+            ]
+          },
+          {
+            "name": "TipoPago",
+            "aliases": [
+              "Tipo_de_pago",
+              "Tipo Pago"
+            ],
+            "attrs": [
+              {
+                "name": "cod_tipo",
+                "key": true
+              },
+              {
+                "name": "descripcion"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "realiza",
+            "between": [
+              {
+                "entity": "Cliente",
+                "card": "1"
+              },
+              {
+                "entity": "Proyecto",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "participa",
+            "between": [
+              {
+                "entity": "Colaborador",
+                "card": "N"
+              },
+              {
+                "entity": "Proyecto",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "recibe",
+            "between": [
+              {
+                "entity": "Colaborador",
+                "card": "1"
+              },
+              {
+                "entity": "Pago",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "tiene",
+            "between": [
+              {
+                "entity": "TipoPago",
+                "card": "1"
+              },
+              {
+                "entity": "Pago",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "layout": [
+          [
+            "Cliente",
+            "Proyecto",
+            "Colaborador"
+          ],
+          [
+            null,
+            "TipoPago",
+            "Pago"
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 11,
+      "slug": "s2-agencia-viajes",
+      "semana": 2,
+      "tipo": "ER",
+      "titulo": "Agencia de viajes",
+      "enunciado": [
+        "Una agencia de viajes desea informatizar la gestión de sus viajeros y de los viajes que estos realizan.",
+        "De los viajeros se guarda el rut (identificador), nombre, dirección y teléfono. De cada viaje: código de viaje (identificador), número de plazas, fecha y otros datos.",
+        "Un viajero puede realizar tantos viajes como desee con la agencia. Un viaje determinado solo puede ser cubierto por un viajero.",
+        "Cada viaje tiene un lugar de destino y un lugar de origen. De cada lugar se guarda el código (identificador), nombre y otros datos. Un viaje tiene un único destino y un único origen (ambos son lugares).",
+        "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Viajero",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "direccion"
+              },
+              {
+                "name": "telefono"
+              }
+            ]
+          },
+          {
+            "name": "Viaje",
+            "attrs": [
+              {
+                "name": "cod_viaje",
+                "key": true
+              },
+              {
+                "name": "numero_plazas"
+              },
+              {
+                "name": "fecha"
+              },
+              {
+                "name": "otros_datos"
+              }
+            ]
+          },
+          {
+            "name": "Lugar",
+            "attrs": [
+              {
+                "name": "cod_lugar",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "otros_datos"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "realiza",
+            "between": [
+              {
+                "entity": "Viajero",
+                "card": "1"
+              },
+              {
+                "entity": "Viaje",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "destino",
+            "between": [
+              {
+                "entity": "Lugar",
+                "card": "1"
+              },
+              {
+                "entity": "Viaje",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "origen",
+            "between": [
+              {
+                "entity": "Lugar",
+                "card": "1"
+              },
+              {
+                "entity": "Viaje",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "layout": [
+          [
+            "Viajero",
+            "Viaje",
+            "Lugar"
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 12,
+      "slug": "s2-liga-futbol",
+      "semana": 2,
+      "tipo": "ER",
+      "titulo": "Liga de fútbol",
+      "enunciado": [
+        "Una liga de fútbol profesional desea crear una base de datos con la información de los partidos que se juegan. Se guarda: de cada jugador su código (identificador), nombre, fecha de nacimiento y posición (portero, defensa, centrocampista…); de cada equipo su código (identificador), nombre, nombre del estadio, aforo, año de fundación y ciudad.",
+        "Un jugador solo puede pertenecer a un único equipo. De cada partido: código numérico (identificador), fecha, goles del equipo de casa y goles del equipo de fuera. Cada partido lo juega un equipo local y un equipo visitante (dos relaciones entre equipo y partido).",
+        "También se registra cada gol: código de gol (identificador), minuto y descripción. Un partido tiene varios goles y un jugador puede meter varios goles. Cada gol pertenece a un partido y lo mete un jugador.",
+        "Por último, se guardan los presidentes de los equipos: rut (identificador), nombre, apellidos y fecha de nacimiento, además del año en que fue elegido presidente. Un equipo solo puede tener un presidente y una persona solo puede ser presidente de un equipo.",
+        "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Jugador",
+            "attrs": [
+              {
+                "name": "cod_jugador",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "fecha_nacimiento"
+              },
+              {
+                "name": "posicion"
+              }
+            ]
+          },
+          {
+            "name": "Equipo",
+            "attrs": [
+              {
+                "name": "cod_equipo",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "nombre_estadio"
+              },
+              {
+                "name": "aforo"
+              },
+              {
+                "name": "anio_fundacion",
+                "aliases": [
+                  "año_fundacion"
+                ]
+              },
+              {
+                "name": "ciudad"
+              }
+            ]
+          },
+          {
+            "name": "Partido",
+            "attrs": [
+              {
+                "name": "cod_partido",
+                "key": true
+              },
+              {
+                "name": "fecha"
+              },
+              {
+                "name": "goles_casa"
+              },
+              {
+                "name": "goles_fuera"
+              }
+            ]
+          },
+          {
+            "name": "Gol",
+            "attrs": [
+              {
+                "name": "cod_gol",
+                "key": true
+              },
+              {
+                "name": "minuto"
+              },
+              {
+                "name": "descripcion"
+              }
+            ]
+          },
+          {
+            "name": "Presidente",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "apellidos"
+              },
+              {
+                "name": "fecha_nacimiento"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "pertenece",
+            "between": [
+              {
+                "entity": "Equipo",
+                "card": "1"
+              },
+              {
+                "entity": "Jugador",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "local",
+            "between": [
+              {
+                "entity": "Equipo",
+                "card": "1"
+              },
+              {
+                "entity": "Partido",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "visitante",
+            "between": [
+              {
+                "entity": "Equipo",
+                "card": "1"
+              },
+              {
+                "entity": "Partido",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "marca",
+            "between": [
+              {
+                "entity": "Jugador",
+                "card": "1"
+              },
+              {
+                "entity": "Gol",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "contiene",
+            "between": [
+              {
+                "entity": "Partido",
+                "card": "1"
+              },
+              {
+                "entity": "Gol",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "preside",
+            "between": [
+              {
+                "entity": "Presidente",
+                "card": "1"
+              },
+              {
+                "entity": "Equipo",
+                "card": "1"
+              }
+            ],
+            "attrs": [
+              {
+                "name": "anio_eleccion",
+                "aliases": [
+                  "año_eleccion",
+                  "anio_elegido"
+                ]
+              }
+            ]
+          }
+        ],
+        "layout": [
+          [
+            "Presidente",
+            "Equipo",
+            "Partido",
+            "Gol"
+          ],
+          [
+            null,
+            "Jugador",
+            null,
+            null
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 13,
+      "slug": "s2-decathlon",
+      "semana": 2,
+      "tipo": "ER",
+      "titulo": "Decathlon Chile",
+      "enunciado": [
+        "La empresa Decathlon Chile desea una base de datos para manejar sus sucursales, empleados, productos y clientes.",
+        "De las sucursales se sabe el número único que la identifica dentro de la cadena, el domicilio y la ciudad. De los empleados: rut (identificador), nombre completo, domicilio (calle, número y ciudad) y los teléfonos en los que puede ser contactado (varios). Los empleados trabajan en diferentes sucursales en diferentes días de la semana, y en cada sucursal tienen asignado un horario que puede ser distinto en cada una; en cada sucursal trabajan varios empleados (se registra el día y el horario).",
+        "De los productos se conoce un código (identificador), descripción, color y costo fijo de fabricación. Las fábricas se identifican con CUIT y se conoce su nombre, país de origen, cantidad de empleados y nombre del gerente. Cada producto es fabricado en una sola fábrica, y cada fábrica solamente realiza un tipo de producto.",
+        "Cada sucursal puede vender varios productos y cada producto puede ser vendido por varias sucursales; cada sucursal establece el precio de venta del producto que ofrece.",
+        "De los clientes se conoce el código de cliente (identificador), rut, nombre, fecha de nacimiento, ciudad y edad (calculable). Cada cliente puede utilizar varias tarjetas de crédito, identificadas por su número, de las que se guarda el nombre de la tarjeta, el código de seguridad y la fecha de vencimiento. Cada cliente compra en una sola sucursal y en una sucursal pueden comprar varios clientes. Cada sucursal ofrece a sus clientes un descuento fijo por fidelidad (atributo de la sucursal).",
+        "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Sucursal",
+            "attrs": [
+              {
+                "name": "num_sucursal",
+                "key": true
+              },
+              {
+                "name": "domicilio"
+              },
+              {
+                "name": "ciudad"
+              },
+              {
+                "name": "descuento"
+              }
+            ]
+          },
+          {
+            "name": "Empleado",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true
+              },
+              {
+                "name": "nombre_completo",
+                "aliases": [
+                  "nombre"
+                ]
+              },
+              {
+                "name": "domicilio",
+                "parts": [
+                  {
+                    "name": "calle"
+                  },
+                  {
+                    "name": "numero"
+                  },
+                  {
+                    "name": "ciudad"
+                  }
+                ]
+              },
+              {
+                "name": "telefono",
+                "multi": true
+              }
+            ]
+          },
+          {
+            "name": "Producto",
+            "attrs": [
+              {
+                "name": "codigo",
+                "key": true
+              },
+              {
+                "name": "descripcion"
+              },
+              {
+                "name": "color"
+              },
+              {
+                "name": "costo_fijo"
+              }
+            ]
+          },
+          {
+            "name": "Fabrica",
+            "attrs": [
+              {
+                "name": "cuit",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "pais_origen"
+              },
+              {
+                "name": "cantidad_empleados"
+              },
+              {
+                "name": "gerente"
+              }
+            ]
+          },
+          {
+            "name": "Cliente",
+            "attrs": [
+              {
+                "name": "cod_cliente",
+                "key": true
+              },
+              {
+                "name": "rut"
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "fecha_nacimiento"
+              },
+              {
+                "name": "ciudad"
+              },
+              {
+                "name": "edad",
+                "derived": true
+              }
+            ]
+          },
+          {
+            "name": "Tarjeta",
+            "attrs": [
+              {
+                "name": "numero",
+                "key": true
+              },
+              {
+                "name": "nombre_tarjeta",
+                "aliases": [
+                  "nombre"
+                ]
+              },
+              {
+                "name": "codigo_seguridad"
+              },
+              {
+                "name": "fecha_vencimiento"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "trabaja",
+            "between": [
+              {
+                "entity": "Empleado",
+                "card": "N"
+              },
+              {
+                "entity": "Sucursal",
+                "card": "N"
+              }
+            ],
+            "attrs": [
+              {
+                "name": "dia"
+              },
+              {
+                "name": "horario"
+              }
+            ]
+          },
+          {
+            "name": "vende",
+            "between": [
+              {
+                "entity": "Sucursal",
+                "card": "N"
+              },
+              {
+                "entity": "Producto",
+                "card": "N"
+              }
+            ],
+            "attrs": [
+              {
+                "name": "precio_venta"
+              }
+            ]
+          },
+          {
+            "name": "fabrica",
+            "between": [
+              {
+                "entity": "Fabrica",
+                "card": "1"
+              },
+              {
+                "entity": "Producto",
+                "card": "1"
+              }
+            ]
+          },
+          {
+            "name": "compra",
+            "between": [
+              {
+                "entity": "Sucursal",
+                "card": "1"
+              },
+              {
+                "entity": "Cliente",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "utiliza",
+            "between": [
+              {
+                "entity": "Cliente",
+                "card": "1"
+              },
+              {
+                "entity": "Tarjeta",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "layout": [
+          [
+            "Empleado",
+            "Sucursal",
+            "Producto",
+            "Fabrica"
+          ],
+          [
+            null,
+            "Cliente",
+            "Tarjeta",
+            null
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 14,
+      "slug": "s2-farmacias",
+      "semana": 2,
+      "tipo": "ER",
+      "titulo": "Sistema de farmacias",
+      "enunciado": [
+        "Se debe diseñar un sistema para registrar las farmacias de las ciudades de un país. Cada farmacia tiene un nombre (único, identificador) y un domicilio. Cada farmacia se ubica en una sola ciudad, pero en una ciudad hay varias farmacias.",
+        "De cada ciudad se conoce el nombre, la provincia, la cantidad de habitantes y la superficie; cada ciudad se identifica con el nombre y la provincia (clave compuesta).",
+        "Cada farmacia puede tener un propietario y cada propietario tiene solamente una farmacia (puede haber farmacias sin propietario). De los propietarios se conoce el dni (identificador), nombre, domicilio (compuesto por calle, número, código postal y ciudad), teléfonos (varios) y emails (varios).",
+        "Cada farmacia vende varios medicamentos y un medicamento se vende en varias farmacias, a un precio determinado que puede ser distinto en cada farmacia. De cada medicamento se conoce su id (identificador), nombre comercial y las drogas de las que se compone (varias monodrogas).",
+        "Un medicamento puede complementar a otros medicamentos, pero cada medicamento puede ser complementado por un solo medicamento (relación reflexiva).",
+        "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Farmacia",
+            "attrs": [
+              {
+                "name": "nombre",
+                "key": true
+              },
+              {
+                "name": "domicilio"
+              }
+            ]
+          },
+          {
+            "name": "Ciudad",
+            "attrs": [
+              {
+                "name": "nombre",
+                "key": true
+              },
+              {
+                "name": "provincia",
+                "key": true
+              },
+              {
+                "name": "habitantes"
+              },
+              {
+                "name": "superficie"
+              }
+            ]
+          },
+          {
+            "name": "Propietario",
+            "attrs": [
+              {
+                "name": "dni",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "domicilio",
+                "parts": [
+                  {
+                    "name": "calle"
+                  },
+                  {
+                    "name": "numero"
+                  },
+                  {
+                    "name": "codigo_postal"
+                  },
+                  {
+                    "name": "ciudad"
+                  }
+                ]
+              },
+              {
+                "name": "telefonos",
+                "multi": true
+              },
+              {
+                "name": "emails",
+                "multi": true
+              }
+            ]
+          },
+          {
+            "name": "Medicamento",
+            "attrs": [
+              {
+                "name": "id",
+                "key": true
+              },
+              {
+                "name": "nombre_comercial"
+              },
+              {
+                "name": "drogas",
+                "multi": true,
+                "aliases": [
+                  "monodrogas"
+                ]
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "se_ubica",
+            "between": [
+              {
+                "entity": "Ciudad",
+                "card": "1"
+              },
+              {
+                "entity": "Farmacia",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "posee",
+            "between": [
+              {
+                "entity": "Propietario",
+                "card": "1"
+              },
+              {
+                "entity": "Farmacia",
+                "card": "1"
+              }
+            ]
+          },
+          {
+            "name": "vende",
+            "between": [
+              {
+                "entity": "Farmacia",
+                "card": "N"
+              },
+              {
+                "entity": "Medicamento",
+                "card": "N"
+              }
+            ],
+            "attrs": [
+              {
+                "name": "precio"
+              }
+            ]
+          },
+          {
+            "name": "complementa",
+            "between": [
+              {
+                "entity": "Medicamento",
+                "card": "1"
+              },
+              {
+                "entity": "Medicamento",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "layout": [
+          [
+            "Ciudad",
+            "Farmacia",
+            "Propietario"
+          ],
+          [
+            null,
+            "Medicamento",
+            null
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 15,
+      "slug": "s2-veterinaria",
+      "semana": 2,
+      "tipo": "ER",
+      "titulo": "Clínica veterinaria",
+      "enunciado": [
+        "Una clínica veterinaria necesita diseñar una base de datos para administrar sus clientes, mascotas, veterinarios y atenciones médicas.",
+        "Cada cliente tiene rut (identificador), nombre, dirección (calle, número y comuna) y teléfonos (puede tener varios). Un cliente puede tener una o varias mascotas, pero cada mascota pertenece a un solo cliente.",
+        "De cada mascota se registra código (identificador), nombre, especie, raza, fecha de nacimiento y peso; la edad debe poder calcularse a partir de la fecha de nacimiento.",
+        "Cada veterinario tiene rut (identificador), nombre, especialidad, correo electrónico y teléfono. Cada atención médica (identificada por un número de atención) es realizada por un veterinario a una mascota y registra la fecha, motivo de consulta, diagnóstico, tratamiento indicado y costo. Un veterinario realiza muchas atenciones y una mascota puede recibir varias atenciones.",
+        "Además, se registran los medicamentos indicados en cada atención: código (identificador), nombre, dosis recomendada y laboratorio. Una atención puede incluir varios medicamentos y un medicamento puede indicarse en muchas atenciones.",
+        "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Cliente",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "direccion",
+                "parts": [
+                  {
+                    "name": "calle"
+                  },
+                  {
+                    "name": "numero"
+                  },
+                  {
+                    "name": "comuna"
+                  }
+                ]
+              },
+              {
+                "name": "telefono",
+                "multi": true
+              }
+            ]
+          },
+          {
+            "name": "Mascota",
+            "attrs": [
+              {
+                "name": "codigo",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "especie"
+              },
+              {
+                "name": "raza"
+              },
+              {
+                "name": "fecha_nacimiento"
+              },
+              {
+                "name": "peso"
+              },
+              {
+                "name": "edad",
+                "derived": true
+              }
+            ]
+          },
+          {
+            "name": "Veterinario",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "especialidad"
+              },
+              {
+                "name": "correo"
+              },
+              {
+                "name": "telefono"
+              }
+            ]
+          },
+          {
+            "name": "Atencion",
+            "attrs": [
+              {
+                "name": "cod_atencion",
+                "key": true
+              },
+              {
+                "name": "fecha"
+              },
+              {
+                "name": "motivo"
+              },
+              {
+                "name": "diagnostico"
+              },
+              {
+                "name": "tratamiento"
+              },
+              {
+                "name": "costo"
+              }
+            ]
+          },
+          {
+            "name": "Medicamento",
+            "attrs": [
+              {
+                "name": "codigo",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "dosis_recomendada"
+              },
+              {
+                "name": "laboratorio"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "tiene",
+            "between": [
+              {
+                "entity": "Cliente",
+                "card": "1"
+              },
+              {
+                "entity": "Mascota",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "recibe",
+            "between": [
+              {
+                "entity": "Mascota",
+                "card": "1"
+              },
+              {
+                "entity": "Atencion",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "realiza",
+            "between": [
+              {
+                "entity": "Veterinario",
+                "card": "1"
+              },
+              {
+                "entity": "Atencion",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "indica",
+            "between": [
+              {
+                "entity": "Atencion",
+                "card": "N"
+              },
+              {
+                "entity": "Medicamento",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "layout": [
+          [
+            "Cliente",
+            "Mascota",
+            "Atencion",
+            "Medicamento"
+          ],
+          [
+            null,
+            null,
+            "Veterinario",
+            null
+          ]
+        ]
+      }
+    }
+  ]
+}

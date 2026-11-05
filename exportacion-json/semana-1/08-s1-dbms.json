@@ -1,0 +1,77 @@
+{
+  "numero": 8,
+  "slug": "s1-dbms",
+  "semana": 1,
+  "tipo": "QUIZ",
+  "titulo": "DBMS: el intermediario de los datos",
+  "enunciado": [
+    "Funciones y tipos de sistemas gestores."
+  ],
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "DBMS significa…",
+      "alternativas": [
+        "Data Backup Management System",
+        "Data Base Management System",
+        "Digital Binary Memory Server",
+        "Database Model Syntax"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "Data Base Management System",
+      "explicacion": "Sistema de gestión de bases de datos."
+    },
+    {
+      "id": "q2",
+      "pregunta": "Entre las funciones del DBMS están…",
+      "alternativas": [
+        "solo almacenar archivos",
+        "seguridad, integridad y compartición de datos",
+        "diseñar interfaces gráficas",
+        "compilar programas"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "seguridad, integridad y compartición de datos",
+      "explicacion": "El DBMS protege, valida y comparte los datos entre aplicaciones y usuarios."
+    },
+    {
+      "id": "q3",
+      "pregunta": "MySQL, Oracle y SQL Server son ejemplos de…",
+      "alternativas": [
+        "DBMS relacionales",
+        "sistemas operativos",
+        "lenguajes de programación",
+        "bases de datos de grafos"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "DBMS relacionales",
+      "explicacion": "Los RDBMS organizan los datos en tablas con filas y columnas."
+    },
+    {
+      "id": "q4",
+      "pregunta": "Un DBMS NoSQL es adecuado para…",
+      "alternativas": [
+        "solo datos con esquema fijo",
+        "gestionar datos no estructurados con esquema flexible",
+        "reemplazar a los sistemas operativos",
+        "dibujar diagramas"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "gestionar datos no estructurados con esquema flexible",
+      "explicacion": "Ofrece esquemas flexibles y varios modelos de datos."
+    },
+    {
+      "id": "q5",
+      "pregunta": "Un DBMS jerárquico organiza los datos…",
+      "alternativas": [
+        "en tablas",
+        "en relaciones padre-hijo como un árbol",
+        "en documentos JSON",
+        "en grafos"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "en relaciones padre-hijo como un árbol",
+      "explicacion": "Cada padre puede tener varios hijos, pero cada hijo tiene un solo padre (ej.: IMS de IBM)."
+    }
+  ]
+}

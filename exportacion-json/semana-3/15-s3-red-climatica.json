@@ -1,0 +1,282 @@
+{
+  "numero": 15,
+  "slug": "s3-red-climatica",
+  "semana": 3,
+  "tipo": "EER",
+  "titulo": "Red de institutos de investigación climática",
+  "enunciado": [
+    "Una red de institutos climáticos registra a las personas afiliadas, identificadas por un ORCID. De cada persona: nombre completo (compuesto por nombre de pila y apellidos), correos electrónicos (varios), año de nacimiento y edad (calculable). Las personas son investigadores o técnicos de laboratorio, y solo de una de estas categorías (todas pertenecen a una). De los investigadores: campo de estudio principal; de los técnicos: certificación de especialidad.",
+    "Ciertos investigadores pueden ser jefes de departamento y/o editores de revista; un investigador puede no tener ninguno de estos roles, uno o ambos.",
+    "Hay estaciones meteorológicas (código único y ubicación compuesta por latitud y longitud). Cada estación es operada por un único técnico de laboratorio (relación exclusiva 1:1). Una estación genera múltiples registros; un registro se identifica por la fecha y hora de la medición (única para esa estación) y no puede existir sin su estación (entidad débil). De cada registro: temperatura y humedad.",
+    "Los investigadores colaboran en publicaciones (DOI y título): una publicación puede ser escrita por varios investigadores y un investigador puede escribir muchas publicaciones; para cada autoría se registra el orden de los autores. Cada publicación está financiada por un único proyecto (id y nombre), pero un proyecto puede financiar muchas publicaciones.",
+    "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Persona",
+        "attrs": [
+          {
+            "name": "orcid",
+            "key": true
+          },
+          {
+            "name": "nombre_completo",
+            "parts": [
+              {
+                "name": "nombre_pila"
+              },
+              {
+                "name": "apellidos"
+              }
+            ]
+          },
+          {
+            "name": "correos",
+            "multi": true,
+            "aliases": [
+              "correo"
+            ]
+          },
+          {
+            "name": "anio_nacimiento",
+            "aliases": [
+              "año_nacimiento"
+            ]
+          },
+          {
+            "name": "edad",
+            "derived": true
+          }
+        ]
+      },
+      {
+        "name": "Investigador",
+        "attrs": [
+          {
+            "name": "campo_estudio",
+            "aliases": [
+              "campo"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tecnico_Laboratorio",
+        "aliases": [
+          "Técnico de laboratorio",
+          "Tecnico"
+        ],
+        "attrs": [
+          {
+            "name": "certificacion",
+            "aliases": [
+              "certificación"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Jefe_Departamento",
+        "aliases": [
+          "Jefe de departamento",
+          "Jefe"
+        ],
+        "attrs": []
+      },
+      {
+        "name": "Editor_Revista",
+        "aliases": [
+          "Editor de revista",
+          "Editor"
+        ],
+        "attrs": []
+      },
+      {
+        "name": "Estacion",
+        "aliases": [
+          "Estación"
+        ],
+        "attrs": [
+          {
+            "name": "codigo_estacion",
+            "key": true,
+            "aliases": [
+              "codigo"
+            ]
+          },
+          {
+            "name": "ubicacion",
+            "parts": [
+              {
+                "name": "latitud"
+              },
+              {
+                "name": "longitud"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Registro",
+        "weak": true,
+        "attrs": [
+          {
+            "name": "fecha_hora",
+            "partialKey": true,
+            "aliases": [
+              "fecha"
+            ]
+          },
+          {
+            "name": "temperatura"
+          },
+          {
+            "name": "humedad"
+          }
+        ]
+      },
+      {
+        "name": "Publicacion",
+        "aliases": [
+          "Publicación"
+        ],
+        "attrs": [
+          {
+            "name": "doi",
+            "key": true
+          },
+          {
+            "name": "titulo"
+          }
+        ]
+      },
+      {
+        "name": "Proyecto",
+        "attrs": [
+          {
+            "name": "id_proyecto",
+            "key": true,
+            "aliases": [
+              "id",
+              "codigo"
+            ]
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "opera",
+        "between": [
+          {
+            "entity": "Tecnico_Laboratorio",
+            "card": "1"
+          },
+          {
+            "entity": "Estacion",
+            "card": "1"
+          }
+        ]
+      },
+      {
+        "name": "genera",
+        "identifying": true,
+        "between": [
+          {
+            "entity": "Estacion",
+            "card": "1"
+          },
+          {
+            "entity": "Registro",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "escribe",
+        "between": [
+          {
+            "entity": "Investigador",
+            "card": "N"
+          },
+          {
+            "entity": "Publicacion",
+            "card": "N"
+          }
+        ],
+        "attrs": [
+          {
+            "name": "orden_autor",
+            "aliases": [
+              "orden"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "financia",
+        "between": [
+          {
+            "entity": "Proyecto",
+            "card": "1"
+          },
+          {
+            "entity": "Publicacion",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "specializations": [
+      {
+        "parent": "Persona",
+        "children": [
+          "Investigador",
+          "Tecnico_Laboratorio"
+        ],
+        "disjoint": true,
+        "total": true
+      },
+      {
+        "parent": "Investigador",
+        "children": [
+          "Jefe_Departamento",
+          "Editor_Revista"
+        ],
+        "disjoint": false,
+        "total": false
+      }
+    ],
+    "layout": [
+      [
+        "Jefe_Departamento",
+        "Editor_Revista",
+        null,
+        null
+      ],
+      [
+        null,
+        "Investigador",
+        "Publicacion",
+        "Proyecto"
+      ],
+      [
+        null,
+        "Persona",
+        null,
+        null
+      ],
+      [
+        "Tecnico_Laboratorio",
+        null,
+        "Estacion",
+        "Registro"
+      ]
+    ]
+  }
+}

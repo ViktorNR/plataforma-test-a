@@ -1,0 +1,145 @@
+{
+  "numero": 1,
+  "slug": "s3-empleados",
+  "semana": 3,
+  "tipo": "EER",
+  "titulo": "Empleados de una universidad",
+  "enunciado": [
+    "Una universidad registra a sus empleados: rut (identificador), nombre y sueldo. Todo empleado es docente o administrativo, y no puede ser ambas cosas a la vez.",
+    "Los docentes tienen grado_academico; los administrativos tienen cargo.",
+    "Además, todo empleado trabaja en un único departamento (cod_depto como identificador, y nombre). Un departamento puede tener muchos empleados, o ninguno todavía.",
+    "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase, y define si es total o parcial y disyunta (d) o solapada (o)."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Empleado",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true,
+            "aliases": [
+              "run",
+              "id_empleado"
+            ]
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "sueldo",
+            "aliases": [
+              "salario"
+            ]
+          }
+        ],
+        "pos": {
+          "x": 280,
+          "y": 40
+        },
+        "arc": [
+          200,
+          340
+        ]
+      },
+      {
+        "name": "Docente",
+        "attrs": [
+          {
+            "name": "grado_academico",
+            "aliases": [
+              "grado"
+            ]
+          }
+        ],
+        "pos": {
+          "x": 110,
+          "y": 330
+        },
+        "arc": [
+          40,
+          140
+        ]
+      },
+      {
+        "name": "Administrativo",
+        "attrs": [
+          {
+            "name": "cargo"
+          }
+        ],
+        "pos": {
+          "x": 440,
+          "y": 330
+        },
+        "arc": [
+          40,
+          140
+        ]
+      },
+      {
+        "name": "Departamento",
+        "attrs": [
+          {
+            "name": "cod_depto",
+            "key": true,
+            "aliases": [
+              "codigo_depto",
+              "id_depto",
+              "codigo",
+              "id_departamento",
+              "cod_departamento"
+            ]
+          },
+          {
+            "name": "nombre"
+          }
+        ],
+        "pos": {
+          "x": 760,
+          "y": 40
+        },
+        "arc": [
+          200,
+          340
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "trabaja_en",
+        "between": [
+          {
+            "entity": "Empleado",
+            "card": "N",
+            "min": 0
+          },
+          {
+            "entity": "Departamento",
+            "card": "1",
+            "min": 1
+          }
+        ],
+        "pos": {
+          "x": 520,
+          "y": 30
+        }
+      }
+    ],
+    "specializations": [
+      {
+        "parent": "Empleado",
+        "children": [
+          "Docente",
+          "Administrativo"
+        ],
+        "disjoint": true,
+        "total": true,
+        "pos": {
+          "x": 345,
+          "y": 180
+        }
+      }
+    ]
+  }
+}

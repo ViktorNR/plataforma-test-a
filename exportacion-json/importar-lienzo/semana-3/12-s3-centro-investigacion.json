@@ -1,0 +1,704 @@
+{
+  "nodes": [
+    {
+      "id": "e:Departamento",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Departamento",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Departamento:codigo_depto",
+      "type": "attribute",
+      "position": {
+        "x": 37.2841646959797,
+        "y": 118.57565794700395
+      },
+      "data": {
+        "label": "codigo_depto",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Departamento:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -112.0084014666108,
+        "y": 29.6276920935411
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Departamento:presupuesto_anual",
+      "type": "attribute",
+      "position": {
+        "x": -15.908258985690502,
+        "y": -115.16448157626424
+      },
+      "data": {
+        "label": "presupuesto_anual",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Cientifico",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Cientifico",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Cientifico:id_empleado",
+      "type": "attribute",
+      "position": {
+        "x": 371.0324480171704,
+        "y": -265.42633070495873
+      },
+      "data": {
+        "label": "id_empleado",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cientifico:nombre_completo",
+      "type": "attribute",
+      "position": {
+        "x": 469.21212831243145,
+        "y": -294.85773154322203
+      },
+      "data": {
+        "label": "nombre_completo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Cientifico:nombre_completo:nombres",
+      "type": "attribute",
+      "position": {
+        "x": 365.02834451295644,
+        "y": -307.9244523722692
+      },
+      "data": {
+        "label": "nombres",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Cientifico:nombre_completo:apellidos",
+      "type": "attribute",
+      "position": {
+        "x": 567.3354032812124,
+        "y": -332.23182563794217
+      },
+      "data": {
+        "label": "apellidos",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cientifico:fecha_contratacion",
+      "type": "attribute",
+      "position": {
+        "x": 571.5692302338525,
+        "y": -289.52100366652706
+      },
+      "data": {
+        "label": "fecha_contratacion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cientifico:antiguedad",
+      "type": "attribute",
+      "position": {
+        "x": 666.1558856631357,
+        "y": -250.03908890946147
+      },
+      "data": {
+        "label": "antiguedad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": true
+      }
+    },
+    {
+      "id": "a:e:Cientifico:especialidades",
+      "type": "attribute",
+      "position": {
+        "x": 741.9312497189201,
+        "y": -181.02060457087617
+      },
+      "data": {
+        "label": "especialidades",
+        "key": false,
+        "partialKey": false,
+        "multi": true,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Junior",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 380
+      },
+      "data": {
+        "label": "Junior",
+        "weak": false
+      }
+    },
+    {
+      "id": "e:Senior",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 380
+      },
+      "data": {
+        "label": "Senior",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Senior:bono_productividad",
+      "type": "attribute",
+      "position": {
+        "x": 616.7975996374036,
+        "y": 426.6038612431837
+      },
+      "data": {
+        "label": "bono_productividad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Administrador_Laboratorio",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 380
+      },
+      "data": {
+        "label": "Administrador_Laboratorio",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Administrador_Laboratorio:laboratorio",
+      "type": "attribute",
+      "position": {
+        "x": 916.6882785885805,
+        "y": 464.2467836985061
+      },
+      "data": {
+        "label": "laboratorio",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Coordinador_Postgrado",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 380
+      },
+      "data": {
+        "label": "Coordinador_Postgrado",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Coordinador_Postgrado:programa",
+      "type": "attribute",
+      "position": {
+        "x": 1593.3117214114195,
+        "y": 464.246783698506
+      },
+      "data": {
+        "label": "programa",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Proyecto",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Proyecto",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Proyecto:codigo_proyecto",
+      "type": "attribute",
+      "position": {
+        "x": 1034.03062747196,
+        "y": -113.4354871531196
+      },
+      "data": {
+        "label": "codigo_proyecto",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Proyecto:titulo",
+      "type": "attribute",
+      "position": {
+        "x": 1034.0306274719603,
+        "y": 119.43548715311954
+      },
+      "data": {
+        "label": "titulo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Familiar",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 0
+      },
+      "data": {
+        "label": "Familiar",
+        "weak": true
+      }
+    },
+    {
+      "id": "a:e:Familiar:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1625,
+        "y": 2.9999999999999716
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": true,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "dirige",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -138
+      },
+      "data": {
+        "label": "emplea",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:2",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": 362
+      },
+      "data": {
+        "label": "tiene_mentor",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:3",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "trabaja_en",
+        "identifying": false
+      }
+    },
+    {
+      "id": "a:r:3:horas_semanales",
+      "type": "attribute",
+      "position": {
+        "x": 755,
+        "y": 103
+      },
+      "data": {
+        "label": "horas_semanales",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:4",
+      "type": "relationship",
+      "position": {
+        "x": 990,
+        "y": -18
+      },
+      "data": {
+        "label": "depende",
+        "identifying": true
+      }
+    },
+    {
+      "id": "s:0",
+      "type": "spec",
+      "position": {
+        "x": 288,
+        "y": 150
+      },
+      "data": {
+        "label": "",
+        "disjoint": true,
+        "total": true
+      }
+    },
+    {
+      "id": "s:1",
+      "type": "spec",
+      "position": {
+        "x": 1288,
+        "y": 150
+      },
+      "data": {
+        "label": "",
+        "disjoint": false,
+        "total": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Departamento->a:e:Departamento:codigo_depto#0",
+      "source": "e:Departamento",
+      "target": "a:e:Departamento:codigo_depto",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Departamento->a:e:Departamento:nombre#0",
+      "source": "e:Departamento",
+      "target": "a:e:Departamento:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Departamento->a:e:Departamento:presupuesto_anual#0",
+      "source": "e:Departamento",
+      "target": "a:e:Departamento:presupuesto_anual",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cientifico->a:e:Cientifico:id_empleado#0",
+      "source": "e:Cientifico",
+      "target": "a:e:Cientifico:id_empleado",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cientifico->a:e:Cientifico:nombre_completo#0",
+      "source": "e:Cientifico",
+      "target": "a:e:Cientifico:nombre_completo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Cientifico:nombre_completo->a:a:e:Cientifico:nombre_completo:nombres#0",
+      "source": "a:e:Cientifico:nombre_completo",
+      "target": "a:a:e:Cientifico:nombre_completo:nombres",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Cientifico:nombre_completo->a:a:e:Cientifico:nombre_completo:apellidos#0",
+      "source": "a:e:Cientifico:nombre_completo",
+      "target": "a:a:e:Cientifico:nombre_completo:apellidos",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cientifico->a:e:Cientifico:fecha_contratacion#0",
+      "source": "e:Cientifico",
+      "target": "a:e:Cientifico:fecha_contratacion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cientifico->a:e:Cientifico:antiguedad#0",
+      "source": "e:Cientifico",
+      "target": "a:e:Cientifico:antiguedad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cientifico->a:e:Cientifico:especialidades#0",
+      "source": "e:Cientifico",
+      "target": "a:e:Cientifico:especialidades",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Senior->a:e:Senior:bono_productividad#0",
+      "source": "e:Senior",
+      "target": "a:e:Senior:bono_productividad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Administrador_Laboratorio->a:e:Administrador_Laboratorio:laboratorio#0",
+      "source": "e:Administrador_Laboratorio",
+      "target": "a:e:Administrador_Laboratorio:laboratorio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Coordinador_Postgrado->a:e:Coordinador_Postgrado:programa#0",
+      "source": "e:Coordinador_Postgrado",
+      "target": "a:e:Coordinador_Postgrado:programa",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proyecto->a:e:Proyecto:codigo_proyecto#0",
+      "source": "e:Proyecto",
+      "target": "a:e:Proyecto:codigo_proyecto",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Proyecto->a:e:Proyecto:titulo#0",
+      "source": "e:Proyecto",
+      "target": "a:e:Proyecto:titulo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Familiar->a:e:Familiar:nombre#0",
+      "source": "e:Familiar",
+      "target": "a:e:Familiar:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cientifico->r:0#0",
+      "source": "e:Cientifico",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Departamento->r:0#0",
+      "source": "e:Departamento",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Departamento->r:1#0",
+      "source": "e:Departamento",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Cientifico->r:1#0",
+      "source": "e:Cientifico",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Senior->r:2#0",
+      "source": "e:Senior",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Junior->r:2#0",
+      "source": "e:Junior",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Cientifico->r:3#0",
+      "source": "e:Cientifico",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Proyecto->r:3#0",
+      "source": "e:Proyecto",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "r:3->a:r:3:horas_semanales#0",
+      "source": "r:3",
+      "target": "a:r:3:horas_semanales",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cientifico->r:4#0",
+      "source": "e:Cientifico",
+      "target": "r:4",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Familiar->r:4#0",
+      "source": "e:Familiar",
+      "target": "r:4",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Cientifico->s:0#0",
+      "source": "e:Cientifico",
+      "target": "s:0",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Junior#0",
+      "source": "s:0",
+      "target": "e:Junior",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Senior#0",
+      "source": "s:0",
+      "target": "e:Senior",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cientifico->s:1#0",
+      "source": "e:Cientifico",
+      "target": "s:1",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:1->e:Administrador_Laboratorio#0",
+      "source": "s:1",
+      "target": "e:Administrador_Laboratorio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:1->e:Coordinador_Postgrado#0",
+      "source": "s:1",
+      "target": "e:Coordinador_Postgrado",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

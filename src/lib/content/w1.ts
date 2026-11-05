@@ -1,0 +1,115 @@
+import type { Exercise } from '../types';
+import { Q, quiz } from './dsl';
+
+export const W1_NEW: Record<string, Exercise> = {
+  dato: quiz('s1-dato-informacion', 'Dato, información y conocimiento', 'Distingue los tres niveles de significado de la información.', [
+    Q('¿Cuál de los siguientes es un ejemplo de DATO?', ['Un informe financiero trimestral', 'El número 22,5 registrado por un sensor de temperatura', 'La comprensión de por qué sube la temperatura en verano', 'Un reporte meteorológico semanal'], 1, 'Un dato es un hecho discreto y crudo, sin contexto: un número, una palabra, una temperatura.'),
+    Q('La información se obtiene cuando los datos…', ['se borran para ahorrar espacio', 'se organizan, interpretan y se les da contexto', 'se copian a otro equipo', 'se encriptan'], 1, 'La información es el resultado de organizar e interpretar datos para que sean útiles en la toma de decisiones.'),
+    Q('¿Qué ejemplo corresponde a CONOCIMIENTO?', ['El teléfono 9 4552 4171', 'Una tabla con las ventas de enero', 'Comprender las implicaciones de un fenómeno a partir de la información y la experiencia acumulada', 'Una fotografía sin descripción'], 2, 'El conocimiento es la comprensión profunda de la información, basada en su aplicación práctica y experiencia.'),
+    Q('Ordena de menor a mayor significado:', ['Conocimiento → información → dato', 'Dato → información → conocimiento', 'Información → dato → conocimiento', 'Dato → conocimiento → información'], 1, 'Los datos se transforman en información y esta, con experiencia, en conocimiento.'),
+    Q('Verdadero o falso: un dato aislado, sin contexto, ya es información útil para decidir.', ['Verdadero', 'Falso'], 1, 'Sin contexto ni interpretación un dato carece de significado; por eso no es aún información.'),
+  ]),
+  tradicional: quiz('s1-enfoque-tradicional', 'Enfoque tradicional: sistema de archivos', 'Repasa cómo se manejaba la información antes de las bases de datos.', [
+    Q('En el enfoque tradicional (sistema de archivos), cada programa…', ['comparte todos los archivos con los demás', 'es dueño de sus propios archivos y depende de su formato', 'consulta una base de datos central', 'no necesita definir sus datos'], 1, 'Cada programa define y maneja sus archivos; la lógica del programa depende de los formatos de esos datos.'),
+    Q('¿Qué ocurre cuando cambia el formato de un archivo en el enfoque tradicional?', ['Nada, los programas se adaptan solos', 'Hay que modificar todos los programas que lo usan', 'Solo se modifica el sistema operativo', 'Se pierde el archivo'], 1, 'Es la dependencia de los datos: un cambio de esquema obliga a modificar todos los programas.'),
+    Q('Cada nueva aplicación en este enfoque se diseña con…', ['la base de datos corporativa', 'su propio conjunto de archivos', 'un modelo conceptual compartido', 'un DBMS'], 1, 'Cada aplicación nace con sus archivos propios, lo que duplica datos.'),
+    Q('El enfoque tradicional responde a requerimientos…', ['de la organización completa, con planificación central', 'de usuarios individuales, sin una planificación que guíe el desarrollo', 'de la alta gerencia únicamente', 'de los clientes externos'], 1, 'Cada sistema satisface las necesidades de un departamento, sin planificación corporativa.'),
+    Q('Verdadero o falso: en el enfoque tradicional cada usuario mantiene archivos y programas separados.', ['Verdadero', 'Falso'], 0, 'Por eso también se le llama enfoque de archivos.'),
+  ]),
+  agregacion: quiz('s1-enfoque-agregacion', 'Enfoque por agregación', 'Sistemas de información que crecen por departamentos.', [
+    Q('El enfoque por agregación consiste en…', ['integrar todos los datos en un único modelo', 'ir acoplando a un sistema de información nuevas funciones por departamento', 'eliminar los archivos duplicados', 'usar solo hojas de cálculo'], 1, 'Es un proceso evolutivo: se agregan funciones y sistemas a medida que cada área los necesita.'),
+    Q('¿Cuál es un ejemplo de aplicación individual típica de este enfoque?', ['Remuneraciones', 'Un diagrama E/R', 'El esquema conceptual', 'Un motor de base de datos'], 0, 'Remuneraciones, cuentas corrientes, contabilidad o control de inventario se desarrollaron como sistemas aislados.'),
+    Q('La superposición de áreas en el organigrama indica…', ['mejor integración', 'utilización del mismo tipo de dato por varios sistemas (duplicación de recursos)', 'menor costo', 'mayor seguridad'], 1, 'Distintos sistemas usan el mismo dato, lo que duplica recursos y esfuerzo.'),
+    Q('En este enfoque, los programas de aplicación…', ['no necesitan conocer los archivos', 'deben contener las definiciones de los archivos que usan y las instrucciones para manejarlos', 'acceden siempre a una sola tabla', 'delegan todo al DBMS'], 1, 'Cada programa incluye la definición de sus archivos y la lógica para manipularlos.'),
+    Q('¿Existe una planificación corporativa que guíe el desarrollo de aplicaciones en el enfoque por agregación?', ['Sí, siempre', 'No, cada sistema responde a las necesidades de un departamento', 'Solo en empresas grandes', 'Solo en bancos'], 1, 'La falta de planificación y de un modelo común es precisamente su debilidad.'),
+  ]),
+  inconvenientes: quiz('s1-inconvenientes', 'Inconvenientes del enfoque tradicional', 'Identifica los problemas que motivaron las bases de datos.', [
+    Q('Guardar la dirección de un cliente en tres archivos distintos genera principalmente…', ['redundancia y riesgo de inconsistencia', 'mayor velocidad', 'independencia de datos', 'menos duplicación'], 0, 'La redundancia no controlada puede dejar versiones distintas del mismo dato.'),
+    Q('Usar nombres diferentes para el mismo ítem de datos en distintos archivos es un problema de…', ['seguridad', 'anomalías de los datos', 'rendimiento', 'hardware'], 1, 'Es una anomalía: mismo dato, distintos nombres (o el mismo nombre para datos distintos).'),
+    Q('Que no exista restricción de acceso a los datos corresponde a un problema de…', ['seguridad', 'normalización', 'indexación', 'respaldo'], 0, 'En los archivos tradicionales es difícil controlar quién ve o modifica qué.'),
+    Q('Los informes erróneos y la pérdida de confianza del cliente son consecuencia de…', ['la inconsistencia de los datos', 'el exceso de memoria', 'la normalización', 'las vistas de usuario'], 0, 'Datos inconsistentes entre archivos producen informes distintos para la misma pregunta.'),
+    Q('¿Cuál NO es un inconveniente del enfoque tradicional?', ['Subutilización del espacio en disco', 'Duplicidad en el ingreso de datos', 'Escasa posibilidad de compartir datos', 'Control centralizado de la seguridad'], 3, 'El control centralizado es una característica del enfoque de bases de datos.'),
+  ]),
+  definicion: quiz('s1-definicion-bd', 'Definición de base de datos', 'Integrar y compartir: las dos propiedades fundamentales.', [
+    Q('Una base de datos es…', ['un conjunto de datos organizados y relacionados entre sí que satisface las necesidades de información de una organización', 'un archivo de texto con datos sueltos', 'un programa de contabilidad', 'una planilla por departamento'], 0, 'Es el conjunto de datos organizados y relacionados de una organización.'),
+    Q('Las dos propiedades principales de una base de datos son…', ['rapidez y color', 'integrar y compartir', 'copiar y pegar', 'cifrar y comprimir'], 1, 'Integrar (reducir redundancia, facilitar acceso) y compartir (todos los usuarios calificados acceden a los mismos datos).'),
+    Q('«Integrar» significa que los archivos de datos…', ['se organizan lógicamente para reducir redundancia y facilitar el acceso', 'se separan por departamento', 'se borran después de usarlos', 'se copian en cada aplicación'], 0, 'Integración es organización lógica de los datos para evitar redundancia.'),
+    Q('«Compartir» significa que…', ['cada usuario tiene su copia', 'todos los usuarios calificados acceden a los mismos datos en distintas actividades', 'los datos son públicos', 'solo el administrador accede'], 1, 'Los datos son un recurso común, con acceso controlado.'),
+    Q('Verdadero o falso: en el enfoque de bases de datos los datos son visualizados como un recurso de la organización.', ['Verdadero', 'Falso'], 0, 'Los datos dejan de pertenecer a cada programa y pasan a ser un recurso compartido.'),
+  ]),
+  enfoqueBd: quiz('s1-enfoque-bd', 'Enfoque de base de datos', 'Características de la metodología de bases de datos.', [
+    Q('En el enfoque de bases de datos los datos se almacenan…', ['dentro de cada programa', 'de forma independiente del programa que los usa', 'solo en papel', 'en archivos por departamento'], 1, 'Esta es la independencia de datos.'),
+    Q('El control de protección, ingreso, modificación, eliminación y recuperación de datos es…', ['individual de cada aplicación', 'centralizado', 'inexistente', 'responsabilidad del usuario final'], 1, 'Existe un control centralizado de las operaciones sobre los datos.'),
+    Q('¿Qué software gestiona la base de datos?', ['Un compilador', 'Un DBMS', 'Un navegador', 'Un antivirus'], 1, 'El DBMS (Data Base Management System) es el intermediario entre las aplicaciones y los datos.'),
+    Q('Una característica del enfoque de bases de datos es…', ['la redundancia no controlada', 'la dependencia de los datos', 'los datos se integran y se comparten', 'cada programa define sus archivos'], 2, 'Integración y compartición son sus propiedades distintivas.'),
+    Q('Verdadero o falso: con el enfoque de bases de datos, un cambio en el esquema obliga siempre a reescribir todos los programas.', ['Verdadero', 'Falso'], 1, 'La independencia de datos evita reescribir los programas por cambios en el esquema.'),
+  ]),
+  dbms: quiz('s1-dbms', 'DBMS: el intermediario de los datos', 'Funciones y tipos de sistemas gestores.', [
+    Q('DBMS significa…', ['Data Backup Management System', 'Data Base Management System', 'Digital Binary Memory Server', 'Database Model Syntax'], 1, 'Sistema de gestión de bases de datos.'),
+    Q('Entre las funciones del DBMS están…', ['solo almacenar archivos', 'seguridad, integridad y compartición de datos', 'diseñar interfaces gráficas', 'compilar programas'], 1, 'El DBMS protege, valida y comparte los datos entre aplicaciones y usuarios.'),
+    Q('MySQL, Oracle y SQL Server son ejemplos de…', ['DBMS relacionales', 'sistemas operativos', 'lenguajes de programación', 'bases de datos de grafos'], 0, 'Los RDBMS organizan los datos en tablas con filas y columnas.'),
+    Q('Un DBMS NoSQL es adecuado para…', ['solo datos con esquema fijo', 'gestionar datos no estructurados con esquema flexible', 'reemplazar a los sistemas operativos', 'dibujar diagramas'], 1, 'Ofrece esquemas flexibles y varios modelos de datos.'),
+    Q('Un DBMS jerárquico organiza los datos…', ['en tablas', 'en relaciones padre-hijo como un árbol', 'en documentos JSON', 'en grafos'], 1, 'Cada padre puede tener varios hijos, pero cada hijo tiene un solo padre (ej.: IMS de IBM).'),
+  ]),
+  ventajas: quiz('s1-ventajas', 'Ventajas del enfoque de bases de datos', 'Qué se gana al usar una base de datos.', [
+    Q('¿Cuál es una ventaja del enfoque de bases de datos?', ['Mayor redundancia', 'Mínima redundancia de datos', 'Mayor dependencia de los programas', 'Menor seguridad'], 1, 'Se evita duplicar datos innecesariamente.'),
+    Q('La consistencia de datos significa que…', ['todos los datos son iguales', 'un dato tiene el mismo valor en toda la organización', 'los datos no cambian nunca', 'hay un solo usuario'], 1, 'Al no duplicarse, los datos no se contradicen entre sí.'),
+    Q('Facilitar el desarrollo de aplicaciones se logra porque…', ['los programadores no necesitan conocer los datos', 'los datos ya están definidos y disponibles de forma independiente', 'se elimina el DBMS', 'se programa en papel'], 1, 'Los programadores reutilizan datos y definiciones existentes.'),
+    Q('La reducción de la mantención de programas se debe a…', ['la independencia de los datos', 'la redundancia', 'el uso de más archivos', 'la duplicidad de código'], 0, 'Un cambio en el almacenamiento no obliga a modificar los programas.'),
+    Q('¿Cuál de las siguientes NO es una ventaja listada?', ['Esfuerzo por estandarización', 'Controles de seguridad, privacidad e integridad', 'Integración de datos', 'Dependencia de los datos'], 3, 'La dependencia de los datos es un problema del enfoque tradicional.'),
+  ]),
+  etapas: quiz('s1-etapas-modelos', 'Etapas y modelos en bases de datos', 'Creación y operación; esquema conceptual y físico.', [
+    Q('Las dos etapas al trabajar con bases de datos son…', ['compilación y ejecución', 'creación y operación o utilización', 'compra e instalación', 'diseño gráfico y pruebas'], 1, 'La creación se hace una vez; la operación involucra a los usuarios finales.'),
+    Q('La creación de la base de datos debe…', ['hacerse cada día', 'satisfacer los requerimientos de todas las áreas', 'ignorar a los usuarios', 'hacerse solo para un departamento'], 1, 'Debe considerar las necesidades de toda la organización.'),
+    Q('Los modelos se usan para…', ['facilitar la comunicación entre el diseñador y los usuarios finales', 'reemplazar al DBMS', 'comprimir archivos', 'dibujar la interfaz'], 0, 'Son una imagen simplificada del sistema de información que se desea desarrollar.'),
+    Q('La definición o esquema conceptual describe…', ['la ubicación física de los archivos', 'los archivos y sus asociaciones', 'las contraseñas', 'el hardware'], 1, 'Es la descripción lógica de los datos y sus relaciones.'),
+    Q('Los usuarios finales participan principalmente en la etapa de…', ['creación', 'operación o utilización', 'diseño físico', 'instalación del hardware'], 1, 'Son quienes acceden constantemente a las bases de datos.'),
+  ]),
+  niveles: quiz('s1-niveles-arquitectura', 'Niveles de la arquitectura de una BD', 'Nivel externo, conceptual e interno.', [
+    Q('El nivel externo describe…', ['la estructura física de almacenamiento', 'la parte de la base de datos visible para cada grupo de usuarios (vistas)', 'la estructura completa de la base de datos', 'la red'], 1, 'Presenta solo la información relevante a cada grupo de usuarios y oculta el resto.'),
+    Q('El nivel conceptual se centra en…', ['rutas de acceso físicas', 'entidades, atributos, relaciones, operaciones y restricciones', 'pantallas de usuario', 'el sistema operativo'], 1, 'Describe la estructura completa de la base de datos mediante un modelo conceptual o lógico.'),
+    Q('El nivel interno describe…', ['las vistas de usuario', 'el esquema lógico', 'la estructura física: almacenamiento, rutas y métodos de acceso', 'los permisos'], 2, 'Se especifica mediante un modelo físico.'),
+    Q('Una factura, boleta o informe que ve un usuario corresponde al esquema…', ['externo', 'conceptual', 'interno', 'físico del disco'], 0, 'Las vistas de usuario (facturas, boletas, informes) son esquemas externos.'),
+    Q('Verdadero o falso: puede haber varios esquemas externos para una misma base de datos.', ['Verdadero', 'Falso'], 0, 'Cada grupo de usuarios puede tener su propia vista.'),
+  ]),
+  esquemas: quiz('s1-esquemas', 'Esquemas: externo, conceptual e interno', 'Qué representa cada esquema y para qué sirve.', [
+    Q('El esquema conceptual…', ['depende del DBMS', 'abstrae la realidad en relación con los datos e integra las visiones de distintos interesados', 'describe solo la interfaz', 'es el archivo de respaldo'], 1, 'Permite integrar visiones de diferentes interesados.'),
+    Q('El esquema interno…', ['es independiente del DBMS', 'depende del DBMS y desarrolla conceptos de eficiencia, seguridad e integridad', 'son las vistas de usuario', 'solo existe en NoSQL'], 1, 'Depende del DBMS elegido.'),
+    Q('Si cambia la forma física de almacenar datos pero no el esquema conceptual, ¿qué conviene preservar?', ['Los programas de aplicación sin cambios', 'Reescribir todo', 'Cambiar las vistas', 'Cambiar el modelo conceptual'], 0, 'La independencia física de datos permite cambios en el nivel interno sin afectar las aplicaciones.'),
+    Q('¿Cuál es el orden de abstracción de más cercano al usuario a más cercano al hardware?', ['Interno, conceptual, externo', 'Externo, conceptual, interno', 'Conceptual, externo, interno', 'Interno, externo, conceptual'], 1, 'Externo (usuario) → conceptual → interno (físico).'),
+    Q('Los modelos Entidad-Relación se usan principalmente en el nivel…', ['interno', 'conceptual', 'de red', 'de hardware'], 1, 'El modelo E/R es un modelo conceptual de alto nivel.'),
+  ]),
+  arquitecturas: quiz('s1-arquitecturas-dbms', 'Arquitecturas de un DBMS', 'Centralizada, cliente/servidor y distribuida.', [
+    Q('En la arquitectura centralizada…', ['los datos están en varios países', 'el DBMS y los datos residen en un único computador central', 'no existe servidor', 'solo hay clientes'], 1, 'Todo el procesamiento y almacenamiento ocurre en un equipo central.'),
+    Q('En la arquitectura cliente/servidor de dos capas…', ['la aplicación (cliente) se conecta directamente al servidor de base de datos', 'hay tres servidores', 'no hay red', 'los datos están en el cliente'], 0, 'El cliente contiene la lógica y la interfaz; el servidor gestiona los datos.'),
+    Q('La arquitectura de tres capas separa…', ['presentación, lógica de negocio y datos', 'interno, conceptual y externo', 'cliente, red y correo', 'hardware, software y datos'], 0, 'Facilita mantenimiento y escalabilidad.'),
+    Q('Una base de datos distribuida…', ['almacena los datos en múltiples ubicaciones conectadas por una red', 'solo funciona sin red', 'usa un único disco', 'no admite consultas'], 0, 'Aumenta disponibilidad, a costa de complejidad.'),
+    Q('Una arquitectura IoT–Big Data basada en pipeline de datos se caracteriza por…', ['un flujo de datos desde sensores hasta el almacenamiento y análisis', 'no usar datos', 'funcionar solo en papel', 'usar solo hojas de cálculo'], 0, 'Los datos fluyen por etapas: captura, transporte, almacenamiento y análisis.'),
+  ]),
+  tipos: quiz('s1-tipos-bd', 'Tipos de bases de datos', 'Relacionales, documentales, orientadas a objetos y de grafos.', [
+    Q('Las bases de datos relacionales…', ['usan tablas relacionadas (ej. Oracle, MySQL, PostgreSQL, SQL Server, MariaDB)', 'usan solo grafos', 'solo guardan imágenes', 'no usan SQL'], 0, 'Estructuran los datos en tablas con filas y columnas.'),
+    Q('Las bases de datos documentales (NoSQL) utilizan…', ['tablas', 'documentos en formato JSON o XML', 'solo archivos de audio', 'árboles B'], 1, 'Ejemplos: MongoDB, Cassandra, Redis.'),
+    Q('Las bases de datos orientadas a objetos…', ['almacenan datos como objetos basados en clases', 'no permiten herencia', 'son siempre relacionales', 'solo guardan texto'], 0, 'Son útiles para estructuras de datos complejas (ej.: modelado 3D).'),
+    Q('Las bases de datos de grafos son adecuadas para…', ['facturas', 'relaciones complejas como redes sociales o redes de transporte', 'listas simples', 'hojas de cálculo'], 1, 'Los grafos representan nodos y relaciones.'),
+    Q('Una base de datos con un esquema predefinido de columnas y tipos de datos es típica de un DBMS…', ['relacional', 'de grafos', 'de documentos sin esquema', 'jerárquico NoSQL'], 0, 'Los RDBMS definen un esquema fijo por tabla.'),
+  ]),
+};
+
+/** Orden de presentación junto con los dos cuestionarios originales (`s1-conceptos`, `s1-modelos`). */
+export const W1_ORDER = [
+  'dato',
+  'tradicional',
+  'agregacion',
+  'inconvenientes',
+  'CONCEPTOS',
+  'definicion',
+  'enfoqueBd',
+  'dbms',
+  'ventajas',
+  'etapas',
+  'MODELOS',
+  'niveles',
+  'esquemas',
+  'arquitecturas',
+  'tipos',
+];

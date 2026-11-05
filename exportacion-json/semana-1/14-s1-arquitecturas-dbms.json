@@ -1,0 +1,77 @@
+{
+  "numero": 14,
+  "slug": "s1-arquitecturas-dbms",
+  "semana": 1,
+  "tipo": "QUIZ",
+  "titulo": "Arquitecturas de un DBMS",
+  "enunciado": [
+    "Centralizada, cliente/servidor y distribuida."
+  ],
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "En la arquitectura centralizada…",
+      "alternativas": [
+        "los datos están en varios países",
+        "el DBMS y los datos residen en un único computador central",
+        "no existe servidor",
+        "solo hay clientes"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "el DBMS y los datos residen en un único computador central",
+      "explicacion": "Todo el procesamiento y almacenamiento ocurre en un equipo central."
+    },
+    {
+      "id": "q2",
+      "pregunta": "En la arquitectura cliente/servidor de dos capas…",
+      "alternativas": [
+        "la aplicación (cliente) se conecta directamente al servidor de base de datos",
+        "hay tres servidores",
+        "no hay red",
+        "los datos están en el cliente"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "la aplicación (cliente) se conecta directamente al servidor de base de datos",
+      "explicacion": "El cliente contiene la lógica y la interfaz; el servidor gestiona los datos."
+    },
+    {
+      "id": "q3",
+      "pregunta": "La arquitectura de tres capas separa…",
+      "alternativas": [
+        "presentación, lógica de negocio y datos",
+        "interno, conceptual y externo",
+        "cliente, red y correo",
+        "hardware, software y datos"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "presentación, lógica de negocio y datos",
+      "explicacion": "Facilita mantenimiento y escalabilidad."
+    },
+    {
+      "id": "q4",
+      "pregunta": "Una base de datos distribuida…",
+      "alternativas": [
+        "almacena los datos en múltiples ubicaciones conectadas por una red",
+        "solo funciona sin red",
+        "usa un único disco",
+        "no admite consultas"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "almacena los datos en múltiples ubicaciones conectadas por una red",
+      "explicacion": "Aumenta disponibilidad, a costa de complejidad."
+    },
+    {
+      "id": "q5",
+      "pregunta": "Una arquitectura IoT–Big Data basada en pipeline de datos se caracteriza por…",
+      "alternativas": [
+        "un flujo de datos desde sensores hasta el almacenamiento y análisis",
+        "no usar datos",
+        "funcionar solo en papel",
+        "usar solo hojas de cálculo"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "un flujo de datos desde sensores hasta el almacenamiento y análisis",
+      "explicacion": "Los datos fluyen por etapas: captura, transporte, almacenamiento y análisis."
+    }
+  ]
+}

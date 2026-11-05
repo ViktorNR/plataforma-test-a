@@ -1,0 +1,218 @@
+{
+  "numero": 7,
+  "slug": "s3-hotel",
+  "semana": 3,
+  "tipo": "EER",
+  "titulo": "Cadena de hoteles",
+  "enunciado": [
+    "Cadena de hoteles: de cada hotel se almacena el código (identificador), nombre, dirección, teléfono y año de construcción. Cada hotel se clasifica obligatoriamente en una categoría (por ejemplo, tres estrellas); cada categoría tiene código (identificador), tipo de IVA y descripción, y agrupa a muchos hoteles.",
+    "Cada hotel tiene varias habitaciones, de las que se guarda el código (identificador) y el tipo (suite, doble, individual…); cada habitación pertenece a un hotel.",
+    "Las reservas las realizan clientes (identificador, nombre, dirección y teléfono), que pueden ser particulares o agencias de viaje (no ambos; todo cliente es de uno de los dos tipos). Si la reserva la realiza una agencia, se necesita además el nombre de la persona para quien se reserva.",
+    "De cada reserva (código identificador) se guarda el precio, la fecha de inicio y la fecha de fin. Cada reserva es de una habitación y la realiza un cliente; una habitación puede tener muchas reservas y un cliente puede hacer muchas reservas.",
+    "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Hotel",
+        "attrs": [
+          {
+            "name": "cod_hotel",
+            "key": true,
+            "aliases": [
+              "codigo"
+            ]
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "direccion"
+          },
+          {
+            "name": "telefono"
+          },
+          {
+            "name": "anio_construccion",
+            "aliases": [
+              "año_construccion"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Categoria",
+        "attrs": [
+          {
+            "name": "cod_categoria",
+            "key": true,
+            "aliases": [
+              "codigo"
+            ]
+          },
+          {
+            "name": "tipo_iva",
+            "aliases": [
+              "iva"
+            ]
+          },
+          {
+            "name": "descripcion"
+          }
+        ]
+      },
+      {
+        "name": "Habitacion",
+        "attrs": [
+          {
+            "name": "codigo_habitacion",
+            "key": true,
+            "aliases": [
+              "codigo"
+            ]
+          },
+          {
+            "name": "tipo"
+          }
+        ]
+      },
+      {
+        "name": "Cliente",
+        "attrs": [
+          {
+            "name": "id_cliente",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "direccion"
+          },
+          {
+            "name": "telefono"
+          }
+        ]
+      },
+      {
+        "name": "Particular",
+        "attrs": []
+      },
+      {
+        "name": "Agencia",
+        "aliases": [
+          "Agencia de viajes",
+          "Agencia_Viajes"
+        ],
+        "attrs": [
+          {
+            "name": "nombre_persona"
+          }
+        ]
+      },
+      {
+        "name": "Reserva",
+        "attrs": [
+          {
+            "name": "cod_reserva",
+            "key": true,
+            "aliases": [
+              "codigo"
+            ]
+          },
+          {
+            "name": "precio"
+          },
+          {
+            "name": "fecha_inicio"
+          },
+          {
+            "name": "fecha_fin"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "clasifica",
+        "between": [
+          {
+            "entity": "Categoria",
+            "card": "1"
+          },
+          {
+            "entity": "Hotel",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "tiene",
+        "between": [
+          {
+            "entity": "Hotel",
+            "card": "1"
+          },
+          {
+            "entity": "Habitacion",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "es_de",
+        "between": [
+          {
+            "entity": "Habitacion",
+            "card": "1"
+          },
+          {
+            "entity": "Reserva",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "realiza",
+        "between": [
+          {
+            "entity": "Cliente",
+            "card": "1"
+          },
+          {
+            "entity": "Reserva",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "specializations": [
+      {
+        "parent": "Cliente",
+        "children": [
+          "Particular",
+          "Agencia"
+        ],
+        "disjoint": true,
+        "total": true
+      }
+    ],
+    "layout": [
+      [
+        "Categoria",
+        "Hotel",
+        "Habitacion",
+        "Reserva"
+      ],
+      [
+        "Particular",
+        "Cliente",
+        "Agencia",
+        null
+      ]
+    ]
+  }
+}

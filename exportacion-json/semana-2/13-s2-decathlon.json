@@ -1,0 +1,249 @@
+{
+  "numero": 13,
+  "slug": "s2-decathlon",
+  "semana": 2,
+  "tipo": "ER",
+  "titulo": "Decathlon Chile",
+  "enunciado": [
+    "La empresa Decathlon Chile desea una base de datos para manejar sus sucursales, empleados, productos y clientes.",
+    "De las sucursales se sabe el número único que la identifica dentro de la cadena, el domicilio y la ciudad. De los empleados: rut (identificador), nombre completo, domicilio (calle, número y ciudad) y los teléfonos en los que puede ser contactado (varios). Los empleados trabajan en diferentes sucursales en diferentes días de la semana, y en cada sucursal tienen asignado un horario que puede ser distinto en cada una; en cada sucursal trabajan varios empleados (se registra el día y el horario).",
+    "De los productos se conoce un código (identificador), descripción, color y costo fijo de fabricación. Las fábricas se identifican con CUIT y se conoce su nombre, país de origen, cantidad de empleados y nombre del gerente. Cada producto es fabricado en una sola fábrica, y cada fábrica solamente realiza un tipo de producto.",
+    "Cada sucursal puede vender varios productos y cada producto puede ser vendido por varias sucursales; cada sucursal establece el precio de venta del producto que ofrece.",
+    "De los clientes se conoce el código de cliente (identificador), rut, nombre, fecha de nacimiento, ciudad y edad (calculable). Cada cliente puede utilizar varias tarjetas de crédito, identificadas por su número, de las que se guarda el nombre de la tarjeta, el código de seguridad y la fecha de vencimiento. Cada cliente compra en una sola sucursal y en una sucursal pueden comprar varios clientes. Cada sucursal ofrece a sus clientes un descuento fijo por fidelidad (atributo de la sucursal).",
+    "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Sucursal",
+        "attrs": [
+          {
+            "name": "num_sucursal",
+            "key": true
+          },
+          {
+            "name": "domicilio"
+          },
+          {
+            "name": "ciudad"
+          },
+          {
+            "name": "descuento"
+          }
+        ]
+      },
+      {
+        "name": "Empleado",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true
+          },
+          {
+            "name": "nombre_completo",
+            "aliases": [
+              "nombre"
+            ]
+          },
+          {
+            "name": "domicilio",
+            "parts": [
+              {
+                "name": "calle"
+              },
+              {
+                "name": "numero"
+              },
+              {
+                "name": "ciudad"
+              }
+            ]
+          },
+          {
+            "name": "telefono",
+            "multi": true
+          }
+        ]
+      },
+      {
+        "name": "Producto",
+        "attrs": [
+          {
+            "name": "codigo",
+            "key": true
+          },
+          {
+            "name": "descripcion"
+          },
+          {
+            "name": "color"
+          },
+          {
+            "name": "costo_fijo"
+          }
+        ]
+      },
+      {
+        "name": "Fabrica",
+        "attrs": [
+          {
+            "name": "cuit",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "pais_origen"
+          },
+          {
+            "name": "cantidad_empleados"
+          },
+          {
+            "name": "gerente"
+          }
+        ]
+      },
+      {
+        "name": "Cliente",
+        "attrs": [
+          {
+            "name": "cod_cliente",
+            "key": true
+          },
+          {
+            "name": "rut"
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "fecha_nacimiento"
+          },
+          {
+            "name": "ciudad"
+          },
+          {
+            "name": "edad",
+            "derived": true
+          }
+        ]
+      },
+      {
+        "name": "Tarjeta",
+        "attrs": [
+          {
+            "name": "numero",
+            "key": true
+          },
+          {
+            "name": "nombre_tarjeta",
+            "aliases": [
+              "nombre"
+            ]
+          },
+          {
+            "name": "codigo_seguridad"
+          },
+          {
+            "name": "fecha_vencimiento"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "trabaja",
+        "between": [
+          {
+            "entity": "Empleado",
+            "card": "N"
+          },
+          {
+            "entity": "Sucursal",
+            "card": "N"
+          }
+        ],
+        "attrs": [
+          {
+            "name": "dia"
+          },
+          {
+            "name": "horario"
+          }
+        ]
+      },
+      {
+        "name": "vende",
+        "between": [
+          {
+            "entity": "Sucursal",
+            "card": "N"
+          },
+          {
+            "entity": "Producto",
+            "card": "N"
+          }
+        ],
+        "attrs": [
+          {
+            "name": "precio_venta"
+          }
+        ]
+      },
+      {
+        "name": "fabrica",
+        "between": [
+          {
+            "entity": "Fabrica",
+            "card": "1"
+          },
+          {
+            "entity": "Producto",
+            "card": "1"
+          }
+        ]
+      },
+      {
+        "name": "compra",
+        "between": [
+          {
+            "entity": "Sucursal",
+            "card": "1"
+          },
+          {
+            "entity": "Cliente",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "utiliza",
+        "between": [
+          {
+            "entity": "Cliente",
+            "card": "1"
+          },
+          {
+            "entity": "Tarjeta",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "layout": [
+      [
+        "Empleado",
+        "Sucursal",
+        "Producto",
+        "Fabrica"
+      ],
+      [
+        null,
+        "Cliente",
+        "Tarjeta",
+        null
+      ]
+    ]
+  }
+}

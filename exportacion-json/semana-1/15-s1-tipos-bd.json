@@ -1,0 +1,77 @@
+{
+  "numero": 15,
+  "slug": "s1-tipos-bd",
+  "semana": 1,
+  "tipo": "QUIZ",
+  "titulo": "Tipos de bases de datos",
+  "enunciado": [
+    "Relacionales, documentales, orientadas a objetos y de grafos."
+  ],
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "Las bases de datos relacionales…",
+      "alternativas": [
+        "usan tablas relacionadas (ej. Oracle, MySQL, PostgreSQL, SQL Server, MariaDB)",
+        "usan solo grafos",
+        "solo guardan imágenes",
+        "no usan SQL"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "usan tablas relacionadas (ej. Oracle, MySQL, PostgreSQL, SQL Server, MariaDB)",
+      "explicacion": "Estructuran los datos en tablas con filas y columnas."
+    },
+    {
+      "id": "q2",
+      "pregunta": "Las bases de datos documentales (NoSQL) utilizan…",
+      "alternativas": [
+        "tablas",
+        "documentos en formato JSON o XML",
+        "solo archivos de audio",
+        "árboles B"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "documentos en formato JSON o XML",
+      "explicacion": "Ejemplos: MongoDB, Cassandra, Redis."
+    },
+    {
+      "id": "q3",
+      "pregunta": "Las bases de datos orientadas a objetos…",
+      "alternativas": [
+        "almacenan datos como objetos basados en clases",
+        "no permiten herencia",
+        "son siempre relacionales",
+        "solo guardan texto"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "almacenan datos como objetos basados en clases",
+      "explicacion": "Son útiles para estructuras de datos complejas (ej.: modelado 3D)."
+    },
+    {
+      "id": "q4",
+      "pregunta": "Las bases de datos de grafos son adecuadas para…",
+      "alternativas": [
+        "facturas",
+        "relaciones complejas como redes sociales o redes de transporte",
+        "listas simples",
+        "hojas de cálculo"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "relaciones complejas como redes sociales o redes de transporte",
+      "explicacion": "Los grafos representan nodos y relaciones."
+    },
+    {
+      "id": "q5",
+      "pregunta": "Una base de datos con un esquema predefinido de columnas y tipos de datos es típica de un DBMS…",
+      "alternativas": [
+        "relacional",
+        "de grafos",
+        "de documentos sin esquema",
+        "jerárquico NoSQL"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "relacional",
+      "explicacion": "Los RDBMS definen un esquema fijo por tabla."
+    }
+  ]
+}

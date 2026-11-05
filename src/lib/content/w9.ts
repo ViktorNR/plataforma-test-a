@@ -1,0 +1,130 @@
+import type { Exercise } from '../types';
+import { sqlQ } from './dsl';
+
+const use = (db: string) => `Trabaja con la base de datos \`${db}\` (cárgala desde «Bases de ejemplo» del Laboratorio o con \`USE ${db};\`).`;
+const CM = 'centro_medico';
+const CO = 'comercio';
+
+/** Semana 9: operadores relacionales (UNION, INTERSECT, EXCEPT, anti-join) y funciones de grupo. */
+export const W9: Exercise[] = [
+  sqlQ(
+    's9-union-personal',
+    9,
+    'UNION: administrativos y médicos',
+    CM,
+    [use(CM), 'Con un operador `UNION`, lista en una sola columna el nombre de todo el personal que es administrativo o médico (sin repetir).'],
+    `SELECT p.NOMBRE FROM PERSONAL p INNER JOIN ADMINISTRATIVO a ON a.RUT_PERSONAL = p.RUT_PERSONAL UNION SELECT p.NOMBRE FROM PERSONAL p INNER JOIN MEDICO m ON m.RUT_PERSONAL = p.RUT_PERSONAL;`,
+  ),
+  sqlQ(
+    's9-intersect-citas',
+    9,
+    'INTERSECT: pacientes con citas confirmadas y anuladas',
+    CM,
+    [use(CM), 'Con `INTERSECT`, obtén el RUT de los pacientes que tienen al menos una cita `CONFIRMADO` y también al menos una cita `ANULADO`.'],
+    `SELECT RUT_PACIENTE FROM CITA WHERE ESTADO = 'CONFIRMADO' INTERSECT SELECT RUT_PACIENTE FROM CITA WHERE ESTADO = 'ANULADO';`,
+  ),
+  sqlQ(
+    's9-except-pacientes',
+    9,
+    'EXCEPT: pacientes sin citas',
+    CM,
+    [use(CM), 'Con `EXCEPT`, obtén el RUT de los pacientes que no tienen ninguna cita registrada.'],
+    `SELECT RUT_PACIENTE FROM PACIENTE EXCEPT SELECT RUT_PACIENTE FROM CITA;`,
+  ),
+  sqlQ(
+    's9-antijoin-medicamentos',
+    9,
+    'Anti-join: medicamentos nunca recetados',
+    CM,
+    [use(CM), 'Lista el nombre de los medicamentos que nunca han sido recetados (no aparecen en `RECETA_MEDICAMENTO`). Resuélvelo con `LEFT JOIN` y `IS NULL`.'],
+    `SELECT m.NOMBRE FROM MEDICAMENTO m LEFT JOIN RECETA_MEDICAMENTO rm ON rm.CODIGO_MEDICAMENTO = m.CODIGO_MEDICAMENTO WHERE rm.CODIGO_MEDICAMENTO IS NULL;`,
+  ),
+  sqlQ(
+    's9-notexists-medicos',
+    9,
+    'NOT EXISTS: médicos sin citas',
+    CM,
+    [use(CM), 'Lista el RUT y el nombre de los médicos que no tienen citas asignadas. Resuélvelo con `NOT EXISTS`.'],
+    `SELECT p.RUT_PERSONAL, p.NOMBRE FROM PERSONAL p INNER JOIN MEDICO m ON m.RUT_PERSONAL = p.RUT_PERSONAL WHERE NOT EXISTS (SELECT 1 FROM CITA c WHERE c.RUT_PERSONAL = m.RUT_PERSONAL);`,
+  ),
+  sqlQ(
+    's9-notin-especialidades',
+    9,
+    'NOT IN: pacientes sin citas anuladas',
+    CM,
+    [use(CM), 'Lista el RUT y el nombre de los pacientes que nunca han tenido una cita en estado `ANULADO`. Resuélvelo con `NOT IN`.'],
+    `SELECT RUT_PACIENTE, NOMBRE FROM PACIENTE WHERE RUT_PACIENTE NOT IN (SELECT RUT_PACIENTE FROM CITA WHERE ESTADO = 'ANULADO');`,
+  ),
+  sqlQ(
+    's9-citas-estado',
+    9,
+    'Citas por estado',
+    CM,
+    [use(CM), 'Muestra cada estado de cita y la cantidad de citas que tiene.'],
+    `SELECT ESTADO, COUNT(*) AS cantidad FROM CITA GROUP BY ESTADO;`,
+  ),
+  sqlQ(
+    's9-medicos-especialidad',
+    9,
+    'Especialidades con más de un médico',
+    CM,
+    [use(CM), 'Muestra el nombre de cada especialidad y la cantidad de médicos certificados en ella, solo para las que tienen más de un médico.'],
+    `SELECT e.NOMBRE, COUNT(*) AS medicos FROM ESPECIALIDAD e INNER JOIN MEDICO_ESPECIALIDAD me ON me.CODIGO_ESPECIALIDAD = e.CODIGO_ESPECIALIDAD GROUP BY e.CODIGO_ESPECIALIDAD, e.NOMBRE HAVING COUNT(*) > 1;`,
+  ),
+  sqlQ(
+    's9-paciente-mas-citas',
+    9,
+    'Paciente con más citas',
+    CM,
+    [use(CM), 'Obtén el RUT de los pacientes que tienen la mayor cantidad de citas (si hay empate, deben aparecer todos) junto con esa cantidad.', 'Pista: compara `COUNT(*)` contra el máximo de los conteos usando una subconsulta en el `HAVING`.'],
+    `SELECT RUT_PACIENTE, COUNT(*) AS n FROM CITA GROUP BY RUT_PACIENTE HAVING COUNT(*) = (SELECT MAX(x.n) FROM (SELECT COUNT(*) AS n FROM CITA GROUP BY RUT_PACIENTE) x);`,
+  ),
+  sqlQ(
+    's9-exp-promedio',
+    9,
+    'Experiencia promedio por especialidad',
+    CM,
+    [use(CM), 'Muestra el nombre de cada especialidad y el promedio de años de experiencia de sus médicos.'],
+    `SELECT e.NOMBRE, AVG(m.ANIOS_EXPERIENCIA) AS promedio FROM ESPECIALIDAD e INNER JOIN MEDICO_ESPECIALIDAD me ON me.CODIGO_ESPECIALIDAD = e.CODIGO_ESPECIALIDAD INNER JOIN MEDICO m ON m.RUT_PERSONAL = me.RUT_PERSONAL GROUP BY e.CODIGO_ESPECIALIDAD, e.NOMBRE;`,
+  ),
+  sqlQ(
+    's9-clientes-sin-facturas',
+    9,
+    'Clientes sin facturas',
+    CO,
+    [use(CO), 'Lista el nombre y apellido de los clientes que no tienen ninguna factura.'],
+    `SELECT c.nombre, c.apellido FROM cliente c LEFT JOIN factura f ON f.id_cliente = c.id_cliente WHERE f.num_factura IS NULL;`,
+  ),
+  sqlQ(
+    's9-productos-sin-venta',
+    9,
+    'NOT EXISTS: clientes que nunca pagaron con el modo 1',
+    CO,
+    [use(CO), 'Lista el nombre y apellido de los clientes que nunca han emitido una factura con el modo de pago número 1 (`num_pago = 1`). Resuélvelo con `NOT EXISTS`.'],
+    `SELECT c.nombre, c.apellido FROM cliente c WHERE NOT EXISTS (SELECT 1 FROM factura f WHERE f.id_cliente = c.id_cliente AND f.num_pago = 1);`,
+  ),
+  sqlQ(
+    's9-union-ciudades',
+    9,
+    'UNION: ciudades de clientes y tiendas',
+    CO,
+    [use(CO), 'Obtén, sin repetir, todas las ciudades en las que hay clientes o tiendas.'],
+    `SELECT ciudad FROM cliente UNION SELECT ciudad FROM tienda;`,
+  ),
+  sqlQ(
+    's9-intersect-ciudades',
+    9,
+    'INTERSECT: ciudades con clientes y tiendas',
+    CO,
+    [use(CO), 'Obtén las ciudades en las que hay clientes y además hay tiendas.'],
+    `SELECT ciudad FROM cliente INTERSECT SELECT ciudad FROM tienda;`,
+  ),
+  sqlQ(
+    's9-alumnos-sin-notas',
+    9,
+    'Alumnos sin ninguna reprobación',
+    'academico',
+    [use('academico'), 'Lista el nombre y apellido de los alumnos que no tienen ninguna nota final inferior a 4.0 en `curso_alumno` (incluye a quienes no tienen notas).', 'Pista: anti-join con `LEFT JOIN` condicionando la nota en el `ON`.'],
+    `SELECT a.Nombre, a.Apellido FROM alumno a LEFT JOIN curso_alumno ca ON ca.Rut_alu = a.Rut_alu AND ca.Nota_final < 4.0 WHERE ca.Rut_alu IS NULL;`,
+  ),
+];

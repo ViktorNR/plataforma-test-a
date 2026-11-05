@@ -1,0 +1,75 @@
+{
+  "numero": 2,
+  "slug": "s1-enfoque-tradicional",
+  "semana": 1,
+  "tipo": "QUIZ",
+  "titulo": "Enfoque tradicional: sistema de archivos",
+  "enunciado": [
+    "Repasa cómo se manejaba la información antes de las bases de datos."
+  ],
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "En el enfoque tradicional (sistema de archivos), cada programa…",
+      "alternativas": [
+        "comparte todos los archivos con los demás",
+        "es dueño de sus propios archivos y depende de su formato",
+        "consulta una base de datos central",
+        "no necesita definir sus datos"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "es dueño de sus propios archivos y depende de su formato",
+      "explicacion": "Cada programa define y maneja sus archivos; la lógica del programa depende de los formatos de esos datos."
+    },
+    {
+      "id": "q2",
+      "pregunta": "¿Qué ocurre cuando cambia el formato de un archivo en el enfoque tradicional?",
+      "alternativas": [
+        "Nada, los programas se adaptan solos",
+        "Hay que modificar todos los programas que lo usan",
+        "Solo se modifica el sistema operativo",
+        "Se pierde el archivo"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "Hay que modificar todos los programas que lo usan",
+      "explicacion": "Es la dependencia de los datos: un cambio de esquema obliga a modificar todos los programas."
+    },
+    {
+      "id": "q3",
+      "pregunta": "Cada nueva aplicación en este enfoque se diseña con…",
+      "alternativas": [
+        "la base de datos corporativa",
+        "su propio conjunto de archivos",
+        "un modelo conceptual compartido",
+        "un DBMS"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "su propio conjunto de archivos",
+      "explicacion": "Cada aplicación nace con sus archivos propios, lo que duplica datos."
+    },
+    {
+      "id": "q4",
+      "pregunta": "El enfoque tradicional responde a requerimientos…",
+      "alternativas": [
+        "de la organización completa, con planificación central",
+        "de usuarios individuales, sin una planificación que guíe el desarrollo",
+        "de la alta gerencia únicamente",
+        "de los clientes externos"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "de usuarios individuales, sin una planificación que guíe el desarrollo",
+      "explicacion": "Cada sistema satisface las necesidades de un departamento, sin planificación corporativa."
+    },
+    {
+      "id": "q5",
+      "pregunta": "Verdadero o falso: en el enfoque tradicional cada usuario mantiene archivos y programas separados.",
+      "alternativas": [
+        "Verdadero",
+        "Falso"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "Verdadero",
+      "explicacion": "Por eso también se le llama enfoque de archivos."
+    }
+  ]
+}

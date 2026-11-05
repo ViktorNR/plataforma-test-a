@@ -1,0 +1,288 @@
+{
+  "nodes": [
+    {
+      "id": "e:Publicacion",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 380
+      },
+      "data": {
+        "label": "Publicacion",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Publicacion:doi",
+      "type": "attribute",
+      "position": {
+        "x": 452.611531772735,
+        "y": 275.03959801482375
+      },
+      "data": {
+        "label": "doi",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Articulo",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Articulo",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Articulo:nombre_revista",
+      "type": "attribute",
+      "position": {
+        "x": -46.1942410855573,
+        "y": -105.53179110138116
+      },
+      "data": {
+        "label": "nombre_revista",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Libro",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Libro",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Libro:editorial",
+      "type": "attribute",
+      "position": {
+        "x": 556.1942410855571,
+        "y": -105.53179110138122
+      },
+      "data": {
+        "label": "editorial",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Personal",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 380
+      },
+      "data": {
+        "label": "Personal",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Personal:rut",
+      "type": "attribute",
+      "position": {
+        "x": 1402.1008489144947,
+        "y": 321.2605093486968
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Academico",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 0
+      },
+      "data": {
+        "label": "Academico",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Academico:grado",
+      "type": "attribute",
+      "position": {
+        "x": 1549.8945726481777,
+        "y": -108.28556665955158
+      },
+      "data": {
+        "label": "grado",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Administrativo",
+      "type": "entity",
+      "position": {
+        "x": 2000,
+        "y": 0
+      },
+      "data": {
+        "label": "Administrativo",
+        "weak": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 990,
+        "y": 172
+      },
+      "data": {
+        "label": "escribe",
+        "identifying": false
+      }
+    },
+    {
+      "id": "s:0",
+      "type": "spec",
+      "position": {
+        "x": 288,
+        "y": 530
+      },
+      "data": {
+        "label": "",
+        "disjoint": false,
+        "total": false
+      }
+    },
+    {
+      "id": "s:1",
+      "type": "spec",
+      "position": {
+        "x": 1788,
+        "y": 530
+      },
+      "data": {
+        "label": "",
+        "disjoint": true,
+        "total": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Publicacion->a:e:Publicacion:doi#0",
+      "source": "e:Publicacion",
+      "target": "a:e:Publicacion:doi",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Articulo->a:e:Articulo:nombre_revista#0",
+      "source": "e:Articulo",
+      "target": "a:e:Articulo:nombre_revista",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Libro->a:e:Libro:editorial#0",
+      "source": "e:Libro",
+      "target": "a:e:Libro:editorial",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Personal->a:e:Personal:rut#0",
+      "source": "e:Personal",
+      "target": "a:e:Personal:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Academico->a:e:Academico:grado#0",
+      "source": "e:Academico",
+      "target": "a:e:Academico:grado",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Academico->r:0#0",
+      "source": "e:Academico",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Publicacion->r:0#0",
+      "source": "e:Publicacion",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Publicacion->s:0#0",
+      "source": "e:Publicacion",
+      "target": "s:0",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Articulo#0",
+      "source": "s:0",
+      "target": "e:Articulo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Libro#0",
+      "source": "s:0",
+      "target": "e:Libro",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Personal->s:1#0",
+      "source": "e:Personal",
+      "target": "s:1",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:1->e:Academico#0",
+      "source": "s:1",
+      "target": "e:Academico",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:1->e:Administrativo#0",
+      "source": "s:1",
+      "target": "e:Administrativo",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "numero": 7,
+  "slug": "s2-santa-paz",
+  "semana": 2,
+  "tipo": "ER",
+  "titulo": "Clínica «Santa Paz»",
+  "enunciado": [
+    "La clínica «Santa Paz» necesita llevar un control informatizado de sus pacientes y médicos.",
+    "De cada paciente se guarda el código (identificador), nombre, apellidos, dirección, población, provincia, código postal, teléfono y fecha de nacimiento. De cada médico: código (identificador), nombre, apellidos, teléfono y especialidad.",
+    "Se controla cada ingreso que el paciente hace en la clínica. De cada ingreso se guarda el código de ingreso (identificador), el número de habitación, la cama y la fecha de ingreso.",
+    "Un médico puede atender varios ingresos, pero cada ingreso solo es atendido por un único médico. Un paciente puede realizar varios ingresos y cada ingreso corresponde a un solo paciente.",
+    "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Paciente",
+        "attrs": [
+          {
+            "name": "cod_paciente",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "apellidos"
+          },
+          {
+            "name": "direccion"
+          },
+          {
+            "name": "poblacion"
+          },
+          {
+            "name": "provincia"
+          },
+          {
+            "name": "codigo_postal"
+          },
+          {
+            "name": "telefono"
+          },
+          {
+            "name": "fecha_nacimiento"
+          }
+        ]
+      },
+      {
+        "name": "Medico",
+        "attrs": [
+          {
+            "name": "cod_medico",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "apellidos"
+          },
+          {
+            "name": "telefono"
+          },
+          {
+            "name": "especialidad"
+          }
+        ]
+      },
+      {
+        "name": "Ingreso",
+        "attrs": [
+          {
+            "name": "cod_ingreso",
+            "key": true
+          },
+          {
+            "name": "numero_habitacion"
+          },
+          {
+            "name": "cama"
+          },
+          {
+            "name": "fecha_ingreso"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "realiza",
+        "between": [
+          {
+            "entity": "Paciente",
+            "card": "1"
+          },
+          {
+            "entity": "Ingreso",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "atiende",
+        "between": [
+          {
+            "entity": "Medico",
+            "card": "1"
+          },
+          {
+            "entity": "Ingreso",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "layout": [
+      [
+        "Paciente",
+        "Ingreso",
+        "Medico"
+      ]
+    ]
+  }
+}

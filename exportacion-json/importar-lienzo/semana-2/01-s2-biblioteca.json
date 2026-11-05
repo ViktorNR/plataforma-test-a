@@ -1,0 +1,330 @@
+{
+  "nodes": [
+    {
+      "id": "e:Socio",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Socio",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Socio:rut",
+      "type": "attribute",
+      "position": {
+        "x": 28.58199314393964,
+        "y": 120.66005949071752
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Socio:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -115,
+        "y": 3.000000000000014
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Socio:email",
+      "type": "attribute",
+      "position": {
+        "x": 28.58199314393964,
+        "y": -114.66005949071752
+      },
+      "data": {
+        "label": "email",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Libro",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Libro",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Libro:isbn",
+      "type": "attribute",
+      "position": {
+        "x": 618.5210373477119,
+        "y": 132.06677043145189
+      },
+      "data": {
+        "label": "isbn",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Libro:titulo",
+      "type": "attribute",
+      "position": {
+        "x": 505,
+        "y": 174.88733853924697
+      },
+      "data": {
+        "label": "titulo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Libro:anio_publicacion",
+      "type": "attribute",
+      "position": {
+        "x": 391.47896265228815,
+        "y": 132.06677043145189
+      },
+      "data": {
+        "label": "anio_publicacion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Autor",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Autor",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Autor:id_autor",
+      "type": "attribute",
+      "position": {
+        "x": 981.4180068560604,
+        "y": -114.66005949071752
+      },
+      "data": {
+        "label": "id_autor",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Autor:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1125,
+        "y": 2.9999999999999716
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Autor:nacionalidad",
+      "type": "attribute",
+      "position": {
+        "x": 981.4180068560604,
+        "y": 120.66005949071752
+      },
+      "data": {
+        "label": "nacionalidad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "presta",
+        "identifying": false
+      }
+    },
+    {
+      "id": "a:r:0:fecha_prestamo",
+      "type": "attribute",
+      "position": {
+        "x": 255,
+        "y": 103
+      },
+      "data": {
+        "label": "fecha_prestamo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "escribe",
+        "identifying": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Socio->a:e:Socio:rut#0",
+      "source": "e:Socio",
+      "target": "a:e:Socio:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Socio->a:e:Socio:nombre#0",
+      "source": "e:Socio",
+      "target": "a:e:Socio:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Socio->a:e:Socio:email#0",
+      "source": "e:Socio",
+      "target": "a:e:Socio:email",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Libro->a:e:Libro:isbn#0",
+      "source": "e:Libro",
+      "target": "a:e:Libro:isbn",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Libro->a:e:Libro:titulo#0",
+      "source": "e:Libro",
+      "target": "a:e:Libro:titulo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Libro->a:e:Libro:anio_publicacion#0",
+      "source": "e:Libro",
+      "target": "a:e:Libro:anio_publicacion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Autor->a:e:Autor:id_autor#0",
+      "source": "e:Autor",
+      "target": "a:e:Autor:id_autor",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Autor->a:e:Autor:nombre#0",
+      "source": "e:Autor",
+      "target": "a:e:Autor:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Autor->a:e:Autor:nacionalidad#0",
+      "source": "e:Autor",
+      "target": "a:e:Autor:nacionalidad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Socio->r:0#0",
+      "source": "e:Socio",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "min": "0",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Libro->r:0#0",
+      "source": "e:Libro",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "min": "0",
+        "view": true
+      }
+    },
+    {
+      "id": "r:0->a:r:0:fecha_prestamo#0",
+      "source": "r:0",
+      "target": "a:r:0:fecha_prestamo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Autor->r:1#0",
+      "source": "e:Autor",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "min": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Libro->r:1#0",
+      "source": "e:Libro",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "min": "1",
+        "view": true
+      }
+    }
+  ]
+}

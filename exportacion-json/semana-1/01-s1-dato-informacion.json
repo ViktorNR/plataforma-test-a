@@ -1,0 +1,75 @@
+{
+  "numero": 1,
+  "slug": "s1-dato-informacion",
+  "semana": 1,
+  "tipo": "QUIZ",
+  "titulo": "Dato, información y conocimiento",
+  "enunciado": [
+    "Distingue los tres niveles de significado de la información."
+  ],
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "¿Cuál de los siguientes es un ejemplo de DATO?",
+      "alternativas": [
+        "Un informe financiero trimestral",
+        "El número 22,5 registrado por un sensor de temperatura",
+        "La comprensión de por qué sube la temperatura en verano",
+        "Un reporte meteorológico semanal"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "El número 22,5 registrado por un sensor de temperatura",
+      "explicacion": "Un dato es un hecho discreto y crudo, sin contexto: un número, una palabra, una temperatura."
+    },
+    {
+      "id": "q2",
+      "pregunta": "La información se obtiene cuando los datos…",
+      "alternativas": [
+        "se borran para ahorrar espacio",
+        "se organizan, interpretan y se les da contexto",
+        "se copian a otro equipo",
+        "se encriptan"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "se organizan, interpretan y se les da contexto",
+      "explicacion": "La información es el resultado de organizar e interpretar datos para que sean útiles en la toma de decisiones."
+    },
+    {
+      "id": "q3",
+      "pregunta": "¿Qué ejemplo corresponde a CONOCIMIENTO?",
+      "alternativas": [
+        "El teléfono 9 4552 4171",
+        "Una tabla con las ventas de enero",
+        "Comprender las implicaciones de un fenómeno a partir de la información y la experiencia acumulada",
+        "Una fotografía sin descripción"
+      ],
+      "respuestaCorrecta": 2,
+      "respuestaCorrectaTexto": "Comprender las implicaciones de un fenómeno a partir de la información y la experiencia acumulada",
+      "explicacion": "El conocimiento es la comprensión profunda de la información, basada en su aplicación práctica y experiencia."
+    },
+    {
+      "id": "q4",
+      "pregunta": "Ordena de menor a mayor significado:",
+      "alternativas": [
+        "Conocimiento → información → dato",
+        "Dato → información → conocimiento",
+        "Información → dato → conocimiento",
+        "Dato → conocimiento → información"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "Dato → información → conocimiento",
+      "explicacion": "Los datos se transforman en información y esta, con experiencia, en conocimiento."
+    },
+    {
+      "id": "q5",
+      "pregunta": "Verdadero o falso: un dato aislado, sin contexto, ya es información útil para decidir.",
+      "alternativas": [
+        "Verdadero",
+        "Falso"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "Falso",
+      "explicacion": "Sin contexto ni interpretación un dato carece de significado; por eso no es aún información."
+    }
+  ]
+}

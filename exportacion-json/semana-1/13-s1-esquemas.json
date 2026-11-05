@@ -1,0 +1,77 @@
+{
+  "numero": 13,
+  "slug": "s1-esquemas",
+  "semana": 1,
+  "tipo": "QUIZ",
+  "titulo": "Esquemas: externo, conceptual e interno",
+  "enunciado": [
+    "Qué representa cada esquema y para qué sirve."
+  ],
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "El esquema conceptual…",
+      "alternativas": [
+        "depende del DBMS",
+        "abstrae la realidad en relación con los datos e integra las visiones de distintos interesados",
+        "describe solo la interfaz",
+        "es el archivo de respaldo"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "abstrae la realidad en relación con los datos e integra las visiones de distintos interesados",
+      "explicacion": "Permite integrar visiones de diferentes interesados."
+    },
+    {
+      "id": "q2",
+      "pregunta": "El esquema interno…",
+      "alternativas": [
+        "es independiente del DBMS",
+        "depende del DBMS y desarrolla conceptos de eficiencia, seguridad e integridad",
+        "son las vistas de usuario",
+        "solo existe en NoSQL"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "depende del DBMS y desarrolla conceptos de eficiencia, seguridad e integridad",
+      "explicacion": "Depende del DBMS elegido."
+    },
+    {
+      "id": "q3",
+      "pregunta": "Si cambia la forma física de almacenar datos pero no el esquema conceptual, ¿qué conviene preservar?",
+      "alternativas": [
+        "Los programas de aplicación sin cambios",
+        "Reescribir todo",
+        "Cambiar las vistas",
+        "Cambiar el modelo conceptual"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "Los programas de aplicación sin cambios",
+      "explicacion": "La independencia física de datos permite cambios en el nivel interno sin afectar las aplicaciones."
+    },
+    {
+      "id": "q4",
+      "pregunta": "¿Cuál es el orden de abstracción de más cercano al usuario a más cercano al hardware?",
+      "alternativas": [
+        "Interno, conceptual, externo",
+        "Externo, conceptual, interno",
+        "Conceptual, externo, interno",
+        "Interno, externo, conceptual"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "Externo, conceptual, interno",
+      "explicacion": "Externo (usuario) → conceptual → interno (físico)."
+    },
+    {
+      "id": "q5",
+      "pregunta": "Los modelos Entidad-Relación se usan principalmente en el nivel…",
+      "alternativas": [
+        "interno",
+        "conceptual",
+        "de red",
+        "de hardware"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "conceptual",
+      "explicacion": "El modelo E/R es un modelo conceptual de alto nivel."
+    }
+  ]
+}

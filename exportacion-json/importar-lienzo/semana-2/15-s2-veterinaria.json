@@ -1,0 +1,832 @@
+{
+  "nodes": [
+    {
+      "id": "e:Cliente",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Cliente",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:rut",
+      "type": "attribute",
+      "position": {
+        "x": 53.808397169096025,
+        "y": 112.62545491711211
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -89.56129043280663,
+        "y": 76.879377039079
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:direccion",
+      "type": "attribute",
+      "position": {
+        "x": -89.56129043280667,
+        "y": -70.87937703907895
+      },
+      "data": {
+        "label": "direccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Cliente:direccion:calle",
+      "type": "attribute",
+      "position": {
+        "x": -136.68520435385517,
+        "y": 22.952050194879362
+      },
+      "data": {
+        "label": "calle",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Cliente:direccion:numero",
+      "type": "attribute",
+      "position": {
+        "x": -172.30241956151252,
+        "y": -135.52383194827303
+      },
+      "data": {
+        "label": "numero",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Cliente:direccion:comuna",
+      "type": "attribute",
+      "position": {
+        "x": -9.917364181175387,
+        "y": -139.3033860653317
+      },
+      "data": {
+        "label": "comuna",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Cliente:telefono",
+      "type": "attribute",
+      "position": {
+        "x": 53.80839716909607,
+        "y": -106.6254549171121
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": true,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Mascota",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Mascota",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Mascota:codigo",
+      "type": "attribute",
+      "position": {
+        "x": 745.0400644033618,
+        "y": 182.9465684063741
+      },
+      "data": {
+        "label": "codigo",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Mascota:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 678.9062729235947,
+        "y": 247.45164805708345
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Mascota:especie",
+      "type": "attribute",
+      "position": {
+        "x": 596.281174353957,
+        "y": 288.77569387294386
+      },
+      "data": {
+        "label": "especie",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Mascota:raza",
+      "type": "attribute",
+      "position": {
+        "x": 505,
+        "y": 303
+      },
+      "data": {
+        "label": "raza",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Mascota:fecha_nacimiento",
+      "type": "attribute",
+      "position": {
+        "x": 413.7188256460432,
+        "y": 288.77569387294386
+      },
+      "data": {
+        "label": "fecha_nacimiento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Mascota:peso",
+      "type": "attribute",
+      "position": {
+        "x": 331.09372707640534,
+        "y": 247.45164805708345
+      },
+      "data": {
+        "label": "peso",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Mascota:edad",
+      "type": "attribute",
+      "position": {
+        "x": 264.95993559663816,
+        "y": 182.94656840637418
+      },
+      "data": {
+        "label": "edad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": true
+      }
+    },
+    {
+      "id": "e:Veterinario",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 380
+      },
+      "data": {
+        "label": "Veterinario",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Veterinario:rut",
+      "type": "attribute",
+      "position": {
+        "x": 1107.2072320971656,
+        "y": 320.12169128359045
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Veterinario:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1109.7506492723771,
+        "y": 441.5431590966479
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Veterinario:especialidad",
+      "type": "attribute",
+      "position": {
+        "x": 1005,
+        "y": 503
+      },
+      "data": {
+        "label": "especialidad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Veterinario:correo",
+      "type": "attribute",
+      "position": {
+        "x": 900.2493507276228,
+        "y": 441.5431590966478
+      },
+      "data": {
+        "label": "correo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Veterinario:telefono",
+      "type": "attribute",
+      "position": {
+        "x": 902.7927679028344,
+        "y": 320.1216912835904
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Atencion",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Atencion",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Atencion:cod_atencion",
+      "type": "attribute",
+      "position": {
+        "x": 769.6753005241272,
+        "y": -183.070647380478
+      },
+      "data": {
+        "label": "cod_atencion",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Atencion:fecha",
+      "type": "attribute",
+      "position": {
+        "x": 850.4885775269836,
+        "y": -254.15019021063364
+      },
+      "data": {
+        "label": "fecha",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Atencion:motivo",
+      "type": "attribute",
+      "position": {
+        "x": 951.1876242187628,
+        "y": -292.13425455676764
+      },
+      "data": {
+        "label": "motivo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Atencion:diagnostico",
+      "type": "attribute",
+      "position": {
+        "x": 1058.812375781237,
+        "y": -292.13425455676764
+      },
+      "data": {
+        "label": "diagnostico",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Atencion:tratamiento",
+      "type": "attribute",
+      "position": {
+        "x": 1159.5114224730162,
+        "y": -254.1501902106337
+      },
+      "data": {
+        "label": "tratamiento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Atencion:costo",
+      "type": "attribute",
+      "position": {
+        "x": 1240.3246994758729,
+        "y": -183.07064738047794
+      },
+      "data": {
+        "label": "costo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Medicamento",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 0
+      },
+      "data": {
+        "label": "Medicamento",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Medicamento:codigo",
+      "type": "attribute",
+      "position": {
+        "x": 1456.191602830904,
+        "y": -106.62545491711212
+      },
+      "data": {
+        "label": "codigo",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Medicamento:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1599.5612904328066,
+        "y": -70.87937703907906
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Medicamento:dosis_recomendada",
+      "type": "attribute",
+      "position": {
+        "x": 1599.5612904328066,
+        "y": 76.879377039079
+      },
+      "data": {
+        "label": "dosis_recomendada",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Medicamento:laboratorio",
+      "type": "attribute",
+      "position": {
+        "x": 1456.191602830904,
+        "y": 112.62545491711211
+      },
+      "data": {
+        "label": "laboratorio",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "tiene",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "recibe",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:2",
+      "type": "relationship",
+      "position": {
+        "x": 990,
+        "y": 172
+      },
+      "data": {
+        "label": "realiza",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:3",
+      "type": "relationship",
+      "position": {
+        "x": 1240,
+        "y": -18
+      },
+      "data": {
+        "label": "indica",
+        "identifying": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Cliente->a:e:Cliente:rut#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:nombre#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:direccion#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:direccion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Cliente:direccion->a:a:e:Cliente:direccion:calle#0",
+      "source": "a:e:Cliente:direccion",
+      "target": "a:a:e:Cliente:direccion:calle",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Cliente:direccion->a:a:e:Cliente:direccion:numero#0",
+      "source": "a:e:Cliente:direccion",
+      "target": "a:a:e:Cliente:direccion:numero",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Cliente:direccion->a:a:e:Cliente:direccion:comuna#0",
+      "source": "a:e:Cliente:direccion",
+      "target": "a:a:e:Cliente:direccion:comuna",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->a:e:Cliente:telefono#0",
+      "source": "e:Cliente",
+      "target": "a:e:Cliente:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Mascota->a:e:Mascota:codigo#0",
+      "source": "e:Mascota",
+      "target": "a:e:Mascota:codigo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Mascota->a:e:Mascota:nombre#0",
+      "source": "e:Mascota",
+      "target": "a:e:Mascota:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Mascota->a:e:Mascota:especie#0",
+      "source": "e:Mascota",
+      "target": "a:e:Mascota:especie",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Mascota->a:e:Mascota:raza#0",
+      "source": "e:Mascota",
+      "target": "a:e:Mascota:raza",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Mascota->a:e:Mascota:fecha_nacimiento#0",
+      "source": "e:Mascota",
+      "target": "a:e:Mascota:fecha_nacimiento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Mascota->a:e:Mascota:peso#0",
+      "source": "e:Mascota",
+      "target": "a:e:Mascota:peso",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Mascota->a:e:Mascota:edad#0",
+      "source": "e:Mascota",
+      "target": "a:e:Mascota:edad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Veterinario->a:e:Veterinario:rut#0",
+      "source": "e:Veterinario",
+      "target": "a:e:Veterinario:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Veterinario->a:e:Veterinario:nombre#0",
+      "source": "e:Veterinario",
+      "target": "a:e:Veterinario:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Veterinario->a:e:Veterinario:especialidad#0",
+      "source": "e:Veterinario",
+      "target": "a:e:Veterinario:especialidad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Veterinario->a:e:Veterinario:correo#0",
+      "source": "e:Veterinario",
+      "target": "a:e:Veterinario:correo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Veterinario->a:e:Veterinario:telefono#0",
+      "source": "e:Veterinario",
+      "target": "a:e:Veterinario:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Atencion->a:e:Atencion:cod_atencion#0",
+      "source": "e:Atencion",
+      "target": "a:e:Atencion:cod_atencion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Atencion->a:e:Atencion:fecha#0",
+      "source": "e:Atencion",
+      "target": "a:e:Atencion:fecha",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Atencion->a:e:Atencion:motivo#0",
+      "source": "e:Atencion",
+      "target": "a:e:Atencion:motivo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Atencion->a:e:Atencion:diagnostico#0",
+      "source": "e:Atencion",
+      "target": "a:e:Atencion:diagnostico",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Atencion->a:e:Atencion:tratamiento#0",
+      "source": "e:Atencion",
+      "target": "a:e:Atencion:tratamiento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Atencion->a:e:Atencion:costo#0",
+      "source": "e:Atencion",
+      "target": "a:e:Atencion:costo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Medicamento->a:e:Medicamento:codigo#0",
+      "source": "e:Medicamento",
+      "target": "a:e:Medicamento:codigo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Medicamento->a:e:Medicamento:nombre#0",
+      "source": "e:Medicamento",
+      "target": "a:e:Medicamento:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Medicamento->a:e:Medicamento:dosis_recomendada#0",
+      "source": "e:Medicamento",
+      "target": "a:e:Medicamento:dosis_recomendada",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Medicamento->a:e:Medicamento:laboratorio#0",
+      "source": "e:Medicamento",
+      "target": "a:e:Medicamento:laboratorio",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Cliente->r:0#0",
+      "source": "e:Cliente",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Mascota->r:0#0",
+      "source": "e:Mascota",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Mascota->r:1#0",
+      "source": "e:Mascota",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Atencion->r:1#0",
+      "source": "e:Atencion",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Veterinario->r:2#0",
+      "source": "e:Veterinario",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Atencion->r:2#0",
+      "source": "e:Atencion",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Atencion->r:3#0",
+      "source": "e:Atencion",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Medicamento->r:3#0",
+      "source": "e:Medicamento",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    }
+  ]
+}

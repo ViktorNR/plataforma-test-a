@@ -1,0 +1,126 @@
+{
+  "numero": 11,
+  "slug": "s3-publicaciones",
+  "semana": 3,
+  "tipo": "EER",
+  "titulo": "Publicaciones académicas",
+  "enunciado": [
+    "Una universidad gestiona sus publicaciones académicas. Cada publicación tiene un DOI único. Las publicaciones son de dos tipos: artículos o libros. Una publicación puede ser un artículo, un libro o ambos (por ejemplo, un capítulo de libro publicado como artículo), o ninguno de los dos. De los artículos se guarda el nombre de la revista; de los libros, la editorial.",
+    "Todo el personal de la universidad, con un rut único, se clasifica como académico o administrativo; esta clasificación es exclusiva y cubre a todo el personal. De los académicos se anota su grado (por ejemplo, Doctor).",
+    "Las publicaciones son escritas por académicos: un académico puede escribir muchas publicaciones y una publicación puede tener muchos autores.",
+    "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Publicacion",
+        "aliases": [
+          "Publicación"
+        ],
+        "attrs": [
+          {
+            "name": "doi",
+            "key": true
+          }
+        ]
+      },
+      {
+        "name": "Articulo",
+        "aliases": [
+          "Artículo"
+        ],
+        "attrs": [
+          {
+            "name": "nombre_revista",
+            "aliases": [
+              "revista"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Libro",
+        "attrs": [
+          {
+            "name": "editorial"
+          }
+        ]
+      },
+      {
+        "name": "Personal",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true
+          }
+        ]
+      },
+      {
+        "name": "Academico",
+        "aliases": [
+          "Académico"
+        ],
+        "attrs": [
+          {
+            "name": "grado"
+          }
+        ]
+      },
+      {
+        "name": "Administrativo",
+        "attrs": []
+      }
+    ],
+    "relationships": [
+      {
+        "name": "escribe",
+        "between": [
+          {
+            "entity": "Academico",
+            "card": "N"
+          },
+          {
+            "entity": "Publicacion",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "specializations": [
+      {
+        "parent": "Publicacion",
+        "children": [
+          "Articulo",
+          "Libro"
+        ],
+        "disjoint": false,
+        "total": false
+      },
+      {
+        "parent": "Personal",
+        "children": [
+          "Academico",
+          "Administrativo"
+        ],
+        "disjoint": true,
+        "total": true
+      }
+    ],
+    "layout": [
+      [
+        "Articulo",
+        "Libro",
+        null,
+        "Academico",
+        "Administrativo"
+      ],
+      [
+        null,
+        "Publicacion",
+        null,
+        "Personal",
+        null
+      ]
+    ]
+  }
+}

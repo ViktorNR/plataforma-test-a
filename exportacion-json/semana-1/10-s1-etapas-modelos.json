@@ -1,0 +1,77 @@
+{
+  "numero": 10,
+  "slug": "s1-etapas-modelos",
+  "semana": 1,
+  "tipo": "QUIZ",
+  "titulo": "Etapas y modelos en bases de datos",
+  "enunciado": [
+    "Creación y operación; esquema conceptual y físico."
+  ],
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "Las dos etapas al trabajar con bases de datos son…",
+      "alternativas": [
+        "compilación y ejecución",
+        "creación y operación o utilización",
+        "compra e instalación",
+        "diseño gráfico y pruebas"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "creación y operación o utilización",
+      "explicacion": "La creación se hace una vez; la operación involucra a los usuarios finales."
+    },
+    {
+      "id": "q2",
+      "pregunta": "La creación de la base de datos debe…",
+      "alternativas": [
+        "hacerse cada día",
+        "satisfacer los requerimientos de todas las áreas",
+        "ignorar a los usuarios",
+        "hacerse solo para un departamento"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "satisfacer los requerimientos de todas las áreas",
+      "explicacion": "Debe considerar las necesidades de toda la organización."
+    },
+    {
+      "id": "q3",
+      "pregunta": "Los modelos se usan para…",
+      "alternativas": [
+        "facilitar la comunicación entre el diseñador y los usuarios finales",
+        "reemplazar al DBMS",
+        "comprimir archivos",
+        "dibujar la interfaz"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "facilitar la comunicación entre el diseñador y los usuarios finales",
+      "explicacion": "Son una imagen simplificada del sistema de información que se desea desarrollar."
+    },
+    {
+      "id": "q4",
+      "pregunta": "La definición o esquema conceptual describe…",
+      "alternativas": [
+        "la ubicación física de los archivos",
+        "los archivos y sus asociaciones",
+        "las contraseñas",
+        "el hardware"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "los archivos y sus asociaciones",
+      "explicacion": "Es la descripción lógica de los datos y sus relaciones."
+    },
+    {
+      "id": "q5",
+      "pregunta": "Los usuarios finales participan principalmente en la etapa de…",
+      "alternativas": [
+        "creación",
+        "operación o utilización",
+        "diseño físico",
+        "instalación del hardware"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "operación o utilización",
+      "explicacion": "Son quienes acceden constantemente a las bases de datos."
+    }
+  ]
+}

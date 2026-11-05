@@ -1,0 +1,133 @@
+{
+  "numero": 2,
+  "slug": "s2-clinica",
+  "semana": 2,
+  "tipo": "ER",
+  "titulo": "Clínica médica",
+  "enunciado": [
+    "Una clínica gestiona médicos, pacientes y departamentos.",
+    "Médico: rut_medico (identificador), nombre y especialidad. Paciente: rut_paciente (identificador), nombre, fecha_nacimiento, edad (se calcula a partir de la fecha de nacimiento, por lo tanto es derivado) y puede tener varios teléfonos. Departamento: cod_depto (identificador) y nombre.",
+    "Todo médico pertenece a un único departamento, pero un departamento puede tener muchos médicos (o ninguno todavía). Un médico puede atender a muchos pacientes (o a ninguno todavía) y todo paciente registrado ha sido atendido por al menos un médico (y puede haber sido atendido por varios); de cada atención se registra la fecha y el diagnóstico.",
+    "Dibuja el modelo Entidad-Relación con cardinalidades (mín,máx). Recuerda marcar los atributos multivaluado y derivado."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Medico",
+        "aliases": [
+          "Doctor"
+        ],
+        "attrs": [
+          {
+            "name": "rut_medico",
+            "key": true,
+            "aliases": [
+              "rut",
+              "id_medico"
+            ]
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "especialidad"
+          }
+        ]
+      },
+      {
+        "name": "Paciente",
+        "attrs": [
+          {
+            "name": "rut_paciente",
+            "key": true,
+            "aliases": [
+              "rut",
+              "id_paciente"
+            ]
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "fecha_nacimiento",
+            "aliases": [
+              "fecha_de_nacimiento",
+              "nacimiento"
+            ]
+          },
+          {
+            "name": "telefono",
+            "multi": true,
+            "aliases": [
+              "telefonos",
+              "fono"
+            ]
+          },
+          {
+            "name": "edad",
+            "derived": true
+          }
+        ]
+      },
+      {
+        "name": "Departamento",
+        "attrs": [
+          {
+            "name": "cod_depto",
+            "key": true,
+            "aliases": [
+              "codigo_depto",
+              "id_depto",
+              "codigo",
+              "id_departamento",
+              "cod_departamento"
+            ]
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "pertenece",
+        "between": [
+          {
+            "entity": "Medico",
+            "card": "N",
+            "min": 0
+          },
+          {
+            "entity": "Departamento",
+            "card": "1",
+            "min": 1
+          }
+        ]
+      },
+      {
+        "name": "atiende",
+        "between": [
+          {
+            "entity": "Medico",
+            "card": "N",
+            "min": 1
+          },
+          {
+            "entity": "Paciente",
+            "card": "N",
+            "min": 0
+          }
+        ],
+        "attrs": [
+          {
+            "name": "fecha"
+          },
+          {
+            "name": "diagnostico"
+          }
+        ]
+      }
+    ]
+  }
+}

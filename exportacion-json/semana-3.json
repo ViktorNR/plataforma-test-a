@@ -1,0 +1,3212 @@
+{
+  "semana": 3,
+  "titulo": "Modelo Entidad-Relación extendido",
+  "ejercicios": [
+    {
+      "numero": 1,
+      "slug": "s3-empleados",
+      "semana": 3,
+      "tipo": "EER",
+      "titulo": "Empleados de una universidad",
+      "enunciado": [
+        "Una universidad registra a sus empleados: rut (identificador), nombre y sueldo. Todo empleado es docente o administrativo, y no puede ser ambas cosas a la vez.",
+        "Los docentes tienen grado_academico; los administrativos tienen cargo.",
+        "Además, todo empleado trabaja en un único departamento (cod_depto como identificador, y nombre). Un departamento puede tener muchos empleados, o ninguno todavía.",
+        "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase, y define si es total o parcial y disyunta (d) o solapada (o)."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Empleado",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true,
+                "aliases": [
+                  "run",
+                  "id_empleado"
+                ]
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "sueldo",
+                "aliases": [
+                  "salario"
+                ]
+              }
+            ],
+            "pos": {
+              "x": 280,
+              "y": 40
+            },
+            "arc": [
+              200,
+              340
+            ]
+          },
+          {
+            "name": "Docente",
+            "attrs": [
+              {
+                "name": "grado_academico",
+                "aliases": [
+                  "grado"
+                ]
+              }
+            ],
+            "pos": {
+              "x": 110,
+              "y": 330
+            },
+            "arc": [
+              40,
+              140
+            ]
+          },
+          {
+            "name": "Administrativo",
+            "attrs": [
+              {
+                "name": "cargo"
+              }
+            ],
+            "pos": {
+              "x": 440,
+              "y": 330
+            },
+            "arc": [
+              40,
+              140
+            ]
+          },
+          {
+            "name": "Departamento",
+            "attrs": [
+              {
+                "name": "cod_depto",
+                "key": true,
+                "aliases": [
+                  "codigo_depto",
+                  "id_depto",
+                  "codigo",
+                  "id_departamento",
+                  "cod_departamento"
+                ]
+              },
+              {
+                "name": "nombre"
+              }
+            ],
+            "pos": {
+              "x": 760,
+              "y": 40
+            },
+            "arc": [
+              200,
+              340
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "trabaja_en",
+            "between": [
+              {
+                "entity": "Empleado",
+                "card": "N",
+                "min": 0
+              },
+              {
+                "entity": "Departamento",
+                "card": "1",
+                "min": 1
+              }
+            ],
+            "pos": {
+              "x": 520,
+              "y": 30
+            }
+          }
+        ],
+        "specializations": [
+          {
+            "parent": "Empleado",
+            "children": [
+              "Docente",
+              "Administrativo"
+            ],
+            "disjoint": true,
+            "total": true,
+            "pos": {
+              "x": 345,
+              "y": 180
+            }
+          }
+        ]
+      }
+    },
+    {
+      "numero": 2,
+      "slug": "s3-personas",
+      "semana": 3,
+      "tipo": "EER",
+      "titulo": "Personas en la universidad",
+      "enunciado": [
+        "De cada persona se registra su rut (identificador), nombre y email. Algunas personas son estudiantes (con carrera y anio_ingreso) y otras son funcionarios (con cargo).",
+        "No toda persona es estudiante o funcionario (por ejemplo, un visitante), y una persona puede ser estudiante y funcionario al mismo tiempo (por ejemplo, un ayudante).",
+        "Un estudiante puede cursar muchos cursos (o ninguno todavía) (cod_curso como identificador, y nombre) y cada curso puede ser cursado por muchos estudiantes (o por ninguno).",
+        "Dibuja el modelo E/R extendido indicando el tipo de especialización."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Persona",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true,
+                "aliases": [
+                  "run"
+                ]
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "email",
+                "aliases": [
+                  "correo"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Estudiante",
+            "attrs": [
+              {
+                "name": "carrera"
+              },
+              {
+                "name": "anio_ingreso",
+                "aliases": [
+                  "año_ingreso",
+                  "ano_ingreso",
+                  "anio_de_ingreso"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Funcionario",
+            "attrs": [
+              {
+                "name": "cargo"
+              }
+            ]
+          },
+          {
+            "name": "Curso",
+            "attrs": [
+              {
+                "name": "cod_curso",
+                "key": true,
+                "aliases": [
+                  "codigo_curso",
+                  "id_curso",
+                  "codigo",
+                  "cod"
+                ]
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "cursa",
+            "between": [
+              {
+                "entity": "Estudiante",
+                "card": "N",
+                "min": 0
+              },
+              {
+                "entity": "Curso",
+                "card": "N",
+                "min": 0
+              }
+            ]
+          }
+        ],
+        "specializations": [
+          {
+            "parent": "Persona",
+            "children": [
+              "Estudiante",
+              "Funcionario"
+            ],
+            "disjoint": false,
+            "total": false
+          }
+        ]
+      }
+    },
+    {
+      "numero": 3,
+      "slug": "s3-cursos",
+      "semana": 3,
+      "tipo": "EER",
+      "titulo": "Cursos presenciales y en línea",
+      "enunciado": [
+        "Una institución de capacitación ofrece cursos, identificados por un código, con nombre y horas. Todo curso es presencial (con la sala donde se dicta) o en línea (con la plataforma y la URL de acceso), y no puede ser ambas cosas.",
+        "Cada curso es impartido por un instructor (rut como identificador y nombre); un instructor imparte muchos cursos. Los participantes (rut como identificador y nombre) pueden inscribirse en muchos cursos y cada curso tiene muchos participantes; de cada inscripción se guarda la nota.",
+        "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Curso",
+            "attrs": [
+              {
+                "name": "cod_curso",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "horas"
+              }
+            ]
+          },
+          {
+            "name": "Presencial",
+            "aliases": [
+              "Curso presencial",
+              "Curso_Presencial"
+            ],
+            "attrs": [
+              {
+                "name": "sala"
+              }
+            ]
+          },
+          {
+            "name": "En_Linea",
+            "aliases": [
+              "En línea",
+              "Curso en línea",
+              "Online",
+              "Curso_En_Linea"
+            ],
+            "attrs": [
+              {
+                "name": "plataforma"
+              },
+              {
+                "name": "url"
+              }
+            ]
+          },
+          {
+            "name": "Instructor",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          },
+          {
+            "name": "Participante",
+            "attrs": [
+              {
+                "name": "rut_participante",
+                "key": true,
+                "aliases": [
+                  "rut"
+                ]
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "imparte",
+            "between": [
+              {
+                "entity": "Instructor",
+                "card": "1"
+              },
+              {
+                "entity": "Curso",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "se_inscribe",
+            "between": [
+              {
+                "entity": "Participante",
+                "card": "N"
+              },
+              {
+                "entity": "Curso",
+                "card": "N"
+              }
+            ],
+            "attrs": [
+              {
+                "name": "nota"
+              }
+            ]
+          }
+        ],
+        "specializations": [
+          {
+            "parent": "Curso",
+            "children": [
+              "Presencial",
+              "En_Linea"
+            ],
+            "disjoint": true,
+            "total": true
+          }
+        ],
+        "layout": [
+          [
+            "Instructor",
+            "Curso",
+            "Participante"
+          ],
+          [
+            "Presencial",
+            null,
+            "En_Linea"
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 4,
+      "slug": "s3-software",
+      "semana": 3,
+      "tipo": "EER",
+      "titulo": "Empresa de software",
+      "enunciado": [
+        "Una empresa de software gestiona sus productos. Un producto, con un ID único, puede ser de dos tipos: software de escritorio o aplicación web. Todo producto debe ser de un tipo y solo uno. Del software de escritorio se anota el sistema operativo compatible. De las aplicaciones web, la URL de acceso.",
+        "La empresa tiene clientes (ID y nombre), y un cliente puede comprar licencias para varios productos. Una compra asocia un cliente con un producto y una fecha.",
+        "Además, los empleados de la empresa (ID y nombre) se clasifican como desarrolladores o vendedores. Un empleado puede ser ambas cosas, pero no es obligatorio que sea alguna de ellas. De los desarrolladores se guarda su lenguaje de programación principal.",
+        "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Producto",
+            "attrs": [
+              {
+                "name": "id_producto",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          },
+          {
+            "name": "Software_Escritorio",
+            "aliases": [
+              "Software de escritorio",
+              "Escritorio",
+              "Software_de_Escritorio"
+            ],
+            "attrs": [
+              {
+                "name": "sistema_operativo"
+              }
+            ]
+          },
+          {
+            "name": "Aplicacion_Web",
+            "aliases": [
+              "Aplicación web",
+              "App_Web",
+              "Aplicacion Web"
+            ],
+            "attrs": [
+              {
+                "name": "url_acceso",
+                "aliases": [
+                  "url"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Cliente",
+            "attrs": [
+              {
+                "name": "id_cliente",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          },
+          {
+            "name": "Empleado",
+            "attrs": [
+              {
+                "name": "id_empleado",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          },
+          {
+            "name": "Desarrollador",
+            "attrs": [
+              {
+                "name": "lenguaje_principal",
+                "aliases": [
+                  "lenguaje"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Vendedor",
+            "attrs": []
+          }
+        ],
+        "relationships": [
+          {
+            "name": "compra",
+            "between": [
+              {
+                "entity": "Cliente",
+                "card": "N"
+              },
+              {
+                "entity": "Producto",
+                "card": "N"
+              }
+            ],
+            "attrs": [
+              {
+                "name": "fecha_compra",
+                "aliases": [
+                  "fecha"
+                ]
+              }
+            ]
+          }
+        ],
+        "specializations": [
+          {
+            "parent": "Producto",
+            "children": [
+              "Software_Escritorio",
+              "Aplicacion_Web"
+            ],
+            "disjoint": true,
+            "total": true
+          },
+          {
+            "parent": "Empleado",
+            "children": [
+              "Desarrollador",
+              "Vendedor"
+            ],
+            "disjoint": false,
+            "total": false
+          }
+        ],
+        "layout": [
+          [
+            "Cliente",
+            "Producto",
+            "Empleado"
+          ],
+          [
+            "Software_Escritorio",
+            "Aplicacion_Web",
+            "Desarrollador",
+            "Vendedor"
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 5,
+      "slug": "s3-consultora",
+      "semana": 3,
+      "tipo": "EER",
+      "titulo": "Consultora",
+      "enunciado": [
+        "Una consultora registra a sus empleados (ID y nombre), que pueden ser consultores (con su especialidad) o administrativos (con su cargo). Un empleado no puede ser de ambos tipos, pero puede no ser de ninguno (por ejemplo, personal de apoyo).",
+        "Sus clientes (ID y nombre) pueden ser personas (con su rut) o empresas (con su razón social); un cliente no puede ser ambas cosas y puede ser de otro tipo (por ejemplo, una institución pública).",
+        "La consultora ejecuta proyectos (código como identificador y nombre). Cada proyecto es contratado por un cliente, y un cliente puede contratar varios proyectos. En cada proyecto trabajan varios empleados y un empleado puede trabajar en varios proyectos.",
+        "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Empleado",
+            "attrs": [
+              {
+                "name": "id_empleado",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          },
+          {
+            "name": "Consultor",
+            "attrs": [
+              {
+                "name": "especialidad"
+              }
+            ]
+          },
+          {
+            "name": "Administrativo",
+            "attrs": [
+              {
+                "name": "cargo"
+              }
+            ]
+          },
+          {
+            "name": "Cliente",
+            "attrs": [
+              {
+                "name": "id_cliente",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          },
+          {
+            "name": "Cliente_Personal",
+            "aliases": [
+              "Cliente personal",
+              "Personal",
+              "Persona"
+            ],
+            "attrs": [
+              {
+                "name": "rut"
+              }
+            ]
+          },
+          {
+            "name": "Cliente_Empresa",
+            "aliases": [
+              "Cliente empresa",
+              "Empresa"
+            ],
+            "attrs": [
+              {
+                "name": "razon_social"
+              }
+            ]
+          },
+          {
+            "name": "Proyecto",
+            "attrs": [
+              {
+                "name": "cod_proyecto",
+                "key": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "trabaja_en",
+            "between": [
+              {
+                "entity": "Empleado",
+                "card": "N"
+              },
+              {
+                "entity": "Proyecto",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "contrata",
+            "between": [
+              {
+                "entity": "Cliente",
+                "card": "1"
+              },
+              {
+                "entity": "Proyecto",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "specializations": [
+          {
+            "parent": "Empleado",
+            "children": [
+              "Consultor",
+              "Administrativo"
+            ],
+            "disjoint": true,
+            "total": false
+          },
+          {
+            "parent": "Cliente",
+            "children": [
+              "Cliente_Personal",
+              "Cliente_Empresa"
+            ],
+            "disjoint": true,
+            "total": false
+          }
+        ],
+        "layout": [
+          [
+            "Consultor",
+            "Administrativo",
+            "Cliente_Personal",
+            "Cliente_Empresa"
+          ],
+          [
+            "Empleado",
+            "Proyecto",
+            "Cliente"
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 6,
+      "slug": "s3-estudiantes",
+      "semana": 3,
+      "tipo": "EER",
+      "titulo": "Gestión de estudiantes",
+      "enunciado": [
+        "En una universidad hay estudiantes de tiempo completo, de medio tiempo y a distancia. Todo estudiante pertenece a exactamente una de estas categorías. De todos los estudiantes se requiere su ID (identificador) y nombre completo; de los estudiantes a distancia, la modalidad de estudio (online o semipresencial); y de los de medio tiempo, el número de créditos que están cursando.",
+        "Los estudiantes se inscriben en uno o más programas académicos (código identificador y nombre); un programa tiene muchos estudiantes. Cada programa ofrece varias asignaturas (código identificador y nombre) y cada asignatura pertenece a un solo programa. Un estudiante cursa varias asignaturas y una asignatura es cursada por varios estudiantes.",
+        "Cada estudiante tiene un tutor asignado (ID y nombre) que lo asesora; un tutor puede asesorar a muchos estudiantes.",
+        "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Estudiante",
+            "attrs": [
+              {
+                "name": "id_estudiante",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              },
+              {
+                "name": "nombre_completo",
+                "aliases": [
+                  "nombre"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Tiempo_Completo",
+            "aliases": [
+              "Tiempo completo",
+              "Estudiante_Tiempo_Completo"
+            ],
+            "attrs": []
+          },
+          {
+            "name": "Medio_Tiempo",
+            "aliases": [
+              "Medio tiempo",
+              "Estudiante_Medio_Tiempo"
+            ],
+            "attrs": [
+              {
+                "name": "numero_creditos",
+                "aliases": [
+                  "creditos"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "A_Distancia",
+            "aliases": [
+              "A distancia",
+              "Estudiante_A_Distancia",
+              "Distancia"
+            ],
+            "attrs": [
+              {
+                "name": "modalidad_estudio",
+                "aliases": [
+                  "modalidad"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Programa",
+            "attrs": [
+              {
+                "name": "cod_programa",
+                "key": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          },
+          {
+            "name": "Asignatura",
+            "attrs": [
+              {
+                "name": "cod_asignatura",
+                "key": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          },
+          {
+            "name": "Tutor",
+            "attrs": [
+              {
+                "name": "id_tutor",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "se_inscribe",
+            "between": [
+              {
+                "entity": "Estudiante",
+                "card": "N"
+              },
+              {
+                "entity": "Programa",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "ofrece",
+            "between": [
+              {
+                "entity": "Programa",
+                "card": "1"
+              },
+              {
+                "entity": "Asignatura",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "cursa",
+            "between": [
+              {
+                "entity": "Estudiante",
+                "card": "N"
+              },
+              {
+                "entity": "Asignatura",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "asesora",
+            "between": [
+              {
+                "entity": "Tutor",
+                "card": "1"
+              },
+              {
+                "entity": "Estudiante",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "specializations": [
+          {
+            "parent": "Estudiante",
+            "children": [
+              "Tiempo_Completo",
+              "Medio_Tiempo",
+              "A_Distancia"
+            ],
+            "disjoint": true,
+            "total": true
+          }
+        ],
+        "layout": [
+          [
+            "Tiempo_Completo",
+            "Medio_Tiempo",
+            "A_Distancia",
+            null
+          ],
+          [
+            "Tutor",
+            "Estudiante",
+            "Programa",
+            "Asignatura"
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 7,
+      "slug": "s3-hotel",
+      "semana": 3,
+      "tipo": "EER",
+      "titulo": "Cadena de hoteles",
+      "enunciado": [
+        "Cadena de hoteles: de cada hotel se almacena el código (identificador), nombre, dirección, teléfono y año de construcción. Cada hotel se clasifica obligatoriamente en una categoría (por ejemplo, tres estrellas); cada categoría tiene código (identificador), tipo de IVA y descripción, y agrupa a muchos hoteles.",
+        "Cada hotel tiene varias habitaciones, de las que se guarda el código (identificador) y el tipo (suite, doble, individual…); cada habitación pertenece a un hotel.",
+        "Las reservas las realizan clientes (identificador, nombre, dirección y teléfono), que pueden ser particulares o agencias de viaje (no ambos; todo cliente es de uno de los dos tipos). Si la reserva la realiza una agencia, se necesita además el nombre de la persona para quien se reserva.",
+        "De cada reserva (código identificador) se guarda el precio, la fecha de inicio y la fecha de fin. Cada reserva es de una habitación y la realiza un cliente; una habitación puede tener muchas reservas y un cliente puede hacer muchas reservas.",
+        "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Hotel",
+            "attrs": [
+              {
+                "name": "cod_hotel",
+                "key": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "direccion"
+              },
+              {
+                "name": "telefono"
+              },
+              {
+                "name": "anio_construccion",
+                "aliases": [
+                  "año_construccion"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Categoria",
+            "attrs": [
+              {
+                "name": "cod_categoria",
+                "key": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "tipo_iva",
+                "aliases": [
+                  "iva"
+                ]
+              },
+              {
+                "name": "descripcion"
+              }
+            ]
+          },
+          {
+            "name": "Habitacion",
+            "attrs": [
+              {
+                "name": "codigo_habitacion",
+                "key": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "tipo"
+              }
+            ]
+          },
+          {
+            "name": "Cliente",
+            "attrs": [
+              {
+                "name": "id_cliente",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "direccion"
+              },
+              {
+                "name": "telefono"
+              }
+            ]
+          },
+          {
+            "name": "Particular",
+            "attrs": []
+          },
+          {
+            "name": "Agencia",
+            "aliases": [
+              "Agencia de viajes",
+              "Agencia_Viajes"
+            ],
+            "attrs": [
+              {
+                "name": "nombre_persona"
+              }
+            ]
+          },
+          {
+            "name": "Reserva",
+            "attrs": [
+              {
+                "name": "cod_reserva",
+                "key": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "precio"
+              },
+              {
+                "name": "fecha_inicio"
+              },
+              {
+                "name": "fecha_fin"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "clasifica",
+            "between": [
+              {
+                "entity": "Categoria",
+                "card": "1"
+              },
+              {
+                "entity": "Hotel",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "tiene",
+            "between": [
+              {
+                "entity": "Hotel",
+                "card": "1"
+              },
+              {
+                "entity": "Habitacion",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "es_de",
+            "between": [
+              {
+                "entity": "Habitacion",
+                "card": "1"
+              },
+              {
+                "entity": "Reserva",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "realiza",
+            "between": [
+              {
+                "entity": "Cliente",
+                "card": "1"
+              },
+              {
+                "entity": "Reserva",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "specializations": [
+          {
+            "parent": "Cliente",
+            "children": [
+              "Particular",
+              "Agencia"
+            ],
+            "disjoint": true,
+            "total": true
+          }
+        ],
+        "layout": [
+          [
+            "Categoria",
+            "Hotel",
+            "Habitacion",
+            "Reserva"
+          ],
+          [
+            "Particular",
+            "Cliente",
+            "Agencia",
+            null
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 8,
+      "slug": "s3-clinica-dental",
+      "semana": 3,
+      "tipo": "EER",
+      "titulo": "Clínica dental",
+      "enunciado": [
+        "Una clínica dental necesita un sistema para gestionar sus pacientes y tratamientos. Cada paciente es identificado por un rut y se registra su nombre y fecha de nacimiento. Un paciente puede tener múltiples alergias registradas.",
+        "Cada paciente tiene asignada una única ficha dental, identificada por un número de folio, que contiene el historial. De cada ficha se desglosan los tratamientos realizados. Un tratamiento, que se identifica por un código único dentro de cada ficha, no puede existir sin ella (entidad débil). De cada tratamiento se anota la descripción y el costo.",
+        "Un odontólogo, con un ID único (y su nombre), puede realizar muchos tratamientos, y un tratamiento es realizado por un único odontólogo.",
+        "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Paciente",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "fecha_nacimiento"
+              },
+              {
+                "name": "alergias",
+                "multi": true
+              }
+            ]
+          },
+          {
+            "name": "Ficha_Dental",
+            "aliases": [
+              "Ficha dental",
+              "Ficha"
+            ],
+            "attrs": [
+              {
+                "name": "numero_folio",
+                "key": true,
+                "aliases": [
+                  "folio"
+                ]
+              },
+              {
+                "name": "historial"
+              }
+            ]
+          },
+          {
+            "name": "Tratamiento",
+            "weak": true,
+            "attrs": [
+              {
+                "name": "codigo_tratamiento",
+                "partialKey": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "descripcion"
+              },
+              {
+                "name": "costo"
+              }
+            ]
+          },
+          {
+            "name": "Odontologo",
+            "aliases": [
+              "Odontólogo"
+            ],
+            "attrs": [
+              {
+                "name": "id_odontologo",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              },
+              {
+                "name": "nombre_odontologo",
+                "aliases": [
+                  "nombre"
+                ]
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "tiene",
+            "between": [
+              {
+                "entity": "Paciente",
+                "card": "1"
+              },
+              {
+                "entity": "Ficha_Dental",
+                "card": "1"
+              }
+            ]
+          },
+          {
+            "name": "contiene",
+            "identifying": true,
+            "between": [
+              {
+                "entity": "Ficha_Dental",
+                "card": "1"
+              },
+              {
+                "entity": "Tratamiento",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "realiza",
+            "between": [
+              {
+                "entity": "Odontologo",
+                "card": "1"
+              },
+              {
+                "entity": "Tratamiento",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "layout": [
+          [
+            "Paciente",
+            "Ficha_Dental",
+            "Tratamiento",
+            "Odontologo"
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 9,
+      "slug": "s3-zoologico",
+      "semana": 3,
+      "tipo": "EER",
+      "titulo": "Zoológico",
+      "enunciado": [
+        "Un zoológico cataloga sus animales. Cada animal tiene un ID único y una fecha de nacimiento. Los animales se clasifican en mamíferos, aves o reptiles; todo animal debe pertenecer a una y solo una de estas categorías. De los mamíferos se registra si es depredador; de las aves, la envergadura de sus alas; de los reptiles, si es venenoso.",
+        "El zoológico también tiene empleados (rut como identificador y nombre); los cuidadores son un tipo de empleado (no todos los empleados son cuidadores). Un cuidador está asignado a un único hábitat. Un hábitat (ID de hábitat) alberga a muchos animales, pero un animal vive en un único hábitat.",
+        "Además, algunos animales, pero no todos, pueden estar en un programa de conservación (ID del programa y estado de riesgo); un programa agrupa a muchos animales y cada animal está en, como máximo, un programa.",
+        "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Animal",
+            "attrs": [
+              {
+                "name": "id_animal",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              },
+              {
+                "name": "fecha_nacimiento"
+              }
+            ]
+          },
+          {
+            "name": "Mamifero",
+            "aliases": [
+              "Mamífero"
+            ],
+            "attrs": [
+              {
+                "name": "es_depredador",
+                "aliases": [
+                  "depredador"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Ave",
+            "attrs": [
+              {
+                "name": "envergadura"
+              }
+            ]
+          },
+          {
+            "name": "Reptil",
+            "attrs": [
+              {
+                "name": "es_venenoso",
+                "aliases": [
+                  "venenoso"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Habitat",
+            "aliases": [
+              "Hábitat"
+            ],
+            "attrs": [
+              {
+                "name": "id_habitat",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Empleado",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          },
+          {
+            "name": "Cuidador",
+            "attrs": []
+          },
+          {
+            "name": "Programa_Conservacion",
+            "aliases": [
+              "Programa de conservación",
+              "Programa"
+            ],
+            "attrs": [
+              {
+                "name": "id_programa",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              },
+              {
+                "name": "estado_riesgo"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "alberga",
+            "between": [
+              {
+                "entity": "Habitat",
+                "card": "1"
+              },
+              {
+                "entity": "Animal",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "esta_asignado",
+            "between": [
+              {
+                "entity": "Habitat",
+                "card": "1"
+              },
+              {
+                "entity": "Cuidador",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "participa",
+            "between": [
+              {
+                "entity": "Programa_Conservacion",
+                "card": "1"
+              },
+              {
+                "entity": "Animal",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "specializations": [
+          {
+            "parent": "Animal",
+            "children": [
+              "Mamifero",
+              "Ave",
+              "Reptil"
+            ],
+            "disjoint": true,
+            "total": true
+          },
+          {
+            "parent": "Empleado",
+            "children": [
+              "Cuidador"
+            ],
+            "disjoint": true,
+            "total": false
+          }
+        ],
+        "layout": [
+          [
+            "Mamifero",
+            "Ave",
+            "Reptil",
+            null
+          ],
+          [
+            null,
+            "Animal",
+            "Habitat",
+            "Programa_Conservacion"
+          ],
+          [
+            null,
+            null,
+            "Cuidador",
+            null
+          ],
+          [
+            null,
+            null,
+            "Empleado",
+            null
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 10,
+      "slug": "s3-rrhh",
+      "semana": 3,
+      "tipo": "EER",
+      "titulo": "Recursos humanos",
+      "enunciado": [
+        "Un sistema de recursos humanos registra a los empleados de una corporación. Cada empleado tiene un ID único. Los empleados son contratados o externos: todo empleado debe pertenecer a una de estas dos categorías y solo a una. De los contratados se guarda el salario; de los externos, la empresa consultora a la que pertenecen.",
+        "Adicionalmente, cualquier empleado contratado puede ser ascendido a un cargo de gerencia, del cual se guarda el presupuesto que maneja. No todos los contratados son gerentes.",
+        "Un empleado contratado también tiene beneficios. Un beneficio (por ejemplo, «Seguro Dental») se identifica por un código dentro de cada empleado y no puede existir sin él (entidad débil).",
+        "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Empleado",
+            "attrs": [
+              {
+                "name": "id_empleado",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Contratado",
+            "attrs": [
+              {
+                "name": "salario"
+              }
+            ]
+          },
+          {
+            "name": "Externo",
+            "attrs": [
+              {
+                "name": "empresa_consultora",
+                "aliases": [
+                  "consultora",
+                  "empresa"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Gerente",
+            "attrs": [
+              {
+                "name": "presupuesto"
+              }
+            ]
+          },
+          {
+            "name": "Beneficio",
+            "weak": true,
+            "attrs": [
+              {
+                "name": "codigo_beneficio",
+                "partialKey": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "descripcion",
+                "aliases": [
+                  "nombre"
+                ]
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "tiene",
+            "identifying": true,
+            "between": [
+              {
+                "entity": "Contratado",
+                "card": "1"
+              },
+              {
+                "entity": "Beneficio",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "specializations": [
+          {
+            "parent": "Empleado",
+            "children": [
+              "Contratado",
+              "Externo"
+            ],
+            "disjoint": true,
+            "total": true
+          },
+          {
+            "parent": "Contratado",
+            "children": [
+              "Gerente"
+            ],
+            "disjoint": true,
+            "total": false
+          }
+        ],
+        "layout": [
+          [
+            "Empleado",
+            null,
+            null
+          ],
+          [
+            "Contratado",
+            null,
+            "Externo"
+          ],
+          [
+            "Gerente",
+            "Beneficio",
+            null
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 11,
+      "slug": "s3-publicaciones",
+      "semana": 3,
+      "tipo": "EER",
+      "titulo": "Publicaciones académicas",
+      "enunciado": [
+        "Una universidad gestiona sus publicaciones académicas. Cada publicación tiene un DOI único. Las publicaciones son de dos tipos: artículos o libros. Una publicación puede ser un artículo, un libro o ambos (por ejemplo, un capítulo de libro publicado como artículo), o ninguno de los dos. De los artículos se guarda el nombre de la revista; de los libros, la editorial.",
+        "Todo el personal de la universidad, con un rut único, se clasifica como académico o administrativo; esta clasificación es exclusiva y cubre a todo el personal. De los académicos se anota su grado (por ejemplo, Doctor).",
+        "Las publicaciones son escritas por académicos: un académico puede escribir muchas publicaciones y una publicación puede tener muchos autores.",
+        "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Publicacion",
+            "aliases": [
+              "Publicación"
+            ],
+            "attrs": [
+              {
+                "name": "doi",
+                "key": true
+              }
+            ]
+          },
+          {
+            "name": "Articulo",
+            "aliases": [
+              "Artículo"
+            ],
+            "attrs": [
+              {
+                "name": "nombre_revista",
+                "aliases": [
+                  "revista"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Libro",
+            "attrs": [
+              {
+                "name": "editorial"
+              }
+            ]
+          },
+          {
+            "name": "Personal",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true
+              }
+            ]
+          },
+          {
+            "name": "Academico",
+            "aliases": [
+              "Académico"
+            ],
+            "attrs": [
+              {
+                "name": "grado"
+              }
+            ]
+          },
+          {
+            "name": "Administrativo",
+            "attrs": []
+          }
+        ],
+        "relationships": [
+          {
+            "name": "escribe",
+            "between": [
+              {
+                "entity": "Academico",
+                "card": "N"
+              },
+              {
+                "entity": "Publicacion",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "specializations": [
+          {
+            "parent": "Publicacion",
+            "children": [
+              "Articulo",
+              "Libro"
+            ],
+            "disjoint": false,
+            "total": false
+          },
+          {
+            "parent": "Personal",
+            "children": [
+              "Academico",
+              "Administrativo"
+            ],
+            "disjoint": true,
+            "total": true
+          }
+        ],
+        "layout": [
+          [
+            "Articulo",
+            "Libro",
+            null,
+            "Academico",
+            "Administrativo"
+          ],
+          [
+            null,
+            "Publicacion",
+            null,
+            "Personal",
+            null
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 12,
+      "slug": "s3-centro-investigacion",
+      "semana": 3,
+      "tipo": "EER",
+      "titulo": "Centro de investigación",
+      "enunciado": [
+        "Un centro de investigación gestiona su capital humano y sus proyectos. El centro está organizado en departamentos (código único, nombre y presupuesto anual). Cada departamento es dirigido por un único científico (director único); además, cada departamento emplea a muchos científicos, pero cada científico pertenece a un único departamento.",
+        "De cada científico (ID de empleado) se guarda su nombre completo, que se compone de nombres y apellidos, y su fecha de contratación, a partir de la cual se calcula su antigüedad. Un científico puede tener múltiples especialidades.",
+        "Cada científico debe ser clasificado obligatoriamente como junior o senior, pero no ambos. De los juniors se registra su mentor (un científico senior); de los seniors, su bono de productividad. Adicionalmente, un científico puede ser administrador de laboratorio (se guarda el laboratorio que gestiona) y/o coordinador de postgrado (el programa que dirige); estos roles no son obligatorios y puede tener ambos.",
+        "El centro lleva a cabo proyectos (código único y título). Un científico puede trabajar en varios proyectos y un proyecto tiene muchos científicos, registrándose las horas semanales que cada científico dedica a cada proyecto.",
+        "Cada científico puede registrar a sus familiares como beneficiarios del seguro médico; cada familiar se identifica por su nombre y no puede existir en el sistema sin el científico del que depende.",
+        "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Departamento",
+            "attrs": [
+              {
+                "name": "codigo_depto",
+                "key": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "presupuesto_anual",
+                "aliases": [
+                  "presupuesto"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Cientifico",
+            "aliases": [
+              "Científico"
+            ],
+            "attrs": [
+              {
+                "name": "id_empleado",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              },
+              {
+                "name": "nombre_completo",
+                "parts": [
+                  {
+                    "name": "nombres"
+                  },
+                  {
+                    "name": "apellidos"
+                  }
+                ]
+              },
+              {
+                "name": "fecha_contratacion"
+              },
+              {
+                "name": "antiguedad",
+                "derived": true,
+                "aliases": [
+                  "antigüedad"
+                ]
+              },
+              {
+                "name": "especialidades",
+                "multi": true,
+                "aliases": [
+                  "especialidad"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Junior",
+            "aliases": [
+              "Cientifico_Junior",
+              "Científico junior"
+            ],
+            "attrs": []
+          },
+          {
+            "name": "Senior",
+            "aliases": [
+              "Cientifico_Senior",
+              "Científico senior"
+            ],
+            "attrs": [
+              {
+                "name": "bono_productividad",
+                "aliases": [
+                  "bono"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Administrador_Laboratorio",
+            "aliases": [
+              "Administrador de laboratorio",
+              "Administrador"
+            ],
+            "attrs": [
+              {
+                "name": "laboratorio"
+              }
+            ]
+          },
+          {
+            "name": "Coordinador_Postgrado",
+            "aliases": [
+              "Coordinador de postgrado",
+              "Coordinador"
+            ],
+            "attrs": [
+              {
+                "name": "programa"
+              }
+            ]
+          },
+          {
+            "name": "Proyecto",
+            "attrs": [
+              {
+                "name": "codigo_proyecto",
+                "key": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "titulo"
+              }
+            ]
+          },
+          {
+            "name": "Familiar",
+            "weak": true,
+            "attrs": [
+              {
+                "name": "nombre",
+                "partialKey": true
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "dirige",
+            "between": [
+              {
+                "entity": "Cientifico",
+                "card": "1"
+              },
+              {
+                "entity": "Departamento",
+                "card": "1"
+              }
+            ]
+          },
+          {
+            "name": "emplea",
+            "between": [
+              {
+                "entity": "Departamento",
+                "card": "1"
+              },
+              {
+                "entity": "Cientifico",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "tiene_mentor",
+            "between": [
+              {
+                "entity": "Senior",
+                "card": "1"
+              },
+              {
+                "entity": "Junior",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "trabaja_en",
+            "between": [
+              {
+                "entity": "Cientifico",
+                "card": "N"
+              },
+              {
+                "entity": "Proyecto",
+                "card": "N"
+              }
+            ],
+            "attrs": [
+              {
+                "name": "horas_semanales",
+                "aliases": [
+                  "horas"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "depende",
+            "identifying": true,
+            "between": [
+              {
+                "entity": "Cientifico",
+                "card": "1"
+              },
+              {
+                "entity": "Familiar",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "specializations": [
+          {
+            "parent": "Cientifico",
+            "children": [
+              "Junior",
+              "Senior"
+            ],
+            "disjoint": true,
+            "total": true
+          },
+          {
+            "parent": "Cientifico",
+            "children": [
+              "Administrador_Laboratorio",
+              "Coordinador_Postgrado"
+            ],
+            "disjoint": false,
+            "total": false
+          }
+        ],
+        "layout": [
+          [
+            "Departamento",
+            "Cientifico",
+            "Proyecto",
+            "Familiar"
+          ],
+          [
+            "Junior",
+            "Senior",
+            "Administrador_Laboratorio",
+            "Coordinador_Postgrado"
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 13,
+      "slug": "s3-biblioteca-universitaria",
+      "semana": 3,
+      "tipo": "EER",
+      "titulo": "Biblioteca universitaria",
+      "enunciado": [
+        "Una universidad tiene sucursales de biblioteca (código único, nombre, dirección, teléfono y horario de atención). Una sucursal tiene muchos ejemplares de libros, pero cada ejemplar físico pertenece a una sola sucursal.",
+        "Cada libro tiene ISBN (identificador), título, año de publicación, editorial, categoría y número de páginas. Un libro puede tener varios autores y un autor puede haber escrito varios libros; de cada autor: id (identificador), nombre completo, nacionalidad, fecha de nacimiento y correo. Un libro puede tener varios ejemplares físicos (código único, estado, ubicación y fecha de adquisición).",
+        "Los usuarios se clasifican en estudiantes o funcionarios; todo usuario pertenece obligatoriamente a una de las dos categorías. De cada usuario: rut (identificador), nombre completo, dirección (calle, número, comuna y ciudad), teléfonos (puede tener varios), correo, fecha de inscripción y fecha de nacimiento (de la que se calcula la edad). De los estudiantes: carrera, semestre y jornada; de los funcionarios: cargo, departamento y tipo de contrato.",
+        "Un funcionario puede desempeñar uno, ambos o ninguno de estos roles: bibliotecario (se guarda el turno) y administrativo (el área de gestión). Cada sucursal tiene un funcionario responsable (relación 1:1) y un funcionario puede supervisar a otros funcionarios.",
+        "Los usuarios solicitan préstamos de ejemplares (id, fecha de préstamo, fecha estimada de devolución, fecha real de devolución y estado); cada préstamo pertenece a un solo usuario y a un ejemplar específico. Un usuario puede reservar varios libros y un libro puede ser reservado por varios usuarios; de cada reserva se guarda la fecha de solicitud, el estado y la fecha máxima de retiro. Cada sanción por atraso (id, monto, motivo, fecha de generación y estado de pago) está asociada a un préstamo, y un préstamo puede generar varias sanciones.",
+        "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Sucursal",
+            "attrs": [
+              {
+                "name": "codigo_sucursal",
+                "key": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "direccion"
+              },
+              {
+                "name": "telefono"
+              },
+              {
+                "name": "horario_atencion",
+                "aliases": [
+                  "horario"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Libro",
+            "attrs": [
+              {
+                "name": "isbn",
+                "key": true
+              },
+              {
+                "name": "titulo"
+              },
+              {
+                "name": "anio_publicacion",
+                "aliases": [
+                  "año_publicacion"
+                ]
+              },
+              {
+                "name": "editorial"
+              },
+              {
+                "name": "categoria"
+              },
+              {
+                "name": "numero_paginas"
+              }
+            ]
+          },
+          {
+            "name": "Autor",
+            "attrs": [
+              {
+                "name": "id_autor",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              },
+              {
+                "name": "nombre_completo",
+                "aliases": [
+                  "nombre"
+                ]
+              },
+              {
+                "name": "nacionalidad"
+              },
+              {
+                "name": "fecha_nacimiento"
+              },
+              {
+                "name": "email"
+              }
+            ]
+          },
+          {
+            "name": "Ejemplar",
+            "attrs": [
+              {
+                "name": "codigo_ejemplar",
+                "key": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "estado"
+              },
+              {
+                "name": "ubicacion"
+              },
+              {
+                "name": "fecha_adquisicion"
+              }
+            ]
+          },
+          {
+            "name": "Usuario",
+            "attrs": [
+              {
+                "name": "rut",
+                "key": true
+              },
+              {
+                "name": "nombre_completo",
+                "aliases": [
+                  "nombre"
+                ]
+              },
+              {
+                "name": "direccion",
+                "parts": [
+                  {
+                    "name": "calle"
+                  },
+                  {
+                    "name": "numero"
+                  },
+                  {
+                    "name": "comuna"
+                  },
+                  {
+                    "name": "ciudad"
+                  }
+                ]
+              },
+              {
+                "name": "telefonos",
+                "multi": true,
+                "aliases": [
+                  "telefono"
+                ]
+              },
+              {
+                "name": "correo",
+                "aliases": [
+                  "email"
+                ]
+              },
+              {
+                "name": "fecha_inscripcion"
+              },
+              {
+                "name": "fecha_nacimiento"
+              },
+              {
+                "name": "edad",
+                "derived": true
+              }
+            ]
+          },
+          {
+            "name": "Estudiante",
+            "attrs": [
+              {
+                "name": "carrera"
+              },
+              {
+                "name": "semestre"
+              },
+              {
+                "name": "jornada"
+              }
+            ]
+          },
+          {
+            "name": "Funcionario",
+            "attrs": [
+              {
+                "name": "cargo"
+              },
+              {
+                "name": "departamento"
+              },
+              {
+                "name": "tipo_contrato"
+              }
+            ]
+          },
+          {
+            "name": "Bibliotecario",
+            "attrs": [
+              {
+                "name": "turno"
+              }
+            ]
+          },
+          {
+            "name": "Administrativo",
+            "attrs": [
+              {
+                "name": "area_gestion",
+                "aliases": [
+                  "area"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Prestamo",
+            "aliases": [
+              "Préstamo"
+            ],
+            "attrs": [
+              {
+                "name": "id_prestamo",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              },
+              {
+                "name": "fecha_prestamo"
+              },
+              {
+                "name": "fecha_estimada_devolucion"
+              },
+              {
+                "name": "fecha_real_devolucion"
+              },
+              {
+                "name": "estado"
+              }
+            ]
+          },
+          {
+            "name": "Sancion",
+            "aliases": [
+              "Sanción"
+            ],
+            "attrs": [
+              {
+                "name": "id_sancion",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              },
+              {
+                "name": "monto"
+              },
+              {
+                "name": "motivo"
+              },
+              {
+                "name": "fecha_generacion"
+              },
+              {
+                "name": "estado_pago"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "tiene",
+            "between": [
+              {
+                "entity": "Sucursal",
+                "card": "1"
+              },
+              {
+                "entity": "Ejemplar",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "escribe",
+            "between": [
+              {
+                "entity": "Autor",
+                "card": "N"
+              },
+              {
+                "entity": "Libro",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "posee",
+            "between": [
+              {
+                "entity": "Libro",
+                "card": "1"
+              },
+              {
+                "entity": "Ejemplar",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "solicita",
+            "between": [
+              {
+                "entity": "Usuario",
+                "card": "1"
+              },
+              {
+                "entity": "Prestamo",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "corresponde",
+            "between": [
+              {
+                "entity": "Ejemplar",
+                "card": "1"
+              },
+              {
+                "entity": "Prestamo",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "genera",
+            "between": [
+              {
+                "entity": "Prestamo",
+                "card": "1"
+              },
+              {
+                "entity": "Sancion",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "reserva",
+            "between": [
+              {
+                "entity": "Usuario",
+                "card": "N"
+              },
+              {
+                "entity": "Libro",
+                "card": "N"
+              }
+            ],
+            "attrs": [
+              {
+                "name": "fecha_solicitud"
+              },
+              {
+                "name": "estado"
+              },
+              {
+                "name": "fecha_maxima_retiro"
+              }
+            ]
+          },
+          {
+            "name": "responsable",
+            "between": [
+              {
+                "entity": "Funcionario",
+                "card": "1"
+              },
+              {
+                "entity": "Sucursal",
+                "card": "1"
+              }
+            ]
+          },
+          {
+            "name": "supervisa",
+            "between": [
+              {
+                "entity": "Funcionario",
+                "card": "1"
+              },
+              {
+                "entity": "Funcionario",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "specializations": [
+          {
+            "parent": "Usuario",
+            "children": [
+              "Estudiante",
+              "Funcionario"
+            ],
+            "disjoint": true,
+            "total": true
+          },
+          {
+            "parent": "Funcionario",
+            "children": [
+              "Bibliotecario",
+              "Administrativo"
+            ],
+            "disjoint": false,
+            "total": false
+          }
+        ],
+        "layout": [
+          [
+            "Autor",
+            "Libro",
+            "Ejemplar",
+            "Sucursal",
+            "Sancion"
+          ],
+          [
+            null,
+            "Usuario",
+            "Prestamo",
+            null,
+            null
+          ],
+          [
+            "Estudiante",
+            "Funcionario",
+            null,
+            null,
+            null
+          ],
+          [
+            "Bibliotecario",
+            null,
+            "Administrativo",
+            null,
+            null
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 14,
+      "slug": "s3-centro-medico",
+      "semana": 3,
+      "tipo": "EER",
+      "titulo": "Centro médico universitario",
+      "enunciado": [
+        "Una universidad con facultad de medicina diseña el sistema de su red de centros médicos. Cada centro tiene código único, nombre, dirección, teléfono y horario de atención. Cada centro tiene varios consultorios, que solo tienen sentido en el contexto de un centro: se identifican por un número (único solo dentro de su centro), con piso y tipo de equipamiento (entidad débil). Cada centro tiene un médico jefe responsable (relación 1:1).",
+        "Todo el personal se clasifica en médicos o administrativos (exclusivo y obligatorio). De todo el personal: rut (identificador), nombre completo, dirección (calle, número, comuna y ciudad), teléfono, correo y fecha de contratación. De los médicos: número de colegiatura y años de experiencia; de los administrativos: cargo y área.",
+        "Dentro de los médicos hay dos roles: tratante (cupo diario de pacientes) y docente (asignatura o rotación a cargo). Un médico puede ser tratante, docente, ambos, o ninguno. Un médico puede supervisar a otros médicos (relación reflexiva).",
+        "Hay especialidades (código, nombre y descripción): un médico ejerce varias especialidades y una especialidad es ejercida por muchos médicos, registrándose la fecha de certificación.",
+        "Los pacientes (rut, nombre completo, dirección compuesta, correo, fecha de nacimiento —de la que se calcula la edad— y varios teléfonos) solicitan citas (id, fecha, hora, motivo y estado); cada cita pertenece a un paciente y a un médico. De una cita puede emitirse una receta (id), que incluye uno o varios medicamentos (código y nombre); un medicamento puede estar en varias recetas, con dosis, frecuencia y duración.",
+        "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Personal",
+            "attrs": [
+              {
+                "name": "rut_personal",
+                "key": true,
+                "aliases": [
+                  "rut"
+                ]
+              },
+              {
+                "name": "nombre_completo",
+                "aliases": [
+                  "nombre"
+                ]
+              },
+              {
+                "name": "direccion",
+                "parts": [
+                  {
+                    "name": "calle"
+                  },
+                  {
+                    "name": "numero"
+                  },
+                  {
+                    "name": "comuna"
+                  },
+                  {
+                    "name": "ciudad"
+                  }
+                ]
+              },
+              {
+                "name": "telefono"
+              },
+              {
+                "name": "correo"
+              },
+              {
+                "name": "fecha_contratacion"
+              }
+            ]
+          },
+          {
+            "name": "Medico",
+            "aliases": [
+              "Médico"
+            ],
+            "attrs": [
+              {
+                "name": "numero_colegiatura"
+              },
+              {
+                "name": "anios_experiencia",
+                "aliases": [
+                  "años_experiencia"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Administrativo",
+            "attrs": [
+              {
+                "name": "cargo"
+              },
+              {
+                "name": "area"
+              }
+            ]
+          },
+          {
+            "name": "Medico_Tratante",
+            "aliases": [
+              "Médico tratante",
+              "Tratante"
+            ],
+            "attrs": [
+              {
+                "name": "cupo_diario_pacientes",
+                "aliases": [
+                  "cupo_diario"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Medico_Docente",
+            "aliases": [
+              "Médico docente",
+              "Docente"
+            ],
+            "attrs": [
+              {
+                "name": "asignatura_rotacion",
+                "aliases": [
+                  "asignatura",
+                  "rotacion"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Centro_Medico",
+            "aliases": [
+              "Centro médico",
+              "Centro"
+            ],
+            "attrs": [
+              {
+                "name": "codigo_centro",
+                "key": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "direccion"
+              },
+              {
+                "name": "telefono"
+              },
+              {
+                "name": "horario_atencion",
+                "aliases": [
+                  "horario"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Consultorio",
+            "weak": true,
+            "attrs": [
+              {
+                "name": "numero_consultorio",
+                "partialKey": true,
+                "aliases": [
+                  "numero"
+                ]
+              },
+              {
+                "name": "piso"
+              },
+              {
+                "name": "tipo_equipamiento",
+                "aliases": [
+                  "equipamiento"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Especialidad",
+            "attrs": [
+              {
+                "name": "codigo_especialidad",
+                "key": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "nombre"
+              },
+              {
+                "name": "descripcion"
+              }
+            ]
+          },
+          {
+            "name": "Paciente",
+            "attrs": [
+              {
+                "name": "rut_paciente",
+                "key": true,
+                "aliases": [
+                  "rut"
+                ]
+              },
+              {
+                "name": "nombre_completo",
+                "aliases": [
+                  "nombre"
+                ]
+              },
+              {
+                "name": "direccion",
+                "parts": [
+                  {
+                    "name": "calle"
+                  },
+                  {
+                    "name": "numero"
+                  },
+                  {
+                    "name": "comuna"
+                  },
+                  {
+                    "name": "ciudad"
+                  }
+                ]
+              },
+              {
+                "name": "correo"
+              },
+              {
+                "name": "fecha_nacimiento"
+              },
+              {
+                "name": "telefonos",
+                "multi": true,
+                "aliases": [
+                  "telefono"
+                ]
+              },
+              {
+                "name": "edad",
+                "derived": true
+              }
+            ]
+          },
+          {
+            "name": "Cita",
+            "attrs": [
+              {
+                "name": "id_cita",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              },
+              {
+                "name": "fecha"
+              },
+              {
+                "name": "hora"
+              },
+              {
+                "name": "motivo"
+              },
+              {
+                "name": "estado"
+              }
+            ]
+          },
+          {
+            "name": "Receta",
+            "attrs": [
+              {
+                "name": "id_receta",
+                "key": true,
+                "aliases": [
+                  "id"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Medicamento",
+            "attrs": [
+              {
+                "name": "codigo_medicamento",
+                "key": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "tiene",
+            "identifying": true,
+            "between": [
+              {
+                "entity": "Centro_Medico",
+                "card": "1"
+              },
+              {
+                "entity": "Consultorio",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "dirige",
+            "between": [
+              {
+                "entity": "Medico",
+                "card": "1"
+              },
+              {
+                "entity": "Centro_Medico",
+                "card": "1"
+              }
+            ]
+          },
+          {
+            "name": "ejerce",
+            "between": [
+              {
+                "entity": "Medico",
+                "card": "N"
+              },
+              {
+                "entity": "Especialidad",
+                "card": "N"
+              }
+            ],
+            "attrs": [
+              {
+                "name": "fecha_certificacion"
+              }
+            ]
+          },
+          {
+            "name": "supervisa",
+            "between": [
+              {
+                "entity": "Medico",
+                "card": "1"
+              },
+              {
+                "entity": "Medico",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "solicita",
+            "between": [
+              {
+                "entity": "Paciente",
+                "card": "1"
+              },
+              {
+                "entity": "Cita",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "atiende",
+            "between": [
+              {
+                "entity": "Medico",
+                "card": "1"
+              },
+              {
+                "entity": "Cita",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "emite",
+            "between": [
+              {
+                "entity": "Cita",
+                "card": "1"
+              },
+              {
+                "entity": "Receta",
+                "card": "1"
+              }
+            ]
+          },
+          {
+            "name": "incluye",
+            "between": [
+              {
+                "entity": "Receta",
+                "card": "N"
+              },
+              {
+                "entity": "Medicamento",
+                "card": "N"
+              }
+            ],
+            "attrs": [
+              {
+                "name": "dosis"
+              },
+              {
+                "name": "frecuencia"
+              },
+              {
+                "name": "duracion"
+              }
+            ]
+          }
+        ],
+        "specializations": [
+          {
+            "parent": "Personal",
+            "children": [
+              "Medico",
+              "Administrativo"
+            ],
+            "disjoint": true,
+            "total": true
+          },
+          {
+            "parent": "Medico",
+            "children": [
+              "Medico_Tratante",
+              "Medico_Docente"
+            ],
+            "disjoint": false,
+            "total": false
+          }
+        ],
+        "layout": [
+          [
+            "Consultorio",
+            "Centro_Medico",
+            "Personal",
+            "Especialidad",
+            "Paciente"
+          ],
+          [
+            null,
+            "Administrativo",
+            "Medico",
+            "Cita",
+            null
+          ],
+          [
+            null,
+            "Medico_Tratante",
+            "Medico_Docente",
+            "Receta",
+            "Medicamento"
+          ]
+        ]
+      }
+    },
+    {
+      "numero": 15,
+      "slug": "s3-red-climatica",
+      "semana": 3,
+      "tipo": "EER",
+      "titulo": "Red de institutos de investigación climática",
+      "enunciado": [
+        "Una red de institutos climáticos registra a las personas afiliadas, identificadas por un ORCID. De cada persona: nombre completo (compuesto por nombre de pila y apellidos), correos electrónicos (varios), año de nacimiento y edad (calculable). Las personas son investigadores o técnicos de laboratorio, y solo de una de estas categorías (todas pertenecen a una). De los investigadores: campo de estudio principal; de los técnicos: certificación de especialidad.",
+        "Ciertos investigadores pueden ser jefes de departamento y/o editores de revista; un investigador puede no tener ninguno de estos roles, uno o ambos.",
+        "Hay estaciones meteorológicas (código único y ubicación compuesta por latitud y longitud). Cada estación es operada por un único técnico de laboratorio (relación exclusiva 1:1). Una estación genera múltiples registros; un registro se identifica por la fecha y hora de la medición (única para esa estación) y no puede existir sin su estación (entidad débil). De cada registro: temperatura y humedad.",
+        "Los investigadores colaboran en publicaciones (DOI y título): una publicación puede ser escrita por varios investigadores y un investigador puede escribir muchas publicaciones; para cada autoría se registra el orden de los autores. Cada publicación está financiada por un único proyecto (id y nombre), pero un proyecto puede financiar muchas publicaciones.",
+        "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+      ],
+      "solution": {
+        "entities": [
+          {
+            "name": "Persona",
+            "attrs": [
+              {
+                "name": "orcid",
+                "key": true
+              },
+              {
+                "name": "nombre_completo",
+                "parts": [
+                  {
+                    "name": "nombre_pila"
+                  },
+                  {
+                    "name": "apellidos"
+                  }
+                ]
+              },
+              {
+                "name": "correos",
+                "multi": true,
+                "aliases": [
+                  "correo"
+                ]
+              },
+              {
+                "name": "anio_nacimiento",
+                "aliases": [
+                  "año_nacimiento"
+                ]
+              },
+              {
+                "name": "edad",
+                "derived": true
+              }
+            ]
+          },
+          {
+            "name": "Investigador",
+            "attrs": [
+              {
+                "name": "campo_estudio",
+                "aliases": [
+                  "campo"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Tecnico_Laboratorio",
+            "aliases": [
+              "Técnico de laboratorio",
+              "Tecnico"
+            ],
+            "attrs": [
+              {
+                "name": "certificacion",
+                "aliases": [
+                  "certificación"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Jefe_Departamento",
+            "aliases": [
+              "Jefe de departamento",
+              "Jefe"
+            ],
+            "attrs": []
+          },
+          {
+            "name": "Editor_Revista",
+            "aliases": [
+              "Editor de revista",
+              "Editor"
+            ],
+            "attrs": []
+          },
+          {
+            "name": "Estacion",
+            "aliases": [
+              "Estación"
+            ],
+            "attrs": [
+              {
+                "name": "codigo_estacion",
+                "key": true,
+                "aliases": [
+                  "codigo"
+                ]
+              },
+              {
+                "name": "ubicacion",
+                "parts": [
+                  {
+                    "name": "latitud"
+                  },
+                  {
+                    "name": "longitud"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Registro",
+            "weak": true,
+            "attrs": [
+              {
+                "name": "fecha_hora",
+                "partialKey": true,
+                "aliases": [
+                  "fecha"
+                ]
+              },
+              {
+                "name": "temperatura"
+              },
+              {
+                "name": "humedad"
+              }
+            ]
+          },
+          {
+            "name": "Publicacion",
+            "aliases": [
+              "Publicación"
+            ],
+            "attrs": [
+              {
+                "name": "doi",
+                "key": true
+              },
+              {
+                "name": "titulo"
+              }
+            ]
+          },
+          {
+            "name": "Proyecto",
+            "attrs": [
+              {
+                "name": "id_proyecto",
+                "key": true,
+                "aliases": [
+                  "id",
+                  "codigo"
+                ]
+              },
+              {
+                "name": "nombre"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "opera",
+            "between": [
+              {
+                "entity": "Tecnico_Laboratorio",
+                "card": "1"
+              },
+              {
+                "entity": "Estacion",
+                "card": "1"
+              }
+            ]
+          },
+          {
+            "name": "genera",
+            "identifying": true,
+            "between": [
+              {
+                "entity": "Estacion",
+                "card": "1"
+              },
+              {
+                "entity": "Registro",
+                "card": "N"
+              }
+            ]
+          },
+          {
+            "name": "escribe",
+            "between": [
+              {
+                "entity": "Investigador",
+                "card": "N"
+              },
+              {
+                "entity": "Publicacion",
+                "card": "N"
+              }
+            ],
+            "attrs": [
+              {
+                "name": "orden_autor",
+                "aliases": [
+                  "orden"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "financia",
+            "between": [
+              {
+                "entity": "Proyecto",
+                "card": "1"
+              },
+              {
+                "entity": "Publicacion",
+                "card": "N"
+              }
+            ]
+          }
+        ],
+        "specializations": [
+          {
+            "parent": "Persona",
+            "children": [
+              "Investigador",
+              "Tecnico_Laboratorio"
+            ],
+            "disjoint": true,
+            "total": true
+          },
+          {
+            "parent": "Investigador",
+            "children": [
+              "Jefe_Departamento",
+              "Editor_Revista"
+            ],
+            "disjoint": false,
+            "total": false
+          }
+        ],
+        "layout": [
+          [
+            "Jefe_Departamento",
+            "Editor_Revista",
+            null,
+            null
+          ],
+          [
+            null,
+            "Investigador",
+            "Publicacion",
+            "Proyecto"
+          ],
+          [
+            null,
+            "Persona",
+            null,
+            null
+          ],
+          [
+            "Tecnico_Laboratorio",
+            null,
+            "Estacion",
+            "Registro"
+          ]
+        ]
+      }
+    }
+  ]
+}

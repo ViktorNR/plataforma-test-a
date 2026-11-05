@@ -1,0 +1,878 @@
+CREATE TABLE PERSONAL
+(
+RUT_PERSONAL VARCHAR(12) PRIMARY KEY,
+NOMBRE VARCHAR(30),
+TELEFONO INT,
+CORREO VARCHAR(30),
+FECHA_CONTRATACION DATE,
+CALLE VARCHAR(50),
+NUMERO INT,
+COMUNA VARCHAR(50),
+CIUDAD VARCHAR(30)
+);
+
+CREATE TABLE ADMINISTRATIVO
+(
+RUT_PERSONAL VARCHAR(12) PRIMARY KEY,
+CARGO VARCHAR(30),
+AREA VARCHAR(40),
+FOREIGN KEY (RUT_PERSONAL) REFERENCES PERSONAL(RUT_PERSONAL)
+);
+
+CREATE TABLE MEDICO
+(
+RUT_PERSONAL VARCHAR(12) PRIMARY KEY,
+NUMERO_COLEGIATURA INT,
+ANIOS_EXPERIENCIA INT,
+FOREIGN KEY (RUT_PERSONAL) REFERENCES PERSONAL(RUT_PERSONAL)
+);
+
+CREATE TABLE MEDICO_TRATANTE
+(
+RUT_PERSONAL VARCHAR(12) PRIMARY KEY,
+CUPO_DIARIO INT,
+FOREIGN KEY (RUT_PERSONAL) REFERENCES MEDICO(RUT_PERSONAL)
+);
+
+CREATE TABLE MEDICO_DOCENTE
+(
+RUT_PERSONAL VARCHAR(12) PRIMARY KEY,
+ASIGNATURA_ROTACION VARCHAR(30),
+FOREIGN KEY (RUT_PERSONAL) REFERENCES MEDICO(RUT_PERSONAL)
+);
+
+CREATE TABLE CENTRO_MEDICO
+(
+CODIGO_CENTRO INT PRIMARY KEY,
+NOMBRE VARCHAR(30),
+DIRECCION VARCHAR(30),
+TELEFONO INT,
+RUT_PERSONAL VARCHAR(12),
+FOREIGN KEY (RUT_PERSONAL) REFERENCES MEDICO(RUT_PERSONAL)
+);
+
+CREATE TABLE CONSULTORIO
+(
+CODIGO_CENTRO INT,
+NUMERO_CONSULTORIO INT,
+PISO INT,
+TIPO_EQUIPAMIENTO VARCHAR(30),
+PRIMARY KEY (CODIGO_CENTRO, NUMERO_CONSULTORIO),
+FOREIGN KEY (CODIGO_CENTRO) REFERENCES CENTRO_MEDICO(CODIGO_CENTRO)
+);
+
+CREATE TABLE ESPECIALIDAD
+(
+CODIGO_ESPECIALIDAD INT PRIMARY KEY,
+NOMBRE VARCHAR(30),
+DESCRIPCION VARCHAR(50)
+);
+
+CREATE TABLE MEDICO_ESPECIALIDAD
+(
+RUT_PERSONAL VARCHAR(12),
+CODIGO_ESPECIALIDAD INT,
+FECHA_CERTIFICACION DATE,
+PRIMARY KEY (RUT_PERSONAL, CODIGO_ESPECIALIDAD),
+FOREIGN KEY (RUT_PERSONAL) REFERENCES MEDICO(RUT_PERSONAL),
+FOREIGN KEY (CODIGO_ESPECIALIDAD) REFERENCES ESPECIALIDAD(CODIGO_ESPECIALIDAD)
+);
+
+CREATE TABLE PACIENTE
+(
+RUT_PACIENTE VARCHAR(12) PRIMARY KEY,
+NOMBRE VARCHAR(30),
+CORREO VARCHAR(50),
+FECHA_NACIMIENTO DATE,
+CALLE VARCHAR(30),
+NUMERO INT,
+CIUDAD VARCHAR(40),
+COMUNA VARCHAR(30)
+);
+
+CREATE TABLE TELEFONO
+(
+RUT_PACIENTE VARCHAR(12),
+TELEFONO INT,
+PRIMARY KEY (RUT_PACIENTE, TELEFONO),
+FOREIGN KEY (RUT_PACIENTE) REFERENCES PACIENTE(RUT_PACIENTE)
+);
+
+CREATE TABLE CITA
+(
+ID_CITA INT PRIMARY KEY,
+FECHA_HORA DATETIME,
+ESTADO ENUM("RESERVADO","ANULADO","CONFIRMADO"),
+RUT_PACIENTE VARCHAR(12),
+RUT_PERSONAL VARCHAR(12),
+FOREIGN KEY (RUT_PACIENTE) REFERENCES PACIENTE(RUT_PACIENTE),
+FOREIGN KEY (RUT_PERSONAL) REFERENCES MEDICO(RUT_PERSONAL)
+);
+
+CREATE TABLE RECETA
+(
+ID_RECETA INT PRIMARY KEY,
+FECHA_EMISION DATE,
+OBSERVACION VARCHAR(100),
+ID_CITA INT,
+FOREIGN KEY (ID_CITA) REFERENCES CITA(ID_CITA)
+);
+
+CREATE TABLE MEDICAMENTO
+(
+CODIGO_MEDICAMENTO INT PRIMARY KEY,
+NOMBRE VARCHAR(30),
+DESCRIPCION VARCHAR(40),
+LABORATORIO VARCHAR(50)
+);
+
+CREATE TABLE RECETA_MEDICAMENTO
+(
+ID_RECETA INT,
+CODIGO_MEDICAMENTO INT,
+DOSIS INT,
+FRECUENCIA INT,
+DURACION VARCHAR(30),
+PRIMARY KEY (ID_RECETA, CODIGO_MEDICAMENTO),
+FOREIGN KEY (ID_RECETA) REFERENCES RECETA(ID_RECETA),
+FOREIGN KEY (CODIGO_MEDICAMENTO) REFERENCES MEDICAMENTO(CODIGO_MEDICAMENTO)
+);
+
+-- ==========================================================
+-- PERSONAL 
+-- ==========================================================
+INSERT INTO PERSONAL VALUES ('15721369-9', 'Diego Gutiérrez Castillo', 947376585, 'dgutierrez17@cmedico.cl', '2015-02-02', 'Manuel Montt', 1260, 'La Reina', 'Valparaíso');
+INSERT INTO PERSONAL VALUES ('24287807-3', 'Bárbara Espinoza Torres', 998447167, 'bespinoza41@cmedico.cl', '2024-08-26', 'Av. Kennedy', 3219, 'Ñuñoa', 'Santiago');
+INSERT INTO PERSONAL VALUES ('22463677-5', 'Nicolás Tapia Vargas', 955540424, 'ntapia16@cmedico.cl', '2022-11-21', 'Los Leones', 1093, 'San Miguel', 'Temuco');
+INSERT INTO PERSONAL VALUES ('11666460-3', 'Rafael Hernández Pérez', 983863413, 'rhernandez64@cmedico.cl', '2014-05-15', 'Av. Apoquindo', 1335, 'Puente Alto', 'Rancagua');
+INSERT INTO PERSONAL VALUES ('11285271-0', 'Sofía Ramírez González', 963826716, 'sramirez21@cmedico.cl', '2024-04-06', 'Av. Kennedy', 8056, 'Puente Alto', 'Valparaíso');
+INSERT INTO PERSONAL VALUES ('9967477-2', 'Tomás Martínez Vera', 975319931, 'tmartinez68@cmedico.cl', '2016-07-23', 'Av. Matta', 9205, 'Independencia', 'Temuco');
+INSERT INTO PERSONAL VALUES ('13194119-3', 'Pedro Espinoza Vargas', 977491435, 'pespinoza79@cmedico.cl', '2012-12-11', 'Av. Providencia', 921, 'Recoleta', 'La Serena');
+INSERT INTO PERSONAL VALUES ('13282565-0', 'Francisca Tapia Soto', 943046464, 'ftapia18@cmedico.cl', '2021-02-22', 'Av. Apoquindo', 6715, 'Ñuñoa', 'Antofagasta');
+INSERT INTO PERSONAL VALUES ('9333508-9', 'Vicente Espinoza Araya', 963121477, 'vespinoza50@cmedico.cl', '2016-04-22', 'Av. Matta', 5247, 'La Florida', 'Concepción');
+INSERT INTO PERSONAL VALUES ('12391546-K', 'Trinidad Morales Vera', 938609087, 'tmorales19@cmedico.cl', '2012-08-20', 'Santa Rosa', 1738, 'Ñuñoa', 'Antofagasta');
+INSERT INTO PERSONAL VALUES ('24974673-4', 'Ignacio Bravo Rojas', 992097999, 'ibravo41@cmedico.cl', '2017-05-06', 'Av. Grecia', 9000, 'Peñalolén', 'Concepción');
+INSERT INTO PERSONAL VALUES ('8262499-K', 'Catalina Vera Reyes', 947816686, 'cvera23@cmedico.cl', '2014-05-04', 'Los Leones', 9164, 'Las Condes', 'Concepción');
+INSERT INTO PERSONAL VALUES ('15067558-5', 'Sebastián Araya Torres', 915917225, 'saraya42@cmedico.cl', '2025-01-03', 'San Pablo', 7039, 'San Bernardo', 'Concepción');
+INSERT INTO PERSONAL VALUES ('8118973-5', 'Josefa Soto Vargas', 930005727, 'jsoto66@cmedico.cl', '2020-12-14', 'Los Aromos', 258, 'Ñuñoa', 'Santiago');
+INSERT INTO PERSONAL VALUES ('9208903-5', 'Antonia Fuentes Pérez', 943491314, 'afuentes15@cmedico.cl', '2016-06-26', 'Av. Providencia', 5962, 'La Florida', 'Temuco');
+INSERT INTO PERSONAL VALUES ('11449181-5', 'Isidora Valenzuela Vargas', 954585178, 'ivalenzuela29@cmedico.cl', '2015-03-26', 'Av. V. Mackenna', 6855, 'Providencia', 'Valparaíso');
+INSERT INTO PERSONAL VALUES ('21814801-K', 'Fernanda Martínez Soto', 971780854, 'fmartinez99@cmedico.cl', '2013-07-28', 'Av. Providencia', 7811, 'La Florida', 'Valparaíso');
+INSERT INTO PERSONAL VALUES ('19732589-4', 'Fernanda Silva González', 957130035, 'fsilva94@cmedico.cl', '2015-07-11', 'Av. Irarrázaval', 1237, 'Vitacura', 'Concepción');
+INSERT INTO PERSONAL VALUES ('21410981-K', 'Sofía Morales González', 968326160, 'smorales24@cmedico.cl', '2016-03-19', 'Av. Irarrázaval', 726, 'Ñuñoa', 'Antofagasta');
+INSERT INTO PERSONAL VALUES ('19599334-5', 'Gonzalo Díaz López', 982269803, 'gdiaz83@cmedico.cl', '2015-05-02', 'Av. Matta', 7244, 'Providencia', 'Antofagasta');
+INSERT INTO PERSONAL VALUES ('14611401-5', 'Francisco Valenzuela Morales', 964813568, 'fvalenzuela94@cmedico.cl', '2025-02-24', 'Av. Irarrázaval', 8408, 'Maipú', 'Temuco');
+INSERT INTO PERSONAL VALUES ('18944882-6', 'Sofía Pérez Contreras', 950392808, 'sperez63@cmedico.cl', '2022-07-22', 'Av. Matta', 2951, 'Recoleta', 'Antofagasta');
+INSERT INTO PERSONAL VALUES ('21625621-8', 'Catalina Sepúlveda Contreras', 969345683, 'csepulveda65@cmedico.cl', '2024-10-20', 'San Pablo', 5379, 'Puente Alto', 'La Serena');
+INSERT INTO PERSONAL VALUES ('15170629-8', 'Andrés Reyes Rojas', 941523529, 'areyes46@cmedico.cl', '2020-11-21', 'Santa Rosa', 5591, 'Ñuñoa', 'Rancagua');
+INSERT INTO PERSONAL VALUES ('18415948-3', 'Antonia González Muñoz', 987265240, 'agonzalez41@cmedico.cl', '2019-10-28', 'Los Leones', 7561, 'San Miguel', 'Temuco');
+INSERT INTO PERSONAL VALUES ('14524163-6', 'Rodrigo Pérez Castillo', 979519112, 'rperez98@cmedico.cl', '2012-02-25', 'Av. Kennedy', 3685, 'Las Condes', 'Rancagua');
+INSERT INTO PERSONAL VALUES ('23587707-0', 'Valentina Hernández Pérez', 992228802, 'vhernandez69@cmedico.cl', '2022-09-18', 'Santa Rosa', 5298, 'Vitacura', 'La Serena');
+INSERT INTO PERSONAL VALUES ('24937544-6', 'Sofía Hernández Bravo', 947220099, 'shernandez30@cmedico.cl', '2023-08-15', 'Av. Irarrázaval', 4150, 'San Bernardo', 'Temuco');
+INSERT INTO PERSONAL VALUES ('24260377-K', 'Nicolás Rojas Gutiérrez', 930244148, 'nrojas46@cmedico.cl', '2015-05-11', 'Manuel Montt', 8949, 'Ñuñoa', 'Valparaíso');
+INSERT INTO PERSONAL VALUES ('15759847-6', 'Constanza Rojas Fuentes', 966390708, 'crojas62@cmedico.cl', '2017-09-15', 'Av. Kennedy', 1120, 'La Florida', 'Rancagua');
+INSERT INTO PERSONAL VALUES ('21068673-9', 'María Tapia Bravo', 966240084, 'mtapia83@cmedico.cl', '2018-08-01', 'Manuel Montt', 4992, 'Vitacura', 'La Serena');
+INSERT INTO PERSONAL VALUES ('15400050-7', 'Javier Torres González', 927129912, 'jtorres59@cmedico.cl', '2017-11-22', 'Av. Kennedy', 2804, 'San Bernardo', 'La Serena');
+INSERT INTO PERSONAL VALUES ('8904843-6', 'María Rojas Castillo', 938408562, 'mrojas64@cmedico.cl', '2014-08-06', 'Av. Providencia', 4362, 'San Miguel', 'Concepción');
+INSERT INTO PERSONAL VALUES ('23257177-5', 'Tomás Martínez Núñez', 940094589, 'tmartinez63@cmedico.cl', '2016-02-16', 'Av. Providencia', 8937, 'Providencia', 'Concepción');
+INSERT INTO PERSONAL VALUES ('10302450-K', 'Juan Silva Contreras', 985694715, 'jsilva12@cmedico.cl', '2021-03-08', 'Av. V. Mackenna', 7858, 'Independencia', 'Santiago');
+INSERT INTO PERSONAL VALUES ('15313676-7', 'Daniela Soto Valenzuela', 913446499, 'dsoto87@cmedico.cl', '2023-12-04', 'Av. V. Mackenna', 5196, 'Ñuñoa', 'Antofagasta');
+INSERT INTO PERSONAL VALUES ('18467548-9', 'Carolina López Gutiérrez', 950477742, 'clopez35@cmedico.cl', '2013-10-23', 'San Pablo', 4078, 'Ñuñoa', 'Temuco');
+INSERT INTO PERSONAL VALUES ('12061933-9', 'Daniela Flores Fuentes', 966379329, 'dflores94@cmedico.cl', '2017-02-17', 'San Pablo', 5690, 'Providencia', 'Rancagua');
+INSERT INTO PERSONAL VALUES ('24448439-1', 'Ignacio Castillo Bravo', 992666356, 'icastillo68@cmedico.cl', '2023-03-14', 'Av. V. Mackenna', 8648, 'Independencia', 'Concepción');
+INSERT INTO PERSONAL VALUES ('24223484-7', 'Vicente Martínez Morales', 986483924, 'vmartinez41@cmedico.cl', '2025-02-09', 'Av. Grecia', 4095, 'Vitacura', 'La Serena');
+INSERT INTO PERSONAL VALUES ('20716770-5', 'Francisco Soto Torres', 984597009, 'fsoto37@cmedico.cl', '2017-05-11', 'Av. Irarrázaval', 9867, 'Peñalolén', 'Concepción');
+INSERT INTO PERSONAL VALUES ('8340614-8', 'Francisca Silva Vargas', 975876924, 'fsilva62@cmedico.cl', '2019-09-25', 'Av. Apoquindo', 7900, 'Independencia', 'Temuco');
+INSERT INTO PERSONAL VALUES ('23038242-0', 'Rodrigo López Gutiérrez', 956138336, 'rlopez41@cmedico.cl', '2016-11-19', 'Manuel Montt', 7853, 'La Reina', 'Antofagasta');
+INSERT INTO PERSONAL VALUES ('22277538-8', 'Nicolás Martínez Sepúlveda', 981922443, 'nmartinez42@cmedico.cl', '2015-02-24', 'Av. Apoquindo', 5269, 'Ñuñoa', 'Temuco');
+INSERT INTO PERSONAL VALUES ('14212597-3', 'Álvaro Martínez Vargas', 949761527, 'amartinez85@cmedico.cl', '2024-09-20', 'Av. Irarrázaval', 1747, 'San Bernardo', 'Valparaíso');
+INSERT INTO PERSONAL VALUES ('20045349-5', 'Camila Vargas Hernández', 993016315, 'cvargas78@cmedico.cl', '2013-07-03', 'Los Aromos', 4903, 'San Bernardo', 'Temuco');
+INSERT INTO PERSONAL VALUES ('20134457-9', 'Diego Muñoz Reyes', 970855700, 'dmunoz39@cmedico.cl', '2024-05-03', 'Av. Apoquindo', 1754, 'San Miguel', 'Concepción');
+INSERT INTO PERSONAL VALUES ('20241736-2', 'Felipe Reyes Martínez', 942857966, 'freyes99@cmedico.cl', '2022-11-03', 'Santa Rosa', 2903, 'La Reina', 'Temuco');
+INSERT INTO PERSONAL VALUES ('13482877-7', 'Rafael Silva Reyes', 918883684, 'rsilva51@cmedico.cl', '2025-01-08', 'Av. Providencia', 5268, 'San Miguel', 'Concepción');
+INSERT INTO PERSONAL VALUES ('15079409-9', 'Paula Contreras Castillo', 985345555, 'pcontreras73@cmedico.cl', '2018-11-15', 'Av. V. Mackenna', 4439, 'Las Condes', 'Valparaíso');
+INSERT INTO PERSONAL VALUES ('16816145-9', 'Vicente López Rodríguez', 930514014, 'vlopez38@cmedico.cl', '2014-09-16', 'Los Leones', 871, 'San Bernardo', 'Santiago');
+INSERT INTO PERSONAL VALUES ('13368105-K', 'Diego López López', 925374874, 'dlopez86@cmedico.cl', '2019-09-09', 'Los Aromos', 288, 'Independencia', 'Temuco');
+INSERT INTO PERSONAL VALUES ('16953167-K', 'Cristóbal Fuentes Soto', 978139880, 'cfuentes68@cmedico.cl', '2012-12-24', 'Av. Irarrázaval', 8301, 'Vitacura', 'Valparaíso');
+INSERT INTO PERSONAL VALUES ('11570554-K', 'Gonzalo Valenzuela Contreras', 975579548, 'gvalenzuela29@cmedico.cl', '2017-03-18', 'Los Aromos', 109, 'Recoleta', 'Concepción');
+INSERT INTO PERSONAL VALUES ('8653531-1', 'Catalina Silva Muñoz', 981498611, 'csilva40@cmedico.cl', '2021-02-03', 'Av. Matta', 8062, 'San Bernardo', 'Santiago');
+INSERT INTO PERSONAL VALUES ('12219822-2', 'Sofía Soto Martínez', 936998038, 'ssoto77@cmedico.cl', '2025-10-14', 'Av. Apoquindo', 8935, 'Vitacura', 'Temuco');
+INSERT INTO PERSONAL VALUES ('18459463-6', 'Daniela Hernández Bravo', 988961459, 'dhernandez76@cmedico.cl', '2019-02-08', 'Av. Apoquindo', 1149, 'Santiago Centro', 'Santiago');
+INSERT INTO PERSONAL VALUES ('17334531-0', 'Javiera Gutiérrez Fuentes', 922981052, 'jgutierrez53@cmedico.cl', '2016-03-07', 'Manuel Montt', 1774, 'Ñuñoa', 'La Serena');
+
+
+
+-- ==========================================================
+-- ADMINISTRATIVO (20 registros, tabla completa)
+-- ==========================================================
+INSERT INTO ADMINISTRATIVO VALUES ('14524163-6', 'Asist. Administrativo', 'Gerencia General');
+INSERT INTO ADMINISTRATIVO VALUES ('23587707-0', 'Jefe de Personal', 'Logística');
+INSERT INTO ADMINISTRATIVO VALUES ('24937544-6', 'Recepcionista', 'Admisión');
+INSERT INTO ADMINISTRATIVO VALUES ('24260377-K', 'Enc. de Convenios', 'Recursos Humanos');
+INSERT INTO ADMINISTRATIVO VALUES ('15759847-6', 'Recepcionista', 'Logística');
+INSERT INTO ADMINISTRATIVO VALUES ('21068673-9', 'Jefe de Personal', 'TI');
+INSERT INTO ADMINISTRATIVO VALUES ('15400050-7', 'Enc. de Finanzas', 'Recursos Humanos');
+INSERT INTO ADMINISTRATIVO VALUES ('8904843-6', 'Asist. de Gerencia', 'Logística');
+INSERT INTO ADMINISTRATIVO VALUES ('23257177-5', 'Enc. de Bodega', 'TI');
+INSERT INTO ADMINISTRATIVO VALUES ('10302450-K', 'Enc. de Bodega', 'Gerencia General');
+INSERT INTO ADMINISTRATIVO VALUES ('15313676-7', 'Jefe de Personal', 'Recursos Humanos');
+INSERT INTO ADMINISTRATIVO VALUES ('18467548-9', 'Enc. de Convenios', 'TI');
+INSERT INTO ADMINISTRATIVO VALUES ('12061933-9', 'Enc. de Finanzas', 'Finanzas');
+INSERT INTO ADMINISTRATIVO VALUES ('24448439-1', 'Analista Facturación', 'TI');
+INSERT INTO ADMINISTRATIVO VALUES ('24223484-7', 'Enc. de Finanzas', 'Recursos Humanos');
+INSERT INTO ADMINISTRATIVO VALUES ('20716770-5', 'Jefe de Personal', 'Admisión');
+INSERT INTO ADMINISTRATIVO VALUES ('8340614-8', 'Asist. de Gerencia', 'Logística');
+INSERT INTO ADMINISTRATIVO VALUES ('23038242-0', 'Enc. de Finanzas', 'Facturación');
+INSERT INTO ADMINISTRATIVO VALUES ('22277538-8', 'Enc. de Finanzas', 'Convenios');
+INSERT INTO ADMINISTRATIVO VALUES ('14212597-3', 'Asist. de Gerencia', 'Facturación');
+
+-- ==========================================================
+-- MEDICO (registros 16 a 40 -> 25 filas)
+-- ==========================================================
+INSERT INTO MEDICO VALUES ('15721369-9', 19329, 15);
+INSERT INTO MEDICO VALUES ('24287807-3', 44675, 13);
+INSERT INTO MEDICO VALUES ('22463677-5', 65723, 8);
+INSERT INTO MEDICO VALUES ('11666460-3', 81376, 15);
+INSERT INTO MEDICO VALUES ('11285271-0', 94886, 10);
+INSERT INTO MEDICO VALUES ('9967477-2', 44816, 10);
+INSERT INTO MEDICO VALUES ('13194119-3', 19359, 4);
+INSERT INTO MEDICO VALUES ('13282565-0', 31747, 20);
+INSERT INTO MEDICO VALUES ('9333508-9', 87993, 19);
+INSERT INTO MEDICO VALUES ('12391546-K', 67560, 8);
+INSERT INTO MEDICO VALUES ('24974673-4', 71433, 20);
+INSERT INTO MEDICO VALUES ('8262499-K', 62757, 18);
+INSERT INTO MEDICO VALUES ('15067558-5', 75597, 35);
+INSERT INTO MEDICO VALUES ('8118973-5', 74722, 29);
+INSERT INTO MEDICO VALUES ('9208903-5', 20543, 3);
+INSERT INTO MEDICO VALUES ('11449181-5', 66626, 21);
+INSERT INTO MEDICO VALUES ('21814801-K', 89129, 17);
+INSERT INTO MEDICO VALUES ('19732589-4', 13390, 6);
+INSERT INTO MEDICO VALUES ('21410981-K', 40005, 2);
+INSERT INTO MEDICO VALUES ('19599334-5', 98117, 18);
+INSERT INTO MEDICO VALUES ('14611401-5', 85529, 3);
+INSERT INTO MEDICO VALUES ('18944882-6', 32962, 31);
+INSERT INTO MEDICO VALUES ('21625621-8', 78021, 29);
+INSERT INTO MEDICO VALUES ('15170629-8', 46458, 12);
+INSERT INTO MEDICO VALUES ('18415948-3', 86720, 28);
+INSERT INTO MEDICO VALUES ('17334531-0', 48974, 28);
+INSERT INTO MEDICO VALUES ('20045349-5', 50026, 4);
+INSERT INTO MEDICO VALUES ('20134457-9', 89905, 7);
+INSERT INTO MEDICO VALUES ('20241736-2', 37235, 14);
+INSERT INTO MEDICO VALUES ('13482877-7', 44687, 6);
+INSERT INTO MEDICO VALUES ('15079409-9', 30585, 16);
+INSERT INTO MEDICO VALUES ('16816145-9', 32782, 5);
+INSERT INTO MEDICO VALUES ('13368105-K', 30517, 1);
+INSERT INTO MEDICO VALUES ('16953167-K', 63545, 29);
+INSERT INTO MEDICO VALUES ('11570554-K', 87832, 31);
+INSERT INTO MEDICO VALUES ('8653531-1', 48175, 3);
+INSERT INTO MEDICO VALUES ('12219822-2', 40340, 19);
+INSERT INTO MEDICO VALUES ('18459463-6', 47056, 30);
+
+
+
+
+-- ==========================================================
+-- MEDICO_TRATANTE (registros 16 a 25 -> 10 filas)
+-- ==========================================================
+INSERT INTO MEDICO_TRATANTE VALUES ('15721369-9', 19);
+INSERT INTO MEDICO_TRATANTE VALUES ('24287807-3', 7);
+INSERT INTO MEDICO_TRATANTE VALUES ('22463677-5', 15);
+INSERT INTO MEDICO_TRATANTE VALUES ('11666460-3', 13);
+INSERT INTO MEDICO_TRATANTE VALUES ('11285271-0', 15);
+INSERT INTO MEDICO_TRATANTE VALUES ('9967477-2', 8);
+INSERT INTO MEDICO_TRATANTE VALUES ('13194119-3', 17);
+INSERT INTO MEDICO_TRATANTE VALUES ('13282565-0', 5);
+INSERT INTO MEDICO_TRATANTE VALUES ('9333508-9', 19);
+INSERT INTO MEDICO_TRATANTE VALUES ('12391546-K', 18);
+INSERT INTO MEDICO_TRATANTE VALUES ('17334531-0', 20);
+INSERT INTO MEDICO_TRATANTE VALUES ('20045349-5', 16);
+INSERT INTO MEDICO_TRATANTE VALUES ('20134457-9', 18);
+INSERT INTO MEDICO_TRATANTE VALUES ('20241736-2', 15);
+INSERT INTO MEDICO_TRATANTE VALUES ('13482877-7', 15);
+INSERT INTO MEDICO_TRATANTE VALUES ('15079409-9', 8);
+INSERT INTO MEDICO_TRATANTE VALUES ('16816145-9', 10);
+INSERT INTO MEDICO_TRATANTE VALUES ('13368105-K', 15);
+INSERT INTO MEDICO_TRATANTE VALUES ('16953167-K', 18);
+INSERT INTO MEDICO_TRATANTE VALUES ('11570554-K', 20);
+INSERT INTO MEDICO_TRATANTE VALUES ('8653531-1', 14);
+INSERT INTO MEDICO_TRATANTE VALUES ('12219822-2', 17);
+INSERT INTO MEDICO_TRATANTE VALUES ('18459463-6', 6);
+
+-- ==========================================================
+-- MEDICO_DOCENTE (20 registros, tabla completa)
+-- ==========================================================
+INSERT INTO MEDICO_DOCENTE VALUES ('15721369-9', 'Semiología Clínica');
+INSERT INTO MEDICO_DOCENTE VALUES ('24287807-3', 'Medicina Interna');
+INSERT INTO MEDICO_DOCENTE VALUES ('22463677-5', 'Salud Pública');
+INSERT INTO MEDICO_DOCENTE VALUES ('11666460-3', 'Pediatría Clínica');
+INSERT INTO MEDICO_DOCENTE VALUES ('11285271-0', 'Bioética Médica');
+INSERT INTO MEDICO_DOCENTE VALUES ('9967477-2', 'Traumatología');
+INSERT INTO MEDICO_DOCENTE VALUES ('13194119-3', 'Traumatología');
+INSERT INTO MEDICO_DOCENTE VALUES ('13282565-0', 'Semiología Clínica');
+INSERT INTO MEDICO_DOCENTE VALUES ('9333508-9', 'Medicina Interna');
+INSERT INTO MEDICO_DOCENTE VALUES ('12391546-K', 'Cirugía General');
+INSERT INTO MEDICO_DOCENTE VALUES ('24974673-4', 'Salud Pública');
+INSERT INTO MEDICO_DOCENTE VALUES ('8262499-K', 'Farmacología');
+INSERT INTO MEDICO_DOCENTE VALUES ('15067558-5', 'Cirugía General');
+INSERT INTO MEDICO_DOCENTE VALUES ('8118973-5', 'Traumatología');
+INSERT INTO MEDICO_DOCENTE VALUES ('9208903-5', 'Traumatología');
+INSERT INTO MEDICO_DOCENTE VALUES ('11449181-5', 'Anatomía Humana');
+INSERT INTO MEDICO_DOCENTE VALUES ('21814801-K', 'Semiología Clínica');
+INSERT INTO MEDICO_DOCENTE VALUES ('19732589-4', 'Bioética Médica');
+INSERT INTO MEDICO_DOCENTE VALUES ('21410981-K', 'Medicina Interna');
+INSERT INTO MEDICO_DOCENTE VALUES ('19599334-5', 'Farmacología');
+
+-- ==========================================================
+-- CENTRO_MEDICO (5 registros, tabla completa)
+-- ==========================================================
+INSERT INTO CENTRO_MEDICO VALUES (1, 'CM Providencia', 'Av. Apoquindo 1958', 971934487, '11285271-0');
+INSERT INTO CENTRO_MEDICO VALUES (2, 'CM Las Condes', 'Los Leones 2622', 976890827, '14611401-5');
+INSERT INTO CENTRO_MEDICO VALUES (3, 'CM Ñuñoa', 'Av. Matta 4881', 978299645, '11735650-0');
+INSERT INTO CENTRO_MEDICO VALUES (4, 'CM Maipú', 'Av. Matta 4579', 965766169, '8262499-K');
+INSERT INTO CENTRO_MEDICO VALUES (5, 'CM San Miguel', 'Av. Grecia 7836', 942713008, '20241736-2');
+
+-- ==========================================================
+-- CONSULTORIO (20 registros, tabla completa)
+-- ==========================================================
+INSERT INTO CONSULTORIO VALUES (1, 1, 4, 'Camilla, lámpara examen');
+INSERT INTO CONSULTORIO VALUES (1, 2, 4, 'Electrocardiógrafo');
+INSERT INTO CONSULTORIO VALUES (1, 3, 2, 'Ecógrafo portátil');
+INSERT INTO CONSULTORIO VALUES (1, 4, 3, 'Camilla ginecológica');
+INSERT INTO CONSULTORIO VALUES (2, 1, 3, 'Equipo dental');
+INSERT INTO CONSULTORIO VALUES (2, 2, 1, 'Equipo dental');
+INSERT INTO CONSULTORIO VALUES (2, 3, 3, 'Rayos X portátil');
+INSERT INTO CONSULTORIO VALUES (2, 4, 2, 'Rayos X portátil');
+INSERT INTO CONSULTORIO VALUES (3, 1, 4, 'Balanza pediátrica');
+INSERT INTO CONSULTORIO VALUES (3, 2, 3, 'Camilla ginecológica');
+INSERT INTO CONSULTORIO VALUES (3, 3, 4, 'Balanza pediátrica');
+INSERT INTO CONSULTORIO VALUES (3, 4, 2, 'Electrocardiógrafo');
+INSERT INTO CONSULTORIO VALUES (4, 1, 4, 'Electrocardiógrafo');
+INSERT INTO CONSULTORIO VALUES (4, 2, 4, 'Camilla, tensiómetro');
+INSERT INTO CONSULTORIO VALUES (4, 3, 3, 'Rayos X portátil');
+INSERT INTO CONSULTORIO VALUES (4, 4, 4, 'Camilla ginecológica');
+INSERT INTO CONSULTORIO VALUES (5, 1, 2, 'Rayos X portátil');
+INSERT INTO CONSULTORIO VALUES (5, 2, 1, 'Camilla, lámpara examen');
+INSERT INTO CONSULTORIO VALUES (5, 3, 3, 'Ecógrafo portátil');
+INSERT INTO CONSULTORIO VALUES (5, 4, 4, 'Ecógrafo portátil');
+
+-- ==========================================================
+-- ESPECIALIDAD (10 registros, tabla completa)
+-- ==========================================================
+INSERT INTO ESPECIALIDAD VALUES (1, 'Cardiología', 'Enfermedades del corazón');
+INSERT INTO ESPECIALIDAD VALUES (2, 'Pediatría', 'Atención médica de niños');
+INSERT INTO ESPECIALIDAD VALUES (3, 'Dermatología', 'Enfermedades de la piel');
+INSERT INTO ESPECIALIDAD VALUES (4, 'Traumatología', 'Lesiones musculoesqueléticas');
+INSERT INTO ESPECIALIDAD VALUES (5, 'Ginecología', 'Salud reproductiva femenina');
+INSERT INTO ESPECIALIDAD VALUES (6, 'Medicina Interna', 'Enfermedades en adultos');
+INSERT INTO ESPECIALIDAD VALUES (7, 'Neurología', 'Sistema nervioso');
+INSERT INTO ESPECIALIDAD VALUES (8, 'Oftalmología', 'Enfermedades oculares');
+INSERT INTO ESPECIALIDAD VALUES (9, 'Psiquiatría', 'Trastornos mentales');
+INSERT INTO ESPECIALIDAD VALUES (10, 'Endocrinología', 'Trastornos hormonales');
+
+-- ==========================================================
+-- MEDICO_ESPECIALIDAD (50 registros, tabla completa)
+-- ==========================================================
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('11735650-0', 1, '2021-11-05');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('11735650-0', 3, '2010-08-26');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('11143890-3', 6, '2020-11-03');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('17334531-0', 9, '2020-06-21');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('20045349-5', 9, '2010-04-21');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('20045349-5', 1, '2017-04-24');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('20134457-9', 7, '2011-11-23');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('20241736-2', 8, '2013-12-10');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('13482877-7', 1, '2018-01-10');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('15079409-9', 6, '2021-03-08');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('16816145-9', 10, '2013-03-03');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('16816145-9', 3, '2020-10-22');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('13368105-K', 8, '2012-04-15');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('16953167-K', 8, '2016-11-01');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('11570554-K', 5, '2013-02-15');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('11570554-K', 9, '2019-10-10');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('8653531-1', 5, '2017-04-13');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('8653531-1', 8, '2023-02-08');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('12219822-2', 10, '2017-12-10');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('12219822-2', 6, '2008-11-13');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('18459463-6', 1, '2009-10-24');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('15721369-9', 5, '2019-04-21');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('15721369-9', 4, '2014-10-09');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('24287807-3', 2, '2009-05-26');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('22463677-5', 1, '2012-02-10');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('22463677-5', 6, '2018-12-14');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('11666460-3', 4, '2012-09-12');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('11285271-0', 3, '2016-08-26');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('9967477-2', 6, '2011-08-03');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('13194119-3', 4, '2020-09-12');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('13282565-0', 7, '2008-05-18');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('9333508-9', 8, '2019-11-24');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('12391546-K', 10, '2020-11-12');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('24974673-4', 4, '2023-01-20');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('8262499-K', 10, '2015-11-03');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('15067558-5', 5, '2011-03-02');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('15067558-5', 7, '2009-05-16');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('8118973-5', 2, '2015-09-05');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('9208903-5', 8, '2021-10-24');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('9208903-5', 6, '2012-07-21');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('11449181-5', 8, '2021-05-02');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('21814801-K', 4, '2022-08-08');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('19732589-4', 2, '2019-09-21');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('21410981-K', 1, '2020-05-07');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('19599334-5', 8, '2010-11-07');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('14611401-5', 1, '2018-04-05');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('18944882-6', 2, '2014-10-07');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('21625621-8', 6, '2012-10-01');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('15170629-8', 3, '2012-09-09');
+INSERT INTO MEDICO_ESPECIALIDAD VALUES ('18415948-3', 2, '2008-03-01');
+
+-- ==========================================================
+-- PACIENTE (60 registros, tabla completa)
+-- ==========================================================
+INSERT INTO PACIENTE VALUES ('20020616-3', 'María Soto Martínez', 'msoto16@gmail.com', '1961-12-14', 'Los Aromos', 1962, 'Temuco', 'Ñuñoa');
+INSERT INTO PACIENTE VALUES ('23980162-7', 'Rocío Espinoza Díaz', 'respinoza67@gmail.com', '2009-04-20', 'Av. Providencia', 8643, 'Concepción', 'Puente Alto');
+INSERT INTO PACIENTE VALUES ('9045242-0', 'Carolina Fuentes Reyes', 'cfuentes23@gmail.com', '2007-12-15', 'Los Leones', 1423, 'Concepción', 'Recoleta');
+INSERT INTO PACIENTE VALUES ('12977257-1', 'Emilio Castillo Espinoza', 'ecastillo80@gmail.com', '1986-07-20', 'Los Aromos', 4931, 'La Serena', 'La Reina');
+INSERT INTO PACIENTE VALUES ('22435094-1', 'Valentina Tapia Castillo', 'vtapia93@gmail.com', '2015-12-28', 'Av. Apoquindo', 7146, 'La Serena', 'Quilicura');
+INSERT INTO PACIENTE VALUES ('15666972-6', 'Nicolás López Fuentes', 'nlopez22@gmail.com', '1985-07-11', 'San Pablo', 4276, 'Concepción', 'Las Condes');
+INSERT INTO PACIENTE VALUES ('23913789-1', 'Diego Rojas Fuentes', 'drojas22@gmail.com', '1992-03-18', 'Av. Providencia', 9708, 'Antofagasta', 'La Reina');
+INSERT INTO PACIENTE VALUES ('19061083-K', 'Ignacio Tapia Reyes', 'itapia64@gmail.com', '1951-05-20', 'Av. Irarrázaval', 5861, 'Santiago', 'Recoleta');
+INSERT INTO PACIENTE VALUES ('15138329-2', 'Fernanda Tapia Díaz', 'ftapia54@gmail.com', '2016-06-04', 'Av. Irarrázaval', 9506, 'Valparaíso', 'Vitacura');
+INSERT INTO PACIENTE VALUES ('22398623-8', 'Macarena Valenzuela Reyes', 'mvalenzuela92@gmail.com', '2016-01-20', 'San Pablo', 4481, 'Santiago', 'Las Condes');
+INSERT INTO PACIENTE VALUES ('17169432-4', 'Daniela González Soto', 'dgonzalez28@gmail.com', '2017-11-13', 'Los Leones', 2424, 'Temuco', 'Independencia');
+INSERT INTO PACIENTE VALUES ('9028681-1', 'Constanza López Fuentes', 'clopez68@gmail.com', '1988-03-12', 'Av. Irarrázaval', 5414, 'Rancagua', 'Recoleta');
+INSERT INTO PACIENTE VALUES ('10850685-0', 'Emilio Muñoz Reyes', 'emunoz20@gmail.com', '1979-08-22', 'Av. Kennedy', 8057, 'Antofagasta', 'Puente Alto');
+INSERT INTO PACIENTE VALUES ('21897700-4', 'Gonzalo Díaz Rodríguez', 'gdiaz65@gmail.com', '1959-05-22', 'San Pablo', 9817, 'La Serena', 'La Reina');
+INSERT INTO PACIENTE VALUES ('18348837-0', 'Emilio Muñoz González', 'emunoz36@gmail.com', '1983-04-25', 'Av. V. Mackenna', 4286, 'Concepción', 'Santiago Centro');
+INSERT INTO PACIENTE VALUES ('12026006-0', 'Javier Soto Pérez', 'jsoto58@gmail.com', '2013-12-08', 'Los Aromos', 9254, 'Rancagua', 'Independencia');
+INSERT INTO PACIENTE VALUES ('19883878-1', 'Pedro Fuentes González', 'pfuentes68@gmail.com', '1954-06-19', 'Av. Kennedy', 9494, 'La Serena', 'Peñalolén');
+INSERT INTO PACIENTE VALUES ('22015483-4', 'Juan Morales Soto', 'jmorales89@gmail.com', '2003-12-12', 'Los Leones', 7255, 'Rancagua', 'Ñuñoa');
+INSERT INTO PACIENTE VALUES ('16164346-6', 'Rocío Rojas López', 'rrojas49@gmail.com', '1988-04-11', 'Av. V. Mackenna', 1351, 'Antofagasta', 'Independencia');
+INSERT INTO PACIENTE VALUES ('11826099-8', 'Daniela Rodríguez Vargas', 'drodriguez92@gmail.com', '1963-04-04', 'Av. V. Mackenna', 4293, 'Valparaíso', 'Las Condes');
+INSERT INTO PACIENTE VALUES ('13129458-K', 'Álvaro Hernández Núñez', 'ahernandez82@gmail.com', '2019-08-22', 'Santa Rosa', 5395, 'Rancagua', 'Independencia');
+INSERT INTO PACIENTE VALUES ('18607861-2', 'Álvaro Hernández Castillo', 'ahernandez48@gmail.com', '1980-10-02', 'Manuel Montt', 8412, 'Santiago', 'Maipú');
+INSERT INTO PACIENTE VALUES ('23493506-7', 'Ignacio Ramírez Sepúlveda', 'iramirez19@gmail.com', '1956-10-20', 'Los Aromos', 6399, 'La Serena', 'Recoleta');
+INSERT INTO PACIENTE VALUES ('9376493-7', 'Bárbara Castillo Contreras', 'bcastillo51@gmail.com', '2022-08-17', 'Av. V. Mackenna', 1113, 'La Serena', 'Ñuñoa');
+INSERT INTO PACIENTE VALUES ('19523859-1', 'Javiera Muñoz Silva', 'jmunoz66@gmail.com', '2001-09-17', 'Santa Rosa', 2700, 'Concepción', 'Santiago Centro');
+INSERT INTO PACIENTE VALUES ('17492333-6', 'Francisco Reyes Valenzuela', 'freyes16@gmail.com', '1987-02-11', 'Los Leones', 9241, 'Temuco', 'San Miguel');
+INSERT INTO PACIENTE VALUES ('17534390-4', 'Macarena Tapia Pérez', 'mtapia52@gmail.com', '1955-10-22', 'Av. V. Mackenna', 5831, 'Concepción', 'Independencia');
+INSERT INTO PACIENTE VALUES ('21151927-2', 'Francisca Sepúlveda Flores', 'fsepulveda58@gmail.com', '1987-03-22', 'Av. Matta', 8724, 'Santiago', 'Independencia');
+INSERT INTO PACIENTE VALUES ('22207160-8', 'Ignacio Sepúlveda Soto', 'isepulveda37@gmail.com', '1988-08-07', 'Av. Apoquindo', 2353, 'Valparaíso', 'Ñuñoa');
+INSERT INTO PACIENTE VALUES ('17925135-1', 'Sofía Ramírez Vargas', 'sramirez77@gmail.com', '1949-11-11', 'Santa Rosa', 2247, 'Antofagasta', 'San Miguel');
+INSERT INTO PACIENTE VALUES ('13175863-2', 'Emilio Carrasco Bravo', 'ecarrasco31@gmail.com', '2001-01-14', 'Manuel Montt', 3991, 'La Serena', 'Recoleta');
+INSERT INTO PACIENTE VALUES ('17560594-7', 'Rodrigo Sepúlveda Carrasco', 'rsepulveda70@gmail.com', '1969-06-22', 'Santa Rosa', 7318, 'La Serena', 'Vitacura');
+INSERT INTO PACIENTE VALUES ('17454690-6', 'Isidora Soto Ramírez', 'isoto35@gmail.com', '2022-03-28', 'Av. Irarrázaval', 954, 'Temuco', 'Puente Alto');
+INSERT INTO PACIENTE VALUES ('20455811-8', 'Rocío Tapia Díaz', 'rtapia46@gmail.com', '1955-03-09', 'Av. Grecia', 8510, 'Valparaíso', 'San Bernardo');
+INSERT INTO PACIENTE VALUES ('22679143-1', 'Fernanda Ramírez Hernández', 'framirez54@gmail.com', '1948-07-02', 'Av. Kennedy', 8324, 'Concepción', 'La Florida');
+INSERT INTO PACIENTE VALUES ('20957584-1', 'Juan Morales Vera', 'jmorales22@gmail.com', '1987-03-05', 'Av. Providencia', 4800, 'Rancagua', 'Puente Alto');
+INSERT INTO PACIENTE VALUES ('12657109-7', 'Juan Bravo Rojas', 'jbravo12@gmail.com', '1977-04-27', 'Av. V. Mackenna', 9091, 'Temuco', 'Recoleta');
+INSERT INTO PACIENTE VALUES ('22202073-1', 'Fernanda Sepúlveda Díaz', 'fsepulveda16@gmail.com', '1975-07-21', 'Santa Rosa', 7589, 'Santiago', 'Ñuñoa');
+INSERT INTO PACIENTE VALUES ('24771485-9', 'Rocío Espinoza Silva', 'respinoza28@gmail.com', '1982-07-01', 'Santa Rosa', 5880, 'Valparaíso', 'Recoleta');
+INSERT INTO PACIENTE VALUES ('21977689-2', 'Francisca Araya Rodríguez', 'faraya18@gmail.com', '2012-09-17', 'Los Aromos', 9179, 'Santiago', 'San Miguel');
+INSERT INTO PACIENTE VALUES ('23775115-0', 'Daniela Martínez Vargas', 'dmartinez12@gmail.com', '1990-02-12', 'Av. Apoquindo', 1798, 'Rancagua', 'Recoleta');
+INSERT INTO PACIENTE VALUES ('19157473-2', 'Rafael Morales Ramírez', 'rmorales92@gmail.com', '1967-11-15', 'Av. Matta', 7940, 'Temuco', 'Las Condes');
+INSERT INTO PACIENTE VALUES ('12524901-1', 'Trinidad Muñoz Sepúlveda', 'tmunoz35@gmail.com', '1950-04-02', 'Manuel Montt', 5180, 'Antofagasta', 'San Miguel');
+INSERT INTO PACIENTE VALUES ('23884660-4', 'Felipe Sepúlveda Rodríguez', 'fsepulveda16@gmail.com', '1987-05-04', 'Manuel Montt', 7259, 'La Serena', 'Peñalolén');
+INSERT INTO PACIENTE VALUES ('22755112-6', 'Andrés Torres Gutiérrez', 'atorres73@gmail.com', '1992-09-09', 'Los Leones', 7055, 'Santiago', 'San Miguel');
+INSERT INTO PACIENTE VALUES ('14055114-8', 'Matías Rojas Morales', 'mrojas94@gmail.com', '1982-05-15', 'Santa Rosa', 7081, 'Valparaíso', 'Peñalolén');
+INSERT INTO PACIENTE VALUES ('22895093-5', 'Ignacio Valenzuela Fuentes', 'ivalenzuela45@gmail.com', '1952-02-22', 'San Pablo', 6755, 'Concepción', 'La Reina');
+INSERT INTO PACIENTE VALUES ('13368263-0', 'Emilio Reyes Carrasco', 'ereyes66@gmail.com', '1949-03-03', 'Av. Apoquindo', 6101, 'Concepción', 'San Miguel');
+INSERT INTO PACIENTE VALUES ('9086671-9', 'Nicolás Rodríguez Rodríguez', 'nrodriguez66@gmail.com', '1954-10-05', 'Los Aromos', 6112, 'La Serena', 'Santiago Centro');
+INSERT INTO PACIENTE VALUES ('17351276-3', 'María Vargas Soto', 'mvargas73@gmail.com', '2011-07-18', 'Los Leones', 4388, 'Rancagua', 'Maipú');
+INSERT INTO PACIENTE VALUES ('22974440-3', 'Catalina Gutiérrez Vera', 'cgutierrez72@gmail.com', '1970-02-05', 'Los Leones', 7506, 'Valparaíso', 'Quilicura');
+INSERT INTO PACIENTE VALUES ('22935453-1', 'Paula Reyes Rodríguez', 'preyes18@gmail.com', '2015-09-10', 'Av. Irarrázaval', 2680, 'Temuco', 'Peñalolén');
+INSERT INTO PACIENTE VALUES ('13841524-5', 'Valentina Contreras Carrasco', 'vcontreras27@gmail.com', '1975-08-01', 'Manuel Montt', 9177, 'Antofagasta', 'Santiago Centro');
+INSERT INTO PACIENTE VALUES ('23683537-8', 'Diego Rojas Sepúlveda', 'drojas60@gmail.com', '2006-09-14', 'Av. Kennedy', 9519, 'Santiago', 'Las Condes');
+INSERT INTO PACIENTE VALUES ('18637683-K', 'Nicolás Reyes Araya', 'nreyes54@gmail.com', '1961-09-21', 'Santa Rosa', 3081, 'Rancagua', 'Las Condes');
+INSERT INTO PACIENTE VALUES ('22516260-8', 'Camila Ramírez Díaz', 'cramirez76@gmail.com', '1964-05-06', 'Av. V. Mackenna', 5386, 'Temuco', 'La Florida');
+INSERT INTO PACIENTE VALUES ('19610607-8', 'Francisca Martínez Contreras', 'fmartinez91@gmail.com', '2015-05-05', 'San Pablo', 5061, 'Antofagasta', 'La Reina');
+INSERT INTO PACIENTE VALUES ('11134937-8', 'Bárbara Espinoza Pérez', 'bespinoza31@gmail.com', '2022-06-27', 'Santa Rosa', 774, 'Rancagua', 'San Bernardo');
+INSERT INTO PACIENTE VALUES ('8952056-1', 'Vicente Martínez Castillo', 'vmartinez36@gmail.com', '2018-07-20', 'San Pablo', 596, 'La Serena', 'Quilicura');
+INSERT INTO PACIENTE VALUES ('17719767-K', 'Amanda Silva Carrasco', 'asilva97@gmail.com', '1996-05-15', 'Los Leones', 1081, 'Valparaíso', 'Puente Alto');
+
+-- ==========================================================
+-- TELEFONO (76 registros, tabla completa)
+-- ==========================================================
+INSERT INTO TELEFONO VALUES ('20020616-3', 974995086);
+INSERT INTO TELEFONO VALUES ('23980162-7', 937383505);
+INSERT INTO TELEFONO VALUES ('9045242-0', 991424562);
+INSERT INTO TELEFONO VALUES ('12977257-1', 951954112);
+INSERT INTO TELEFONO VALUES ('22435094-1', 952857920);
+INSERT INTO TELEFONO VALUES ('22435094-1', 956354851);
+INSERT INTO TELEFONO VALUES ('15666972-6', 927551135);
+INSERT INTO TELEFONO VALUES ('23913789-1', 979119463);
+INSERT INTO TELEFONO VALUES ('19061083-K', 924251766);
+INSERT INTO TELEFONO VALUES ('19061083-K', 952831009);
+INSERT INTO TELEFONO VALUES ('15138329-2', 972608888);
+INSERT INTO TELEFONO VALUES ('22398623-8', 945899440);
+INSERT INTO TELEFONO VALUES ('17169432-4', 943275109);
+INSERT INTO TELEFONO VALUES ('9028681-1', 922993840);
+INSERT INTO TELEFONO VALUES ('10850685-0', 948951595);
+INSERT INTO TELEFONO VALUES ('21897700-4', 992594562);
+INSERT INTO TELEFONO VALUES ('18348837-0', 943322272);
+INSERT INTO TELEFONO VALUES ('12026006-0', 953947691);
+INSERT INTO TELEFONO VALUES ('19883878-1', 935479101);
+INSERT INTO TELEFONO VALUES ('19883878-1', 951971886);
+INSERT INTO TELEFONO VALUES ('22015483-4', 976876068);
+INSERT INTO TELEFONO VALUES ('16164346-6', 972654864);
+INSERT INTO TELEFONO VALUES ('16164346-6', 976942394);
+INSERT INTO TELEFONO VALUES ('11826099-8', 976755908);
+INSERT INTO TELEFONO VALUES ('13129458-K', 922086184);
+INSERT INTO TELEFONO VALUES ('18607861-2', 977839607);
+INSERT INTO TELEFONO VALUES ('23493506-7', 942310051);
+INSERT INTO TELEFONO VALUES ('9376493-7', 988295121);
+INSERT INTO TELEFONO VALUES ('19523859-1', 916530784);
+INSERT INTO TELEFONO VALUES ('17492333-6', 947763008);
+INSERT INTO TELEFONO VALUES ('17534390-4', 990197611);
+INSERT INTO TELEFONO VALUES ('21151927-2', 973161098);
+INSERT INTO TELEFONO VALUES ('21151927-2', 948352498);
+INSERT INTO TELEFONO VALUES ('22207160-8', 911097552);
+INSERT INTO TELEFONO VALUES ('22207160-8', 924428014);
+INSERT INTO TELEFONO VALUES ('17925135-1', 927976443);
+INSERT INTO TELEFONO VALUES ('13175863-2', 959093843);
+INSERT INTO TELEFONO VALUES ('17560594-7', 959115280);
+INSERT INTO TELEFONO VALUES ('17454690-6', 963765155);
+INSERT INTO TELEFONO VALUES ('20455811-8', 986541906);
+INSERT INTO TELEFONO VALUES ('22679143-1', 936126192);
+INSERT INTO TELEFONO VALUES ('22679143-1', 958657117);
+INSERT INTO TELEFONO VALUES ('20957584-1', 948735464);
+INSERT INTO TELEFONO VALUES ('20957584-1', 919869264);
+INSERT INTO TELEFONO VALUES ('12657109-7', 977680031);
+INSERT INTO TELEFONO VALUES ('22202073-1', 983800569);
+INSERT INTO TELEFONO VALUES ('24771485-9', 993650068);
+INSERT INTO TELEFONO VALUES ('21977689-2', 992012822);
+INSERT INTO TELEFONO VALUES ('21977689-2', 925946545);
+INSERT INTO TELEFONO VALUES ('23775115-0', 922976369);
+INSERT INTO TELEFONO VALUES ('19157473-2', 960089832);
+INSERT INTO TELEFONO VALUES ('12524901-1', 984870921);
+INSERT INTO TELEFONO VALUES ('23884660-4', 929363237);
+INSERT INTO TELEFONO VALUES ('22755112-6', 990861208);
+INSERT INTO TELEFONO VALUES ('14055114-8', 977119320);
+INSERT INTO TELEFONO VALUES ('14055114-8', 963873262);
+INSERT INTO TELEFONO VALUES ('22895093-5', 916080513);
+INSERT INTO TELEFONO VALUES ('13368263-0', 928392710);
+INSERT INTO TELEFONO VALUES ('9086671-9', 973584863);
+INSERT INTO TELEFONO VALUES ('9086671-9', 954699966);
+INSERT INTO TELEFONO VALUES ('17351276-3', 929990477);
+INSERT INTO TELEFONO VALUES ('17351276-3', 971335966);
+INSERT INTO TELEFONO VALUES ('22974440-3', 928761086);
+INSERT INTO TELEFONO VALUES ('22974440-3', 979190008);
+INSERT INTO TELEFONO VALUES ('22935453-1', 992284610);
+INSERT INTO TELEFONO VALUES ('13841524-5', 931810655);
+INSERT INTO TELEFONO VALUES ('23683537-8', 992745294);
+INSERT INTO TELEFONO VALUES ('18637683-K', 950162553);
+INSERT INTO TELEFONO VALUES ('18637683-K', 989688374);
+INSERT INTO TELEFONO VALUES ('22516260-8', 978090664);
+INSERT INTO TELEFONO VALUES ('19610607-8', 981449442);
+INSERT INTO TELEFONO VALUES ('19610607-8', 975746104);
+INSERT INTO TELEFONO VALUES ('11134937-8', 950237208);
+INSERT INTO TELEFONO VALUES ('11134937-8', 985554415);
+INSERT INTO TELEFONO VALUES ('8952056-1', 912232974);
+INSERT INTO TELEFONO VALUES ('17719767-K', 954458225);
+
+-- ==========================================================
+-- CITA (100 registros, tabla completa)
+-- ==========================================================
+INSERT INTO CITA VALUES (1, '2026-02-14 17:30:00', 'CONFIRMADO', '22895093-5', '11143890-3');
+INSERT INTO CITA VALUES (2, '2026-08-09 18:15:00', 'CONFIRMADO', '22202073-1', '11449181-5');
+INSERT INTO CITA VALUES (3, '2024-09-21 19:45:00', 'RESERVADO', '23884660-4', '15721369-9');
+INSERT INTO CITA VALUES (4, '2024-10-23 09:15:00', 'RESERVADO', '13129458-K', '8262499-K');
+INSERT INTO CITA VALUES (5, '2024-07-23 11:45:00', 'CONFIRMADO', '21977689-2', '11449181-5');
+INSERT INTO CITA VALUES (6, '2026-12-02 19:15:00', 'CONFIRMADO', '20957584-1', '9967477-2');
+INSERT INTO CITA VALUES (7, '2026-08-17 14:30:00', 'CONFIRMADO', '17925135-1', '19599334-5');
+INSERT INTO CITA VALUES (8, '2025-09-12 18:30:00', 'CONFIRMADO', '10850685-0', '15721369-9');
+INSERT INTO CITA VALUES (9, '2025-09-10 11:30:00', 'CONFIRMADO', '14055114-8', '12219822-2');
+INSERT INTO CITA VALUES (10, '2026-12-16 13:45:00', 'ANULADO', '17719767-K', '22463677-5');
+INSERT INTO CITA VALUES (11, '2025-02-19 18:45:00', 'CONFIRMADO', '17492333-6', '13282565-0');
+INSERT INTO CITA VALUES (12, '2024-05-02 12:00:00', 'ANULADO', '22207160-8', '24287807-3');
+INSERT INTO CITA VALUES (13, '2026-08-07 11:30:00', 'CONFIRMADO', '22755112-6', '22463677-5');
+INSERT INTO CITA VALUES (14, '2024-02-20 19:15:00', 'RESERVADO', '12524901-1', '21410981-K');
+INSERT INTO CITA VALUES (15, '2024-11-08 08:00:00', 'CONFIRMADO', '14055114-8', '11449181-5');
+INSERT INTO CITA VALUES (16, '2024-11-25 10:00:00', 'CONFIRMADO', '17719767-K', '16953167-K');
+INSERT INTO CITA VALUES (17, '2025-11-16 15:15:00', 'CONFIRMADO', '16164346-6', '9967477-2');
+INSERT INTO CITA VALUES (18, '2025-11-02 09:15:00', 'CONFIRMADO', '22895093-5', '17334531-0');
+INSERT INTO CITA VALUES (19, '2024-07-27 10:00:00', 'CONFIRMADO', '17492333-6', '21814801-K');
+INSERT INTO CITA VALUES (20, '2024-12-28 12:00:00', 'RESERVADO', '12657109-7', '15170629-8');
+INSERT INTO CITA VALUES (21, '2024-06-10 15:45:00', 'CONFIRMADO', '15138329-2', '19732589-4');
+INSERT INTO CITA VALUES (22, '2025-05-07 09:30:00', 'RESERVADO', '17925135-1', '24287807-3');
+INSERT INTO CITA VALUES (23, '2026-03-01 19:30:00', 'CONFIRMADO', '12657109-7', '8653531-1');
+INSERT INTO CITA VALUES (24, '2024-10-28 18:45:00', 'CONFIRMADO', '17454690-6', '9967477-2');
+INSERT INTO CITA VALUES (25, '2024-07-22 09:15:00', 'CONFIRMADO', '13175863-2', '9967477-2');
+INSERT INTO CITA VALUES (26, '2024-01-09 14:15:00', 'CONFIRMADO', '22015483-4', '13194119-3');
+INSERT INTO CITA VALUES (27, '2025-10-24 17:00:00', 'ANULADO', '9376493-7', '15721369-9');
+INSERT INTO CITA VALUES (28, '2024-11-04 15:30:00', 'RESERVADO', '23884660-4', '19732589-4');
+INSERT INTO CITA VALUES (29, '2026-05-23 09:30:00', 'ANULADO', '18348837-0', '18459463-6');
+INSERT INTO CITA VALUES (30, '2024-08-05 15:30:00', 'CONFIRMADO', '20957584-1', '11449181-5');
+INSERT INTO CITA VALUES (31, '2026-11-27 11:15:00', 'CONFIRMADO', '24771485-9', '20241736-2');
+INSERT INTO CITA VALUES (32, '2026-08-17 19:30:00', 'RESERVADO', '12657109-7', '15079409-9');
+INSERT INTO CITA VALUES (33, '2024-09-17 11:15:00', 'RESERVADO', '18637683-K', '21410981-K');
+INSERT INTO CITA VALUES (34, '2025-02-22 11:45:00', 'RESERVADO', '17454690-6', '8118973-5');
+INSERT INTO CITA VALUES (35, '2024-08-05 16:45:00', 'CONFIRMADO', '12977257-1', '14611401-5');
+INSERT INTO CITA VALUES (36, '2025-11-26 12:00:00', 'ANULADO', '13841524-5', '11735650-0');
+INSERT INTO CITA VALUES (37, '2026-04-19 09:00:00', 'CONFIRMADO', '22755112-6', '20134457-9');
+INSERT INTO CITA VALUES (38, '2026-01-03 15:00:00', 'ANULADO', '9028681-1', '16816145-9');
+INSERT INTO CITA VALUES (39, '2026-12-21 14:30:00', 'CONFIRMADO', '19523859-1', '8118973-5');
+INSERT INTO CITA VALUES (40, '2025-07-03 18:15:00', 'CONFIRMADO', '23493506-7', '15079409-9');
+INSERT INTO CITA VALUES (41, '2024-09-13 16:15:00', 'CONFIRMADO', '18348837-0', '11735650-0');
+INSERT INTO CITA VALUES (42, '2024-05-15 18:45:00', 'CONFIRMADO', '13841524-5', '18459463-6');
+INSERT INTO CITA VALUES (43, '2024-08-12 10:30:00', 'RESERVADO', '19610607-8', '15079409-9');
+INSERT INTO CITA VALUES (44, '2024-11-14 17:00:00', 'RESERVADO', '22435094-1', '13482877-7');
+INSERT INTO CITA VALUES (45, '2026-01-15 17:00:00', 'RESERVADO', '9045242-0', '24974673-4');
+INSERT INTO CITA VALUES (46, '2025-04-18 11:00:00', 'RESERVADO', '16164346-6', '18459463-6');
+INSERT INTO CITA VALUES (47, '2026-10-11 17:30:00', 'RESERVADO', '19610607-8', '13368105-K');
+INSERT INTO CITA VALUES (48, '2026-09-08 14:30:00', 'ANULADO', '20957584-1', '21625621-8');
+INSERT INTO CITA VALUES (49, '2026-03-21 18:45:00', 'CONFIRMADO', '12977257-1', '13282565-0');
+INSERT INTO CITA VALUES (50, '2026-11-13 16:30:00', 'CONFIRMADO', '17534390-4', '13368105-K');
+INSERT INTO CITA VALUES (51, '2025-07-06 16:45:00', 'RESERVADO', '18348837-0', '11285271-0');
+INSERT INTO CITA VALUES (52, '2026-03-26 15:00:00', 'CONFIRMADO', '17534390-4', '14611401-5');
+INSERT INTO CITA VALUES (53, '2026-03-13 11:30:00', 'RESERVADO', '19157473-2', '20241736-2');
+INSERT INTO CITA VALUES (54, '2025-06-03 16:15:00', 'RESERVADO', '19523859-1', '15170629-8');
+INSERT INTO CITA VALUES (55, '2026-01-28 09:15:00', 'CONFIRMADO', '22202073-1', '14611401-5');
+INSERT INTO CITA VALUES (56, '2024-08-07 13:30:00', 'CONFIRMADO', '20020616-3', '12219822-2');
+INSERT INTO CITA VALUES (57, '2024-12-04 19:45:00', 'CONFIRMADO', '22755112-6', '15170629-8');
+INSERT INTO CITA VALUES (58, '2026-04-13 11:30:00', 'CONFIRMADO', '19523859-1', '9208903-5');
+INSERT INTO CITA VALUES (59, '2026-11-12 12:30:00', 'ANULADO', '19610607-8', '21814801-K');
+INSERT INTO CITA VALUES (60, '2025-02-26 19:45:00', 'CONFIRMADO', '13129458-K', '12219822-2');
+INSERT INTO CITA VALUES (61, '2025-06-14 08:15:00', 'CONFIRMADO', '23980162-7', '24287807-3');
+INSERT INTO CITA VALUES (62, '2026-10-19 19:45:00', 'ANULADO', '10850685-0', '13194119-3');
+INSERT INTO CITA VALUES (63, '2024-07-19 11:45:00', 'CONFIRMADO', '23884660-4', '13194119-3');
+INSERT INTO CITA VALUES (64, '2025-08-24 18:45:00', 'CONFIRMADO', '22895093-5', '13282565-0');
+INSERT INTO CITA VALUES (65, '2024-03-24 16:45:00', 'RESERVADO', '19610607-8', '19599334-5');
+INSERT INTO CITA VALUES (66, '2026-01-17 08:00:00', 'CONFIRMADO', '12524901-1', '20045349-5');
+INSERT INTO CITA VALUES (67, '2024-07-05 18:15:00', 'RESERVADO', '22398623-8', '11735650-0');
+INSERT INTO CITA VALUES (68, '2024-09-15 13:00:00', 'CONFIRMADO', '12524901-1', '18415948-3');
+INSERT INTO CITA VALUES (69, '2025-11-16 08:00:00', 'CONFIRMADO', '17534390-4', '11735650-0');
+INSERT INTO CITA VALUES (70, '2024-09-24 12:30:00', 'RESERVADO', '13841524-5', '15067558-5');
+INSERT INTO CITA VALUES (71, '2024-02-04 16:15:00', 'RESERVADO', '21977689-2', '21410981-K');
+INSERT INTO CITA VALUES (72, '2025-06-09 14:00:00', 'ANULADO', '17492333-6', '9208903-5');
+INSERT INTO CITA VALUES (73, '2026-04-23 11:30:00', 'CONFIRMADO', '18637683-K', '20241736-2');
+INSERT INTO CITA VALUES (74, '2026-11-25 08:00:00', 'CONFIRMADO', '19523859-1', '14611401-5');
+INSERT INTO CITA VALUES (75, '2025-01-21 08:15:00', 'RESERVADO', '18637683-K', '15067558-5');
+INSERT INTO CITA VALUES (76, '2026-06-19 09:00:00', 'RESERVADO', '11134937-8', '18944882-6');
+INSERT INTO CITA VALUES (77, '2025-05-02 09:30:00', 'CONFIRMADO', '12657109-7', '17334531-0');
+INSERT INTO CITA VALUES (78, '2024-06-01 11:15:00', 'CONFIRMADO', '14055114-8', '24974673-4');
+INSERT INTO CITA VALUES (79, '2024-05-06 17:15:00', 'CONFIRMADO', '18637683-K', '12391546-K');
+INSERT INTO CITA VALUES (80, '2026-09-11 14:15:00', 'CONFIRMADO', '22755112-6', '20241736-2');
+INSERT INTO CITA VALUES (81, '2026-12-12 08:00:00', 'CONFIRMADO', '23683537-8', '20134457-9');
+INSERT INTO CITA VALUES (82, '2025-10-25 17:45:00', 'CONFIRMADO', '13129458-K', '11143890-3');
+INSERT INTO CITA VALUES (83, '2026-05-26 15:45:00', 'RESERVADO', '20957584-1', '12391546-K');
+INSERT INTO CITA VALUES (84, '2025-03-22 17:45:00', 'RESERVADO', '21977689-2', '11666460-3');
+INSERT INTO CITA VALUES (85, '2024-12-03 09:30:00', 'RESERVADO', '14055114-8', '13368105-K');
+INSERT INTO CITA VALUES (86, '2026-07-11 13:00:00', 'RESERVADO', '11826099-8', '8118973-5');
+INSERT INTO CITA VALUES (87, '2025-05-04 10:00:00', 'RESERVADO', '22207160-8', '14611401-5');
+INSERT INTO CITA VALUES (88, '2026-09-14 09:00:00', 'RESERVADO', '20957584-1', '20241736-2');
+INSERT INTO CITA VALUES (89, '2026-10-26 13:45:00', 'RESERVADO', '17534390-4', '12391546-K');
+INSERT INTO CITA VALUES (90, '2024-12-18 11:15:00', 'CONFIRMADO', '17169432-4', '16816145-9');
+INSERT INTO CITA VALUES (91, '2025-05-09 15:15:00', 'RESERVADO', '21151927-2', '22463677-5');
+INSERT INTO CITA VALUES (92, '2025-05-16 09:30:00', 'ANULADO', '12026006-0', '21814801-K');
+INSERT INTO CITA VALUES (93, '2026-10-07 15:00:00', 'RESERVADO', '20020616-3', '24974673-4');
+INSERT INTO CITA VALUES (94, '2025-10-13 13:45:00', 'ANULADO', '13841524-5', '15170629-8');
+INSERT INTO CITA VALUES (95, '2024-05-11 17:15:00', 'CONFIRMADO', '9028681-1', '24974673-4');
+INSERT INTO CITA VALUES (96, '2025-05-24 19:45:00', 'CONFIRMADO', '22974440-3', '15721369-9');
+INSERT INTO CITA VALUES (97, '2025-07-09 14:30:00', 'RESERVADO', '12657109-7', '8653531-1');
+INSERT INTO CITA VALUES (98, '2026-09-06 18:00:00', 'CONFIRMADO', '17925135-1', '12219822-2');
+INSERT INTO CITA VALUES (99, '2025-05-27 19:00:00', 'CONFIRMADO', '22974440-3', '8262499-K');
+INSERT INTO CITA VALUES (100, '2026-08-05 18:30:00', 'RESERVADO', '12524901-1', '13368105-K');
+
+-- ==========================================================
+-- RECETA (60 registros, tabla completa)
+-- ==========================================================
+INSERT INTO RECETA VALUES (1, '2026-08-12', 'Sin observaciones adicionales', 87);
+INSERT INTO RECETA VALUES (2, '2026-12-15', 'Reposo relativo', 3);
+INSERT INTO RECETA VALUES (3, '2024-12-04', 'Control en 15 días', 82);
+INSERT INTO RECETA VALUES (4, '2026-03-24', 'Derivar a especialista si persisten síntomas', 15);
+INSERT INTO RECETA VALUES (5, '2024-06-18', 'Seguir dieta indicada', 12);
+INSERT INTO RECETA VALUES (6, '2025-11-06', 'Evaluar evolución en próxima cita', 53);
+INSERT INTO RECETA VALUES (7, '2024-12-20', 'Realizar exámenes de control', 27);
+INSERT INTO RECETA VALUES (8, '2025-07-01', 'Seguir dieta indicada', 48);
+INSERT INTO RECETA VALUES (9, '2025-12-26', 'Derivar a especialista si persisten síntomas', 96);
+INSERT INTO RECETA VALUES (10, '2024-06-11', 'Control en 15 días', 38);
+INSERT INTO RECETA VALUES (11, '2025-11-28', 'Realizar exámenes de control', 32);
+INSERT INTO RECETA VALUES (12, '2025-10-13', 'Control post operatorio', 84);
+INSERT INTO RECETA VALUES (13, '2025-08-20', 'Realizar exámenes de control', 99);
+INSERT INTO RECETA VALUES (14, '2026-02-22', 'Control en 15 días', 43);
+INSERT INTO RECETA VALUES (15, '2024-05-04', 'Aplicar tratamiento tópico', 7);
+INSERT INTO RECETA VALUES (16, '2026-07-14', 'Realizar exámenes de control', 80);
+INSERT INTO RECETA VALUES (17, '2025-07-06', 'Derivar a especialista si persisten síntomas', 86);
+INSERT INTO RECETA VALUES (18, '2024-08-10', 'Control post operatorio', 91);
+INSERT INTO RECETA VALUES (19, '2025-10-02', 'Sin observaciones adicionales', 67);
+INSERT INTO RECETA VALUES (20, '2024-04-27', 'Evaluar evolución en próxima cita', 16);
+INSERT INTO RECETA VALUES (21, '2026-08-14', 'Sin observaciones adicionales', 19);
+INSERT INTO RECETA VALUES (22, '2024-02-19', 'Reposo relativo', 56);
+INSERT INTO RECETA VALUES (23, '2024-05-08', 'Aplicar tratamiento tópico', 79);
+INSERT INTO RECETA VALUES (24, '2025-10-24', 'Realizar exámenes de control', 35);
+INSERT INTO RECETA VALUES (25, '2024-05-25', 'Derivar a especialista si persisten síntomas', 8);
+INSERT INTO RECETA VALUES (26, '2024-12-15', 'Evaluar evolución en próxima cita', 46);
+INSERT INTO RECETA VALUES (27, '2024-12-27', 'Reposo relativo', 100);
+INSERT INTO RECETA VALUES (28, '2024-08-09', 'Sin observaciones adicionales', 74);
+INSERT INTO RECETA VALUES (29, '2024-04-07', 'Realizar exámenes de control', 4);
+INSERT INTO RECETA VALUES (30, '2026-07-06', 'Seguir dieta indicada', 62);
+INSERT INTO RECETA VALUES (31, '2024-01-19', 'Realizar exámenes de control', 2);
+INSERT INTO RECETA VALUES (32, '2026-03-11', 'Reposo relativo', 18);
+INSERT INTO RECETA VALUES (33, '2026-05-28', 'Aplicar tratamiento tópico', 58);
+INSERT INTO RECETA VALUES (34, '2025-01-09', 'Aplicar tratamiento tópico', 50);
+INSERT INTO RECETA VALUES (35, '2024-03-23', 'Evaluar evolución en próxima cita', 33);
+INSERT INTO RECETA VALUES (36, '2025-03-19', 'Evaluar evolución en próxima cita', 34);
+INSERT INTO RECETA VALUES (37, '2025-08-03', 'Evaluar evolución en próxima cita', 92);
+INSERT INTO RECETA VALUES (38, '2026-12-09', 'Sin observaciones adicionales', 39);
+INSERT INTO RECETA VALUES (39, '2025-06-19', 'Sin observaciones adicionales', 41);
+INSERT INTO RECETA VALUES (40, '2026-11-23', 'Derivar a especialista si persisten síntomas', 52);
+INSERT INTO RECETA VALUES (41, '2025-04-14', 'Reposo relativo', 90);
+INSERT INTO RECETA VALUES (42, '2025-05-11', 'Realizar exámenes de control', 77);
+INSERT INTO RECETA VALUES (43, '2025-06-22', 'Control en 15 días', 64);
+INSERT INTO RECETA VALUES (44, '2026-08-01', 'Sin observaciones adicionales', 78);
+INSERT INTO RECETA VALUES (45, '2025-01-14', 'Reposo relativo', 57);
+INSERT INTO RECETA VALUES (46, '2024-05-03', 'Reposo relativo', 93);
+INSERT INTO RECETA VALUES (47, '2024-06-22', 'Reposo por 3 días', 37);
+INSERT INTO RECETA VALUES (48, '2025-11-10', 'Evaluar evolución en próxima cita', 76);
+INSERT INTO RECETA VALUES (49, '2026-02-23', 'Seguir dieta indicada', 55);
+INSERT INTO RECETA VALUES (50, '2025-02-05', 'Derivar a especialista si persisten síntomas', 9);
+INSERT INTO RECETA VALUES (51, '2026-08-01', 'Control en 15 días', 26);
+INSERT INTO RECETA VALUES (52, '2025-12-05', 'Seguir dieta indicada', 42);
+INSERT INTO RECETA VALUES (53, '2025-02-24', 'Control post operatorio', 51);
+INSERT INTO RECETA VALUES (54, '2025-05-05', 'Aplicar tratamiento tópico', 11);
+INSERT INTO RECETA VALUES (55, '2024-09-19', 'Sin observaciones adicionales', 97);
+INSERT INTO RECETA VALUES (56, '2025-12-07', 'Evaluar evolución en próxima cita', 83);
+INSERT INTO RECETA VALUES (57, '2026-11-15', 'Control en 15 días', 30);
+INSERT INTO RECETA VALUES (58, '2024-02-19', 'Control post operatorio', 70);
+INSERT INTO RECETA VALUES (59, '2025-06-26', 'Reposo relativo', 22);
+INSERT INTO RECETA VALUES (60, '2026-02-08', 'Reposo por 3 días', 44);
+
+-- ==========================================================
+-- MEDICAMENTO (15 registros, tabla completa)
+-- ==========================================================
+INSERT INTO MEDICAMENTO VALUES (1, 'Paracetamol', 'Analgésico y antipirético', 'Laboratorio Chile');
+INSERT INTO MEDICAMENTO VALUES (2, 'Ibuprofeno', 'Antiinflamatorio no esteroideo', 'Laboratorio Andrómaco');
+INSERT INTO MEDICAMENTO VALUES (3, 'Amoxicilina', 'Antibiótico de amplio espectro', 'Laboratorio Saval');
+INSERT INTO MEDICAMENTO VALUES (4, 'Losartán', 'Antihipertensivo', 'Laboratorio Recalcine');
+INSERT INTO MEDICAMENTO VALUES (5, 'Metformina', 'Hipoglicemiante oral', 'Laboratorio Bagó');
+INSERT INTO MEDICAMENTO VALUES (6, 'Omeprazol', 'Inhibidor bomba de protones', 'Laboratorio Chile');
+INSERT INTO MEDICAMENTO VALUES (7, 'Loratadina', 'Antihistamínico', 'Laboratorio Saval');
+INSERT INTO MEDICAMENTO VALUES (8, 'Salbutamol', 'Broncodilatador', 'Laboratorio Andrómaco');
+INSERT INTO MEDICAMENTO VALUES (9, 'Atorvastatina', 'Reductor de colesterol', 'Laboratorio Recalcine');
+INSERT INTO MEDICAMENTO VALUES (10, 'Diclofenaco', 'Antiinflamatorio no esteroideo', 'Laboratorio Bagó');
+INSERT INTO MEDICAMENTO VALUES (11, 'Ác. Acetilsalicílico', 'Analgésico y antiagregante', 'Laboratorio Chile');
+INSERT INTO MEDICAMENTO VALUES (12, 'Clonazepam', 'Ansiolítico', 'Laboratorio Saval');
+INSERT INTO MEDICAMENTO VALUES (13, 'Levotiroxina', 'Hormona tiroidea sintética', 'Laboratorio Bagó');
+INSERT INTO MEDICAMENTO VALUES (14, 'Ranitidina', 'Antagonista H2', 'Laboratorio Recalcine');
+INSERT INTO MEDICAMENTO VALUES (15, 'Ciprofloxacino', 'Antibiótico quinolona', 'Laboratorio Andrómaco');
+
+-- ==========================================================
+-- RECETA_MEDICAMENTO (119 registros, tabla completa)
+-- ==========================================================
+INSERT INTO RECETA_MEDICAMENTO VALUES (1, 4, 2, 12, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (1, 9, 1, 8, '14 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (2, 7, 1, 8, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (2, 2, 1, 24, '10 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (2, 4, 1, 6, '3 meses');
+INSERT INTO RECETA_MEDICAMENTO VALUES (3, 13, 1, 8, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (3, 8, 1, 24, '14 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (4, 15, 1, 6, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (5, 7, 1, 12, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (5, 12, 1, 24, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (5, 15, 2, 12, '10 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (6, 7, 2, 8, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (6, 10, 2, 6, '14 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (7, 4, 1, 6, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (8, 10, 1, 12, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (8, 15, 1, 12, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (8, 1, 1, 6, '3 meses');
+INSERT INTO RECETA_MEDICAMENTO VALUES (9, 3, 1, 24, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (9, 6, 1, 24, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (10, 9, 1, 8, '15 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (10, 2, 1, 24, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (11, 14, 1, 12, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (11, 10, 1, 8, '14 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (11, 3, 2, 8, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (12, 4, 1, 6, '3 meses');
+INSERT INTO RECETA_MEDICAMENTO VALUES (13, 15, 1, 6, '14 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (13, 3, 1, 12, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (13, 14, 2, 24, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (14, 10, 1, 8, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (15, 4, 2, 8, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (15, 13, 1, 6, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (16, 6, 2, 6, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (16, 2, 1, 12, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (17, 12, 1, 6, '3 meses');
+INSERT INTO RECETA_MEDICAMENTO VALUES (17, 10, 2, 6, '14 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (18, 3, 1, 8, '14 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (18, 1, 2, 24, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (19, 1, 2, 6, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (19, 13, 1, 12, '14 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (20, 8, 2, 24, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (20, 1, 1, 12, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (20, 3, 2, 24, '15 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (21, 10, 1, 12, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (22, 10, 2, 8, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (23, 4, 1, 24, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (23, 5, 2, 24, '3 meses');
+INSERT INTO RECETA_MEDICAMENTO VALUES (24, 5, 1, 12, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (24, 4, 1, 8, '10 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (24, 2, 1, 6, '3 meses');
+INSERT INTO RECETA_MEDICAMENTO VALUES (25, 2, 1, 6, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (25, 9, 1, 24, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (25, 6, 1, 12, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (26, 4, 1, 12, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (27, 6, 2, 8, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (27, 7, 1, 12, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (28, 14, 2, 12, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (28, 8, 1, 8, '10 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (28, 9, 1, 8, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (29, 3, 1, 24, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (29, 4, 2, 24, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (30, 2, 1, 6, '10 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (31, 15, 1, 8, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (32, 1, 1, 6, '15 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (32, 3, 1, 6, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (32, 10, 1, 24, '14 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (33, 5, 1, 12, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (33, 15, 2, 12, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (34, 7, 1, 8, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (34, 9, 1, 12, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (34, 8, 1, 12, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (35, 13, 1, 6, '3 meses');
+INSERT INTO RECETA_MEDICAMENTO VALUES (35, 12, 2, 24, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (35, 6, 1, 12, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (36, 10, 1, 24, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (36, 4, 1, 24, '14 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (37, 2, 2, 12, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (37, 4, 2, 8, '14 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (38, 6, 1, 12, '3 meses');
+INSERT INTO RECETA_MEDICAMENTO VALUES (38, 14, 2, 24, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (38, 3, 2, 24, '10 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (39, 14, 1, 24, '10 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (39, 13, 1, 8, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (40, 4, 2, 12, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (41, 1, 1, 12, '3 meses');
+INSERT INTO RECETA_MEDICAMENTO VALUES (41, 6, 2, 12, '3 meses');
+INSERT INTO RECETA_MEDICAMENTO VALUES (41, 10, 1, 8, '10 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (42, 13, 2, 24, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (42, 2, 1, 6, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (43, 5, 1, 12, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (43, 6, 2, 6, '3 meses');
+INSERT INTO RECETA_MEDICAMENTO VALUES (44, 12, 2, 24, '14 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (44, 9, 2, 12, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (45, 12, 1, 12, '10 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (45, 15, 2, 8, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (46, 3, 2, 24, '14 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (47, 15, 1, 12, '3 meses');
+INSERT INTO RECETA_MEDICAMENTO VALUES (48, 4, 1, 24, '10 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (49, 14, 2, 24, '15 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (50, 5, 1, 12, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (51, 5, 1, 8, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (51, 13, 1, 6, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (52, 15, 1, 6, '3 meses');
+INSERT INTO RECETA_MEDICAMENTO VALUES (52, 7, 2, 6, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (53, 13, 2, 12, '10 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (53, 14, 1, 8, '5 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (53, 10, 1, 8, '3 meses');
+INSERT INTO RECETA_MEDICAMENTO VALUES (54, 2, 1, 12, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (54, 15, 1, 8, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (55, 10, 1, 8, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (55, 15, 2, 12, 'Uso continuo');
+INSERT INTO RECETA_MEDICAMENTO VALUES (56, 1, 1, 12, '14 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (56, 2, 1, 24, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (57, 4, 1, 6, '15 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (57, 2, 1, 8, '3 meses');
+INSERT INTO RECETA_MEDICAMENTO VALUES (58, 7, 1, 24, '15 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (59, 2, 1, 12, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (59, 1, 1, 6, '7 días');
+INSERT INTO RECETA_MEDICAMENTO VALUES (60, 13, 1, 6, '1 mes');
+INSERT INTO RECETA_MEDICAMENTO VALUES (60, 7, 1, 6, '10 días');

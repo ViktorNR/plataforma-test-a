@@ -1,0 +1,128 @@
+{
+  "numero": 10,
+  "slug": "s3-rrhh",
+  "semana": 3,
+  "tipo": "EER",
+  "titulo": "Recursos humanos",
+  "enunciado": [
+    "Un sistema de recursos humanos registra a los empleados de una corporación. Cada empleado tiene un ID único. Los empleados son contratados o externos: todo empleado debe pertenecer a una de estas dos categorías y solo a una. De los contratados se guarda el salario; de los externos, la empresa consultora a la que pertenecen.",
+    "Adicionalmente, cualquier empleado contratado puede ser ascendido a un cargo de gerencia, del cual se guarda el presupuesto que maneja. No todos los contratados son gerentes.",
+    "Un empleado contratado también tiene beneficios. Un beneficio (por ejemplo, «Seguro Dental») se identifica por un código dentro de cada empleado y no puede existir sin él (entidad débil).",
+    "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Empleado",
+        "attrs": [
+          {
+            "name": "id_empleado",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Contratado",
+        "attrs": [
+          {
+            "name": "salario"
+          }
+        ]
+      },
+      {
+        "name": "Externo",
+        "attrs": [
+          {
+            "name": "empresa_consultora",
+            "aliases": [
+              "consultora",
+              "empresa"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Gerente",
+        "attrs": [
+          {
+            "name": "presupuesto"
+          }
+        ]
+      },
+      {
+        "name": "Beneficio",
+        "weak": true,
+        "attrs": [
+          {
+            "name": "codigo_beneficio",
+            "partialKey": true,
+            "aliases": [
+              "codigo"
+            ]
+          },
+          {
+            "name": "descripcion",
+            "aliases": [
+              "nombre"
+            ]
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "tiene",
+        "identifying": true,
+        "between": [
+          {
+            "entity": "Contratado",
+            "card": "1"
+          },
+          {
+            "entity": "Beneficio",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "specializations": [
+      {
+        "parent": "Empleado",
+        "children": [
+          "Contratado",
+          "Externo"
+        ],
+        "disjoint": true,
+        "total": true
+      },
+      {
+        "parent": "Contratado",
+        "children": [
+          "Gerente"
+        ],
+        "disjoint": true,
+        "total": false
+      }
+    ],
+    "layout": [
+      [
+        "Empleado",
+        null,
+        null
+      ],
+      [
+        "Contratado",
+        null,
+        "Externo"
+      ],
+      [
+        "Gerente",
+        "Beneficio",
+        null
+      ]
+    ]
+  }
+}

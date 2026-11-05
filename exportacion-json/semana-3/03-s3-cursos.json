@@ -1,0 +1,143 @@
+{
+  "numero": 3,
+  "slug": "s3-cursos",
+  "semana": 3,
+  "tipo": "EER",
+  "titulo": "Cursos presenciales y en línea",
+  "enunciado": [
+    "Una institución de capacitación ofrece cursos, identificados por un código, con nombre y horas. Todo curso es presencial (con la sala donde se dicta) o en línea (con la plataforma y la URL de acceso), y no puede ser ambas cosas.",
+    "Cada curso es impartido por un instructor (rut como identificador y nombre); un instructor imparte muchos cursos. Los participantes (rut como identificador y nombre) pueden inscribirse en muchos cursos y cada curso tiene muchos participantes; de cada inscripción se guarda la nota.",
+    "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Curso",
+        "attrs": [
+          {
+            "name": "cod_curso",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "horas"
+          }
+        ]
+      },
+      {
+        "name": "Presencial",
+        "aliases": [
+          "Curso presencial",
+          "Curso_Presencial"
+        ],
+        "attrs": [
+          {
+            "name": "sala"
+          }
+        ]
+      },
+      {
+        "name": "En_Linea",
+        "aliases": [
+          "En línea",
+          "Curso en línea",
+          "Online",
+          "Curso_En_Linea"
+        ],
+        "attrs": [
+          {
+            "name": "plataforma"
+          },
+          {
+            "name": "url"
+          }
+        ]
+      },
+      {
+        "name": "Instructor",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      },
+      {
+        "name": "Participante",
+        "attrs": [
+          {
+            "name": "rut_participante",
+            "key": true,
+            "aliases": [
+              "rut"
+            ]
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "imparte",
+        "between": [
+          {
+            "entity": "Instructor",
+            "card": "1"
+          },
+          {
+            "entity": "Curso",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "se_inscribe",
+        "between": [
+          {
+            "entity": "Participante",
+            "card": "N"
+          },
+          {
+            "entity": "Curso",
+            "card": "N"
+          }
+        ],
+        "attrs": [
+          {
+            "name": "nota"
+          }
+        ]
+      }
+    ],
+    "specializations": [
+      {
+        "parent": "Curso",
+        "children": [
+          "Presencial",
+          "En_Linea"
+        ],
+        "disjoint": true,
+        "total": true
+      }
+    ],
+    "layout": [
+      [
+        "Instructor",
+        "Curso",
+        "Participante"
+      ],
+      [
+        "Presencial",
+        null,
+        "En_Linea"
+      ]
+    ]
+  }
+}

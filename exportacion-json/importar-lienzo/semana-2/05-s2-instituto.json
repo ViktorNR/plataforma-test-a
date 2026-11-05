@@ -1,0 +1,424 @@
+{
+  "nodes": [
+    {
+      "id": "e:Profesor",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Profesor",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Profesor:dni",
+      "type": "attribute",
+      "position": {
+        "x": 53.808397169096025,
+        "y": 112.62545491711211
+      },
+      "data": {
+        "label": "dni",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Profesor:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -89.56129043280663,
+        "y": 76.879377039079
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Profesor:direccion",
+      "type": "attribute",
+      "position": {
+        "x": -89.56129043280667,
+        "y": -70.87937703907895
+      },
+      "data": {
+        "label": "direccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Profesor:telefono",
+      "type": "attribute",
+      "position": {
+        "x": 53.80839716909607,
+        "y": -106.6254549171121
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Modulo",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Modulo",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Modulo:cod_modulo",
+      "type": "attribute",
+      "position": {
+        "x": 566.8045689892065,
+        "y": 105.86007608425346
+      },
+      "data": {
+        "label": "cod_modulo",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Modulo:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 443.19543101079347,
+        "y": 105.86007608425348
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Alumno",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Alumno",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Alumno:n_expediente",
+      "type": "attribute",
+      "position": {
+        "x": 838.7564398961567,
+        "y": -154.75924798308262
+      },
+      "data": {
+        "label": "n_expediente",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Alumno:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 943.753475707144,
+        "y": -217.84783191653142
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Alumno:apellidos",
+      "type": "attribute",
+      "position": {
+        "x": 1066.2465242928558,
+        "y": -217.84783191653145
+      },
+      "data": {
+        "label": "apellidos",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Alumno:fecha_nacimiento",
+      "type": "attribute",
+      "position": {
+        "x": 1171.2435601038433,
+        "y": -154.75924798308267
+      },
+      "data": {
+        "label": "fecha_nacimiento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Curso",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 0
+      },
+      "data": {
+        "label": "Curso",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Curso:cod_curso",
+      "type": "attribute",
+      "position": {
+        "x": 1622.0084014666108,
+        "y": -23.627692093540958
+      },
+      "data": {
+        "label": "cod_curso",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "imparte",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "matricula",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:2",
+      "type": "relationship",
+      "position": {
+        "x": 1240,
+        "y": -18
+      },
+      "data": {
+        "label": "tiene",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:3",
+      "type": "relationship",
+      "position": {
+        "x": 1240,
+        "y": 102
+      },
+      "data": {
+        "label": "delegado",
+        "identifying": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Profesor->a:e:Profesor:dni#0",
+      "source": "e:Profesor",
+      "target": "a:e:Profesor:dni",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Profesor->a:e:Profesor:nombre#0",
+      "source": "e:Profesor",
+      "target": "a:e:Profesor:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Profesor->a:e:Profesor:direccion#0",
+      "source": "e:Profesor",
+      "target": "a:e:Profesor:direccion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Profesor->a:e:Profesor:telefono#0",
+      "source": "e:Profesor",
+      "target": "a:e:Profesor:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Modulo->a:e:Modulo:cod_modulo#0",
+      "source": "e:Modulo",
+      "target": "a:e:Modulo:cod_modulo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Modulo->a:e:Modulo:nombre#0",
+      "source": "e:Modulo",
+      "target": "a:e:Modulo:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Alumno->a:e:Alumno:n_expediente#0",
+      "source": "e:Alumno",
+      "target": "a:e:Alumno:n_expediente",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Alumno->a:e:Alumno:nombre#0",
+      "source": "e:Alumno",
+      "target": "a:e:Alumno:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Alumno->a:e:Alumno:apellidos#0",
+      "source": "e:Alumno",
+      "target": "a:e:Alumno:apellidos",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Alumno->a:e:Alumno:fecha_nacimiento#0",
+      "source": "e:Alumno",
+      "target": "a:e:Alumno:fecha_nacimiento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Curso->a:e:Curso:cod_curso#0",
+      "source": "e:Curso",
+      "target": "a:e:Curso:cod_curso",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Profesor->r:0#0",
+      "source": "e:Profesor",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Modulo->r:0#0",
+      "source": "e:Modulo",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Alumno->r:1#0",
+      "source": "e:Alumno",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Modulo->r:1#0",
+      "source": "e:Modulo",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Curso->r:2#0",
+      "source": "e:Curso",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Alumno->r:2#0",
+      "source": "e:Alumno",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Curso->r:3#0",
+      "source": "e:Curso",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Alumno->r:3#0",
+      "source": "e:Alumno",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,406 @@
+{
+  "nodes": [
+    {
+      "id": "e:Curso",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Curso",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Curso:cod_curso",
+      "type": "attribute",
+      "position": {
+        "x": 391.47896265228815,
+        "y": -126.06677043145189
+      },
+      "data": {
+        "label": "cod_curso",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Curso:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 505,
+        "y": -168.88733853924697
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Curso:horas",
+      "type": "attribute",
+      "position": {
+        "x": 618.5210373477119,
+        "y": -126.06677043145191
+      },
+      "data": {
+        "label": "horas",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Presencial",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 380
+      },
+      "data": {
+        "label": "Presencial",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Presencial:sala",
+      "type": "attribute",
+      "position": {
+        "x": -104.0188543214289,
+        "y": 433.1486729878574
+      },
+      "data": {
+        "label": "sala",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:En_Linea",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 380
+      },
+      "data": {
+        "label": "En_Linea",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:En_Linea:plataforma",
+      "type": "attribute",
+      "position": {
+        "x": 1080.0330909720747,
+        "y": 289.3515335994423
+      },
+      "data": {
+        "label": "plataforma",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:En_Linea:url",
+      "type": "attribute",
+      "position": {
+        "x": 982.7150048150138,
+        "y": 500.91259046261825
+      },
+      "data": {
+        "label": "url",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Instructor",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Instructor",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Instructor:rut",
+      "type": "attribute",
+      "position": {
+        "x": -24.030627471960134,
+        "y": 119.4354871531196
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Instructor:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -24.030627471960134,
+        "y": -113.43548715311958
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Participante",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Participante",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Participante:rut_participante",
+      "type": "attribute",
+      "position": {
+        "x": 1034.03062747196,
+        "y": -113.4354871531196
+      },
+      "data": {
+        "label": "rut_participante",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Participante:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1034.0306274719603,
+        "y": 119.43548715311954
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "imparte",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "se_inscribe",
+        "identifying": false
+      }
+    },
+    {
+      "id": "a:r:1:nota",
+      "type": "attribute",
+      "position": {
+        "x": 755,
+        "y": 103
+      },
+      "data": {
+        "label": "nota",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "s:0",
+      "type": "spec",
+      "position": {
+        "x": 538,
+        "y": 150
+      },
+      "data": {
+        "label": "",
+        "disjoint": true,
+        "total": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Curso->a:e:Curso:cod_curso#0",
+      "source": "e:Curso",
+      "target": "a:e:Curso:cod_curso",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Curso->a:e:Curso:nombre#0",
+      "source": "e:Curso",
+      "target": "a:e:Curso:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Curso->a:e:Curso:horas#0",
+      "source": "e:Curso",
+      "target": "a:e:Curso:horas",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Presencial->a:e:Presencial:sala#0",
+      "source": "e:Presencial",
+      "target": "a:e:Presencial:sala",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:En_Linea->a:e:En_Linea:plataforma#0",
+      "source": "e:En_Linea",
+      "target": "a:e:En_Linea:plataforma",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:En_Linea->a:e:En_Linea:url#0",
+      "source": "e:En_Linea",
+      "target": "a:e:En_Linea:url",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Instructor->a:e:Instructor:rut#0",
+      "source": "e:Instructor",
+      "target": "a:e:Instructor:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Instructor->a:e:Instructor:nombre#0",
+      "source": "e:Instructor",
+      "target": "a:e:Instructor:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Participante->a:e:Participante:rut_participante#0",
+      "source": "e:Participante",
+      "target": "a:e:Participante:rut_participante",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Participante->a:e:Participante:nombre#0",
+      "source": "e:Participante",
+      "target": "a:e:Participante:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Instructor->r:0#0",
+      "source": "e:Instructor",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Curso->r:0#0",
+      "source": "e:Curso",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Participante->r:1#0",
+      "source": "e:Participante",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Curso->r:1#0",
+      "source": "e:Curso",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "r:1->a:r:1:nota#0",
+      "source": "r:1",
+      "target": "a:r:1:nota",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Curso->s:0#0",
+      "source": "e:Curso",
+      "target": "s:0",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Presencial#0",
+      "source": "s:0",
+      "target": "e:Presencial",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:En_Linea#0",
+      "source": "s:0",
+      "target": "e:En_Linea",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

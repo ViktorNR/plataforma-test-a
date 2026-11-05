@@ -1,0 +1,480 @@
+{
+  "nodes": [
+    {
+      "id": "e:Autor",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Autor",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Autor:cod_autor",
+      "type": "attribute",
+      "position": {
+        "x": -24.030627471960134,
+        "y": 119.4354871531196
+      },
+      "data": {
+        "label": "cod_autor",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Autor:nombre",
+      "type": "attribute",
+      "position": {
+        "x": -24.030627471960134,
+        "y": -113.43548715311958
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Libro",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Libro",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Libro:cod_libro",
+      "type": "attribute",
+      "position": {
+        "x": 723.1646547969538,
+        "y": 188.6726747467694
+      },
+      "data": {
+        "label": "cod_libro",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Libro:titulo",
+      "type": "attribute",
+      "position": {
+        "x": 625.1641701606969,
+        "y": 263.0590912848168
+      },
+      "data": {
+        "label": "titulo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Libro:isbn",
+      "type": "attribute",
+      "position": {
+        "x": 505,
+        "y": 289.4788975654116
+      },
+      "data": {
+        "label": "isbn",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Libro:editorial",
+      "type": "attribute",
+      "position": {
+        "x": 384.835829839303,
+        "y": 263.05909128481676
+      },
+      "data": {
+        "label": "editorial",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Libro:numero_paginas",
+      "type": "attribute",
+      "position": {
+        "x": 286.83534520304636,
+        "y": 188.67267474676942
+      },
+      "data": {
+        "label": "numero_paginas",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Ejemplar",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Ejemplar",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Ejemplar:cod_ejemplar",
+      "type": "attribute",
+      "position": {
+        "x": 1066.8045689892065,
+        "y": 105.86007608425346
+      },
+      "data": {
+        "label": "cod_ejemplar",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Ejemplar:localizacion",
+      "type": "attribute",
+      "position": {
+        "x": 943.1954310107935,
+        "y": 105.86007608425348
+      },
+      "data": {
+        "label": "localizacion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Usuario",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 0
+      },
+      "data": {
+        "label": "Usuario",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Usuario:cod_usuario",
+      "type": "attribute",
+      "position": {
+        "x": 1456.191602830904,
+        "y": -106.62545491711212
+      },
+      "data": {
+        "label": "cod_usuario",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Usuario:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1599.5612904328066,
+        "y": -70.87937703907906
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Usuario:direccion",
+      "type": "attribute",
+      "position": {
+        "x": 1599.5612904328066,
+        "y": 76.879377039079
+      },
+      "data": {
+        "label": "direccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Usuario:telefono",
+      "type": "attribute",
+      "position": {
+        "x": 1456.191602830904,
+        "y": 112.62545491711211
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "escribe",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "tiene",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:2",
+      "type": "relationship",
+      "position": {
+        "x": 1240,
+        "y": -18
+      },
+      "data": {
+        "label": "presta",
+        "identifying": false
+      }
+    },
+    {
+      "id": "a:r:2:fecha_prestamo",
+      "type": "attribute",
+      "position": {
+        "x": 1314.0190159617778,
+        "y": 101.22413733370432
+      },
+      "data": {
+        "label": "fecha_prestamo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:r:2:fecha_devolucion",
+      "type": "attribute",
+      "position": {
+        "x": 1195.9809840382222,
+        "y": 101.22413733370432
+      },
+      "data": {
+        "label": "fecha_devolucion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Autor->a:e:Autor:cod_autor#0",
+      "source": "e:Autor",
+      "target": "a:e:Autor:cod_autor",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Autor->a:e:Autor:nombre#0",
+      "source": "e:Autor",
+      "target": "a:e:Autor:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Libro->a:e:Libro:cod_libro#0",
+      "source": "e:Libro",
+      "target": "a:e:Libro:cod_libro",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Libro->a:e:Libro:titulo#0",
+      "source": "e:Libro",
+      "target": "a:e:Libro:titulo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Libro->a:e:Libro:isbn#0",
+      "source": "e:Libro",
+      "target": "a:e:Libro:isbn",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Libro->a:e:Libro:editorial#0",
+      "source": "e:Libro",
+      "target": "a:e:Libro:editorial",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Libro->a:e:Libro:numero_paginas#0",
+      "source": "e:Libro",
+      "target": "a:e:Libro:numero_paginas",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Ejemplar->a:e:Ejemplar:cod_ejemplar#0",
+      "source": "e:Ejemplar",
+      "target": "a:e:Ejemplar:cod_ejemplar",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Ejemplar->a:e:Ejemplar:localizacion#0",
+      "source": "e:Ejemplar",
+      "target": "a:e:Ejemplar:localizacion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Usuario->a:e:Usuario:cod_usuario#0",
+      "source": "e:Usuario",
+      "target": "a:e:Usuario:cod_usuario",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Usuario->a:e:Usuario:nombre#0",
+      "source": "e:Usuario",
+      "target": "a:e:Usuario:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Usuario->a:e:Usuario:direccion#0",
+      "source": "e:Usuario",
+      "target": "a:e:Usuario:direccion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Usuario->a:e:Usuario:telefono#0",
+      "source": "e:Usuario",
+      "target": "a:e:Usuario:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Autor->r:0#0",
+      "source": "e:Autor",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Libro->r:0#0",
+      "source": "e:Libro",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Libro->r:1#0",
+      "source": "e:Libro",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Ejemplar->r:1#0",
+      "source": "e:Ejemplar",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Usuario->r:2#0",
+      "source": "e:Usuario",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Ejemplar->r:2#0",
+      "source": "e:Ejemplar",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "r:2->a:r:2:fecha_prestamo#0",
+      "source": "r:2",
+      "target": "a:r:2:fecha_prestamo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "r:2->a:r:2:fecha_devolucion#0",
+      "source": "r:2",
+      "target": "a:r:2:fecha_devolucion",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "numero": 3,
+  "slug": "s2-ventas",
+  "semana": 2,
+  "tipo": "ER",
+  "titulo": "Empresa de ventas",
+  "enunciado": [
+    "Una empresa vende productos a varios clientes. De los clientes se guardan: rut (identificador), nombre, apellido, dirección (compuesta por calle, número y ciudad), fecha de nacimiento y edad (se calcula a partir de la fecha de nacimiento). Cada producto tiene un código (identificador), un nombre y un precio unitario.",
+    "Un cliente puede comprar varios productos a la empresa, y un mismo producto puede ser comprado por varios clientes.",
+    "Los productos son suministrados por diferentes proveedores. Un producto solo puede ser suministrado por un proveedor, y un proveedor puede suministrar diferentes productos. De cada proveedor se desea conocer el rut (identificador), nombre, dirección y sus representantes (puede tener varios).",
+    "Dibuja el modelo Entidad-Relación con sus atributos y cardinalidades (mín,máx)."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Cliente",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "apellido"
+          },
+          {
+            "name": "direccion",
+            "parts": [
+              {
+                "name": "calle"
+              },
+              {
+                "name": "numero"
+              },
+              {
+                "name": "ciudad"
+              }
+            ]
+          },
+          {
+            "name": "fecha_nacimiento"
+          },
+          {
+            "name": "edad",
+            "derived": true
+          }
+        ]
+      },
+      {
+        "name": "Producto",
+        "attrs": [
+          {
+            "name": "codigo",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "precio_unitario"
+          }
+        ]
+      },
+      {
+        "name": "Proveedor",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          },
+          {
+            "name": "direccion"
+          },
+          {
+            "name": "representantes",
+            "multi": true
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "compra",
+        "between": [
+          {
+            "entity": "Cliente",
+            "card": "N"
+          },
+          {
+            "entity": "Producto",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "suministra",
+        "between": [
+          {
+            "entity": "Proveedor",
+            "card": "1"
+          },
+          {
+            "entity": "Producto",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "layout": [
+      [
+        "Cliente",
+        null,
+        "Producto",
+        null,
+        "Proveedor"
+      ]
+    ]
+  }
+}

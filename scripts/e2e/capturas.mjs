@@ -1,0 +1,20 @@
+﻿// Captura de pantalla de la plataforma para las diapositivas finales: WEEK=1 node capturas.mjs
+import { chromium } from 'playwright';
+const base = process.env.BASE, week = process.env.WEEK ?? '1';
+const b = await chromium.launch(); const page = await (await b.newContext({ viewport: { width: 1440, height: 1100 }, deviceScaleFactor: 2 })).newPage();
+await page.goto(base + '/registro');
+await page.fill('input[name=nombre]', 'Camila'); await page.fill('input[name=apellido]', 'Soto');
+await page.fill('input[name=email]', `cap${Date.now()}@test.cl`); await page.fill('input[name=password]', 'clave-segura-1');
+await page.selectOption('select[name=cursoId]', { index: 1 });
+await Promise.all([page.waitForURL('**/panel'), page.click('button.btn-primary')]);
+await page.goto(`${base}/panel/semana/${week}`);
+await page.waitForSelector('.ex-rows'); await page.waitForTimeout(500);
+const head = await page.locator('h1').first().boundingBox();
+const rows = page.locator('.ex-row');
+const n = await rows.count();
+const last = await rows.nth(Math.min(2, n - 1)).boundingBox();
+await page.locator('details > summary').first().click().catch(() => {}); await page.waitForTimeout(300);
+const head2 = await page.locator('h1').first().boundingBox(); const last2 = await rows.nth(Math.min(2, n - 1)).boundingBox();
+const x = 60, y = Math.max(0, head2.y - 40);
+await page.screenshot({ path: `/shots/semana${week}-lista.png`, clip: { x, y, width: 1320, height: Math.min(1090, last2.y + last2.height - y + 20) } });
+await b.close();

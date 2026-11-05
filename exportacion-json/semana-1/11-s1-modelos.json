@@ -1,0 +1,114 @@
+{
+  "numero": 11,
+  "slug": "s1-modelos",
+  "semana": 1,
+  "tipo": "QUIZ",
+  "titulo": "Modelos de datos y arquitecturas",
+  "enunciado": [
+    "Pon a prueba lo aprendido sobre modelos de datos, tipos de bases de datos y arquitecturas de un SGBD."
+  ],
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "El modelo relacional organiza los datos en:",
+      "alternativas": [
+        "Árboles de nodos padre-hijo",
+        "Tablas (relaciones) formadas por filas y columnas",
+        "Grafos de nodos y aristas",
+        "Pares clave-valor únicamente"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "Tablas (relaciones) formadas por filas y columnas",
+      "explicacion": "Cada tabla (relación) tiene columnas (atributos) y filas (tuplas)."
+    },
+    {
+      "id": "q2",
+      "pregunta": "¿Cuál de las siguientes es una base de datos NoSQL orientada a documentos?",
+      "alternativas": [
+        "MySQL",
+        "PostgreSQL",
+        "MongoDB",
+        "Oracle Database"
+      ],
+      "respuestaCorrecta": 2,
+      "respuestaCorrectaTexto": "MongoDB",
+      "explicacion": "MongoDB almacena documentos tipo JSON; los otros son sistemas relacionales."
+    },
+    {
+      "id": "q3",
+      "pregunta": "En la arquitectura de tres niveles ANSI/SPARC, ¿qué nivel describe cómo se almacenan físicamente los datos?",
+      "alternativas": [
+        "Nivel externo",
+        "Nivel conceptual",
+        "Nivel interno",
+        "Nivel de aplicación"
+      ],
+      "respuestaCorrecta": 2,
+      "respuestaCorrectaTexto": "Nivel interno",
+      "explicacion": "El nivel interno define estructuras de almacenamiento y rutas de acceso; el conceptual, el esquema lógico completo; el externo, las vistas de usuario."
+    },
+    {
+      "id": "q4",
+      "pregunta": "¿Qué nivel de la arquitectura ANSI/SPARC presenta a cada grupo de usuarios solo la parte de la base de datos que le interesa?",
+      "alternativas": [
+        "Nivel externo (vistas)",
+        "Nivel conceptual",
+        "Nivel interno",
+        "Nivel físico"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "Nivel externo (vistas)",
+      "explicacion": "Las vistas del nivel externo ocultan datos que el usuario no necesita o no debe ver."
+    },
+    {
+      "id": "q5",
+      "pregunta": "En una arquitectura cliente-servidor:",
+      "alternativas": [
+        "El cliente almacena toda la base de datos",
+        "El cliente solicita servicios y el servidor del SGBD procesa las consultas y devuelve resultados",
+        "No existe comunicación entre equipos",
+        "Solo puede conectarse un cliente a la vez"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "El cliente solicita servicios y el servidor del SGBD procesa las consultas y devuelve resultados",
+      "explicacion": "El servidor centraliza el procesamiento y almacenamiento; los clientes envían solicitudes."
+    },
+    {
+      "id": "q6",
+      "pregunta": "Las tres capas de una arquitectura de tres capas son:",
+      "alternativas": [
+        "Interna, conceptual y externa",
+        "Presentación, lógica de negocio y datos",
+        "Cliente, red y servidor de correo",
+        "Entrada, proceso y salida"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "Presentación, lógica de negocio y datos",
+      "explicacion": "Separar presentación, lógica y datos facilita el mantenimiento y la escalabilidad."
+    },
+    {
+      "id": "q7",
+      "pregunta": "¿Para qué tipo de problema resulta especialmente adecuada una base de datos de grafos?",
+      "alternativas": [
+        "Registros contables con formato fijo",
+        "Redes sociales o recomendaciones, donde importan las relaciones complejas entre elementos",
+        "Almacenar archivos de video",
+        "Sustituir las hojas de cálculo"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "Redes sociales o recomendaciones, donde importan las relaciones complejas entre elementos",
+      "explicacion": "Los grafos modelan nodos y aristas, ideales para recorrer relaciones (amigos de amigos, rutas, etc.)."
+    },
+    {
+      "id": "q8",
+      "pregunta": "Verdadero o falso: en una base de datos distribuida, los datos pueden estar almacenados en varias ubicaciones físicas conectadas por una red.",
+      "alternativas": [
+        "Verdadero",
+        "Falso"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "Verdadero",
+      "explicacion": "Esto permite mayor disponibilidad y escalabilidad, a costa de mayor complejidad en consistencia y coordinación."
+    }
+  ]
+}

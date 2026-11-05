@@ -1,0 +1,202 @@
+{
+  "numero": 9,
+  "slug": "s3-zoologico",
+  "semana": 3,
+  "tipo": "EER",
+  "titulo": "Zoológico",
+  "enunciado": [
+    "Un zoológico cataloga sus animales. Cada animal tiene un ID único y una fecha de nacimiento. Los animales se clasifican en mamíferos, aves o reptiles; todo animal debe pertenecer a una y solo una de estas categorías. De los mamíferos se registra si es depredador; de las aves, la envergadura de sus alas; de los reptiles, si es venenoso.",
+    "El zoológico también tiene empleados (rut como identificador y nombre); los cuidadores son un tipo de empleado (no todos los empleados son cuidadores). Un cuidador está asignado a un único hábitat. Un hábitat (ID de hábitat) alberga a muchos animales, pero un animal vive en un único hábitat.",
+    "Además, algunos animales, pero no todos, pueden estar en un programa de conservación (ID del programa y estado de riesgo); un programa agrupa a muchos animales y cada animal está en, como máximo, un programa.",
+    "Dibuja el modelo E/R extendido. Conecta la superclase con el círculo de especialización y este con cada subclase; define si es disyunta (d) o solapada (o) y total o parcial. Incluye entidades débiles, atributos y cardinalidades (mín,máx) cuando el enunciado lo pida."
+  ],
+  "solution": {
+    "entities": [
+      {
+        "name": "Animal",
+        "attrs": [
+          {
+            "name": "id_animal",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          },
+          {
+            "name": "fecha_nacimiento"
+          }
+        ]
+      },
+      {
+        "name": "Mamifero",
+        "aliases": [
+          "Mamífero"
+        ],
+        "attrs": [
+          {
+            "name": "es_depredador",
+            "aliases": [
+              "depredador"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ave",
+        "attrs": [
+          {
+            "name": "envergadura"
+          }
+        ]
+      },
+      {
+        "name": "Reptil",
+        "attrs": [
+          {
+            "name": "es_venenoso",
+            "aliases": [
+              "venenoso"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Habitat",
+        "aliases": [
+          "Hábitat"
+        ],
+        "attrs": [
+          {
+            "name": "id_habitat",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Empleado",
+        "attrs": [
+          {
+            "name": "rut",
+            "key": true
+          },
+          {
+            "name": "nombre"
+          }
+        ]
+      },
+      {
+        "name": "Cuidador",
+        "attrs": []
+      },
+      {
+        "name": "Programa_Conservacion",
+        "aliases": [
+          "Programa de conservación",
+          "Programa"
+        ],
+        "attrs": [
+          {
+            "name": "id_programa",
+            "key": true,
+            "aliases": [
+              "id"
+            ]
+          },
+          {
+            "name": "estado_riesgo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "alberga",
+        "between": [
+          {
+            "entity": "Habitat",
+            "card": "1"
+          },
+          {
+            "entity": "Animal",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "esta_asignado",
+        "between": [
+          {
+            "entity": "Habitat",
+            "card": "1"
+          },
+          {
+            "entity": "Cuidador",
+            "card": "N"
+          }
+        ]
+      },
+      {
+        "name": "participa",
+        "between": [
+          {
+            "entity": "Programa_Conservacion",
+            "card": "1"
+          },
+          {
+            "entity": "Animal",
+            "card": "N"
+          }
+        ]
+      }
+    ],
+    "specializations": [
+      {
+        "parent": "Animal",
+        "children": [
+          "Mamifero",
+          "Ave",
+          "Reptil"
+        ],
+        "disjoint": true,
+        "total": true
+      },
+      {
+        "parent": "Empleado",
+        "children": [
+          "Cuidador"
+        ],
+        "disjoint": true,
+        "total": false
+      }
+    ],
+    "layout": [
+      [
+        "Mamifero",
+        "Ave",
+        "Reptil",
+        null
+      ],
+      [
+        null,
+        "Animal",
+        "Habitat",
+        "Programa_Conservacion"
+      ],
+      [
+        null,
+        null,
+        "Cuidador",
+        null
+      ],
+      [
+        null,
+        null,
+        "Empleado",
+        null
+      ]
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "numero": 7,
+  "slug": "s1-enfoque-bd",
+  "semana": 1,
+  "tipo": "QUIZ",
+  "titulo": "Enfoque de base de datos",
+  "enunciado": [
+    "Características de la metodología de bases de datos."
+  ],
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "En el enfoque de bases de datos los datos se almacenan…",
+      "alternativas": [
+        "dentro de cada programa",
+        "de forma independiente del programa que los usa",
+        "solo en papel",
+        "en archivos por departamento"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "de forma independiente del programa que los usa",
+      "explicacion": "Esta es la independencia de datos."
+    },
+    {
+      "id": "q2",
+      "pregunta": "El control de protección, ingreso, modificación, eliminación y recuperación de datos es…",
+      "alternativas": [
+        "individual de cada aplicación",
+        "centralizado",
+        "inexistente",
+        "responsabilidad del usuario final"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "centralizado",
+      "explicacion": "Existe un control centralizado de las operaciones sobre los datos."
+    },
+    {
+      "id": "q3",
+      "pregunta": "¿Qué software gestiona la base de datos?",
+      "alternativas": [
+        "Un compilador",
+        "Un DBMS",
+        "Un navegador",
+        "Un antivirus"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "Un DBMS",
+      "explicacion": "El DBMS (Data Base Management System) es el intermediario entre las aplicaciones y los datos."
+    },
+    {
+      "id": "q4",
+      "pregunta": "Una característica del enfoque de bases de datos es…",
+      "alternativas": [
+        "la redundancia no controlada",
+        "la dependencia de los datos",
+        "los datos se integran y se comparten",
+        "cada programa define sus archivos"
+      ],
+      "respuestaCorrecta": 2,
+      "respuestaCorrectaTexto": "los datos se integran y se comparten",
+      "explicacion": "Integración y compartición son sus propiedades distintivas."
+    },
+    {
+      "id": "q5",
+      "pregunta": "Verdadero o falso: con el enfoque de bases de datos, un cambio en el esquema obliga siempre a reescribir todos los programas.",
+      "alternativas": [
+        "Verdadero",
+        "Falso"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "Falso",
+      "explicacion": "La independencia de datos evita reescribir los programas por cambios en el esquema."
+    }
+  ]
+}

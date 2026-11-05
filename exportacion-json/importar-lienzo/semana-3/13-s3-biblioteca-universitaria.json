@@ -1,0 +1,1661 @@
+{
+  "nodes": [
+    {
+      "id": "e:Sucursal",
+      "type": "entity",
+      "position": {
+        "x": 1500,
+        "y": 0
+      },
+      "data": {
+        "label": "Sucursal",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Sucursal:codigo_sucursal",
+      "type": "attribute",
+      "position": {
+        "x": 1428.0059186931096,
+        "y": -105.64819045335629
+      },
+      "data": {
+        "label": "codigo_sucursal",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Sucursal:nombre",
+      "type": "attribute",
+      "position": {
+        "x": 1546.2150957787255,
+        "y": -123.62477532075349
+      },
+      "data": {
+        "label": "nombre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Sucursal:direccion",
+      "type": "attribute",
+      "position": {
+        "x": 1631.1952419070296,
+        "y": -39.51210139603894
+      },
+      "data": {
+        "label": "direccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Sucursal:telefono",
+      "type": "attribute",
+      "position": {
+        "x": 1614.432433887968,
+        "y": 78.8752941242161
+      },
+      "data": {
+        "label": "telefono",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Sucursal:horario_atencion",
+      "type": "attribute",
+      "position": {
+        "x": 1509.4414253833388,
+        "y": 136.0894119967665
+      },
+      "data": {
+        "label": "horario_atencion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Libro",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "data": {
+        "label": "Libro",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Libro:isbn",
+      "type": "attribute",
+      "position": {
+        "x": 269.67530052412724,
+        "y": -183.070647380478
+      },
+      "data": {
+        "label": "isbn",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Libro:titulo",
+      "type": "attribute",
+      "position": {
+        "x": 350.48857752698365,
+        "y": -254.15019021063364
+      },
+      "data": {
+        "label": "titulo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Libro:anio_publicacion",
+      "type": "attribute",
+      "position": {
+        "x": 451.18762421876283,
+        "y": -292.13425455676764
+      },
+      "data": {
+        "label": "anio_publicacion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Libro:editorial",
+      "type": "attribute",
+      "position": {
+        "x": 558.812375781237,
+        "y": -292.13425455676764
+      },
+      "data": {
+        "label": "editorial",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Libro:categoria",
+      "type": "attribute",
+      "position": {
+        "x": 659.5114224730162,
+        "y": -254.1501902106337
+      },
+      "data": {
+        "label": "categoria",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Libro:numero_paginas",
+      "type": "attribute",
+      "position": {
+        "x": 740.3246994758728,
+        "y": -183.07064738047794
+      },
+      "data": {
+        "label": "numero_paginas",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Autor",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "label": "Autor",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Autor:id_autor",
+      "type": "attribute",
+      "position": {
+        "x": 67.87830871640952,
+        "y": 105.2072320971657
+      },
+      "data": {
+        "label": "id_autor",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Autor:nombre_completo",
+      "type": "attribute",
+      "position": {
+        "x": -53.54315909664794,
+        "y": 107.75064927237715
+      },
+      "data": {
+        "label": "nombre_completo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Autor:nacionalidad",
+      "type": "attribute",
+      "position": {
+        "x": -115,
+        "y": 3.000000000000014
+      },
+      "data": {
+        "label": "nacionalidad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Autor:fecha_nacimiento",
+      "type": "attribute",
+      "position": {
+        "x": -53.54315909664788,
+        "y": -101.75064927237719
+      },
+      "data": {
+        "label": "fecha_nacimiento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Autor:email",
+      "type": "attribute",
+      "position": {
+        "x": 67.8783087164095,
+        "y": -99.2072320971657
+      },
+      "data": {
+        "label": "email",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Ejemplar",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "label": "Ejemplar",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Ejemplar:codigo_ejemplar",
+      "type": "attribute",
+      "position": {
+        "x": 838.7564398961567,
+        "y": -154.75924798308262
+      },
+      "data": {
+        "label": "codigo_ejemplar",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Ejemplar:estado",
+      "type": "attribute",
+      "position": {
+        "x": 943.753475707144,
+        "y": -217.84783191653142
+      },
+      "data": {
+        "label": "estado",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Ejemplar:ubicacion",
+      "type": "attribute",
+      "position": {
+        "x": 1066.2465242928558,
+        "y": -217.84783191653145
+      },
+      "data": {
+        "label": "ubicacion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Ejemplar:fecha_adquisicion",
+      "type": "attribute",
+      "position": {
+        "x": 1171.2435601038433,
+        "y": -154.75924798308267
+      },
+      "data": {
+        "label": "fecha_adquisicion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Usuario",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 380
+      },
+      "data": {
+        "label": "Usuario",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Usuario:rut",
+      "type": "attribute",
+      "position": {
+        "x": 754.2523250160091,
+        "y": 549.9529229277335
+      },
+      "data": {
+        "label": "rut",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Usuario:nombre_completo",
+      "type": "attribute",
+      "position": {
+        "x": 715.4807117081233,
+        "y": 596.7706013436878
+      },
+      "data": {
+        "label": "nombre_completo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Usuario:direccion",
+      "type": "attribute",
+      "position": {
+        "x": 668.0673847784587,
+        "y": 634.8114930290396
+      },
+      "data": {
+        "label": "direccion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Usuario:direccion:calle",
+      "type": "attribute",
+      "position": {
+        "x": 725.367902514088,
+        "y": 546.824842523245
+      },
+      "data": {
+        "label": "calle",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Usuario:direccion:numero",
+      "type": "attribute",
+      "position": {
+        "x": 767.3027056030168,
+        "y": 669.1240432234952
+      },
+      "data": {
+        "label": "numero",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Usuario:direccion:comuna",
+      "type": "attribute",
+      "position": {
+        "x": 658.7812608914662,
+        "y": 739.4000579066371
+      },
+      "data": {
+        "label": "comuna",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:a:e:Usuario:direccion:ciudad",
+      "type": "attribute",
+      "position": {
+        "x": 564.3390305668715,
+        "y": 651.1034705810586
+      },
+      "data": {
+        "label": "ciudad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Usuario:telefonos",
+      "type": "attribute",
+      "position": {
+        "x": 613.9589947768771,
+        "y": 662.5137518212878
+      },
+      "data": {
+        "label": "telefonos",
+        "key": false,
+        "partialKey": false,
+        "multi": true,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Usuario:correo",
+      "type": "attribute",
+      "position": {
+        "x": 555.3770716817533,
+        "y": 678.7400051544794
+      },
+      "data": {
+        "label": "correo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Usuario:fecha_inscripcion",
+      "type": "attribute",
+      "position": {
+        "x": 494.7268154693352,
+        "y": 682.8240512026994
+      },
+      "data": {
+        "label": "fecha_inscripcion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Usuario:fecha_nacimiento",
+      "type": "attribute",
+      "position": {
+        "x": 434.4983457378599,
+        "y": 674.598211150723
+      },
+      "data": {
+        "label": "fecha_nacimiento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Usuario:edad",
+      "type": "attribute",
+      "position": {
+        "x": 377.1644647839061,
+        "y": 654.4002135887421
+      },
+      "data": {
+        "label": "edad",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": true
+      }
+    },
+    {
+      "id": "e:Estudiante",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 760
+      },
+      "data": {
+        "label": "Estudiante",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Estudiante:carrera",
+      "type": "attribute",
+      "position": {
+        "x": 102.0172317687439,
+        "y": 833.6233441570832
+      },
+      "data": {
+        "label": "carrera",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Estudiante:semestre",
+      "type": "attribute",
+      "position": {
+        "x": -83.31172141141951,
+        "y": 844.2467836985061
+      },
+      "data": {
+        "label": "semestre",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Estudiante:jornada",
+      "type": "attribute",
+      "position": {
+        "x": -57.307791621183874,
+        "y": 660.4439709071615
+      },
+      "data": {
+        "label": "jornada",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Funcionario",
+      "type": "entity",
+      "position": {
+        "x": 500,
+        "y": 760
+      },
+      "data": {
+        "label": "Funcionario",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Funcionario:cargo",
+      "type": "attribute",
+      "position": {
+        "x": 323.3323270233129,
+        "y": 973.6943135190454
+      },
+      "data": {
+        "label": "cargo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Funcionario:departamento",
+      "type": "attribute",
+      "position": {
+        "x": 250.24895689753214,
+        "y": 874.7906221121918
+      },
+      "data": {
+        "label": "departamento",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Funcionario:tipo_contrato",
+      "type": "attribute",
+      "position": {
+        "x": 226.94423625156628,
+        "y": 754.0429134032582
+      },
+      "data": {
+        "label": "tipo_contrato",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Bibliotecario",
+      "type": "entity",
+      "position": {
+        "x": 0,
+        "y": 1140
+      },
+      "data": {
+        "label": "Bibliotecario",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Bibliotecario:turno",
+      "type": "attribute",
+      "position": {
+        "x": -104.0188543214289,
+        "y": 1193.1486729878575
+      },
+      "data": {
+        "label": "turno",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Administrativo",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 1140
+      },
+      "data": {
+        "label": "Administrativo",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Administrativo:area_gestion",
+      "type": "attribute",
+      "position": {
+        "x": 1114.018854321429,
+        "y": 1193.1486729878573
+      },
+      "data": {
+        "label": "area_gestion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Prestamo",
+      "type": "entity",
+      "position": {
+        "x": 1000,
+        "y": 380
+      },
+      "data": {
+        "label": "Prestamo",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Prestamo:id_prestamo",
+      "type": "attribute",
+      "position": {
+        "x": 1232.9721467984755,
+        "y": 473.6008084401093
+      },
+      "data": {
+        "label": "id_prestamo",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Prestamo:fecha_prestamo",
+      "type": "attribute",
+      "position": {
+        "x": 1160.5927354878336,
+        "y": 572.6594497232344
+      },
+      "data": {
+        "label": "fecha_prestamo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Prestamo:fecha_estimada_devolucion",
+      "type": "attribute",
+      "position": {
+        "x": 1049.2984846334293,
+        "y": 624.2829261781463
+      },
+      "data": {
+        "label": "fecha_estimada_devolucion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Prestamo:fecha_real_devolucion",
+      "type": "attribute",
+      "position": {
+        "x": 926.9248706189339,
+        "y": 615.5598425739852
+      },
+      "data": {
+        "label": "fecha_real_devolucion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Prestamo:estado",
+      "type": "attribute",
+      "position": {
+        "x": 824.0783966260894,
+        "y": 548.6719035881473
+      },
+      "data": {
+        "label": "estado",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "e:Sancion",
+      "type": "entity",
+      "position": {
+        "x": 2000,
+        "y": 0
+      },
+      "data": {
+        "label": "Sancion",
+        "weak": false
+      }
+    },
+    {
+      "id": "a:e:Sancion:id_sancion",
+      "type": "attribute",
+      "position": {
+        "x": 1909.9165653316463,
+        "y": -70.20615036777241
+      },
+      "data": {
+        "label": "id_sancion",
+        "key": true,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Sancion:monto",
+      "type": "attribute",
+      "position": {
+        "x": 2022.515892820919,
+        "y": -115.71475686992785
+      },
+      "data": {
+        "label": "monto",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Sancion:motivo",
+      "type": "attribute",
+      "position": {
+        "x": 2117.174029670602,
+        "y": -39.62613127482871
+      },
+      "data": {
+        "label": "motivo",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Sancion:fecha_generacion",
+      "type": "attribute",
+      "position": {
+        "x": 2096.934474937717,
+        "y": 80.12361712164622
+      },
+      "data": {
+        "label": "fecha_generacion",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:e:Sancion:estado_pago",
+      "type": "attribute",
+      "position": {
+        "x": 1982.528213541824,
+        "y": 120.87713439585363
+      },
+      "data": {
+        "label": "estado_pago",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:0",
+      "type": "relationship",
+      "position": {
+        "x": 1240,
+        "y": -18
+      },
+      "data": {
+        "label": "tiene",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:1",
+      "type": "relationship",
+      "position": {
+        "x": 240,
+        "y": -18
+      },
+      "data": {
+        "label": "escribe",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:2",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": -18
+      },
+      "data": {
+        "label": "posee",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:3",
+      "type": "relationship",
+      "position": {
+        "x": 740,
+        "y": 362
+      },
+      "data": {
+        "label": "solicita",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:4",
+      "type": "relationship",
+      "position": {
+        "x": 990,
+        "y": 172
+      },
+      "data": {
+        "label": "corresponde",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:5",
+      "type": "relationship",
+      "position": {
+        "x": 1490,
+        "y": 172
+      },
+      "data": {
+        "label": "genera",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:6",
+      "type": "relationship",
+      "position": {
+        "x": 490,
+        "y": 172
+      },
+      "data": {
+        "label": "reserva",
+        "identifying": false
+      }
+    },
+    {
+      "id": "a:r:6:fecha_solicitud",
+      "type": "attribute",
+      "position": {
+        "x": 375.9332295685482,
+        "y": 306.5210373477119
+      },
+      "data": {
+        "label": "fecha_solicitud",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:r:6:estado",
+      "type": "attribute",
+      "position": {
+        "x": 333.11266146075303,
+        "y": 193.00000000000003
+      },
+      "data": {
+        "label": "estado",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "a:r:6:fecha_maxima_retiro",
+      "type": "attribute",
+      "position": {
+        "x": 375.9332295685481,
+        "y": 79.47896265228817
+      },
+      "data": {
+        "label": "fecha_maxima_retiro",
+        "key": false,
+        "partialKey": false,
+        "multi": false,
+        "derived": false
+      }
+    },
+    {
+      "id": "r:7",
+      "type": "relationship",
+      "position": {
+        "x": 990,
+        "y": 362
+      },
+      "data": {
+        "label": "responsable",
+        "identifying": false
+      }
+    },
+    {
+      "id": "r:8",
+      "type": "relationship",
+      "position": {
+        "x": 490,
+        "y": 992
+      },
+      "data": {
+        "label": "supervisa",
+        "identifying": false
+      }
+    },
+    {
+      "id": "s:0",
+      "type": "spec",
+      "position": {
+        "x": 288,
+        "y": 530
+      },
+      "data": {
+        "label": "",
+        "disjoint": true,
+        "total": true
+      }
+    },
+    {
+      "id": "s:1",
+      "type": "spec",
+      "position": {
+        "x": 538,
+        "y": 910
+      },
+      "data": {
+        "label": "",
+        "disjoint": false,
+        "total": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:Sucursal->a:e:Sucursal:codigo_sucursal#0",
+      "source": "e:Sucursal",
+      "target": "a:e:Sucursal:codigo_sucursal",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Sucursal->a:e:Sucursal:nombre#0",
+      "source": "e:Sucursal",
+      "target": "a:e:Sucursal:nombre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Sucursal->a:e:Sucursal:direccion#0",
+      "source": "e:Sucursal",
+      "target": "a:e:Sucursal:direccion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Sucursal->a:e:Sucursal:telefono#0",
+      "source": "e:Sucursal",
+      "target": "a:e:Sucursal:telefono",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Sucursal->a:e:Sucursal:horario_atencion#0",
+      "source": "e:Sucursal",
+      "target": "a:e:Sucursal:horario_atencion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Libro->a:e:Libro:isbn#0",
+      "source": "e:Libro",
+      "target": "a:e:Libro:isbn",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Libro->a:e:Libro:titulo#0",
+      "source": "e:Libro",
+      "target": "a:e:Libro:titulo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Libro->a:e:Libro:anio_publicacion#0",
+      "source": "e:Libro",
+      "target": "a:e:Libro:anio_publicacion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Libro->a:e:Libro:editorial#0",
+      "source": "e:Libro",
+      "target": "a:e:Libro:editorial",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Libro->a:e:Libro:categoria#0",
+      "source": "e:Libro",
+      "target": "a:e:Libro:categoria",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Libro->a:e:Libro:numero_paginas#0",
+      "source": "e:Libro",
+      "target": "a:e:Libro:numero_paginas",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Autor->a:e:Autor:id_autor#0",
+      "source": "e:Autor",
+      "target": "a:e:Autor:id_autor",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Autor->a:e:Autor:nombre_completo#0",
+      "source": "e:Autor",
+      "target": "a:e:Autor:nombre_completo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Autor->a:e:Autor:nacionalidad#0",
+      "source": "e:Autor",
+      "target": "a:e:Autor:nacionalidad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Autor->a:e:Autor:fecha_nacimiento#0",
+      "source": "e:Autor",
+      "target": "a:e:Autor:fecha_nacimiento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Autor->a:e:Autor:email#0",
+      "source": "e:Autor",
+      "target": "a:e:Autor:email",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Ejemplar->a:e:Ejemplar:codigo_ejemplar#0",
+      "source": "e:Ejemplar",
+      "target": "a:e:Ejemplar:codigo_ejemplar",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Ejemplar->a:e:Ejemplar:estado#0",
+      "source": "e:Ejemplar",
+      "target": "a:e:Ejemplar:estado",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Ejemplar->a:e:Ejemplar:ubicacion#0",
+      "source": "e:Ejemplar",
+      "target": "a:e:Ejemplar:ubicacion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Ejemplar->a:e:Ejemplar:fecha_adquisicion#0",
+      "source": "e:Ejemplar",
+      "target": "a:e:Ejemplar:fecha_adquisicion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Usuario->a:e:Usuario:rut#0",
+      "source": "e:Usuario",
+      "target": "a:e:Usuario:rut",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Usuario->a:e:Usuario:nombre_completo#0",
+      "source": "e:Usuario",
+      "target": "a:e:Usuario:nombre_completo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Usuario->a:e:Usuario:direccion#0",
+      "source": "e:Usuario",
+      "target": "a:e:Usuario:direccion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Usuario:direccion->a:a:e:Usuario:direccion:calle#0",
+      "source": "a:e:Usuario:direccion",
+      "target": "a:a:e:Usuario:direccion:calle",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Usuario:direccion->a:a:e:Usuario:direccion:numero#0",
+      "source": "a:e:Usuario:direccion",
+      "target": "a:a:e:Usuario:direccion:numero",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Usuario:direccion->a:a:e:Usuario:direccion:comuna#0",
+      "source": "a:e:Usuario:direccion",
+      "target": "a:a:e:Usuario:direccion:comuna",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "a:e:Usuario:direccion->a:a:e:Usuario:direccion:ciudad#0",
+      "source": "a:e:Usuario:direccion",
+      "target": "a:a:e:Usuario:direccion:ciudad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Usuario->a:e:Usuario:telefonos#0",
+      "source": "e:Usuario",
+      "target": "a:e:Usuario:telefonos",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Usuario->a:e:Usuario:correo#0",
+      "source": "e:Usuario",
+      "target": "a:e:Usuario:correo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Usuario->a:e:Usuario:fecha_inscripcion#0",
+      "source": "e:Usuario",
+      "target": "a:e:Usuario:fecha_inscripcion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Usuario->a:e:Usuario:fecha_nacimiento#0",
+      "source": "e:Usuario",
+      "target": "a:e:Usuario:fecha_nacimiento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Usuario->a:e:Usuario:edad#0",
+      "source": "e:Usuario",
+      "target": "a:e:Usuario:edad",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Estudiante->a:e:Estudiante:carrera#0",
+      "source": "e:Estudiante",
+      "target": "a:e:Estudiante:carrera",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Estudiante->a:e:Estudiante:semestre#0",
+      "source": "e:Estudiante",
+      "target": "a:e:Estudiante:semestre",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Estudiante->a:e:Estudiante:jornada#0",
+      "source": "e:Estudiante",
+      "target": "a:e:Estudiante:jornada",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Funcionario->a:e:Funcionario:cargo#0",
+      "source": "e:Funcionario",
+      "target": "a:e:Funcionario:cargo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Funcionario->a:e:Funcionario:departamento#0",
+      "source": "e:Funcionario",
+      "target": "a:e:Funcionario:departamento",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Funcionario->a:e:Funcionario:tipo_contrato#0",
+      "source": "e:Funcionario",
+      "target": "a:e:Funcionario:tipo_contrato",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Bibliotecario->a:e:Bibliotecario:turno#0",
+      "source": "e:Bibliotecario",
+      "target": "a:e:Bibliotecario:turno",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Administrativo->a:e:Administrativo:area_gestion#0",
+      "source": "e:Administrativo",
+      "target": "a:e:Administrativo:area_gestion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Prestamo->a:e:Prestamo:id_prestamo#0",
+      "source": "e:Prestamo",
+      "target": "a:e:Prestamo:id_prestamo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Prestamo->a:e:Prestamo:fecha_prestamo#0",
+      "source": "e:Prestamo",
+      "target": "a:e:Prestamo:fecha_prestamo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Prestamo->a:e:Prestamo:fecha_estimada_devolucion#0",
+      "source": "e:Prestamo",
+      "target": "a:e:Prestamo:fecha_estimada_devolucion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Prestamo->a:e:Prestamo:fecha_real_devolucion#0",
+      "source": "e:Prestamo",
+      "target": "a:e:Prestamo:fecha_real_devolucion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Prestamo->a:e:Prestamo:estado#0",
+      "source": "e:Prestamo",
+      "target": "a:e:Prestamo:estado",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Sancion->a:e:Sancion:id_sancion#0",
+      "source": "e:Sancion",
+      "target": "a:e:Sancion:id_sancion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Sancion->a:e:Sancion:monto#0",
+      "source": "e:Sancion",
+      "target": "a:e:Sancion:monto",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Sancion->a:e:Sancion:motivo#0",
+      "source": "e:Sancion",
+      "target": "a:e:Sancion:motivo",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Sancion->a:e:Sancion:fecha_generacion#0",
+      "source": "e:Sancion",
+      "target": "a:e:Sancion:fecha_generacion",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Sancion->a:e:Sancion:estado_pago#0",
+      "source": "e:Sancion",
+      "target": "a:e:Sancion:estado_pago",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Sucursal->r:0#0",
+      "source": "e:Sucursal",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Ejemplar->r:0#0",
+      "source": "e:Ejemplar",
+      "target": "r:0",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Autor->r:1#0",
+      "source": "e:Autor",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Libro->r:1#0",
+      "source": "e:Libro",
+      "target": "r:1",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Libro->r:2#0",
+      "source": "e:Libro",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Ejemplar->r:2#0",
+      "source": "e:Ejemplar",
+      "target": "r:2",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Usuario->r:3#0",
+      "source": "e:Usuario",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Prestamo->r:3#0",
+      "source": "e:Prestamo",
+      "target": "r:3",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Ejemplar->r:4#0",
+      "source": "e:Ejemplar",
+      "target": "r:4",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Prestamo->r:4#0",
+      "source": "e:Prestamo",
+      "target": "r:4",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Prestamo->r:5#0",
+      "source": "e:Prestamo",
+      "target": "r:5",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Sancion->r:5#0",
+      "source": "e:Sancion",
+      "target": "r:5",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Usuario->r:6#0",
+      "source": "e:Usuario",
+      "target": "r:6",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Libro->r:6#0",
+      "source": "e:Libro",
+      "target": "r:6",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true
+      }
+    },
+    {
+      "id": "r:6->a:r:6:fecha_solicitud#0",
+      "source": "r:6",
+      "target": "a:r:6:fecha_solicitud",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "r:6->a:r:6:estado#0",
+      "source": "r:6",
+      "target": "a:r:6:estado",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "r:6->a:r:6:fecha_maxima_retiro#0",
+      "source": "r:6",
+      "target": "a:r:6:fecha_maxima_retiro",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Funcionario->r:7#0",
+      "source": "e:Funcionario",
+      "target": "r:7",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Sucursal->r:7#0",
+      "source": "e:Sucursal",
+      "target": "r:7",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Funcionario->r:8#0",
+      "source": "e:Funcionario",
+      "target": "r:8",
+      "type": "floating",
+      "data": {
+        "card": "1",
+        "view": true
+      }
+    },
+    {
+      "id": "e:Funcionario->r:8#1",
+      "source": "e:Funcionario",
+      "target": "r:8",
+      "type": "floating",
+      "data": {
+        "card": "N",
+        "view": true,
+        "bend": 55
+      }
+    },
+    {
+      "id": "e:Usuario->s:0#0",
+      "source": "e:Usuario",
+      "target": "s:0",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Estudiante#0",
+      "source": "s:0",
+      "target": "e:Estudiante",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:0->e:Funcionario#0",
+      "source": "s:0",
+      "target": "e:Funcionario",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "e:Funcionario->s:1#0",
+      "source": "e:Funcionario",
+      "target": "s:1",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:1->e:Bibliotecario#0",
+      "source": "s:1",
+      "target": "e:Bibliotecario",
+      "type": "floating",
+      "data": {}
+    },
+    {
+      "id": "s:1->e:Administrativo#0",
+      "source": "s:1",
+      "target": "e:Administrativo",
+      "type": "floating",
+      "data": {}
+    }
+  ]
+}

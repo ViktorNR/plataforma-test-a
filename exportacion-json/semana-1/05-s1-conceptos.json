@@ -1,0 +1,112 @@
+{
+  "numero": 5,
+  "slug": "s1-conceptos",
+  "semana": 1,
+  "tipo": "QUIZ",
+  "titulo": "Conceptos fundamentales",
+  "enunciado": [
+    "Responde las siguientes preguntas sobre las características y ventajas de las bases de datos. Al corregir verás la explicación de cada una."
+  ],
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "¿Qué es una base de datos?",
+      "alternativas": [
+        "Una colección organizada de datos relacionados entre sí, almacenados para ser consultados y actualizados",
+        "Un programa para editar documentos de texto",
+        "Un lenguaje de programación orientado a objetos",
+        "Un dispositivo de almacenamiento físico"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "Una colección organizada de datos relacionados entre sí, almacenados para ser consultados y actualizados",
+      "explicacion": "La base de datos es el conjunto de datos; el software que la gestiona es el SGBD."
+    },
+    {
+      "id": "q2",
+      "pregunta": "¿Cuál es la función principal de un SGBD (DBMS)?",
+      "alternativas": [
+        "Diseñar la interfaz gráfica de las aplicaciones",
+        "Permitir definir, crear, manipular y controlar el acceso a la base de datos",
+        "Compilar el código de las aplicaciones",
+        "Conectar los computadores a internet"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "Permitir definir, crear, manipular y controlar el acceso a la base de datos",
+      "explicacion": "El SGBD ofrece lenguajes de definición y manipulación, control de acceso, concurrencia y recuperación."
+    },
+    {
+      "id": "q3",
+      "pregunta": "En un sistema de archivos tradicional, el mismo dato (por ejemplo, la dirección de un cliente) se guarda en varios archivos. ¿Qué problema genera principalmente?",
+      "alternativas": [
+        "Mayor velocidad de consulta",
+        "Redundancia e inconsistencia de datos",
+        "Mayor seguridad",
+        "Independencia de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "Redundancia e inconsistencia de datos",
+      "explicacion": "Al duplicar datos, una actualización puede quedar en un archivo y no en otro, generando inconsistencias."
+    },
+    {
+      "id": "q4",
+      "pregunta": "¿Qué significa independencia de datos?",
+      "alternativas": [
+        "Que los datos no necesitan ser almacenados",
+        "Que cada usuario tiene su propia copia de la base de datos",
+        "Poder modificar el esquema de almacenamiento sin tener que reescribir los programas de aplicación",
+        "Que los datos no pueden relacionarse entre sí"
+      ],
+      "respuestaCorrecta": 2,
+      "respuestaCorrectaTexto": "Poder modificar el esquema de almacenamiento sin tener que reescribir los programas de aplicación",
+      "explicacion": "Es una de las grandes ventajas del enfoque de bases de datos frente al procesamiento de archivos."
+    },
+    {
+      "id": "q5",
+      "pregunta": "Verdadero o falso: la integridad de los datos busca que estos sean correctos y consistentes con las reglas definidas.",
+      "alternativas": [
+        "Verdadero",
+        "Falso"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "Verdadero",
+      "explicacion": "Las restricciones de integridad (claves, dominios, referencias) protegen la calidad de los datos."
+    },
+    {
+      "id": "q6",
+      "pregunta": "¿Cuál es una tarea típica del administrador de la base de datos (DBA)?",
+      "alternativas": [
+        "Diseñar los logotipos de la empresa",
+        "Gestionar seguridad, respaldos, permisos y rendimiento del SGBD",
+        "Escribir manuales de usuario de las aplicaciones",
+        "Reparar los computadores de los usuarios"
+      ],
+      "respuestaCorrecta": 1,
+      "respuestaCorrectaTexto": "Gestionar seguridad, respaldos, permisos y rendimiento del SGBD",
+      "explicacion": "El DBA vela por la disponibilidad, seguridad y rendimiento del sistema de bases de datos."
+    },
+    {
+      "id": "q7",
+      "pregunta": "Verdadero o falso: en un enfoque de bases de datos, varios usuarios pueden acceder y modificar datos de forma concurrente.",
+      "alternativas": [
+        "Verdadero",
+        "Falso"
+      ],
+      "respuestaCorrecta": 0,
+      "respuestaCorrectaTexto": "Verdadero",
+      "explicacion": "El SGBD controla la concurrencia mediante transacciones y bloqueos para mantener la consistencia."
+    },
+    {
+      "id": "q8",
+      "pregunta": "¿Cuál de las siguientes NO es una ventaja de usar una metodología de bases de datos?",
+      "alternativas": [
+        "Reducción de la redundancia",
+        "Mayor control de la seguridad de los datos",
+        "Eliminación total de la necesidad de respaldos",
+        "Datos compartidos entre aplicaciones"
+      ],
+      "respuestaCorrecta": 2,
+      "respuestaCorrectaTexto": "Eliminación total de la necesidad de respaldos",
+      "explicacion": "Los respaldos siguen siendo necesarios: una base de datos puede fallar o corromperse."
+    }
+  ]
+}
